@@ -102,7 +102,7 @@ reports the `v2-maintenance-based` specification.
 ### 1. Prerequisites
 
 * **Python 3.13** (the study used 3.13.9)
-* **Git LFS** — mandatory, the dataset is stored as an LFS object
+* **Git LFS** - mandatory, the dataset is stored as an LFS object
 * Several GB of free RAM, since the panel is loaded in memory
 
 ### 2. Clone the repository and fetch the dataset
@@ -199,7 +199,7 @@ smells), **Bandit** (security weaknesses), the **RSZZ** variant of SZZ (bug-indu
 ## Citation
 
 ```bibtex
-@article{sorrentino_developers_leave,
+@article{palomba_developers_leave,
   title   = {Developers Leave, Projects Fade: On the Relationship between Socio-Technical
              Debt and Abandonment in Open-Source Machine Learning Projects},
   author  = {Sorrentino, Pasquale and Giordano, Giammaria and Palomba, Fabio},
@@ -209,7 +209,7 @@ smells), **Bandit** (security weaknesses), the **RSZZ** variant of SZZ (bug-indu
 
 ## License
 
-To be defined before publication.
+TBD.
 
 ## Contact
 
