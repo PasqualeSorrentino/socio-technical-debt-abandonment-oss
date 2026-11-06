@@ -1598,7 +1598,9 @@ for p in PREDS:
     orr = np.exp(_ml.params[p]); pv = _ml.pvalues[p]
     sig = '***' if pv < .001 else '**' if pv < .01 else '*' if pv < .05 else 'ns'
     print(f"   {p:13s} OR={orr:5.2f}  p={pv:.3f}  {sig}")
-    _rowsL.append({'predictor': p, 'coef': _ml.params[p], 'odds_ratio': orr, 'p_value': pv})
+    _ci = _ml.conf_int().loc[p]
+    _rowsL.append({'predictor': p, 'coef': _ml.params[p], 'odds_ratio': orr,
+                   'or_ci_low': np.exp(_ci[0]), 'or_ci_high': np.exp(_ci[1]), 'p_value': pv})
 pd.DataFrame(_rowsL).to_csv(OUT_DIR / 'rq2_project_logit_multivariate.csv', index=False)
 print("Analisi logit multivariata a livello progetto conclusa")
 
