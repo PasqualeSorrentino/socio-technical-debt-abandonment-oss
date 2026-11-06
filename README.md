@@ -2,7 +2,7 @@
 
 ### On the Relationship between Socio-Technical Debt and Abandonment in Open-Source Machine Learning Projects
 
-Replication package for the paper by **Pasquale Sorrentino, Giammaria Giordano and Fabio Palomba**
+Replication package for the paper by **Pasquale Sorrentino, Giammaria Giordano and Fabio Palomba** -
 Software Engineering (SeSa) Lab, Department of Computer Science, University of Salerno, Italy.
 
 ---
