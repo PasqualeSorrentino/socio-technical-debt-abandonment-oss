@@ -2,8 +2,8 @@
 
 ### On the Relationship between Socio-Technical Debt and Abandonment in Open-Source Machine Learning Projects
 
-Replication package for the paper by **Pasquale Sorrentino, Giammaria Giordano and Fabio Palomba**
-— Software Engineering (SeSa) Lab, Department of Computer Science, University of Salerno, Italy.
+Replication package for the paper by **Pasquale Sorrentino, Giammaria Giordano and Fabio Palomba** -
+Software Engineering (SeSa) Lab, Department of Computer Science, University of Salerno, Italy.
 
 ---
 
@@ -75,8 +75,8 @@ therefore yield different RQ2 results. Both are required to reproduce the paper.
 
 | Pipeline | Definition of project failure | Split | Role |
 |---|---|---|---|
-| **`v2-maintenance-based`** | Fewer than 12 commits in the four windows ending with the project's **most recent commit** | **162 active / 170 inactive** | **Main analysis.** Produces Tables 2–3 and the v2 bars of Figures 3–4 |
-| **`v1-temporal`** | Last observable activity precedes the end of the observation period by at least four windows | 38 active / 294 inactive | **Sensitivity analysis.** Produces the v1 bars of Figures 3–4 |
+| **`v2-maintenance-based`** | Fewer than 12 commits in the four windows ending with the project's **most recent commit** | **162 active / 170 inactive** | **Main analysis.** Produces Tables 2–3 and the v2 bars of Figures 3-4 |
+| **`v1-temporal`** | Last observable activity precedes the end of the observation period by at least four windows | 38 active / 294 inactive | **Sensitivity analysis.** Produces the v1 bars of Figures 3-4 |
 
 **Figure 3 combines the v2 estimates from `v2-maintenance-based` with the v1 estimates from
 `v1-temporal`**, and Figure 4 contrasts the two project splits: neither figure can be reproduced
@@ -102,7 +102,7 @@ reports the `v2-maintenance-based` specification.
 ### 1. Prerequisites
 
 * **Python 3.13** (the study used 3.13.9)
-* **Git LFS** — mandatory, the dataset is stored as an LFS object
+* **Git LFS** - mandatory, the dataset is stored as an LFS object
 * Several GB of free RAM, since the panel is loaded in memory
 
 ### 2. Clone the repository and fetch the dataset
@@ -199,7 +199,7 @@ smells), **Bandit** (security weaknesses), the **RSZZ** variant of SZZ (bug-indu
 ## Citation
 
 ```bibtex
-@article{sorrentino_developers_leave,
+@article{palomba_developers_leave,
   title   = {Developers Leave, Projects Fade: On the Relationship between Socio-Technical
              Debt and Abandonment in Open-Source Machine Learning Projects},
   author  = {Sorrentino, Pasquale and Giordano, Giammaria and Palomba, Fabio},
@@ -209,8 +209,8 @@ smells), **Bandit** (security weaknesses), the **RSZZ** variant of SZZ (bug-indu
 
 ## License
 
-To be defined before publication.
+TBD.
 
 ## Contact
 
-Corresponding author: Giammaria Giordano — `giagiordano@unisa.it`
+Corresponding author: Giammaria Giordano - `giagiordano@unisa.it`
