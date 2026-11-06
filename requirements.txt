@@ -1,0 +1,19 @@
+# Replication package - "Developers Leave, Projects Fade"
+# Python 3.13.9
+#
+# Install with:  pip install -r requirements.txt
+#
+# The four pinned versions are the ones reported in the paper (Section 3.4).
+# The remaining packages are listed without a pin because their exact versions
+# were not recorded; any recent release compatible with Python 3.13 works.
+# Before archiving, consider freezing the environment:  pip freeze > requirements-lock.txt
+
+lifelines==0.30.3
+statsmodels==0.14.6
+scikit-learn==1.9.0
+scipy==1.18.0
+
+pandas
+numpy
+matplotlib
+seaborn
