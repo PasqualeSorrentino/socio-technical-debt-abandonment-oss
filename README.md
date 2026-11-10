@@ -220,10 +220,6 @@ smells), **Bandit** (security weaknesses), the **RSZZ** variant of SZZ (bug-indu
 }
 ```
 
-## License
-
-TBD.
-
 ## Authors
 
 | | Role | GitHub |
