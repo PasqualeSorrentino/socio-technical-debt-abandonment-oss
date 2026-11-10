@@ -16,16 +16,17 @@ the code and the community that develops it, i.e., from the *socio-technical deb
 social debt and technical debt.
 
 **Objective.** While social and technical debt have been shown to be coupled in terms of code
-quality, the extent to which they relate to the abandonment of developers and of entire projects has
-not been systematically assessed. This paper investigates whether socio-technical debt is associated
-with abandonment at these two levels of granularity, and how much the answer depends on the way
-failure is defined.
+quality, the extent to which they relate to the abandonment of developers and the dormancy of entire
+projects has not been systematically assessed. This paper investigates whether socio-technical debt
+is associated with these outcomes at these two levels of granularity, and how much the answer
+depends on the way dormancy is defined.
 
 **Method.** We analyze **332 engineered open-source ML projects** from the NICHE dataset, involving
 **10,416 developers** observed over quarterly windows. We model developer abandonment and project
 inactivity as right-censored time-to-event processes, combining logistic regression and
-(time-varying) Cox models. At the project level, we compare two operationalizations of failure, i.e.,
-a temporal one and one based on recent maintenance intensity, while controlling for project scale.
+(time-varying) Cox models. At the project level, we compare two operationalizations of dormancy,
+i.e., a temporal one and one based on recent maintenance intensity, while controlling for project
+scale.
 
 **Result.** At the developer level, social debt indicators, and in particular team turnover and the
 share of non-core contributors, are consistently associated with a higher risk of abandonment,
@@ -34,10 +35,9 @@ At the project level, the effects observed under the temporal definition vanish 
 maintenance-based one once scale is controlled. We found no consistent evidence of a socio-technical
 effect, while scale and continuity indicators carry most of the signal.
 
-**Conclusion.** Project abandonment does not appear to be the sum of individual abandonments or a
-direct product of socio-technical debt, and conclusions on project failure are sensitive to how
-failure is defined. We conclude by distilling lessons learned, implications, and future research
-directions.
+**Conclusion.** Project dormancy does not appear to be the sum of individual abandonments or a
+direct product of socio-technical debt, and conclusions on project dormancy are sensitive to how it
+is defined. We conclude by distilling lessons learned, implications, and future research directions.
 
 **Keywords:** Social Debt, Technical Debt, Community Smells, Open-Source Sustainability, Survival
 Analysis, Empirical Software Engineering.
@@ -69,25 +69,33 @@ table (`.csv`) and figure (`.png`) it produces into its own `outputs/file/` dire
 
 ## The two analyses, and what each one produces
 
-The paper compares two operationalizations of project failure, and this package contains one
+The paper compares two operationalizations of project dormancy, and this package contains one
 pipeline for each. The two are **not** interchangeable: they classify projects differently and
 therefore yield different RQ2 results. Both are required to reproduce the paper.
 
-| Pipeline | Definition of project failure | Split | Role |
+| Pipeline | Definition of project dormancy | Split | Role |
 |---|---|---|---|
-| **`v2-maintenance-based`** | Fewer than 12 commits in the four windows ending with the project's **most recent commit** | **162 active / 170 inactive** | **Main analysis.** Produces Tables 2–3 and the v2 bars of Figures 3-4 |
-| **`v1-temporal`** | Last observable activity precedes the end of the observation period by at least four windows | 38 active / 294 inactive | **Sensitivity analysis.** Produces the v1 bars of Figures 3-4 |
+| **`v2-maintenance-based`** | Fewer than 12 commits in the four windows ending with the project's **most recent commit** | **162 active / 170 dormant** | **Main analysis.** Produces Tables 2–3 and the v2 bars of Figures 3-4 |
+| **`v1-temporal`** | Last observable activity precedes the end of the observation period by at least four windows | 38 active / 294 dormant | **Sensitivity analysis.** Produces the v1 bars of Figures 3-4 |
 
 **Figure 3 combines the v2 estimates from `v2-maintenance-based` with the v1 estimates from
 `v1-temporal`**, and Figure 4 contrasts the two project splits: neither figure can be reproduced
 from a single pipeline.
+
+> **A note on terminology.** Following Valiev et al. (ESEC/FSE 2018), from whom the maintenance-based
+> definition is taken, we refer to the project-level outcome as *dormancy* rather than abandonment.
+> As those authors explicitly note, while all abandoned projects are dormant, not all dormant
+> projects are abandoned, since some are simply feature-complete and require no further maintenance.
+> The project-level results in this package therefore concern the cessation of maintenance activity,
+> not the death of a project. At the developer level we keep the term *abandonment*, which is the
+> one established in the retention literature.
 
 > **A note on the scale controls.** Under v1 the third structural control is the number of commits
 > per window; under v2 it is the number of observed windows. The substitution is deliberate: commit
 > intensity is what *defines* the v2 outcome, so using it as a control there would introduce leakage.
 > The two columns of Figure 3 are therefore adjusted for slightly different control sets.
 
-**RQ1 does not depend on the project-failure definition.** The developer-level outcome is identical
+**RQ1 does not depend on the project-dormancy definition.** The developer-level outcome is identical
 in both pipelines, so `later_stage_cox_results.csv`, `timevarying_cox.csv`,
 `prefailure_signature.csv` and `cox_interactions_results.csv` can be taken from either of them. The
 early-stage logistic regression is the one exception: `v2-maintenance-based` aggregates the early
@@ -165,10 +173,15 @@ Paths are relative to `<pipeline>/outputs/file/`.
 | Figure 3 — v2 bars | v2-maintenance-based | `rq2_robustness_scale.csv` |
 | Figure 3 — v1 bars | **v1-temporal** | `rq2_robustness_scale_cox.csv` |
 | Figure 4 — team size as a confounder | v2-maintenance-based **and** v1-temporal | `project_level_outcomes.csv` of both |
-| Descriptive comparison, active vs. inactive | v2-maintenance-based | `active_vs_failed_mw.csv` |
+| Descriptive comparison, active vs. dormant | v2-maintenance-based | `active_vs_failed_mw.csv` |
 | Ownership concentration and Gini index | v2-maintenance-based | `truck_factor_concentration.csv` |
 | Project-size control (sign inversions) | v2-maintenance-based | `project_size_controlled_logit.csv` |
 | VIF-based variable selection | v2-maintenance-based | `vif_results.csv` |
+
+> Some output files and column names still carry the earlier wording (`proj_failed`,
+> `active_vs_failed_mw.csv`, `rq2_sensitivity_v1_cox.csv`). These are the names the pipelines
+> produce and they are kept as they are, so that the file names in this table match what a
+> replication run writes to disk. They refer to the dormancy outcome described above.
 
 ### 6. Reproducibility notes
 
@@ -199,9 +212,9 @@ smells), **Bandit** (security weaknesses), the **RSZZ** variant of SZZ (bug-indu
 ## Citation
 
 ```bibtex
-@article{palomba_developers_leave,
-  title   = {Developers Leave, Projects Fade: On the Relationship between Socio-Technical
-             Debt and Abandonment in Open-Source Machine Learning Projects},
+@article{developers_leave,
+  title   = {Developers Leave, Projects Fade: Socio-Technical Debt, Developer Abandonment
+             and Project Dormancy in Open-Source Machine Learning Projects},
   author  = {Sorrentino, Pasquale and Giordano, Giammaria and Palomba, Fabio},
   note    = {Software Engineering (SeSa) Lab, University of Salerno}
 }
@@ -210,6 +223,14 @@ smells), **Bandit** (security weaknesses), the **RSZZ** variant of SZZ (bug-indu
 ## License
 
 TBD.
+
+## Authors
+
+| | Role | GitHub |
+|---|---|---|
+| **Pasquale Sorrentino** | Formal analysis, investigation, data curation, writing | [@<handle-sorrentino>](https://github.com/PasqualeSorrentino) |
+| **Giammaria Giordano** | Conceptualization, methodology, supervision | [@<handle-giordano>](https://github.com/giammariagiordano) |
+| **Fabio Palomba** | Supervision, resources, review |  |
 
 ## Contact
 
