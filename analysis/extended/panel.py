@@ -22,7 +22,10 @@ import pandas as pd
 warnings.filterwarnings('ignore')
 
 BASE_DIR = Path(__file__).resolve().parent
-OUT_DIR = BASE_DIR / 'outputs'
+# Share of a project's commits covered by its core developers (main analysis: 0.50).
+# Set CORE_THRESHOLD=0.8 to run the sensitivity analysis; its outputs go to outputs_core80/.
+CORE_THRESHOLD = float(os.environ.get('CORE_THRESHOLD', '0.5'))
+OUT_DIR = BASE_DIR / ('outputs' if CORE_THRESHOLD == 0.5 else f'outputs_core{int(round(CORE_THRESHOLD * 100))}')
 OUT_DIR.mkdir(exist_ok=True, parents=True)
 
 
@@ -180,7 +183,7 @@ def load_panel(extra=False):
 
 
 def add_core_flags(df):
-    """Commit-based core: smallest set of developers covering >= 50% of the project's commits."""
+    """Commit-based core: smallest set of developers covering >= CORE_THRESHOLD of the project's commits."""
     dp = df.groupby(['project_url', 'developer_id']).agg(commits=('commits_raw', 'sum')).reset_index()
     flags = []
     for proj, g in dp.groupby('project_url'):
@@ -188,7 +191,7 @@ def add_core_flags(df):
         tot = g['commits'].sum()
         g['is_core'] = 0
         if tot > 0:
-            cut = (g['commits'].cumsum() / tot >= 0.50).values.argmax()
+            cut = (g['commits'].cumsum() / tot >= CORE_THRESHOLD).values.argmax()
             g.iloc[:cut + 1, g.columns.get_loc('is_core')] = 1
         flags.append(g[['project_url', 'developer_id', 'is_core']])
     return df.merge(pd.concat(flags), on=['project_url', 'developer_id'], how='left')

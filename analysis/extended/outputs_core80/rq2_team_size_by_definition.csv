@@ -1,0 +1,4 @@
+definition,median_active,median_dormant,mannwhitney_p
+v1,30.0,11.0,6.099058287510973e-09
+v2,14.0,12.0,0.10836811414121053
+v3,32.0,12.0,5.7995480043651855e-08
