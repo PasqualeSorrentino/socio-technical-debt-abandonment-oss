@@ -147,7 +147,16 @@ python analysis/extended/rq1_robustness.py
 python analysis/extended/rq2_extras.py
 python analysis/extended/descriptive_rq3.py
 python analysis/extended/rq3_social.py
+python analysis/extended/rq1_extra.py   # after rq1_robustness.py; needs R with the survival package
 ```
+
+`rq1_extra.py` adds the gamma-frailty Cox model (through `frailty_cox.R`), the models that
+measure covariates before the time at risk (first later-stage window; time-varying covariates
+lagged by one window), and a Benjamini-Hochberg correction pooled over all developer-level
+models. If `Rscript` is not on the path, the frailty model is skipped.
+
+To repeat the role-based analyses with an 80% core threshold, prefix the extended scripts with
+`CORE_THRESHOLD=0.8`; outputs go to `analysis/extended/outputs_core80/`.
 
 Each pipeline takes well under a minute once the panel is loaded. `rq1_robustness.py` first
 re-estimates Table 2 and stops if it does not match the paper, so every extended analysis is

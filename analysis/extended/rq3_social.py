@@ -14,9 +14,11 @@ for pre-trends; the average of k = +1..+3 is the post-departure change.
 The same design is re-estimated controlling for the number of active developers (to separate
 the shrinking of the team from other changes), and applied, as a comparison, to the first
 departure of a repeated peripheral contributor (at least two active windows) in projects
-with no core departure. Benjamini-Hochberg q-values are computed over the social outcomes.
+with no core departure. Benjamini-Hochberg q-values are computed over the social outcomes. Since two-way fixed
+effects can be biased when effects vary across cohorts, the core-departure design is also
+estimated with the interaction-weighted estimator of Sun and Abraham (2021).
 
-Outputs: extended/outputs/rq3_social_*.csv
+Outputs: extended/outputs/rq3_social_*.csv (Sun-Abraham: rq3_social_event_study_sun_abraham.csv)
 """
 import numpy as np
 import pandas as pd
@@ -105,6 +107,61 @@ def event_study(t0, controls, label, control_size=False):
     return R
 
 
+def sun_abraham(t0, controls, label):
+    """Interaction-weighted estimator of Sun and Abraham (2021): cohort-specific event-time
+    effects (cohort = calendar quarter of the event), never-treated projects as the only
+    controls, aggregated with weights equal to the share of each cohort among the treated
+    observations at each event time. Robust to heterogeneous effects across cohorts."""
+    data = pw[pw.project_url.isin(t0.index) | pw.project_url.isin(controls)].copy()
+    data['cohort'] = data['project_url'].map(t0)
+    data['k'] = (data['time_window_rank'] - data['cohort']).where(data['cohort'].notna())
+    data['kb'] = data['k'].map(lambda v: bin_k(v) if pd.notna(v) else np.nan)
+    cells = data.dropna(subset=['kb']).groupby(['cohort', 'kb']).size().rename('n').reset_index()
+    cells = cells[cells.kb != REF]
+    names = []
+    for _, c in cells.iterrows():
+        nm = f"c{int(c.cohort)}_k{int(c.kb) + 10}"
+        data[nm] = ((data['cohort'] == c.cohort) & (data['kb'] == c.kb)).astype(int)
+        names.append((int(c.cohort), int(c.kb), int(c.n), nm))
+    rhs = ' + '.join(n for *_, n in names) + ' + C(project_url) + C(time_window_rank)'
+    rows = []
+    for y in OUT_NAMES:
+        d = data.dropna(subset=[y])
+        fit = smf.ols(f'{y} ~ {rhs}', data=d).fit(cov_type='cluster', cov_kwds={'groups': d['project_url']})
+        V = fit.cov_params()
+
+        def agg(ks):
+            # average over the event times in ks of the cohort-weighted effects
+            w = pd.Series(0.0, index=fit.params.index)
+            for k in ks:
+                sel = [(n, nm) for co, kb, n, nm in names if kb == k and nm in fit.params.index]
+                tot = sum(n for n, _ in sel)
+                for n, nm in sel:
+                    w[nm] += n / tot / len(ks)
+            est = float(w @ fit.params)
+            se = float(np.sqrt(w @ V @ w))
+            return est, se, w
+        est, se, _ = agg([1, 2, 3])
+        z = est / se if se > 0 else np.nan
+        from scipy import stats
+        p = 2 * stats.norm.sf(abs(z))
+        # joint pre-trend test on the aggregated k = -3 and k = -2 effects
+        W = np.vstack([agg([k])[2].values for k in (-3, -2)])
+        b = W @ fit.params.values
+        S = W @ V.values @ W.T
+        chi = float(b @ np.linalg.pinv(S) @ b)
+        sd = d.loc[d['cohort'].isna() | (d['k'] < 0), y].std()
+        rows.append({'design': label, 'outcome': y, 'treated_projects': int(t0.size),
+                     'control_projects': int(len(controls)), 'cohorts': int(cells.cohort.nunique()),
+                     'post_avg': est, 'post_ci_low': est - 1.96 * se, 'post_ci_high': est + 1.96 * se,
+                     'post_p': p, 'post_avg_in_sd': est / sd if sd > 0 else np.nan,
+                     'pretrend_p': float(stats.chi2.sf(chi, 2))})
+    R = pd.DataFrame(rows)
+    social = R['outcome'] != 'log_active_devs'
+    R.loc[social, 'post_q_bh'] = multipletests(R.loc[social, 'post_p'], method='fdr_bh')[1]
+    return R
+
+
 core_t0 = event_dates((dev.core == 1) & (dev.leave == 1))
 never_core = sorted(set(pw.project_url) - set(core_t0.index))
 per_t0 = event_dates((dev.core == 0) & (dev.leave == 1) & (dev.n_win >= 2))
@@ -122,9 +179,13 @@ R = pd.concat([event_study(core_t0, never_core, 'core_departure'),
                event_study(core_t0, never_core, 'core_departure_size_adjusted', control_size=True),
                event_study(per_t0, never_per, 'repeated_peripheral_departure')])
 R.to_csv(OUT_DIR / 'rq3_social_event_study.csv', index=False)
+SA = sun_abraham(core_t0, never_core, 'core_departure_sun_abraham')
+SA.to_csv(OUT_DIR / 'rq3_social_event_study_sun_abraham.csv', index=False)
 pd.Series({'core_event_projects': core_t0.size, 'core_event_projects_observed_after': still,
            'never_treated_projects': len(never_core), 'placebo_projects': per_t0.size}).to_csv(
     OUT_DIR / 'rq3_social_counts.csv', header=['value'])
 cols = ['design', 'outcome', 'post_avg', 'post_ci_low', 'post_ci_high', 'post_p', 'post_q_bh', 'post_avg_in_sd', 'pretrend_p']
 print(R[cols].round(3).to_string(index=False))
+print('\nSun-Abraham interaction-weighted estimator (core departure):')
+print(SA[cols].round(3).to_string(index=False))
 print('\nDone. Outputs in', OUT_DIR)
