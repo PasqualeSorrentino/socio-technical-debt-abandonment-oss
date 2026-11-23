@@ -45,6 +45,7 @@ Analysis, Empirical Software Engineering.
         ├── rq1_robustness.py          # Table A.1, lagged leave-one-out metrics, departure threshold
         ├── rq2_extras.py              # v1/v2/v3, cross-tabulation, age, bots, minimum detectable effect
         ├── descriptive_rq3.py         # Table 3, how developers leave and projects fade, RQ3
+        ├── rq3_social.py              # Table 5, RQ3 social side: event study around core departures
         └── outputs/
 ```
 
@@ -145,6 +146,7 @@ python analysis/v1-temporal/pipeline_v1_temporal.py
 python analysis/extended/rq1_robustness.py
 python analysis/extended/rq2_extras.py
 python analysis/extended/descriptive_rq3.py
+python analysis/extended/rq3_social.py
 ```
 
 Each pipeline takes well under a minute once the panel is loaded. `rq1_robustness.py` first
@@ -187,6 +189,7 @@ for the extended analyses.
 | Activity trajectories | extended/descriptive_rq3.py | `desc_trajectories.csv`, `desc_trajectories_tests.csv` |
 | Contrasting cases | extended/descriptive_rq3.py | `desc_contrasting_cases*.csv` |
 | RQ3 — debt left behind, orphaned debt and permutation baseline | extended/descriptive_rq3.py | `rq3_debt_left_behind.csv`, `rq3_orphaned_share_by_project.csv` |
+| Table 5 — RQ3, community after a core departure (event study) | extended/rq3_social.py | `rq3_social_event_study.csv`, `rq3_social_counts.csv` |
 | Codebook validation samples (stratified 303, random hold-out 150) and manual coding | extended/descriptive_rq3.py | `desc_codebook_validation_sample.csv`, `desc_codebook_holdout_sample.csv`, `desc_codebook_*_manual.csv` |
 | VIF-based variable selection | v2-maintenance-based | `vif_results.csv` |
 
