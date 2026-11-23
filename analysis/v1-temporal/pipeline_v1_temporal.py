@@ -88,15 +88,7 @@ print(f"Finestre: {df['time_window_id'].nunique()} "
       f"({df['time_window_id'].min()} -> {df['time_window_id'].max()})")
 
 
-# Risultato analisi:
-# Shape: 24.916 righe × 76 colonne
-# Progetti: 332
-# Developer: 10.416
-# Finestre: 154 (20070601_20070831 -> 20250701_20250930)
-# 
-# Possibilità teoriche:
-# 10.416 developer su 154 finestre darebbero generare oltre 1,6 milioni di righe se tutti i developer fossero attivi in tutte le finestre.
-# Avere solo 24.916 righe significa che ogni developer compare in pochissime finestre temporali (in media: ~2.4) -> la maggioranza sono contributori "mordi e fuggi"
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -144,9 +136,19 @@ print("STEP 3 — Variabile dipendente: ACTIVE vs FAILED")
 
 
 # Ranking temporale delle finestre
-all_windows     = sorted(df['time_window_id'].astype(str).unique())
-window_rank_map = {w: i for i, w in enumerate(all_windows)}         # ordina le finestre e assegna un rango 0..153
-last_rank       = window_rank_map[all_windows[-1]]                  # rango dell'ultima finestra del dataset
+# Le finestre di ciascun progetto iniziano in un mese specifico del progetto, per cui
+# il panel contiene 154 finestre distinte. L'indice e' il trimestre di calendario
+# (mesi assoluti / 3) ricavato dalla data di inizio della finestra: due finestre
+# consecutive dello stesso progetto distano sempre 1, e le soglie (4 finestre) valgono
+# davvero dodici mesi. Un rango sull'ordine globale delle 154 finestre accorcerebbe
+# ogni soglia a circa un terzo della sua lunghezza nominale.
+def _quarter_index(window_id):
+    start = str(window_id)[:8]
+    return (int(start[:4]) * 12 + int(start[4:6]) - 1) // 3
+
+_ids = pd.concat([df['time_window_id'], df['last_interaction_window_id']]).dropna().astype(str).unique()
+window_rank_map = {w: _quarter_index(w) for w in _ids}
+last_rank = max(window_rank_map[w] for w in df['time_window_id'].astype(str).unique())  # ultimo trimestre osservato
 
 df['time_window_rank']      = df['time_window_id'].astype(str).map(window_rank_map)
 df['last_interaction_rank'] = df['last_interaction_window_id'].astype(str).map(window_rank_map)
@@ -179,13 +181,7 @@ print(f"\nProgetti unici:")
 print(f"  ACTIVE (almeno 1 dev attivo): {(proj_status == 0).sum():,}")
 print(f"  FAILED (tutti i dev failed):  {(proj_status == 1).sum():,}")
 
-# Risultato analisi:
-# Distribuzione has_failed:
-#   ACTIVE (0):  1.635  (6,6%)
-#   FAILED (1): 23.281  (93,4%)
-# 
-# Developer unici:   ACTIVE 226 (2,2%)  |  FAILED 10.190 (97,8%)
-# Progetti unici:    ACTIVE 38  (11,5%) |  FAILED 294  (88,5%)
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -365,13 +361,7 @@ desc = (df.groupby('has_failed')[key_cols]
 print(desc.to_string())
 desc.to_csv(OUT_DIR / 'descriptive_stats.csv')
 
-# Risultato analisi:
-# metrica                    ACTIVE (0)        FAILED (1)
-# community_smell_count      0,733             0,711
-# traditional_smell_count    1,381             1,109
-# vulnerability_count        0,665             0,508
-# commits_count              19,649            9,91
-# code_churn                 11.326            6.579
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 # I developer ACTIVE fanno circa il doppio dei commit e churn dei FAILED
 # Le metriche di debito sociale e tecnico sono più alte per gli ACTIVE, ma la differenza non è così marcata come per le attività.
@@ -559,10 +549,7 @@ except Exception as e:
 
 
 
-# Fattori di rischio significativi:
-# ratio_smelly_devs (OR=2,01), ratio_smelly_quitters (OR=2,26), global_truck (OR=2,38), communicability (OR=1,77).
-# Protettivi: commit (OR=0,59) e anzianità (OR=0,84).
-# Il debito tecnico non risulta significativo.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -646,8 +633,7 @@ except Exception as e:
 
 
 
-# Emergono come fattori di rischio significativi il turnover (HR=1,71, IC 1,24–2,36), il global_truck (HR=2,13) e gli smelly_quitters (HR=1,35).
-# developer_tenure resta protettivo ma con un valore significativamente ridotto rispetto all'analisi precendete.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 # ─────────────────────────────────────────────
 # STEP 9 — INTERAZIONI SD × TD
@@ -740,7 +726,7 @@ except Exception as e:
 print("\n")
 print("STEP 10 — Analisi a livello progetto: ACTIVE vs FAILED")
 
-# SI sale dal livello developer al livello progetto, calcolando metriche medie per progetto e confrontando i 38 ACTIVE contro i 294 FAILED con il test di Mann-Whitney U
+# SI sale dal livello developer al livello progetto, calcolando metriche medie per progetto e confrontando i progetti ACTIVE e INACTIVE con il test di Mann-Whitney U
 
 proj_rows = []
 for proj, grp in df.groupby('project_url'):
@@ -828,30 +814,7 @@ plt.close()
 print("Boxplot salvati.")
 
 
-# Risultato:
-# 
-# metrica              ACTIVE          FAILED         diff%      p(MWU)
-# n_developers          105,7           25,0          −76%      <0,0001***
-# avg_smelly_quitters   0,285           0,174         −39%       0,0010***
-# avg_turnover          0,342           0,250         −27%       0,0036**
-# avg_density           0,488           0,569         +17%       0,0087**
-# avg_community_smells  0,776           0,653         −16%       0,0056**
-# avg_st_congruence     0,303           0,379         +25%       0,0352*
-# avg_trad_smells       1,558           2,102         +35%       0,0292*
-# avg_vuln              0,575           0,757         +32%       0,110 ns
-# avg_ml_smells         0,184           0,159         −13%       0,577 ns
-# avg_churn             14,394          12,755        −11%       0,416 ns
-# 
-#
-# Interpretazione:
-# Il discriminante dominante è la dimensione del team: i progetti ACTIVE hanno in media 106
-# developer contro 25 dei FAILED (p << 0,001). I progetti grandi potrebbero restare vivi semplicemente
-# poiché è più probabile che almeno uno dei tanti contributori sia ancora attivo.
-# Sul debito tecnico i progetti FAILED mostrano più smell tradizionali (+35%) e vulnerabilità (+32%):
-# coerente con la teoria del debito, anche se la vulnerabilità non raggiunge la significatività.
-# Sembra contro intuitivo che i FAILED hanno maggiore st_congruence (+25%) e density (+17%) e minore turnover.
-# Direzioni opposte alle attese teoriche può darsi che l'esito del progetto sia più influenzato da fattori strutturali come dimensione ed età
-# più che dalla salute socio-tecnica.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 # ─────────────────────────────────────────────
 # STEP 11 — HEATMAP CORRELAZIONE
@@ -885,14 +848,7 @@ plt.close()
 print("Heatmap salvata.")
 
 
-# Risultato:
-# stqf_ratio_smelly_devs <-> community_smell_count: r = 0,63 (le due misure di "smell sociale" catturano lo stesso costrutto).
-# traditional_smell_count <-> vulnerability_count: r = 0,57; <-> commits_count: r = 0,51 (più codice -> più smell e più vulnerabilità: relazione di volume).
-# stqf_st_congruence <-> stqf_density: r = −0,66 (trade-off tra congruenza e densità di rete).
-# Riga has_failed: correlazioni prossime a zero con tutto (|r| ≤ 0,10; la più forte è commits_count con −0,10).
-# 
-# Interpretazione: a livello di singola osservazione, nessuna metrica SD/TD è linearmente correlata con il fallimento. 
-# Il segnale predittivo dei modelli viene quasi tutto dalle variabili temporali/di attività, non dal debito socio-tecnico.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 
@@ -942,9 +898,7 @@ proj_conc.to_csv(OUT_DIR / 'truck_factor_concentration.csv', index=False)
 print("Truck factor salvato.")
 
 
-# Risultano 604 core contro 10.756 periferici, con contributi enormemente sbilanciati (commit mediani 178 vs 2; Cliff's d≈0,96).
-# I core abbandonano molto meno dei periferici (42,9% vs 87,5%), i pochi contributori che reggono il progetto sono anche i più persistenti.
-# La concentrazione (Gini) è più alta nei progetti ACTIVE (0,82 vs 0,76), ma è un effetto della dimensione.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -982,8 +936,7 @@ plt.savefig(OUT_DIR / 'thresholds_failure_rate.png', dpi=110); plt.close()
 print("Thresholds salvato.")
 
 
-# Le AUC univariate del debito tecnico e della maggior parte delle metriche sociali restano intorno a 0,50.
-# L'unica con una soglia utile è il turnover (~0,51, AUC 0,61). Che potrebbe essere un segnale precoce
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -992,9 +945,7 @@ print("Thresholds salvato.")
 print("\n")
 print("STEP 14 — Sentiment & Emozioni")
 
-# sentiment_label è degenere: 24.912 "Neutral", 4 "Positive", 0 "Negative".
-# Nel JSON però c'è sentiment_emotions con 6 emozioni (Anger, Fear, Sadness, Love, Joy, Surprise) è stato estratto e usato insieme a sentiment_score e se_score. 
-# Confronto con Mann-Whitney + Cliff's delta.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 print(
     "  sentiment_label degenere (>99.9% Neutral) -> "
@@ -1281,8 +1232,7 @@ for name, row in _res.iterrows():
 _res.to_csv(OUT_DIR / 'timevarying_cox.csv')
 print("Analisi Cox tempo-variante conclusa")
 
-# Con le metriche misurate finestra per finestra: il turnover alza il rischio istantaneo di abbandono (HR=1,11, p<0,001).
-# Commit, smell tradizionali e vulnerabilità hanno HR<1 
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 # ─────────────────────────────────────────────
 # STEP 16 — FIRMA PRE-FALLIMENTO
@@ -1451,12 +1401,7 @@ pd.DataFrame(_rowsL).to_csv(OUT_DIR / 'rq2_project_logit_multivariate.csv', inde
 print("Analisi logit multivariata a livello progetto conclusa")
 
 
-# predittore                          OR            p
-# log_n_dev(dimensione)              0,22        <0,001 ***
-# TD_ml                              0,50         0,005 **
-# SD_truck (bus factor)              1,77         0,113 ns
-# TD_vuln                            1,50         0,236 ns
-# SD_stcongr/SD_community/TD_trad    0,57         0,018 *
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -1479,12 +1424,7 @@ print("Analisi Cox a livello progetto conclusa")
 
 
 
-# predittore                          HR               p 
-# log_n_dev                          0,44          <0,001 ***
-# SD_truck                           1,81          <0,001 ***
-# TD_vuln                            1,22           0,009 **
-# TD_trad                            1,22           0,016 **
-# TD_ml/SD_community/SD_stcongr      0,87           0,030 *
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -1668,86 +1608,7 @@ print("Step 21 (RQ2 robustezza scala) completato.")
 # partire dal primo.
 
 
-# RQ1 — Cosa fa abbandonare i developer?
-
-# I dati sono stati recuperati in quattro STEP:
-#  ———— STEP 7 ->Logit early-stage (McFadden R²≈0,11): rischio significativo per ratio_smelly_devs (OR=2,01),
-#       ratio_smelly_quitters (OR=2,26), global_truck (OR=2,38), communicability (OR=1,77); protettivi commit
-#       (0,59) e anzianità (0,84). Debito tecnico non significativo;
-# 
-# ———— STEP 8 -> Cox PH (concordance 0,89): turnover HR=1,71 (IC 1,24–2,36), global_truck HR=2,13,
-#      smelly_quitters HR=1,35. Anzianità protettiva ma non dominante. Debito tecnico non significativo;
-# 
-# ———— STEP 15 -> Cox tempo-variante (2.173 developer, 14.179 intervalli): con le metriche misurate finestra per
-#      finestra, il turnover corrente alza il rischio istantaneo di abbandono (HR=1,11, p<0,001). Commit e
-#      debito tecnico hanno HR<1 (proxy di attività);
-# 
-# ———— STEP 16 -> Firma pre-abbandono (1.460 abbandoni): avvicinandosi all'uscita, commit −30%, debito tecnico
-#      prodotto −60%, engagement −8%, mentre il turnover sale +23% (tutti p ≪ 0,001);
-
-# ———— Risposta a RQ1: il debito sociale, e in particolare il turnover del team, aumenta il rischio di abbandono del developer, in modo robusto e coerente.
-# Il debito tecnico non predice l'abbandono individuale: si comporta da indicatore di attività.
-
-
-
-# RQ2 — Cosa fa morire i progetti
-
-# I dati sono stati recuperati in sette STEP:
-# ———— STEP 10 — Confronto descrittivo (Mann-Whitney). Il discriminante è la dimensione del team
-#      (106 developer mediani nei sopravvissuti vs 25 nei cessati, p<0,0001). Alcune metriche di debito vanno in
-#      direzione contro-intuitiva, segnale di confondimento;
-# 
-# ———— STEP 12 — Ownership. I core (truck-factor) contribuiscono ~90× i periferici e abbandonano molto meno
-#      (43% vs 88%): sono i "reggenti" del progetto. La concentrazione (Gini) è più alta nei sopravvissuti, ma
-#      è un effetto della dimensione;
-# 
-# ———— STEP 17 — Confondimento della dimensione. Controllando log(n_dev) una metrica alla volta, turnover e
-#      smelly-quitters cambiano segno (da "protettivi" a rischio);
-# 
-# ———— STEP 18 — Logit multivariato di progetto (McFadden R²=0,20; VIF tutti <2,8; predittori puliti).
-#      OR per +1 deviazione standard, OR>1 = più rischio di morte:
-# 
-# ———— STEP 19 — Cox di sopravvivenza del progetto, medie fisse (concordance 0,76; durata=vita del progetto, evento=morte).
-#      HR per +1 deviazione standard, HR>1 = muore prima;
-# 
-# ———— STEP 20 — Cox tempo-variante del progetto, qui le covariate SD/TD e la dimensione variano finestra per finestra invece di essere medie fisse.
-#      Risultato molto diverso dallo STEP 19: quasi tutti gli effetti collassano verso HR≈1.
-#      La dimensione del team resta protettiva (HR 0,88);debito tecnico e community smells non significativi.
-#
-# ———— STEP 21 — Robustezza: fattori socio-tecnici al netto della SCALA. Poiché "fallito = zero developer
-# attivi" rende la dimensione un discriminante quasi meccanico, ho aggiunto un controllo strutturale esteso:
-#       - dimensione del team (log_n_dev);
-#       - intensità di attività (log_commits_per_win, normalizzata per la vita);
-#       - dimensione del codice (log_loc);
-#       - più l'età del progetto (controllata dall'asse del tempo nel Cox).
-#      Ottenendo un duplice risultato:
-#       - Nel logit binario i fattori socio-tecnici diventano non significativi una volta inserita tutta la
-#         scala: resta significativa solo la dimensione (OR=0,28, p<0,001);
-#       - Nel Cox di sopravvivenza, invece, i fattori socio-tecnici SOPRAVVIVONO al controllo di scala esteso,
-#         con HR quasi immutati rispetto alla versione con la sola dimensione: bus factor HR=1,80 (p<0,001), smell
-#         tradizionali HR=1,27 (p=0,005), vulnerabilità HR=1,20 (p=0,014), community smells HR=0,86 (p=0,025). La
-#         dimensione e la LOC restano protettive e dominanti (HR 0,47 e 0,77).
-
-# Risposta a RQ2:
-# 1) la dimensione del team è il fattore dominante, in parte per costruzione, confermato dal fatto che nel modello binario assorbe quasi tutto;
-# 2) i fattori socio-tecnici non sono un semplice riflesso della scala: nel modello di sopravvivenza la fragilità strutturale (alto bus factor) e il
-# debito tecnico (vulnerabilità, smell tradizionali) mantengono un effetto significativo sulla mortalità del progetto al netto di dimensione,
-# intensità di attività, dimensione del codice ed età (STEP 21);
-# 3) questi effetti sono cumulativi, non istantanei (STEP 20): il debito e la fragilità agiscono come erosione lenta, non come innesco acuto.
-
-
-# Sintesi:
-# fattore                              RQ1(abbandono developer)                RQ2(morte progetto)
-# Turnover(debito sociale)                aumenta il rischio                       tautologico
-# Truck / bus factor                      aumenta il rischio                   aumenta il rischio
-# Debito tecnico(smell/vuln)                 non predice                       aumenta il rischio
-# Dimensione team                            protettiva                         fattore dominante
-
-# A livello developer, è il churn sociale (turnover del team, che cresce prima dell'uscita) a guidare l'attrito individuale.
-# A livello progetto, escluse le variabili di abbandono, contano la fragilità strutturale (bus factor) e il debito tecnico accumulato,
-# ossia fattori che non descrivono chi se ne va, ma la salute socio-tecnica del progetto.
-# Il debito tecnico cambia ruolo con la scala: non spinge il singolo developer ad andarsene, ma il suo accumulo è associato alla mortalità del progetto.
-
+# Sintesi dei risultati: si vedano i file in outputs/file/ e il paper.
 
 # ─────────────────────────────────────────────
 # TERMINE ANALISI

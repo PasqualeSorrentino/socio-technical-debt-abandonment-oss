@@ -1,0 +1,101 @@
+Loading panel...
+
+Casual contributors:
+peripheral_departures                                                                8423
+all_departures                                                                       8628
+peripheral_leaver_median_commits                                                      1.0
+peripheral_leavers_one_commit_pct                                               51.015078
+peripheral_leavers_one_window_pct                                               73.536745
+departure_rate_single_commit_pct                                                82.349559
+departure_rate_repeated_pct                                                     70.525973
+core_departure_rate_low_noncore_pct                                             21.491228
+core_departure_rate_mid_noncore_pct                                             43.949045
+core_departure_rate_high_noncore_pct                                            45.977011
+core_departure_by_tercile_chi2_p                                                 0.000001
+top_single_commit_leaver_projects       google-research=297; python-docs-samples=294; ...
+
+Community smells in the last window:
+              smell  freq_leavers_pct  freq_stayers_pct  departure_rate_with_pct  departure_rate_without_pct
+      radio_silence               8.7               4.4                     86.1                        75.1
+organisational_silo              42.4              34.0                     79.8                        73.4
+         bottleneck               1.4               3.5                     55.6                        76.3
+          lone_wolf              19.1              22.7                     72.7                        76.8
+        black_cloud               0.8               0.6                     79.8                        75.9
+
+Table of last-contribution categories (column %):
+                        Core Leave  Core Stay  Peripheral Leave  Peripheral Stay  Projects Active  Projects Inactive
+category                                                                                                            
+end-of-life notice             0.0        0.3               0.0              0.0              0.0                0.7
+merge                         15.1       19.7               3.8              4.9             12.6               13.6
+revert                         0.0        0.3               0.3              0.4              0.4                0.0
+build and dependencies         7.3       11.4               5.8              7.8              9.3               15.6
+feature                       15.1        9.4              17.6             17.5             13.9                8.8
+release                        4.9        8.1               1.7              1.2              4.3                1.4
+documentation                 18.0       16.6              22.5             18.7             15.2               32.0
+test                           3.4        3.4               2.9              2.7              3.2                0.0
+bug fix                        9.3        9.1              16.1             18.7             15.9                7.5
+refactoring                    3.4        1.0               2.9              3.0              1.9                2.7
+other                         23.4       20.8              26.4             25.1             23.3               17.7
+Units                        205.0      385.0            8423.0           2347.0            847.0              147.0
+Median commits               121.0      223.0               1.0              2.0             13.0                2.0
+
+How projects fade:
+history_median_dormant                            21.0
+history_median_active                             12.0
+final_window_median_devs_dormant                   1.0
+final_window_median_devs_active                    2.0
+final_window_median_commits_dormant                2.0
+final_window_median_commits_active                13.0
+maintenance_only_final_window_dormant_pct    48.245614
+maintenance_only_final_window_active_pct     16.513761
+maintenance_or_merge_only_dormant_pct        62.280702
+maintenance_or_merge_only_active_pct         35.321101
+dormant_projects_with_end_of_life_message            1
+end_of_life_projects                         nussl.git
+Codebook vs manual coding (desc_codebook_validation_manual.csv, n=303): agreement 0.911, kappa 0.901
+Codebook vs manual coding (desc_codebook_holdout_manual.csv, n=150): agreement 0.800, kappa 0.761
+
+Trajectories:
+   trajectory  projects  median_first_fifth_share_pct  dormant_v2_pct  dormant_v1_pct  median_debt_index
+   early peak        79                         62.30           48.10           72.15               0.02
+initial burst        49                         82.78           75.51           79.59               0.01
+    sustained       145                         29.73           22.76           75.86              -0.03
+  silhouette k=2 0.34, k=3 0.23; chi2 p (v2) 0.0000; Kruskal-Wallis debt index p k=3 0.42, k=2 0.36
+
+Contrasting cases:
+                      median_devs  median_windows  median_turnover  maintenance_only  at_most_4_devs
+group                                                                                               
+active, highest debt          2.5             4.5         0.000000                 1               9
+dormant, lowest debt         11.0            11.0         0.253149                 5               1
+  Spearman debt index vs team size: rho=-0.18 (p=0.001)
+
+RQ3: parsing smell locations...
+smelly_files_of_leavers                    16586.000
+taken_over_pct                                19.016
+taken_over_peripheral_pct                     24.594
+taken_over_core_pct                            7.013
+leavers_with_smelly_files                   2026.000
+leavers_with_nothing_taken_over_pct           47.976
+core_leaver_median_smelly_files               25.500
+orphaned_share_median_dormant_pct             38.406
+orphaned_share_median_active_pct               1.449
+orphaned_share_mannwhitney_p                   0.000
+expected_share_median_dormant_pct             85.377
+expected_share_median_active_pct              50.671
+excess_median_dormant_pp                     -20.254
+excess_median_active_pp                      -26.989
+excess_dormant_wilcoxon_p                      0.000
+excess_active_wilcoxon_p                       0.000
+excess_dormant_vs_active_mannwhitney_p         0.116
+excess_positive_dormant_pct                   35.185
+excess_positive_active_pct                     7.583
+projects_dormant                             108.000
+projects_active                              211.000
+expected_smelly_devs_median_dormant_pct       76.787
+expected_smelly_devs_median_active_pct        30.345
+excess_smelly_devs_median_dormant_pp          -0.556
+excess_smelly_devs_median_active_pp           -9.000
+excess_smelly_devs_dormant_wilcoxon_p          0.000
+excess_smelly_devs_active_wilcoxon_p           0.000
+
+Done. Outputs in /Users/broke31/Downloads/Developers_Leave__Projects_Fade__On_the_Relationship_between_Socio_Technical_Debt_and_Abandonment_in_Open_Source_Machine_Learning_Projects-3/socio-technical-debt-abandonment-oss/analysis/extended/outputs

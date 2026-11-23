@@ -1,0 +1,4 @@
+metric,loo_metric,pearson_r_row_level
+stqf_global_turnover,loo_turnover,0.6871210951374335
+stqf_core_code_turnover,loo_core_turnover,0.23707752490454925
+stqf_ratio_smelly_quitters,loo_smelly_quitters,0.6341218971946613

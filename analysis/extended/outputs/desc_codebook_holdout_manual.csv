@@ -1,0 +1,1512 @@
+project_url,developer_id,last_commit_message,rule_category,manual_category
+https://github.com/freewym/espresso.git,mavlyutov@fb.com,"Copy to local before loading checkpoint
+
+Summary: Follow-up for ""Fix FSDP optim state loading (#1819)"". Update for remote file systems.
+
+Reviewed By: sshleifer
+
+Differential Revision: D28088088
+
+fbshipit-source-id: 5d2f3ea5084fbbb21564d053317d2c07565cf2bc
+",other,other
+https://github.com/hunkim/DeepLearningZeroToAll.git,fklh15@naver.com,"fix: dropout layers in lab-10-7-mnist_nn_higher_level_API.py (#170)
+
+- Layers were not connected correctly",bug fix,bug fix
+https://github.com/astooke/rlpyt.git,michal@gregor.sk,"Added support for soft updates in DQN algo and agent. (#70)
+
+",feature,feature
+https://github.com/evilsocket/pwnagotchi.git,pascal.cotret@gmail.com,Added missing words for the french PO file,feature,feature
+https://github.com/nyu-mll/jiant.git,yp913@nyu.edu,"Adding Sentence Order Prediction (#1061)
+
+* misc run scripts
+
+* sbatch
+
+* sweep scripts
+
+* update
+
+* qa
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* sb file
+
+* moving update_metrics to outside scope of dataparallel
+
+* fixing micro_avg calculation
+
+* undo debugging
+
+* Fixing tests, moving update_metrics out of other tasks
+
+* remove extraneous change
+
+* MLM task
+
+* Added MLM task
+
+* update
+
+* fix multiple choice dataparallel forward
+
+* update
+
+* add _mask_id to transformers
+
+* Update
+
+* MLM update
+
+* adding update_metrics abstraction
+
+* delete update_metrics_ notation
+
+* fixed wrong index problem
+
+* removed unrelated files
+
+* removed unrelated files
+
+* removed unrelated files
+
+* fix PEP8
+
+* Fixed get_pretained_lm_head for BERT and ALBERT
+
+* spelling check
+
+* black formatting
+
+* fixing tests
+
+* bug fix
+
+* Adding batch_size constraints to multi-GPU setting
+
+* adding documentation
+
+* adding batch size test
+
+* black correct version
+
+* Fixing batch size assertion
+
+* generalize batch size assertion for more than 2 GPU setting
+
+* reducing label loops in code
+
+* fixing span forward
+
+* Fixing span prediction forward for multi-GPU
+
+* fix commonsenseQA forward
+
+* MLM
+
+* adding function documentation
+
+* resolving nits, fixing seq_gen forward
+
+* remove nit
+
+* fixing batch_size assert and SpanPrediction task
+
+* Remove debugging
+
+* Fix batch size mismatch multi-GPU test
+
+* Fix order of assert checking for batch size mismatch
+
+* mlm training
+
+* update
+
+* sbatch
+
+* update
+
+* data parallel
+
+* update data parallel stuffs
+
+* using sequencelabel, using 1 paragraph per example
+
+* update label mapping
+
+* adding exmaples-porportion-mixing
+
+* changing dataloader to work with wikitext103
+
+* weight sampling
+
+* add early stopping only onb one task
+
+* commit
+
+* Cleaning up code
+
+* Removing unecessarily tracked git folders
+
+* Removing unnecesary changes
+
+* revert README
+
+* revert README.md again
+
+* Making more general for Transformer-based embedders
+
+* torch.uint8 -> torch.bool
+
+* Fixing indexing issues
+
+* get rid of unecessary changes
+
+* black cleanup
+
+* update
+
+* Prevent updating update_metrics twice in one step
+
+* update
+
+* update
+
+* update
+
+* Fixing SOP to work with jiant
+
+* delete debugging
+
+* tying pooler weights from ALBERT
+
+* fixed SOP tie weight, and MLM vocab error
+
+* dataset update for SOP
+
+* removed pdb
+
+* Fix ALBERT -> MLM problem, reduce amount of times get_data_iter is called
+
+* delete debugging
+
+* adding utf-8 encoding
+
+* Removing two-layer MLM class hierarchy
+
+* MLM indexing bug
+
+* fixing MLM error
+
+* removed rest of the shifting code
+
+* adding
+
+* fixing batch[inputs] error
+
+* change corpus to wikipedia raw
+
+* change corpus to wikipedia raw
+
+* Finish merge
+
+* style
+
+* Revert rest of mlm_weight
+
+* Revert LM change
+
+* Revert
+
+* Merging SOP
+
+* Improving documentation
+
+* Revert base_roberta
+
+* revert unecessary change
+
+* Correcting documentation
+
+* revert unnecessary changes
+
+* Refactoring SOP to make clearer
+
+* Adding SOPClassifier
+
+* Fixing SOP Task
+
+* Adding further documentation
+
+* Adding more description of dataset
+
+* fixing merge conflict
+
+* cleaning up unnecessary files
+
+* Making documentation clearer about our implementation of ALBERT SOP
+
+* Fix docstring
+
+* Refactoring SOP back as a PairClassificationTask, adding more documentation
+
+* Adding more documentation, adding process_split
+
+* Fix typo in comment
+
+* Adding modified SOP code
+
+* fixing based on comments
+
+* fixing len(current_chunk)==1 condition
+
+* fixing len(current_chunk)==1 condition
+
+* documentation fix
+
+* minor fix
+
+* minor fix: tokenizer
+
+* minor fix: current_length update
+
+* minor fix: current_length update
+
+* minor fix
+
+* bug fix
+
+* bug fix
+
+* Fixing document leakage bug
+
+* Fixing document delimiting bug
+
+* Cleaning up test
+
+* Black style
+
+* Accurately updating current_length based on when len for_next_chunk > 2
+
+* SOP data generation insturctions
+
+* Fix documentation
+
+* Fixing docstrings and adding source of code
+
+* Fixing typos and data script documentation
+
+* Revert merge mistake
+
+Co-authored-by: phu-pmh <phumon91@gmail.com>
+Co-authored-by: Haokun Liu <haokunliu412@gmail.com>
+Co-authored-by: pruksmhc <pruks22y@mtholyoke.edu>
+Co-authored-by: DeepLearning VM <google-dl-platform@googlegroups.com>",feature,feature
+https://github.com/kornia/kornia.git,tanmayvakare@gmail.com,"Enhancement to Resize Augmentation (#1687)
+
+Added antialiasing option to Resize augmentation similar to Resize in geometry.transforms.",other,feature
+https://github.com/alfredfrancis/ai-chatbot-framework.git,lesyk@users.noreply.github.com,"Set Python version to 2.7.0 for pyenv (#126)
+
+* Set version to 2.7.8
+* Allign Python version with docker file
+",other,build and dependencies
+https://github.com/flairNLP/flair.git,31824443+taehyuny@users.noreply.github.com,Update README.md,documentation,documentation
+https://github.com/GoogleCloudPlatform/ml-on-gcp.git,aarondietz@google.com,"Updated a couple lines of markdown to clarify the tasks at hand
+",documentation,documentation
+https://github.com/maelfabien/Multimodal-Emotion-Recognition.git,anatoli.db@gmail.com,"modif on readme
+",documentation,documentation
+https://github.com/albumentations-team/albumentations.git,nekit94-08@mail.ru,"Do not harcode year in copyright in docs (#113)
+
+* Do not harcode year in copyright in docs
+
+* Made flake8 happy
+
+* Hotfix
+",documentation,documentation
+https://github.com/OpenNMT/OpenNMT-py.git,koyamada-s@sys.i.kyoto-u.ac.jp,"fix a bug of missing arg type
+",bug fix,bug fix
+https://github.com/deepmipt/DeepPavlov.git,alitinsky@gmail.com,"docs: add an out-of-the-box models section to quickstart (#1013)
+
+* Added out-of-the-box table to docs
+
+* Added Docker reference to docks
+
+* Added out-of-the-box models list
+
+* Fixed wording in quick start docs
+
+* Added some paragraphs
+
+* docs: better English
+
+* chore: update deeppavlov version number to 0.6.1
+
+* docs: better English
+
+* docs: add another link to docker instructions in quickstart
+",documentation,documentation
+https://github.com/facebookresearch/pytext.git,armenag@fb.com,"Fix Incorrect State Dict Assumption (#1326)
+
+Summary:
+Pull Request resolved: https://github.com/facebookresearch/pytext/pull/1326
+
+PyText currently assumes that the state_dict is a flat key,value ordered dict where the value is typed as tensor. This is not neccessarily true: https://pytorch.org/tutorials/beginner/saving_loading_models.html#saving-multiple-models-in-one-file
+
+This diff fixes this assumption.
+
+Reviewed By: arbabu123
+
+Differential Revision: D21100333
+
+fbshipit-source-id: 098c6af21aff1de3b5323dc44c597d7b10d1deb2
+",bug fix,bug fix
+https://github.com/freewym/espresso.git,nxphi47@gmail.com,"Hot_reload_debug (#4519)
+
+* Add hot reload function decorator, allow faster debugging without reloading models and data.",other,other
+https://github.com/google-research/google-research.git,kbg@google.com,"The most recent version of OpenGrm-NGram has a fix which prevents training from crashing when the covering grammar has deficiencies. One may, for instance, wish to exclude a pair that has a very high edit distance, but this triggered a crash in `ngramcount`.
+
+PiperOrigin-RevId: 660989397
+",documentation,documentation
+https://github.com/MIC-DKFZ/nnUNet.git,lyyu20072@163.com,"Update readme.md
+
+Remove the file endings in argument: output_folder_or_list_of_truncated_output_files, which as appended automatically by nnUNet.",documentation,documentation
+https://github.com/magenta/magenta.git,35841105+mgogag@users.noreply.github.com,"Update README.md
+
+changed CHECKPOINT_DIR in inference part",documentation,documentation
+https://github.com/kornia/kornia.git,all.cows.like.to.moo@gmail.com,"improve bbox_to_mask (#1351)
+
+* improve bbox_to_mask
+
+* [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+for more information, see https://pre-commit.ci
+
+Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>",feature,feature
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,ajhamilton@google.com,"Video Intelligence region tag update [(#1639)](https://github.com/GoogleCloudPlatform/python-docs-samples/issues/1639)
+
+
+",documentation,documentation
+https://github.com/freewym/espresso.git,mazhiyi@fb.com,"Fix overflow nandetector (#1064)
+
+Summary:
+https://github.com/fairinternal/fairseq-py/issues/1029 added update_num as a required argument to train_step function. Adding this argument to the function call for nan detector.
+
+Before I got:
+```
+Traceback (most recent call last):
+  File ""/private/home/mazhiyi/.conda/envs/fairseq-master/lib/python3.6/site-packages/torch/multiprocessing/spawn.py"", line 19, in _wrap
+    fn(i, *args)
+  File ""/private/home/mazhiyi/master/fairseq-py-docrepair/fairseq_cli/train.py"", line 281, in distributed_main
+    main(args, init_distributed=True)
+  File ""/private/home/mazhiyi/master/fairseq-py-docrepair/fairseq_cli/train.py"", line 100, in main
+    train(args, trainer, task, epoch_itr)
+  File ""/private/home/mazhiyi/.conda/envs/fairseq-master/lib/python3.6/contextlib.py"", line 52, in inner
+    return func(*args, **kwds)
+  File ""/private/home/mazhiyi/master/fairseq-py-docrepair/fairseq_cli/train.py"", line 176, in train
+    log_output = trainer.train_step(samples)
+  File ""/private/home/mazhiyi/.conda/envs/fairseq-master/lib/python3.6/contextlib.py"", line 52, in inner
+    return func(*args, **kwds)
+  File ""/private/home/mazhiyi/master/fairseq-py-docrepair/fairseq/trainer.py"", line 405, in train_step
+    ignore_grad=False
+TypeError: train_step() missing 1 required positional argument: 'update_num'
+```
+Pull Request resolved: https://github.com/fairinternal/fairseq-py/pull/1064
+
+Differential Revision: D20249234
+
+Pulled By: mazhiyi
+
+fbshipit-source-id: 0ee85c719a17cc253cbdc7183dc4243193b08d17
+",bug fix,bug fix
+https://github.com/kaushaltrivedi/fast-bert.git,ring.hiram@gmail.com,"Merge remote-tracking branch 'origin/learner_cls/dataBunchmultilabelweights' into learner_cls/dataBunchmultilabelweights
+",merge,merge
+https://github.com/mozilla/bugbug.git,42572253+kushagra414@users.noreply.github.com,"Update models relying on history to also take into account the initial state of the bug (#1247)
+
+Fixes #1218",bug fix,bug fix
+https://github.com/freewym/espresso.git,vineetchandhok@gmail.com,"PR for Issue #1154: Two comments in lstm.py seem to be incorrect
+
+Summary: Pull Request resolved: https://github.com/pytorch/fairseq/pull/1185
+
+Differential Revision: D17602249
+
+Pulled By: lematt1991
+
+fbshipit-source-id: bd515b7d2ebce8181a80684f45223a8db7c7e3cd
+",documentation,documentation
+https://github.com/microsoft/nni.git,lawwu@users.noreply.github.com,"Update AdvancedNas.md (#1601)
+
+",documentation,documentation
+https://github.com/NVIDIA/Megatron-LM.git,terryk@nvidia.com,"ADLR/megatron-lm!3212 - fix: Fixes issue to maintain backward compatibility with TE 1.13.0 optimizer
+",bug fix,bug fix
+https://github.com/nyu-mll/jiant.git,112716341+trellixvulnteam@users.noreply.github.com,"Adding tarfile member sanitization to extractall() (#1355)
+
+",feature,feature
+https://github.com/google-research/google-research.git,kearnes@google.com,"Changes to make .../google_research/mol_dqn compatible with python3.
+
+PiperOrigin-RevId: 248781063
+",other,other
+https://github.com/eleurent/rl-agents.git,dwitt12345@gmail.com,"[Minor] Typo in readme
+
+Fixed the Value Iteration hyperlink",documentation,documentation
+https://github.com/google/flax.git,parkers@google.com,"Break apart flax pack function into the multiple scope handling functions to
+allow calling multiple pack functions in parallel.
+
+PiperOrigin-RevId: 587095169
+",other,refactoring
+https://github.com/facebookresearch/ReAgent.git,alborzg@fb.com,"Migrate numpy => pytorch for Evaluator.py
+
+Summary: Changed most of the numpy code to pytorch. The next action item is to have appendable tensorts to also migrate mc_loss and td_loss metrics.
+
+Reviewed By: kittipatv
+
+Differential Revision: D12890690
+
+fbshipit-source-id: bf83a491a5b331a68f355131c570a07d55297c93
+",other,refactoring
+https://github.com/avrae/avrae.git,zmckinnon@fandom.com,"🚀 Deploy to ECR (#637)
+
+",other,build and dependencies
+https://github.com/google-research/google-research.git,yichaojoey@google.com,"Open source the evaluation program for VRDU datasets which provides a benchmark for visually-rich document extraction tasks.
+
+PiperOrigin-RevId: 505671172
+",release,release
+https://github.com/freewym/espresso.git,aimeeli@fb.com,"changes to make mbart work (#1911)
+
+Summary:
+Pull Request resolved: https://github.com/pytorch/fairseq/pull/1911
+
+Pull Request resolved: https://github.com/fairinternal/fairseq-py/pull/1109
+
+Pull Request resolved: https://github.com/facebookresearch/pytext/pull/1289
+
+First remove the assertion since when I load the model for fine-tuning I don't necessarily have all the language directories on my data.
+I tried several ideas here for general bart archs, however none of them worked well for mbart on multilingual data, but haven't experimented with bart on en data:
+1. initializing ontology embeddings as average pooling of all subword embeddings.
+2. initializing pointer attention mha with some layer from bart decoder
+
+Reviewed By: jeanm
+
+Differential Revision: D20530432
+
+fbshipit-source-id: 40b8735888c28c05f6f326980cc6db820699db5c
+",other,bug fix
+https://github.com/apache/submarine.git,tangzhankun@gmail.com,"[Submarine 169] Revisit license and notice (#67)
+
+### What is this PR for?
+Revisit the submarine license and notice
+
+### What type of PR is it?
+Improvement
+
+### What is the Jira issue?
+https://issues.apache.org/jira/browse/SUBMARINE-169
+
+### How should this be tested?
+It's hard to automate this testing.
+Please refer to the description of JIRA to learn how to modify the license and notice.
+
+
+### Questions:
+* Does the licenses files need update? Yes
+* Is there breaking changes for older versions? No
+* Does this needs documentation? No",documentation,documentation
+https://github.com/facebookresearch/habitat-api.git,maksymets.o@gmail.com,"Added link to download PointNav Gibson v2 (#316)
+
+Added link to download PointNav Gibson v2",documentation,documentation
+https://github.com/flatironinstitute/CaImAn.git,agiovann@andreas-macbook-pro.local,"bug fixes for NWB demo, and pin pynwb momentarily
+",build and dependencies,build and dependencies
+https://github.com/OpenNMT/OpenNMT-py.git,skyisno.1@gmail.com,"Remove unnecessary `view` for linear operation (#1424)
+
+* Remove unnecessary `view` for linear operation",refactoring,refactoring
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,william.f.zeng@gmail.com,"docs: update classification sample to use v2 model (#378)
+
+* docs: update classification sample to use v2 model
+
+* fix: update classification test to use v2 model
+
+Co-authored-by: Anthonios Partheniou <partheniou@google.com>",documentation,documentation
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,64097272+eapl-gemugami@users.noreply.github.com,"fix(translate): update sample `translate_text` to unify across languages (#13395)
+
+* fix(translate): update sample `translate_text` and unify across languages
+
+* fix(translate): fix call to `translate_text` in CLI
+
+* fix(translate): implement support to list[str] in `translate_text` sample",bug fix,bug fix
+https://github.com/Calamari-OCR/calamari.git,michifischermail@web.de,"Dataset mode PREDICT_AND_EVAL (#122)
+
+* added dataset_mode PREDICT_AND_EVAL which loads both images and texts but does not use data augmentation or shuffling during loading
+* This mode is used if one wants to predict and evaluate the same dataset",other,feature
+https://github.com/google-research/google-research.git,vratnakar@google.com,"This mainly adds support for AutoMQM metrics, i.e., MQM-like metrics (consisting of error spans with severity/category assignments) made by AI instead of human raters. Each rater name that has the prefix ""AutoMQM"" is treated as a distinct metric.
+
+- The scores table at the top shows all AutoMQM metrics.
+- The visibility of MQM score slice columns can now be toggled.
+- Since the scores table can get very wide, if there is more than one MQM-like metric, then we start out the details columns in hidden state.
+- The visibility state of details columns persists across sorting/filtering.
+- When comparing rater-specific scores, we conflate all MQM-like metrics, allowing us to compare (using histograms, significance tests) AutoMQM with MQM.
+- In the examples tables, we now allow narrowing the view to just the annotations made by any specific rater by hovering the mouse over the rater's ID in the last column. Each rater has a
+unique flag color associated with them, and this temporary narrowing is indicated in the UI by showing the rater's flag next to the text. You can also hover over a rater's flag to activate this narrowing.
+- Split the earlier ""errors"" DIV into one for status and one for errors.
+
+The other changes are around data reading:
+
+- Instead of not loading more data after MAX_DATA_LINES lines (as was being done earlier), we now use a MAX_SEGMENTS limit (set to 10000) and ignore data from segments not in the first MAX_SEGMENTS distinct doc-segs (but we continue to load data for existing doc-segs, say from more systems/raters).
+- This MAX_SEGMENTS limiting is also used to simply not remember any data lines that were not used, saving memory. Thus, when we save the data, only data for the doc-segs used is saved.
+
+PiperOrigin-RevId: 595246995
+",bug fix,feature
+https://github.com/facebookresearch/habitat-api.git,m@mjschock.com,"Added __init__ for examples (#55)
+",documentation,documentation
+https://github.com/OpenNMT/OpenNMT-tf.git,geras22222c@gmail.com,"Adding Transformer models to TensorFlow Lite exporting (#875)
+
+* Added TensorFlow Lite conversion code
+
+* Reformatted to Lint format - Used the Python tool Black for reformatting
+
+* Reformatted to pass Flake8 check
+
+* Removed save_tflite parameter, you can now call the TFLite conversion process by using the export parameter.
+
+* Simplified test by running it with the Exporter.  Test cleanup
+
+* Reformatted to Lint
+
+* Decoding - Removed extra while loop what was being used for TFLite, instead modified the original while loop to decode differently with TFLite by using an if statement.
+
+* Update opennmt/inputters/text_inputter.py
+
+formatting suggestion by @guillaumekln
+
+Co-authored-by: Guillaume Klein <guillaumekln@users.noreply.github.com>
+
+* Moved supported models check to exporters.py.  TFLite tests still work.  I tried exporting a Transformer Base model and it correctly gives an error.
+
+* Ran lint formatting
+
+* Made default exporting float32 (previously was float16), and added the option to export with float16
+
+* Formatted with Lint
+
+* Fixed a small mistake I made with creating float16.  I registered the wrong name.
+
+* Fixed small issue with running without quantizing
+
+* Removed unnecessary calls to check if the functions work.
+
+* Modified tests to run with parameterized library.  Also removed unsused variable in exporters.py
+
+* Minor diff cleanup
+
+* Minor whitespace cleanup in class docstring
+
+* Added Transformer models, compatibility with <unk> replacement and beam search.
+
+* Merged with the latest commit, and made the changes suggested by guillaumekln in the pull request.
+
+Co-authored-by: Guillaume Klein <guillaumekln@users.noreply.github.com>
+Co-authored-by: gcervantes <gercervantes7>",feature,feature
+https://github.com/athena-team/athena.git,chenguoguo06@gmail.com,"Added example for creating virtual environment
+",documentation,documentation
+https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix.git,16116047+morpheus3000@users.noreply.github.com,"Update tips.md
+
+The combine_A_and_B.py script has been moved to the datasets folder from the scripts folder.",documentation,documentation
+https://github.com/IBM/lale.git,ingkarat_bew@hotmail.com,"Fix typo in possible values of 'sampling_strategy' of 4 Imblearn's Under-sampling methods (#939)
+
+",documentation,documentation
+https://github.com/datamllab/rlcard.git,shh1295@gmail.com,"Change action of nolimit-holdem as ACPC
+",other,other
+https://github.com/apachecn/pytorch-doc-zh.git,sirius.caffrey@gmail.com,change link to master,documentation,documentation
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,brad.friedman@gmail.com,"Update echo quickstart requirements.txt (#951)
+
+",build and dependencies,build and dependencies
+https://github.com/hastagAB/Awesome-Python-Scripts.git,nir61202@gmail.com,"Add Port Scanner Utility
+",feature,feature
+https://github.com/google-research/google-research.git,tsar@google.com,"Internal change
+
+PiperOrigin-RevId: 409411017
+",other,other
+https://github.com/microsoft/nni.git,shjang1992@gmail.com,"Added support for kubeflow 0.7 (#1814)
+
+",feature,feature
+https://github.com/GoogleCloudPlatform/healthcare.git,ruihuang@google.com,"internal
+
+PiperOrigin-RevId: 277510960
+",other,other
+https://github.com/microsoft/EdgeML.git,siddhudivi@gmail.com,"Rebase with edgeML
+",other,other
+https://github.com/interpretml/interpret-community.git,msftgits@microsoft.com,Initial commit,feature,feature
+https://github.com/microsoft/nni.git,squirrel@chisong01.fareast.corp.microsoft.com,"fix bug on exporting
+",bug fix,bug fix
+https://github.com/masa-su/pixyz.git,kanekotakaaki@users.noreply.github.com,"Merge pull request #118 from masa-su/dev_u-kob
+
+Fixed a bug when using a variable name with more than 2 characters for adversarial_loss",merge,merge
+https://github.com/aimacode/aima-python.git,d-k-e@users.noreply.github.com,"Change PriorityQueue expansion (#962)
+
+`self.heap.append` simply appends to the end of the `self.heap` 
+Since `self.heap` is just a python list. 
+`self.append` calls the append method of the class instance, effectively putting the item in its proper place.",other,other
+https://github.com/google-research/google-research.git,mblondel@google.com,"Open-source sparse-soft-topk
+
+PiperOrigin-RevId: 517172510
+",release,release
+https://github.com/google-research/google-research.git,fartash@google.com,"Linear convolutional models.
+
+PiperOrigin-RevId: 344535004
+",other,feature
+https://github.com/cornellius-gp/gpytorch.git,patel_zeel@iitgn.ac.in,"Add `gpytorch.metrics` and tests (#1870)
+
+* Add `gpytorch.metrics` and tests
+
+* Added . Renamed  to
+
+* Added tests for `gpytorch.metrics`
+
+* Added `average_coverage_error`. Renamed `coverage_error` to `percentile_coverage_error`
+
+* Added tests for `gpytorch.metrics`
+
+* change `percentile` to `quantile`
+
+* add batch support for coverage_error
+
+* minor fix to avoid copy construct warning
+
+* Reduce `n_epochs` from 20 to 5 for fast testing.
+
+* Add usage notebook for `gpytorch.metrics`
+
+* Update index.rst
+
+* clean output
+
+* keep output
+
+* improve text
+
+* Added mean_squared_error and mean_absolute_error
+
+* Update test_metrics.py
+
+* Update metrics.py
+
+* Update __init__.py
+
+* Update metrics.py
+
+* Update test_metrics.py
+
+* Update metrics.py
+
+* remove ace from metrics notebook
+
+* lint
+
+* lint again
+
+* linting
+
+* Update test/metrics/test_metrics.py
+
+* Apply suggestions from code review
+
+* lint
+
+Co-authored-by: Wesley Maddox <wjm363@nyu.edu>
+Co-authored-by: Wesley Maddox <wjm78@case.edu>",test,test
+https://github.com/microsoft/nni.git,48624909+erfandarzi@users.noreply.github.com,"Documentation typo fix in DoReFa compression  (#3693)
+
+Co-authored-by: Darzidehkalani <BehDarzidehkaE@umcg.nl>
+Co-authored-by: ErfanDarzi <Erfandarzi@gmail.com>",documentation,documentation
+https://github.com/allenai/allennlp.git,luckytoilet@users.noreply.github.com,"Move matplotlib import into function (#3157)
+
+",refactoring,refactoring
+https://github.com/leela-zero/leela-zero.git,33702685+afalturki@users.noreply.github.com,"Fix build with MSVC. 
+
+Add missing AutoGTP files.
+
+Pull request #831.",build and dependencies,build and dependencies
+https://github.com/allegroai/trains.git,klein.shaked@gmail.com,"add support for TRAINS_NO_DEFAULT_SERVER issue #209
+",bug fix,feature
+https://github.com/datamllab/rlcard.git,kaanoz97@gmail.com,"try new approach for judge_chow
+",feature,feature
+https://github.com/facebookresearch/ReAgent.git,jbschlosser@fb.com,"Fix LR schedulers in ReAgent + supporting tests (#344)
+
+Summary:
+Pull Request resolved: https://github.com/facebookresearch/ReAgent/pull/344
+
+Fixed LR schedulers in ReAgent by adding a ""verbose"" field to each to match their torch.optim counterparts.
+
+To test this, a new `optimizer_tests` target has been added to ensure that a valid Optimizer can be created for each type of LR scheduler (excluding LambdaLR, MultiplicativeLR, and CyclicLR for now as they are not supported yet).
+
+Reviewed By: alexnikulkov
+
+Differential Revision: D24841422
+
+fbshipit-source-id: 6be13a92d7206aa693b0068f10744aeb3d4efb4a
+",test,bug fix
+https://github.com/michaelhush/M-LOOP.git,mhush@quantum-eng-psi,"Added additional tests for halting conditions.
+Fixed bug with GP fitting data with bad runs.",test,test
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,nnegrey@users.noreply.github.com,"video: use flaky on flaky timeouts [(#3385)](https://github.com/GoogleCloudPlatform/python-docs-samples/issues/3385)
+
+* video: use flaky on flaky timeouts
+
+* Update beta_snippets_test.py
+
+* remove api result check
+
+* Update beta_snippets_test.py",documentation,test
+https://github.com/avrae/avrae.git,tanner.lake@gmail.com,"split items out into various item-types; temp info logging; style updates
+",other,other
+https://github.com/fastai/fastai.git,25020209+asvcode@users.noreply.github.com,"nb60_changes (#2818)
+
+* nb60_change
+
+* nb60_change_gauss_blur",other,other
+https://github.com/google-research/google-research.git,kokiopou@google.com,"Open-source the code for ""Learning Parameter Allocation""
+
+PiperOrigin-RevId: 322095056
+",release,release
+https://github.com/freewym/espresso.git,eugene.kharitonov@gmail.com,"Prosody-aware Generative Spoken Language Modelling (#3063)
+
+Summary:
+# Before submitting
+
+- [ ] Was this discussed/approved via a Github issue? (no need for typos, doc improvements)
+- [ ] Did you read the [contributor guideline](https://github.com/pytorch/fairseq/blob/main/CONTRIBUTING.md)?
+- [ ] Did you make sure to update the docs?
+- [ ] Did you write any new necessary tests?
+
+## What does this PR do?
+Fixes # (issue).
+
+## PR review
+Anyone in the community is free to review the PR once the tests have passed.
+If we didn't discuss your PR in Github issues there's a high chance it will not be merged.
+
+## Did you have fun?
+Make sure you had fun coding �
+
+Pull Request resolved: https://github.com/fairinternal/fairseq-py/pull/3063
+
+Reviewed By: eugene-kharitonov
+
+Differential Revision: D34323605
+
+Pulled By: wnhsu
+
+fbshipit-source-id: 9dc779a6c399cda710863596e0880b9277ff2919
+",other,feature
+https://github.com/koaning/scikit-lego.git,jsamoocha@yahoo.com,"subjective classification (#213)
+
+* Adds initial computation of posterior class probabilities, given prior and confusion matrix
+
+* Adds tests for single posterior computations
+
+The other ones are to make sure all posterior class probabilities add up to 1 for a given class prediction.
+
+* Parameterizes test, adds several edge cases
+
+... and breaks the posterior computation - it doesn't like all-zero columns in the confusion matrix.
+
+* Typo
+
+* Adds test assuring fit() stores confusion matrix as dataframe
+
+* Prevents pain from missing classes in prior
+
+* Adds handling of edge cases regarding confusion matrices
+
+When the confusion matrix has no false positives (i.e. filled only on the diagonal), the posterior
+for a class is simply 1 because the evidence equals the likelihood * prior.
+
+When the confusion matrix has all-zero columns (i.e. the inner classifier fails to make any
+prediction for a given class), the posterior for these classes equals their prior probability.
+This is necessary to make sure that the posterior probabilities of all classes, given a
+prediction, sum to 1.
+
+* Adds predict_proba() implementation
+
+* Adds guard against invalid model configuration
+
+* ok, ok, numerical edge cases
+
+* Flips expected/actual in tests to better understand failed tests
+
+* Corrects docstring
+
+* Adds sklearn boilerplate + checks
+
+* Adds check for inner estimator to be fitted
+
+* Adds evidence parameter to meta estimator
+
+* Adds weighing of posterior by 'probas' of inner estimator
+
+* Adds documentation for expected result of different evidence types
+
+* Adds helper to convert probas to discrete predictions
+
+* Adds optimization for predictions
+
+Instead of computing the posterior for every observation at predict_proba(), the possible
+posterior combinations (n_classes ** 2) are computed during fit() and stored in self as
+posterior_matrix_. During prediction, this matrix only needs to be multiplied with the
+(discrete) predictions, preventing lotsa recomputations of the same posteriors.
+
+* Moves param checking to fit()
+
+* Removes unnecessary references to inner estimator's classes_ attribute
+
+It already can be referenced from the meta estimator's property.
+
+* Adds docstring
+
+* Moves method docstring to correct location
+",other,feature
+https://github.com/onnx/onnxmltools.git,supun.nakandala@gmail.com,"exposing  convert_xgboost API method (#318)
+
+",other,feature
+https://github.com/facebookresearch/ParlAI.git,kearnsw@users.noreply.github.com,"fixed error in json format (#262)
+
+",bug fix,bug fix
+https://github.com/joe-siyuan-qiao/DetectoRS.git,guwang12@gmail.com,"exclude folders when install
+",build and dependencies,build and dependencies
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,simon.biggs@radiotherapy.ai,"Update example to apps/v1 (#6534)
+
+## Description
+
+I'm not certain if this is correct, but when I was following the following documentation:
+
+https://cloud.google.com/endpoints/docs/grpc/get-started-kubernetes-engine#deploying_the_sample_api_and_esp_to_the_cluster
+
+I was getting the following error message:
+
+```
+no matches for kind ""Deployment"" in version ""extensions/v1beta1""
+```
+
+Which lead me to the following GitHub issue:
+
+https://github.com/coreos/etcd-operator/issues/2126#issuecomment-561100503
+
+So, here's the fix that made the example work for me again.",documentation,documentation
+https://github.com/explosion/spacy-transformers.git,sofie.vanlandeghem@gmail.com,"add no response configuration
+",feature,feature
+https://github.com/microsoft/ai-edu.git,48014605+kvartet@users.noreply.github.com,"Update DDL for NNI student program (#602)
+
+",other,other
+https://github.com/microsoft/DeepSpeed.git,saforem2@gmail.com,"fix: Propagate `strip_tensor_paddings` (#7426)
+
+Trying to use the `DeepSpeed/deepspeed/checkpoints/ds_to_universal.py`,
+I encountered:
+
+
+```python
+Traceback (most recent call last):
+  File ""/opt/aurora/24.347.0/frameworks/aurora_nre_models_frameworks-2025.0.0/lib/python3.10/concurrent/futures/process.py"", line 246, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File ""/lus/flare/projects/AuroraGPT/CPT-AuroraGPT-v0/foremans/projects/argonne-lcf/Megatron-DeepSpeed/deps/DeepSpeed/deepspeed/checkpoint/ds_to_universal.py"", line 114, in extract_zero_shards
+    sd = ds_checkpoint.get_zero_checkpoint_state(pp_index=pp_index, tp_index=tp_index, dp_index=dp_index)
+  File ""/lus/flare/projects/AuroraGPT/CPT-AuroraGPT-v0/foremans/projects/argonne-lcf/Megatron-DeepSpeed/venvs/aurora/aurora_nre_models_frameworks-2025.0.0/lib/python3.10/site-packages/deepspeed/checkpoint/deepspeed_checkpoint.py"", line 124, in get_zero_checkpoint_state
+    return self.zero_checkpoint.get_state_for_rank(pp_index=pp_index,
+  File ""/lus/flare/projects/AuroraGPT/CPT-AuroraGPT-v0/foremans/projects/argonne-lcf/Megatron-DeepSpeed/venvs/aurora/aurora_nre_models_frameworks-2025.0.0/lib/python3.10/site-packages/deepspeed/checkpoint/zero_checkpoint.py"", line 62, in get_state_for_rank
+    self._strip_tensor_paddings(sd)
+  File ""/lus/flare/projects/AuroraGPT/CPT-AuroraGPT-v0/foremans/projects/argonne-lcf/Megatron-DeepSpeed/venvs/aurora/aurora_nre_models_frameworks-2025.0.0/lib/python3.10/site-packages/deepspeed/checkpoint/zero_checkpoint.py"", line 110, in _strip_tensor_paddings
+    group_state[state_name] = torch.narrow(state_value, 0, 0, raw_length).clone()
+RuntimeError: narrow(): length must be non-negative.
+```
+
+(see full traceback[^traceback] below)
+
+
+The issue is, there's no way to propagate the `strip_tensor_paddings`
+argument from the
+[`DeepSpeedCheckpoint.get_zero_checkpoint_state(...)`](https://github.com/deepspeedai/DeepSpeed/blob/affee605e47c9befd21c4c1445e11fd29d295201/deepspeed/checkpoint/deepspeed_checkpoint.py#L123)
+method through to the [`ZeroCheckpoint.get_state_for_rank(...)`
+method](https://github.com/deepspeedai/DeepSpeed/blob/affee605e47c9befd21c4c1445e11fd29d295201/deepspeed/checkpoint/zero_checkpoint.py#L53)
+(which accepts it as an argument) since it doesn't accept it.
+
+This PR adds this additional `strip_tensor_paddings` argument (default
+`True`) in the `DeepSpeedCheckpoint.get_zero_checkpoint_state` method,
+and passes it through to the
+`self.zero_checkpoint.get_state_for_rank(...,
+strip_tensor_paddings=strip_tensor_paddings)`, as shown below:
+
+```diff
+-    def get_zero_checkpoint_state(self, pp_index, tp_index, dp_index) -> dict:
++    def get_zero_checkpoint_state(self, pp_index, tp_index, dp_index, strip_tensor_paddings: bool = True) -> dict:
+        return self.zero_checkpoint.get_state_for_rank(pp_index=pp_index,
+                                                       tp_index=tp_index,
+                                                       dp_index=dp_index,
+-                                                       keys_to_ignore=[PARAM_SHAPES])
++                                                       keys_to_ignore=[PARAM_SHAPES],
++                                                       strip_tensor_paddings=strip_tensor_paddings)
+```
+
+[^traceback]: Full traceback:
+
+	<details closed><summary>[Full Traceback]:</summary>
+	
+	```bash
+#[🐍 aurora_nre_models_frameworks-2025.0.0](👻
+aurora_nre_models_frameworks-2025.0.0)
+	#[/f/A/C/f/p/a/Megatron-DeepSpeed][🌱 saforem2/fix-formatting][✓]
+	#[07/12/25 @ 16:07:12][x4209c2s4b0n0]
+;
+ckpt_dir=checkpoints/ws768_ds_stage1_nl32_hs4096_mb1_seq4096_gb3072_sp1_pp1_tp1_bf16_optadamw_lr_lwf_flash
+; gs=$(cat ""${ckpt_dir}/latest_checkpointed_iteration.txt"") && echo
+""global step: ${gs}"" && python3
+deps/DeepSpeed/deepspeed/checkpoint/ds_to_universal.py
+--input_folder""${ckpt_dir}/global_step${gs}"" --output_folder
+""${ckpt_dir}/global_step${gs}_universal"" --keep_temp_folder
+	global step: 158945
+[W712 16:07:17.966425018 OperatorEntry.cpp:155] Warning: Warning only
+once for all operators, other operators may also be overridden.
+Overriding a previously registered kernel for the same operator and the
+same dispatch key
+operator: aten::_cummax_helper(Tensor self, Tensor(a!) values,
+Tensor(b!) indices, int dim) -> ()
+registered at /build/pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+	  dispatch key: XPU
+previous kernel: registered at
+/build/pytorch/build/aten/src/ATen/RegisterCPU.cpp:30476
+new kernel: registered at
+/build/intel-pytorch-extension/build/Release/csrc/gpu/csrc/aten/generated/ATen/RegisterXPU.cpp:2971
+(function operator())
+
+/opt/aurora/24.347.0/frameworks/aurora_nre_models_frameworks-2025.0.0/lib/python3.10/site-packages/intel_extension_for_pytorch/nn/utils/_weight_prepack.py:6:
+UserWarning: pkg_resources is deprecated as an API. See
+https://setuptools.pypa.io/en/latest/pkg_resources.html. The
+pkg_resources package is slated for removal as early as 2025-11-30.
+Refrain from using this package or pin to Setuptools<81.
+	  import pkg_resources
+	AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+	AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+	AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+	AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+	AttributeError: 'MessageFactory' object has no attribute 'GetPrototype'
+[2025-07-12 16:07:27,740] [INFO]
+[real_accelerator.py:254:get_accelerator] Setting ds_accelerator to xpu
+(auto detect)
+[2025-07-12 16:07:29,078] [INFO] [logging.py:107:log_dist] [Rank -1]
+[TorchCheckpointEngine] Initialized with serialization = False
+args =
+Namespace(input_folder='checkpoints/ws768_ds_stage1_nl32_hs4096_mb1_seq4096_gb3072_sp1_pp1_tp1_bf16_optadamw_lr_lwf_flash/global_step158945',
+output_folder='checkpoints/ws768_ds_stage1_nl32_hs4096_mb1_seq4096_gb3072_sp1_pp1_tp1_bf16_optadamw_lr_lwf_flash/global_step158945_universal',
+num_extract_workers=4, num_merge_workers=2, keep_temp_folder=True,
+strict=True, inject_missing_state=False)
+	Convert DeepSpeed Checkpoint to Universal Checkpoint
+Converting DeepSpeed checkpoint in
+checkpoints/ws768_ds_stage1_nl32_hs4096_mb1_seq4096_gb3072_sp1_pp1_tp1_bf16_optadamw_lr_lwf_flash/global_step158945
+to Universal checkpoint in
+checkpoints/ws768_ds_stage1_nl32_hs4096_mb1_seq4096_gb3072_sp1_pp1_tp1_bf16_optadamw_lr_lwf_flash/global_step158945_universal
+
+/lus/flare/projects/AuroraGPT/CPT-AuroraGPT-v0/foremans/projects/argonne-lcf/Megatron-DeepSpeed/megatron/core/tensor_parallel/layers.py:290:
+FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated.
+Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+	  def forward(
+
+/lus/flare/projects/AuroraGPT/CPT-AuroraGPT-v0/foremans/projects/argonne-lcf/Megatron-DeepSpeed/megatron/core/tensor_parallel/layers.py:334:
+FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated.
+Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+	  def backward(ctx, grad_output):
+[2025-07-12 16:07:39,134079][I][ezpz/__init__:264:ezpz] Setting logging
+level to 'INFO' on 'RANK == 0'
+[2025-07-12 16:07:39,136376][I][ezpz/__init__:265:ezpz] Setting logging
+level to 'CRITICAL' on all others 'RANK != 0'
+	*** 1. Extracting ZeRO fragments
+
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋|
+767/768 [01:29<00:00, 8.53it/s]
+	concurrent.futures.process._RemoteTraceback:
+	""""""
+	Traceback (most recent call last):
+File
+""/opt/aurora/24.347.0/frameworks/aurora_nre_models_frameworks-2025.0.0/lib/python3.10/concurrent/futures/process.py"",
+line 246, in _process_worker
+	    r = call_item.fn(*call_item.args, **call_item.kwargs)
+File
+""/lus/flare/projects/AuroraGPT/CPT-AuroraGPT-v0/foremans/projects/argonne-lcf/Megatron-DeepSpeed/deps/DeepSpeed/deepspeed/checkpoint/ds_to_universal.py"",
+line 114, in extract_zero_shards
+sd = ds_checkpoint.get_zero_checkpoint_state(pp_index=pp_index,
+tp_index=tp_index, dp_index=dp_index)
+File
+""/lus/flare/projects/AuroraGPT/CPT-AuroraGPT-v0/foremans/projects/argonne-lcf/Megatron-DeepSpeed/venvs/aurora/aurora_nre_models_frameworks-2025.0.0/lib/python3.10/site-packages/deepspeed/checkpoint/deepspeed_checkpoint.py"",
+line 124, in get_zero_checkpoint_state
+	    return self.zero_checkpoint.get_state_for_rank(pp_index=pp_index,
+File
+""/lus/flare/projects/AuroraGPT/CPT-AuroraGPT-v0/foremans/projects/argonne-lcf/Megatron-DeepSpeed/venvs/aurora/aurora_nre_models_frameworks-2025.0.0/lib/python3.10/site-packages/deepspeed/checkpoint/zero_checkpoint.py"",
+line 62, in get_state_for_rank
+	    self._strip_tensor_paddings(sd)
+File
+""/lus/flare/projects/AuroraGPT/CPT-AuroraGPT-v0/foremans/projects/argonne-lcf/Megatron-DeepSpeed/venvs/aurora/aurora_nre_models_frameworks-2025.0.0/lib/python3.10/site-packages/deepspeed/checkpoint/zero_checkpoint.py"",
+line 110, in _strip_tensor_paddings
+group_state[state_name] = torch.narrow(state_value, 0, 0,
+raw_length).clone()
+	RuntimeError: narrow(): length must be non-negative.
+	""""""
+	
+	The above exception was the direct cause of the following exception:
+	
+	Traceback (most recent call last):
+File
+""/lus/flare/projects/AuroraGPT/CPT-AuroraGPT-v0/foremans/projects/argonne-lcf/Megatron-DeepSpeed/deps/DeepSpeed/deepspeed/checkpoint/ds_to_universal.py"",
+line 549, in <module>
+	    main(args)
+File
+""/lus/flare/projects/AuroraGPT/CPT-AuroraGPT-v0/foremans/projects/argonne-lcf/Megatron-DeepSpeed/deps/DeepSpeed/deepspeed/checkpoint/ds_to_universal.py"",
+line 499, in main
+	    _extract_zero_shard_files(args, ds_checkpoint, temp_dir)
+File
+""/lus/flare/projects/AuroraGPT/CPT-AuroraGPT-v0/foremans/projects/argonne-lcf/Megatron-DeepSpeed/deps/DeepSpeed/deepspeed/checkpoint/ds_to_universal.py"",
+line 370, in _extract_zero_shard_files
+_do_parallel_work(do_work, _3d_range_list, args.num_extract_workers)
+File
+""/lus/flare/projects/AuroraGPT/CPT-AuroraGPT-v0/foremans/projects/argonne-lcf/Megatron-DeepSpeed/deps/DeepSpeed/deepspeed/checkpoint/ds_to_universal.py"",
+line 354, in _do_parallel_work
+	    results.append(f.result())
+File
+""/opt/aurora/24.347.0/frameworks/aurora_nre_models_frameworks-2025.0.0/lib/python3.10/concurrent/futures/_base.py"",
+line 451, in result
+	    return self.__get_result()
+File
+""/opt/aurora/24.347.0/frameworks/aurora_nre_models_frameworks-2025.0.0/lib/python3.10/concurrent/futures/_base.py"",
+line 403, in __get_result
+	    raise self._exception
+	RuntimeError: narrow(): length must be non-negative.
+[1] 144664 exit 1 python3
+deps/DeepSpeed/deepspeed/checkpoint/ds_to_universal.py --input_folder
+	took: 0h:02m:08s
+	```
+	
+	</details>
+
+Signed-off-by: Sam Foreman <saforem2@gmail.com>",bug fix,bug fix
+https://github.com/google-research/google-research.git,dmitrig@google.com,"Internal change
+
+PiperOrigin-RevId: 594249080
+",other,other
+https://github.com/medipixel/rl_algorithms.git,wltjd802@gmail.com,"Fix save config.py to config.yaml (#322)
+
+",bug fix,bug fix
+https://github.com/namisan/mt-dnn.git,llychinalz@gmail.com,fix bug in adamax,bug fix,bug fix
+https://github.com/microsoft/MMdnn.git,cclauss@me.com,"Undefined name: printf() --> print() (#562)
+
+__printf__ is an _undefined name_ in this context which has the potential to raise NameError at runtime.
+
+[flake8](http://flake8.pycqa.org) testing of https://github.com/microsoft/MMdnn on Python 3.7.1
+
+$ __flake8 . --count --select=E901,E999,F821,F822,F823 --show-source --statistics__
+```
+./mmdnn/conversion/torch/torch_graph.py:18:15: F821 undefined name 'PyTorchGraphNode'
+        super(PyTorchGraphNode, self).__init__(layer)
+              ^
+./mmdnn/conversion/examples/paddle/extract_model.py:80:63: F821 undefined name 'architecture'
+    fn = download_file(MODEL_URL[args.network], local_fname = architecture + '.tar.gz', directory=args.output_dir)
+                                                              ^
+./mmdnn/conversion/examples/paddle/extract_model.py:96:20: F821 undefined name 'architecture'
+    if 'resnet' in architecture:
+                   ^
+./mmdnn/conversion/examples/paddle/extract_model.py:98:21: F821 undefined name 'architecture'
+        depth = int(architecture.strip('resnet'))
+                    ^
+./mmdnn/conversion/examples/paddle/extract_model.py:100:10: F821 undefined name 'architecture'
+    elif architecture == 'vgg16':
+         ^
+./mmdnn/conversion/examples/paddle/extract_model.py:104:42: F821 undefined name 'architecture'
+        print(""Not support for {} yet."", architecture)
+                                         ^
+./mmdnn/conversion/examples/paddle/extract_model.py:107:43: F821 undefined name 'architecture'
+    dump_v2_config(out, args.output_dir + architecture + '.bin')
+                                          ^
+./mmdnn/conversion/examples/paddle/extract_model.py:110:85: F821 undefined name 'architecture'
+    print(""Model {} is saved as {} and {}."".format(args.network,  args.output_dir + architecture + '.bin', fn))
+                                                                                    ^
+./mmdnn/conversion/examples/paddle/extract_model.py:121:24: F821 undefined name 'parameters_file'
+        with gzip.open(parameters_file, 'r') as f:
+                       ^
+./mmdnn/conversion/darknet/cfg.py:186:9: F821 undefined name 'convert2cpu'
+        convert2cpu(conv_model.bias.data).numpy().tofile(fp)
+        ^
+./mmdnn/conversion/darknet/cfg.py:187:9: F821 undefined name 'convert2cpu'
+        convert2cpu(conv_model.weight.data).numpy().tofile(fp)
+        ^
+./mmdnn/conversion/darknet/cfg.py:204:9: F821 undefined name 'convert2cpu'
+        convert2cpu(bn_model.bias.data).numpy().tofile(fp)
+        ^
+./mmdnn/conversion/darknet/cfg.py:205:9: F821 undefined name 'convert2cpu'
+        convert2cpu(bn_model.weight.data).numpy().tofile(fp)
+        ^
+./mmdnn/conversion/darknet/cfg.py:206:9: F821 undefined name 'convert2cpu'
+        convert2cpu(bn_model.running_mean).numpy().tofile(fp)
+        ^
+./mmdnn/conversion/darknet/cfg.py:207:9: F821 undefined name 'convert2cpu'
+        convert2cpu(bn_model.running_var).numpy().tofile(fp)
+        ^
+./mmdnn/conversion/darknet/cfg.py:208:9: F821 undefined name 'convert2cpu'
+        convert2cpu(conv_model.weight.data).numpy().tofile(fp)
+        ^
+./mmdnn/conversion/darknet/cfg.py:219:9: F821 undefined name 'convert2cpu'
+        convert2cpu(bias).numpy().tofile(fp)
+        ^
+./mmdnn/conversion/darknet/cfg.py:222:9: F821 undefined name 'convert2cpu'
+        convert2cpu(weight).numpy().tofile(fp)
+        ^
+./tests/gen_test.py:385:9: F821 undefined name 'printf'
+        printf('Cannot create target output directory: ""{0}""'.format(output_dir))
+        ^
+19    F821 undefined name 'convert2cpu'
+19
+```
+
+__E901,E999,F821,F822,F823__ are the ""_showstopper_"" [flake8](http://flake8.pycqa.org) issues that can halt the runtime with a SyntaxError, NameError, etc. Most other flake8 issues are merely ""style violations"" -- useful for readability but they do not effect runtime safety.
+* F821: undefined name `name`
+* F822: undefined name `name` in `__all__`
+* F823: local variable name referenced before assignment
+* E901: SyntaxError or IndentationError
+* E999: SyntaxError -- failed to compile a file into an Abstract Syntax Tree",other,bug fix
+https://github.com/Calamari-OCR/calamari.git,chwick@users.noreply.github.com,Update version to 2.1.1,release,release
+https://github.com/asappresearch/flambe.git,41585852+sean-asapp@users.noreply.github.com,"Update script.rst docs to include experiment name (#155)
+
+",documentation,documentation
+https://github.com/google-research/google-research.git,barbaraikica@google.com,"Enable learning-rate tuning.
+
+PiperOrigin-RevId: 737428284
+",feature,feature
+https://github.com/malllabiisc/RESIDE.git,stannislav@users.noreply.github.com,"Correct the link for the raw Riedel dataset
+
+The original link was wrong as mentioned in #46 .
+
+Luckily, the correct link was shared in the following comment: https://github.com/malllabiisc/RESIDE/issues/10#issuecomment-450468018",documentation,documentation
+https://github.com/OpenNMT/OpenNMT-py.git,adrian.javaloy@gmail.com,"removed numpy dependency
+
+",build and dependencies,build and dependencies
+https://github.com/keras-team/autokeras.git,jcrodriguez@unc.edu.ar,"StructuredDataRegressor was missing some init variables documented (#899)
+
+",other,bug fix
+https://github.com/iskandr/fancyimpute.git,zhang.chelsea@gmail.com,"propagate use_bias flag to KerasMatrixFactorizer (#97)
+
+",other,other
+https://github.com/facebookresearch/pytext.git,noonsilk+-noonsilk@gmail.com,"typo: tensorboard -> tensorflow
+
+Summary: Pull Request resolved: https://github.com/facebookresearch/pytext/pull/168
+
+Differential Revision: D13555818
+
+Pulled By: geof90
+
+fbshipit-source-id: c72c85b46fbbd8a34ca3a2cb9fa1b461a449ed62
+",documentation,documentation
+https://github.com/magenta/magenta.git,dongho@ekstrah.com,"removing unnecessary - in readme.md on polyphony_rnn modelel
+",documentation,documentation
+https://github.com/google-research/google-research.git,alexku@google.com,"Pangea will be been relocated to https://github.com/google-research/pangea
+
+PiperOrigin-RevId: 352811528
+",other,end-of-life notice
+https://github.com/freewym/espresso.git,annl@fb.com,"release pre-trained models (#3245)
+
+Summary:
+Releasing pre-trained mHuBERT, vocoder, speech normalizer for the paper ""Textless Speech-to-Speech Translation on Real Data""
+
+# Before submitting
+
+- [ ] Was this discussed/approved via a Github issue? (no need for typos, doc improvements)
+- [ ] Did you read the [contributor guideline](https://github.com/pytorch/fairseq/blob/main/CONTRIBUTING.md)?
+- [ ] Did you make sure to update the docs?
+- [ ] Did you write any new necessary tests?
+
+## What does this PR do?
+Fixes # (issue).
+
+## PR review
+Anyone in the community is free to review the PR once the tests have passed.
+If we didn't discuss your PR in Github issues there's a high chance it will not be merged.
+
+## Did you have fun?
+Make sure you had fun coding �
+
+X-link: https://github.com/fairinternal/fairseq-py/pull/3245
+
+Reviewed By: sravyapopuri388
+
+Differential Revision: D35135891
+
+Pulled By: an918tw
+
+fbshipit-source-id: 96e0a6354dc61d5cbfce9943893bebadfb21b642
+",release,release
+https://github.com/deezer/spleeter.git,u.suke.goto@gmail.com,"fix: switch up to 1.4.9
+",bug fix,build and dependencies
+https://github.com/kornia/kornia.git,kingsj0405@gmail.com,"Fix wrong source points for RandomThinPlateSpline (#1187)
+
+",bug fix,bug fix
+https://github.com/Kaixhin/Rainbow.git,65739020+foersterrobert@users.noreply.github.com,"Update main.py (#84)
+
+removed redundant declaration of variable T.",other,other
+https://github.com/kakaobrain/torchgpipe.git,eric.yoon@kakaobrain.com,"Proofread
+",other,documentation
+https://github.com/hunkim/DeepLearningZeroToAll.git,jennykang95@gmail.com,"added lab-09-1
+",feature,feature
+https://github.com/facebookresearch/pytext.git,yudistirayoga97@gmail.com,"Fix link typo on mentioned paper (#128)
+
+Summary:
+<!--- Why is this change required? What problem does it solve? -->
+<!--- Please link to an existing issue here if one exists. -->
+<!--- (we recommend to have an existing issue for each pull request) -->
+
+<!--- Please describe here how your modifications have been tested. -->
+
+<!--- What types of changes does your code introduce? Put an `x` in all the boxes that apply: -->
+- [x] Docs change / refactoring / dependency upgrade
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to change)
+
+<!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
+<!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
+- [ ] My code follows the code style of this project.
+- [x] My change requires a change to the documentation.
+- [ ] I have updated the documentation accordingly.
+- [ ] I have read the **CONTRIBUTING** document.
+- [ ] I have completed my CLA (see **CONTRIBUTING**)
+- [ ] I have added tests to cover my changes.
+- [ ] All new and existing tests passed.
+Pull Request resolved: https://github.com/facebookresearch/pytext/pull/128
+
+Reviewed By: geof90
+
+Differential Revision: D13506275
+
+Pulled By: snisarg
+
+fbshipit-source-id: b764c01abe887dfabb0fd421a6c9801ab9864a53
+",documentation,documentation
+https://github.com/jettify/pytorch-optimizer.git,christianmarkus@oakmountain.ch,"#349 bugfix Lookahead does not call super init (#350)
+
+Co-authored-by: Christian Eichenberger <christian.eichenberger@iarai.ac.at>",bug fix,bug fix
+https://github.com/idealo/image-super-resolution.git,mike.lesniak@idealo.de,"Merge pull request #148 from idealo/dependabot/pip/tensorflow-2.0.3
+
+Bump tensorflow from 2.0.1 to 2.0.3",merge,merge
+https://github.com/google-research/google-research.git,aviralkumar@google.com,"Add colab demonstration for PRIME
+
+PiperOrigin-RevId: 433693340
+",feature,documentation
+https://github.com/facebookresearch/ParlAI.git,alessandro.suglia@gmail.com,"bAbI+ dataset integration (#319)
+
+",other,feature
+https://github.com/mljar/mljar-supervised.git,66269169+danielavdar@users.noreply.github.com,"optimized supervised imports statements, unused imports removed.
+",refactoring,refactoring
+https://github.com/albumentations-team/albumentations.git,marcocaccin@users.noreply.github.com,"Fix SmallestMaxSize (#176)
+
+",bug fix,bug fix
+https://github.com/microsoft/nni.git,matei.oltean@gmail.com,"Correct typo (#402)
+
+",documentation,documentation
+https://github.com/kornia/kornia.git,priba@cvc.uab.cat,"Clarify documentation to get shear matrices (#2533)
+
+",documentation,documentation
+https://github.com/facebookresearch/ParlAI.git,48228605+erekgit@users.noreply.github.com,"force utf-8 (#2711)
+
+",other,other
+https://github.com/google-research/google-research.git,liyang@google.com,"Created the directory for opensourcing the tap perception project.
+
+PiperOrigin-RevId: 433993807
+",feature,release
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,77185940+duncantech@users.noreply.github.com,"Remove old create_instance region tag (#11937)
+
+",other,documentation
+https://github.com/fastai/fastai.git,8515462+albertvillanova@users.noreply.github.com,"Fix cont_cat_split for multi-label classification (#2759)
+
+* Fix cont_cat_split
+
+* Fix cont_cat_split
+
+* Add tests
+
+* Sync lib with notebooks
+
+* Re-run GitHub Actions checks",bug fix,bug fix
+https://github.com/norse/norse.git,anonymous@kip.uni-heidelberg.de,"Project import generated by Copybara.
+
+GitOrigin-RevId: b9c827d72657b5181e14912307bc25e53420d4d1
+",other,other
+https://github.com/hastagAB/Awesome-Python-Scripts.git,frizz925@hotmail.com,"Add pretty CSV script
+",feature,feature
+https://github.com/hanxiao/bert-as-service.git,parsa@aylien.com,Fixing typos in README.md,documentation,documentation
+https://github.com/flairNLP/flair.git,yahshibu@gmail.com,"delete unused import statements
+",refactoring,refactoring
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,apilaskowski@google.com,"Change what we do with manually triggered dag_runs to being pruned too. (#13480)
+
+* Change what we do with manualy triggered dag_runs to being pruned too.
+
+* Fix lint.",other,other
+https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix.git,alyee@ucsd.edu,"Update README.md
+
+Made explicit HTTPS call",documentation,documentation
+https://github.com/explosion/prodigy-recipes.git,christopher.schiefer@atomleap.com,"fixed urls
+",bug fix,documentation
+https://github.com/google-research/google-research.git,canoee@google.com,"Release some detailed contents and MessageRewriteEval dataset from the work of on_device_rewrite to public.
+
+PiperOrigin-RevId: 620334985
+",release,release
+https://github.com/deepfakes/faceswap.git,ganonmaster@users.noreply.github.com,"Migrate dockerfile to use python3 (#34)
+
+",build and dependencies,build and dependencies
+https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix.git,taesung89@gmail.com,"Merge pull request #1546 from mohammedshafeeqet/patch-1
+
+Update Dockerfile",merge,merge
+https://github.com/PaddlePaddle/PARL.git,35895648+zhanghandi@users.noreply.github.com,"add paddle_based AlphaZero (#621)
+
+* add paddle_based AlphaZero
+
+* change file path for paddle_based AlphaZero
+
+* modify README.md and delete submission file
+
+* unify code style
+
+* modify main.py
+
+* modify readme.md
+
+* modify readme.md
+
+* modify readme.md
+
+* modify readme.md
+
+* modify readme.md
+
+* modify readme.md",feature,feature
+https://github.com/keras-team/autokeras.git,wangtaoo665@gmail.com,"add doc strings
+",documentation,documentation
+https://github.com/philipperemy/deep-speaker.git,premy.enseirb@gmail.com,"upgrade to python3.9
+",build and dependencies,build and dependencies
+https://github.com/deepmind/open_spiel.git,ckennelly@google.com,"Optimize calls to std::string::find() and friends for a single char.
+
+The character literal overload is more efficient.
+
+PiperOrigin-RevId: 347913056
+Change-Id: I46fd814b93674c61be920543482528ff41439ea5
+",other,refactoring
+https://github.com/allegroai/trains.git,37040617+omerm25@users.noreply.github.com,"Added synchronous support for upload_artifact() (#231)
+
+Add synchronous support for Artifacts.upload_artifact()",feature,feature
+https://github.com/KevinMusgrave/pytorch-metric-learning.git,s.kolbachev@gmail.com,"Fix MultiSimilarityMiner to support fp16 training
+
+Training fails when MultiSimilarityMiner is used with CosineSimilarity/DotProductSimilarity and fp16 (via autocast):
+```
+File ""/home/lttazz99/miniconda3/envs/qna/lib/python3.7/site-packages/torch/nn/modules/module.py"", line 722, in _call_impl
+result = self.forward(*input, **kwargs)
+File ""/home/lttazz99/miniconda3/envs/qna/lib/python3.7/site-packages/pytorch_metric_learning/miners/base_miner.py"", line 25, in forward
+mining_output = self.mine(embeddings, labels, ref_emb, ref_labels)
+File ""/home/lttazz99/miniconda3/envs/qna/lib/python3.7/site-packages/pytorch_metric_learning/miners/multi_similarity_miner.py"", line 28, in mine
+mat_pos_sorting[a2, n] = pos_ignore
+RuntimeError: value cannot be converted to type at::Half without overflow: 3.40282e+38
+```
+
+Both `embeddings` and `ref_emb` are float32, but returned `mat` has float16 dtype as a product of `torch.matmul` (in autocast). So the dtype of `mat` should be used when creating `pos_ignore` and `neg_ignore`.",bug fix,bug fix
+https://github.com/kornia/kornia.git,42282389+duc12111@users.noreply.github.com,"Feat/randombrightness contrast saturation hue (#1955)
+
+* feature #1836 implement RandomBrightness
+
+* #1955: fixing some docs, mypy error
+
+* [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+for more information, see https://pre-commit.ci
+
+Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>",other,feature
+https://github.com/colearninglounge/co-learning-lounge.git,sajidalimeo04@gmail.com,"Recommendation System (#28)
+
+* added Recommendation System
+
+* Update README.md
+
+* Added Movie Recommendation System
+
+* Add files via upload",other,feature
+https://github.com/athena-team/athena.git,lekai.huang@gmail.com,"[Add] Add convolution module for Transformer.
+",feature,feature
+https://github.com/onnx/tensorflow-onnx.git,765732949@qq.com,"fix sparse_softmax_cross_entropy bug when logits is negative infinity (#1248)
+
+Signed-off-by: liangkaihuan <765732949@qq.com>",bug fix,bug fix
+https://github.com/catalyst-team/catalyst.git,belskikh.aleksandr@gmail.com,"refactor - remove super().__init__() calls from several callbacks
+since the parent class has not __init__() method
+",refactoring,refactoring
+https://github.com/facebookresearch/ParlAI.git,julianser@users.noreply.github.com,"add hred to parlai (#228)
+
+",feature,feature
+https://github.com/interpretml/interpret-community.git,tir.karthi@gmail.com,"Import ABC from collections.abc instead of collections for Python 3 compatibility. (#207)
+
+Signed-off-by: Karthikeyan Singaravelan <tir.karthi@gmail.com>",other,bug fix
+https://github.com/danielegrattarola/spektral.git,kmader@users.noreply.github.com,fixing badge,documentation,documentation
+https://github.com/PaddlePaddle/PARL.git,tangzhiyi11@users.noreply.github.com,"add dqn readme for kunlun (#497)
+
+* add dqn readme for kunlun
+
+* add dqn readme for kunlun",documentation,documentation
+https://github.com/OpenNMT/OpenNMT-py.git,xutai_ma@outlook.com,Update Translator.py,other,other
+https://github.com/deepmipt/DeepPavlov.git,nprokoptsev@gmail.com,"Fix quadratic complexity in ner_f1 (#564)
+
+
+",bug fix,bug fix
+https://github.com/kornia/kornia.git,73064503+weitong8591@users.noreply.github.com,"new E decomposition without svd (#2920)
+
+* new E decomposition without svd
+
+* [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+for more information, see https://pre-commit.ci
+
+* fix the precommit errors
+
+* [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+for more information, see https://pre-commit.ci
+
+* Apply suggestions from code review
+
+Co-authored-by: Edgar Riba <edgar.riba@gmail.com>
+
+* [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+for more information, see https://pre-commit.ci
+
+* fix the shape issue and change torch.cross to linalg
+
+* add xfail and remove torch.linalg.cross as torch-1.9.1 does not support it.
+
+* [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+for more information, see https://pre-commit.ci
+
+---------
+
+Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+Co-authored-by: Edgar Riba <edgar.riba@gmail.com>",feature,feature
+https://github.com/microsoft/nni.git,apatsekin@gmail.com,"Typos in function invocation and exception msg (#1572)
+
+",documentation,documentation
+https://github.com/OpenNMT/OpenNMT-tf.git,jiangxinghuuua@gmail.com,"Fix reporting loss bug (#583)
+
+",bug fix,bug fix
+https://github.com/hasanirtiza/Pedestron.git,dongyanbing@metasota.ai,"Mod: modify the range of bbox in BboxTransform
+",other,other
+https://github.com/magenta/magenta.git,scottzhu@google.com,"Explicitly import estimator from tensorflow as a separate import instead of accessing it via tf.estimator and depend on the tensorflow estimator target.
+
+PiperOrigin-RevId: 436568278
+",other,refactoring
+https://github.com/nicolas-chaulet/torch-points3d.git,leonardo.gigli@mines-paristech.fr,"updated poetry.lock to remove dependency conflicts
+",build and dependencies,build and dependencies
+https://github.com/asappresearch/flambe.git,kswanson@asapp.com,"Fixing auc test case
+",test,test
+https://github.com/asappresearch/flambe.git,will@asapp.com,"add alias param to !BertEmbedder
+",feature,feature

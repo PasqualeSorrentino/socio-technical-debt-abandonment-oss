@@ -160,12 +160,7 @@ print(f"Finestre: {df['time_window_id'].nunique()} "
       f"({df['time_window_id'].min()} -> {df['time_window_id'].max()})")
 
 
-# Risultato dell'esecuzione di riferimento:
-# - 24.916 righe e 76 colonne nel CSV sorgente;
-# - 19 colonne caricate perché sono le sole necessarie alla pipeline;
-# - 332 progetti, 10.416 developer e 154 finestre trimestrali;
-# - circa 2,4 righe per developer: il panel è molto sparso e contiene molti
-#   contributori occasionali.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -212,9 +207,19 @@ print("\n")
 print("STEP 3 — Outcome developer e progetto")
 
 # Ranking cronologico delle finestre trimestrali.
-all_windows = sorted(df['time_window_id'].astype(str).unique())
-window_rank_map = {window: rank for rank, window in enumerate(all_windows)}
-GLOBAL_LAST = window_rank_map[all_windows[-1]]
+# Le finestre di ciascun progetto iniziano in un mese specifico del progetto, per cui
+# il panel contiene 154 finestre distinte. L'indice e' il trimestre di calendario
+# (mesi assoluti / 3) ricavato dalla data di inizio della finestra: due finestre
+# consecutive dello stesso progetto distano sempre 1, e le soglie (4 finestre) valgono
+# davvero dodici mesi. Un rango sull'ordine globale delle 154 finestre accorcerebbe
+# ogni soglia a circa un terzo della sua lunghezza nominale.
+def _quarter_index(window_id):
+    start = str(window_id)[:8]
+    return (int(start[:4]) * 12 + int(start[4:6]) - 1) // 3
+
+_ids = pd.concat([df['time_window_id'], df['last_interaction_window_id']]).dropna().astype(str).unique()
+window_rank_map = {w: _quarter_index(w) for w in _ids}
+GLOBAL_LAST = max(window_rank_map[w] for w in df['time_window_id'].astype(str).unique())
 
 df['time_window_rank'] = df['time_window_id'].astype(str).map(window_rank_map)
 df['last_interaction_rank'] = (
@@ -323,13 +328,7 @@ print(
 )
 print(f"Durata a rischio developer, mediana: {df['obs_duration'].median():.0f} finestre")
 
-# Risultato dell'esecuzione di riferimento:
-# - developer: 85,1% eventi e 14,9% censurati a livello di coppia
-#   progetto-developer;
-# - progetti: 170 INACTIVE e 162 ACTIVE;
-# - la mediana è 11 commit nelle quattro finestre finali, quindi la soglia di
-#   12 produce due classi quasi perfettamente bilanciate.
-# La nuova etichetta non dipende dalla distanza temporale dal cutoff globale.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -472,13 +471,7 @@ desc = (df.groupby('has_failed')[key_cols]
 print(desc.to_string())
 desc.to_csv(OUT_DIR / 'descriptive_stats.csv')
 
-# Risultato dell'esecuzione di riferimento, livello developer:
-# - censurati: 19,99 commit medi e churn medio 13.190;
-# - eventi: 6,55 commit medi e churn medio 4.217;
-# - community smells quasi identici nei due gruppi (0,712);
-# - smell tradizionali e vulnerabilità sono più elevati nei censurati.
-# Le metriche tecniche grezze riflettono quindi soprattutto esposizione e volume
-# di attività: chi continua a contribuire produce anche più codice e più smell.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # Kaplan-Meier per developer
@@ -528,11 +521,7 @@ plt.savefig(OUT_DIR / 'kaplan_meier.png', dpi=150)
 plt.close()
 print("Kaplan-Meier salvato.")
 
-# Risultato Kaplan-Meier:
-# la sopravvivenza individuale diminuisce rapidamente nelle prime finestre,
-# confermando la presenza di molti contributori occasionali. Le curve per team
-# piccoli e grandi rimangono relativamente vicine: la dimensione del progetto
-# non separa nettamente la persistenza del singolo developer.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 # Distribuzione delle feature per ACTIVE vs INACTIVE
 fig, axes = plt.subplots(2, 3, figsize=(15, 9))
@@ -678,16 +667,7 @@ except Exception as e:
 
 
 
-# Risultato dell'esecuzione di riferimento:
-# - 11.360 developer, event rate 85,15%, McFadden R² = 0,109;
-# - rischio maggiore: ratio_smelly_devs OR=1,29, ratio_smelly_quitters
-#   OR=1,27, global_truck OR=1,20, communicability OR=1,11 e bug introdotti
-#   OR=1,18;
-# - protettivi: commit OR=0,67, tenure OR=0,72, project_age OR=0,88,
-#   bug-fix commit OR=0,87 e numero di fusi orari OR=0,91;
-# - smell tradizionali, community smell aggregato, ML smell e vulnerabilità
-#   non risultano significativi.
-# Gli OR sono riferiti a un incremento di una deviazione standard.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -771,13 +751,7 @@ except Exception as e:
 
 
 
-# Risultato dell'esecuzione di riferimento:
-# - 2.791 developer later-stage, 2.001 eventi e 790 censurati;
-# - concordance = 0,888;
-# - rischio: global_truck HR=2,13, turnover HR=1,71, communicability
-#   HR=1,45 e smelly_quitters HR=1,35;
-# - protezione: commit HR=0,65 e tenure HR=0,89;
-# - il debito tecnico non mantiene un'associazione positiva significativa.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 # ─────────────────────────────────────────────
 # STEP 9 — INTERAZIONI SD × TD
@@ -864,10 +838,7 @@ except Exception as e:
     import traceback; traceback.print_exc()
 
 
-# Risultato dell'esecuzione di riferimento:
-# nessuno dei cinque termini SD × TD è significativo (tutti p > 0,37) e la
-# concordance passa soltanto da 0,8879 a 0,8882. Non emerge quindi una sinergia
-# moltiplicativa robusta tra debito sociale e tecnico nel rischio individuale.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -876,7 +847,7 @@ except Exception as e:
 print("\n")
 print("STEP 10 — Analisi a livello progetto: ACTIVE vs INACTIVE")
 
-# SI sale dal livello developer al livello progetto, calcolando metriche medie per progetto e confrontando i 38 ACTIVE contro i 294 FAILED con il test di Mann-Whitney U
+# SI sale dal livello developer al livello progetto, calcolando metriche medie per progetto e confrontando i progetti ACTIVE e INACTIVE con il test di Mann-Whitney U
 
 proj_rows = []
 for proj, grp in df.groupby('project_url'):
@@ -964,16 +935,7 @@ plt.close()
 print("Boxplot salvati.")
 
 
-# Risultato dell'esecuzione di riferimento, 162 ACTIVE vs 170 INACTIVE:
-# - INACTIVE con più community smells: +14,7%, p=0,009;
-# - INACTIVE con più smelly developers: +18,2%, p<0,001;
-# - INACTIVE con minore ST congruence: -29,6%, p<0,001;
-# - INACTIVE con minore network density: -14,2%, p<0,001;
-# - smell tradizionali medi inferiori negli INACTIVE: -18,9%, p=0,035;
-# - turnover, churn, vulnerabilità, ML smell e smelly quitters non differiscono;
-# - la dimensione media è diversa, ma il Mann-Whitney non è significativo
-#   (p=0,224). La nuova definizione non rende più la taglia un discriminante
-#   quasi meccanico come accadeva con la cessazione collettiva.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -1008,12 +970,7 @@ plt.close()
 print("Heatmap salvata.")
 
 
-# Risultato dell'esecuzione di riferimento:
-# la heatmap conferma correlazioni interne tra famiglie di metriche, per
-# esempio community smells/ratio smelly devs e smell tradizionali/
-# vulnerabilità. La relazione lineare diretta con l'abbandono del developer
-# resta invece debole: i modelli temporali e multivariati sono più informativi
-# della sola correlazione di Pearson.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -1062,15 +1019,7 @@ proj_conc.to_csv(OUT_DIR / 'truck_factor_concentration.csv', index=False)
 print("Truck factor salvato.")
 
 
-# Risultato dell'esecuzione di riferimento:
-# - 604 core e 10.756 periferici;
-# - commit mediani 178 vs 2, churn 56.763 vs 57 e file 388 vs 3;
-# - Cliff's delta tra 0,92 e 0,96: concentrazione molto elevata;
-# - abbandono developer: 42,9% nei core e 87,5% nei periferici;
-# - Gini dei commit quasi identico tra progetti ACTIVE e INACTIVE
-#   (0,772 vs 0,769; p=0,56).
-# L'ownership concentrata distingue nettamente core e periferia, ma non
-# discrimina la nuova etichetta commit-based di progetto.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -1108,12 +1057,7 @@ plt.savefig(OUT_DIR / 'thresholds_failure_rate.png', dpi=110); plt.close()
 print("Thresholds salvato.")
 
 
-# Risultato dell'esecuzione di riferimento, outcome developer:
-# - turnover è la sola metrica univariata moderatamente informativa
-#   (AUC=0,608; soglia Youden circa 0,514);
-# - le altre AUC sono vicine o inferiori a 0,50;
-# - l'albero SD/TD raggiunge AUC=0,670, ma è una stima in-sample e va
-#   interpretata come esplorativa, non come prestazione predittiva validata.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -1122,9 +1066,7 @@ print("Thresholds salvato.")
 print("\n")
 print("STEP 14 — Sentiment & Emozioni")
 
-# sentiment_label è degenere: 24.912 "Neutral", 4 "Positive", 0 "Negative".
-# Nel JSON però c'è sentiment_emotions con 6 emozioni (Anger, Fear, Sadness, Love, Joy, Surprise) è stato estratto e usato insieme a sentiment_score e se_score. 
-# Confronto con Mann-Whitney + Cliff's delta.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 print(
     "  sentiment_label degenere (>99.9% Neutral) -> "
@@ -1356,11 +1298,7 @@ plt.close()
 print("Sentiment analysis salvata.")
 
 
-# Risultato dell'esecuzione di riferimento:
-# le differenze emozionali sono statisticamente rilevabili per la numerosità
-# del campione, ma tutte hanno Cliff's delta trascurabile. Solo SE score mostra
-# un effetto piccolo (mediana 2,10 nei censurati vs 0,70 negli eventi;
-# d=0,17). Le emozioni non costituiscono quindi un discriminante sostanziale.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -1415,11 +1353,7 @@ for name, row in _res.iterrows():
 _res.to_csv(OUT_DIR / 'timevarying_cox.csv')
 print("Analisi Cox tempo-variante conclusa")
 
-# Risultato dell'esecuzione di riferimento:
-# turnover corrente aumenta il rischio istantaneo (HR=1,109, p<0,001), mentre
-# commit è fortemente protettivo (HR=0,778). Smell tradizionali e vulnerabilità
-# hanno HR leggermente inferiori a 1: vicino all'uscita misurano soprattutto la
-# riduzione dell'attività, non un effetto protettivo causale del debito.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 # ─────────────────────────────────────────────
 # STEP 16 — FIRMA PRE-FALLIMENTO
@@ -1465,11 +1399,7 @@ ax[1].set_title('Cox tempo-variante — Hazard Ratio')
 plt.tight_layout(); plt.savefig(OUT_DIR / 'prefailure_timevarying.png', dpi=110); plt.close()
 print("Analisi pre-fallimento conclusa")
 
-# Risultato dell'esecuzione di riferimento, 1.460 traiettorie di abbandono:
-# dalla prima all'ultima finestra i commit calano del 30%, gli smell tecnici
-# prodotti del 60% e SE score dell'8%, mentre il turnover cresce del 23%.
-# Community smells rimane stabile (+2%, p=0,48). La firma pre-abbandono è
-# quindi soprattutto un collasso dell'attività accompagnato da turnover.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 # ─────────────────────────────────────────────
 # STEP 17 — LIVELLO PROGETTO, CONTROLLO PER DIMENSIONE
@@ -1526,14 +1456,7 @@ ax[1].set_ylabel('log(1+n_dev)'); ax[1].set_title('Dimensione team (il confonden
 plt.tight_layout(); plt.savefig(OUT_DIR / 'project_size_control.png', dpi=110); plt.close()
 print("Analisi a livello progetto conclusa")
 
-# Risultato dell'esecuzione di riferimento:
-# - classi quasi bilanciate e mediane di taglia vicine: 14 developer negli
-#   ACTIVE e 12 negli INACTIVE;
-# - dopo il controllo per log(n_dev), turnover e smelly quitters cambiano
-#   segno e diventano fattori di rischio (p=0,031 e p=0,043);
-# - community smells aumenta il rischio, mentre ST congruence e le metriche
-#   tecniche mostrano coefficienti negativi. Le direzioni tecniche suggeriscono
-#   ancora un forte effetto di attività/esposizione e non vanno lette causalmente.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 
@@ -1605,15 +1528,7 @@ pd.DataFrame(_rowsL).to_csv(OUT_DIR / 'rq2_project_logit_multivariate.csv', inde
 print("Analisi logit multivariata a livello progetto conclusa")
 
 
-# Risultato dell'esecuzione di riferimento:
-# McFadden R²=0,182. Risultano associati a minori odds di inattività:
-# - ST congruence OR=0,48, p=0,001;
-# - global truck OR=0,41, p<0,001;
-# - traditional smells OR=0,64, p=0,021.
-# Dimensione del team, community smells, ML smells e vulnerabilità non sono
-# significativi nel modello congiunto. Le direzioni protettive di truck e
-# smell tecnici non sono coerenti con una semplice ipotesi "più debito = più
-# inattività" e richiedono cautela interpretativa.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -1636,12 +1551,7 @@ print("Analisi Cox a livello progetto conclusa")
 
 
 
-# Risultato dell'esecuzione di riferimento:
-# concordance=0,727. Team più grandi raggiungono più lentamente l'evento
-# commit-based (HR=0,60, p<0,001); ML smells è associato a HR=0,79 (p=0,008).
-# Gli altri fattori socio-tecnici non sono significativi. Il risultato è
-# diverso dal Logit perché il Cox considera anche la durata fino all'ultimo
-# commit e tratta gli ACTIVE come censurati.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
@@ -1712,12 +1622,7 @@ except Exception as _e:
     print("  (grafico confronto saltato)")
 print("Confronto tra Step 18-19-20 completato.")
 
-# Risultato dell'esecuzione di riferimento:
-# nel Cox tempo-variante global_truck (HR=0,85, p<0,001) e log_n_dev
-# (HR=0,86, p=0,001) risultano protettivi; le altre covariate non sono
-# significative. La divergenza rispetto al Logit e al Cox statico mostra che
-# le conclusioni di progetto sono sensibili alla forma temporale del modello,
-# non che esista necessariamente un effetto cumulativo univoco.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -1813,66 +1718,7 @@ plt.tight_layout(); plt.savefig(OUT_DIR / 'rq2_robustness_scale.png', dpi=110); 
 print("Step 21 (RQ2 robustezza scala) completato.")
 
 
-# RISULTATI FINALI DELL'ESECUZIONE COMMIT-BASED
-# ================================================================
-#
-# RQ1 — Quali fattori aumentano il rischio di abbandono del developer?
-# ----------------------------------------------------------------
-# L'unità è la coppia progetto-developer; l'evento è l'interruzione almeno
-# quattro finestre prima dell'orizzonte del proprio progetto.
-#
-# Evidenze convergenti:
-# - Logit early-stage: ratio smelly devs, smelly quitters, global truck,
-#   communicability e bug introdotti aumentano le odds; commit e tenure sono
-#   protettivi (McFadden R²=0,109).
-# - Cox later-stage: global truck HR=2,13, turnover HR=1,71,
-#   communicability HR=1,45 e smelly quitters HR=1,35; commit HR=0,65 e tenure
-#   HR=0,89 (concordance=0,888).
-# - Cox tempo-variante: turnover corrente HR=1,109; commit HR=0,778.
-# - Firma pre-abbandono: turnover +23%, commit -30%, smell tecnici prodotti
-#   -60% e SE score -8%.
-# - Nessuna interazione SD × TD è significativa; sentiment ed emozioni hanno
-#   effetti sostanzialmente trascurabili.
-#
-# Risposta RQ1:
-# il segnale più coerente è sociale e dinamico: turnover, fragilità della rete
-# e uscita di smelly developers accompagnano l'abbandono. Il debito tecnico
-# statico non predice in modo robusto l'uscita individuale; vicino all'evento
-# diminuisce insieme all'attività.
-#
-# RQ2 — Quali fattori distinguono i progetti ACTIVE dagli INACTIVE?
-# ----------------------------------------------------------------
-# L'unità è il progetto. INACTIVE significa meno di 12 commit nelle quattro
-# finestre terminanti con il commit più recente. Risultano 170 INACTIVE e 162
-# ACTIVE, senza ulteriori vincoli temporali.
-#
-# Evidenze:
-# - confronto descrittivo: INACTIVE ha più community smells e smelly devs,
-#   ma minore ST congruence, density e traditional smells; molte differenze
-#   non sono significative e la dimensione non separa nettamente i gruppi;
-# - Logit multivariato: ST congruence, global truck e traditional smells sono
-#   associati a odds inferiori di inattività; log_n_dev non è significativo;
-# - Cox statico: log_n_dev e ML smells hanno HR<1, mentre gli altri fattori non
-#   risultano significativi;
-# - Cox tempo-variante: global truck e log_n_dev hanno HR<1;
-# - robustezza con scala estesa: nel Logit restano global truck, community
-#   smells e traditional smells, ma nel Cox tutti i fattori socio-tecnici
-#   diventano non significativi; domina log_n_windows (HR=0,33).
-#
-# Risposta RQ2:
-# con la definizione commit-based non emerge un insieme stabile di metriche
-# socio-tecniche che predica l'inattività in tutti i modelli. Alcune
-# associazioni compaiono nel Logit, ma cambiano o scompaiono nei modelli di
-# sopravvivenza e dopo i controlli di scala. La conclusione più prudente è che
-# la bassa attività recente non è spiegata da una singola misura di debito:
-# la relazione è sensibile al modello, alla scala e alla storia del progetto.
-#
-# Implicazione metodologica:
-# la nuova definizione elimina la precedente dipendenza meccanica tra progetto
-# fallito e assenza collettiva dei developer, produce classi bilanciate e rende
-# più credibile il confronto di progetto. Al tempo stesso, poiché l'outcome è
-# costruito con i commit recenti, le misure di attività basate sugli stessi
-# commit devono restare escluse dai predittori per evitare leakage.
+# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
 
 
 # ─────────────────────────────────────────────
