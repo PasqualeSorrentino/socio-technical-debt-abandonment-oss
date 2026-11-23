@@ -52,8 +52,6 @@ maintenance_or_merge_only_dormant_pct        62.280702
 maintenance_or_merge_only_active_pct         35.321101
 dormant_projects_with_end_of_life_message            1
 end_of_life_projects                         nussl.git
-Codebook vs manual coding (desc_codebook_validation_manual.csv, n=303): agreement 0.911, kappa 0.901
-Codebook vs manual coding (desc_codebook_holdout_manual.csv, n=150): agreement 0.800, kappa 0.761
 
 Trajectories:
    trajectory  projects  median_first_fifth_share_pct  dormant_v2_pct  dormant_v1_pct  median_debt_index

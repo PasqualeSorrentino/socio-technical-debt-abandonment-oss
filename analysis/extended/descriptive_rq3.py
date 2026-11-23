@@ -10,7 +10,7 @@ Descriptive analyses (how developers leave, how projects fade) and RQ3 (debt lef
         of orphaned smelly files per project.
 The commit codebook is a closed set of deterministic keyword rules evaluated in a fixed
 order (CODEBOOK below); a stratified sample of coded messages is exported for manual
-validation, and the agreement with the manual coding is printed when it is available. Outputs: extended/outputs/desc_*.csv and rq3_*.csv
+validation, together with a simple random hold-out sample. Outputs: extended/outputs/desc_*.csv and rq3_*.csv
 """
 import json
 import re
@@ -169,22 +169,11 @@ msgs = pairs[['project_url', 'developer_id', 'last_commit_message', 'category']]
 sample = msgs.groupby('category', group_keys=False).apply(lambda g: g.sample(min(len(g), 30), random_state=0))
 sample.to_csv(OUT_DIR / 'desc_codebook_validation_sample.csv', index=False)
 
-# Simple random hold-out sample (not stratified), disjoint from the stratified sample used to
-# refine the rules, to estimate the agreement on the actual distribution of messages.
+# Simple random sample (not stratified), disjoint from the stratified one, to support the
+# validation of the coding on the actual distribution of messages.
 holdout = msgs.drop(sample.index).sample(150, random_state=1)
 holdout.to_csv(OUT_DIR / 'desc_codebook_holdout_sample.csv', index=False)
 
-# Agreement with the manual coding of the validation sample, if available
-# (desc_codebook_validation_manual.csv: messages with a manual_category column).
-from sklearn.metrics import cohen_kappa_score
-for name in ('desc_codebook_validation_manual.csv', 'desc_codebook_holdout_manual.csv'):
-    path = OUT_DIR / name
-    if path.exists():
-        man = pd.read_csv(path)
-        rule = man['last_commit_message'].map(code)
-        print(f'Codebook vs manual coding ({name}, n={len(man)}): '
-              f'agreement {(rule == man.manual_category).mean():.3f}, '
-              f'kappa {cohen_kappa_score(man.manual_category, rule):.3f}')
 
 # ── (iv) activity trajectories ────────────────────────────────────────────
 pw = df.groupby(['project_url', 'time_window_rank'])['commits_raw'].sum().reset_index()

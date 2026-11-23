@@ -190,7 +190,7 @@ for the extended analyses.
 | Contrasting cases | extended/descriptive_rq3.py | `desc_contrasting_cases*.csv` |
 | RQ3 — debt left behind, orphaned debt and permutation baseline | extended/descriptive_rq3.py | `rq3_debt_left_behind.csv`, `rq3_orphaned_share_by_project.csv` |
 | Table 5 — RQ3, community after a core departure (event study) | extended/rq3_social.py | `rq3_social_event_study.csv`, `rq3_social_counts.csv` |
-| Codebook validation samples (stratified 303, random hold-out 150) and manual coding | extended/descriptive_rq3.py | `desc_codebook_validation_sample.csv`, `desc_codebook_holdout_sample.csv`, `desc_codebook_*_manual.csv` |
+| Codebook validation samples (stratified and random) | extended/descriptive_rq3.py | `desc_codebook_validation_sample.csv`, `desc_codebook_holdout_sample.csv` |
 | VIF-based variable selection | v2-maintenance-based | `vif_results.csv` |
 
 > Some output files and column names still carry the earlier wording (`proj_failed`,
