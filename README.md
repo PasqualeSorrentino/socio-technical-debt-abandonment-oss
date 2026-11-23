@@ -2,7 +2,7 @@
 
 ### Socio-Technical Debt, Developer Departure, and Project Dormancy in Open-Source Machine Learning
 
-Replication package for the paper by **Pasquale Sorrentino, Giammaria Giordano and Fabio Palomba** -
+Replication package for the paper by **Giammaria Giordano, Pasquale Sorrentino and Fabio Palomba** -
 Software Engineering (SeSa) Lab, Department of Computer Science, University of Salerno, Italy.
 
 ---
@@ -236,7 +236,7 @@ smells), **Bandit** (security weaknesses), the **RSZZ** variant of SZZ (bug-indu
 @article{developers_leave,
   title   = {Developers Leave, Projects Fade: Socio-Technical Debt, Developer Abandonment
              and Project Dormancy in Open-Source Machine Learning Projects},
-  author  = {Sorrentino, Pasquale and Giordano, Giammaria and Palomba, Fabio},
+  author  = {Giordano, Giammaria and Sorrentino, Pasquale and Palomba, Fabio},
   note    = {Software Engineering (SeSa) Lab, University of Salerno}
 }
 ```
@@ -245,10 +245,10 @@ smells), **Bandit** (security weaknesses), the **RSZZ** variant of SZZ (bug-indu
 
 | | Role | GitHub |
 |---|---|---|
-| **Pasquale Sorrentino** | Formal analysis, investigation, data curation, writing | [@<handle-sorrentino>](https://github.com/PasqualeSorrentino) |
 | **Giammaria Giordano** | Conceptualization, methodology, supervision | [@<handle-giordano>](https://github.com/giammariagiordano) |
+| **Pasquale Sorrentino** | Formal analysis, investigation, data curation, writing | [@<handle-sorrentino>](https://github.com/PasqualeSorrentino) |
 | **Fabio Palomba** | Supervision, resources, review |  |
 
 ## Contact
 
-Corresponding author: Giammaria Giordano - `giagiordano@unisa.it`
+Corresponding author: Giammaria Giordano - `giammaria.giordano@unipegaso.it`
