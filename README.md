@@ -1,6 +1,6 @@
-# Developers Leave, Projects Fade
+# Without Me
 
-### Socio-Technical Debt, Developer Departure, and Project Dormancy in Open-Source Machine Learning
+### How Open-Source Projects Fade When Developers Leave
 
 Replication package for the paper by **Giammaria Giordano, Pasquale Sorrentino and Fabio Palomba** -
 Software Engineering (SeSa) Lab, Department of Computer Science, University of Salerno, Italy.
@@ -9,15 +9,15 @@ Software Engineering (SeSa) Lab, Department of Computer Science, University of S
 
 ## Abstract
 
-**Context.** The continuity of open-source software depends on the voluntary participation of contributors: developers leave, and many projects fade until nobody maintains them. The causes may lie in *socio-technical debt*, which combines *social debt* and *technical debt*.
+**Context.** The continuity of open-source software depends on the voluntary participation of contributors: developers leave, and many projects fade until nobody maintains them. A widespread intuition blames *socio-technical debt*, which combines *social debt* and *technical debt*: projects accumulate debt, developers leave, and the project dies.
 
-**Objective.** The two forms of debt are known to be related in terms of code quality. We investigate whether they are also associated with the departure of developers and the dormancy of projects, how much the answer depends on the definition of project dormancy, and how exits unfold.
+**Objective.** We test this intuition by investigating how developers leave and projects fade, what role socio-technical debt plays in it, and how much the answer depends on the definition of project dormancy.
 
-**Method.** We analyze 332 engineered open-source ML projects from NICHE and 10,416 developers over quarterly windows. We model developer departure and project dormancy with logistic regression and (time-varying) Cox models, rebuild departure-based metrics in a lagged leave-one-out form, and compare temporal, maintenance-based, and combined definitions of project dormancy, controlling for scale and age. Robustness checks cover developer role, bots, proportional hazards, and within-project comparisons. A descriptive analysis covers the last activity of developers and projects and the fate of the debt left behind.
+**Method.** We analyze 332 engineered open-source projects from NICHE, a curated dataset of Python projects built on machine learning frameworks, and 10,416 developers over quarterly windows. We model developer departure and project dormancy with logistic regression and (time-varying) Cox models, rebuild departure-based metrics in a lagged leave-one-out form, run an event study around core departures, and compare temporal, maintenance-based, and combined definitions of dormancy, controlling for scale and age. A descriptive analysis covers the last activity of developers and projects and the fate of the debt left behind.
 
-**Results.** Developer departure is associated with social rather than technical debt, and it is more likely where others have left. Higher team turnover and ratio of smelly quitters are associated with a higher risk of departure even when computed on the previous departures of other developers; the association distinguishes projects rather than unfolding as a chain within a project. Leavers are mostly casual contributors affected by smells of isolation, and core developers leave more often where the peripheral community is larger. Code smells and vulnerabilities are not associated with departure, but the debt they leave behind is rarely taken over and becomes orphaned in dormant projects, to the extent that the number of departures alone would imply. Projects fade through a long, unannounced tail of maintenance-only activity. Once scale is controlled, no socio-technical factor distinguishes projects that fade from those that stop while still maintained; under temporal definitions, technical debt relates to how early a project stops, not to whether it is still active once its age is controlled.
+**Results.** Developer departure is associated with social debt indicators that describe the departures of others and the structure of the community, not with the number of community smells nor with technical debt. A developer is more likely to leave where others, especially smelly contributors, have left, even when only previous departures of other developers are counted; this distinguishes projects from one another rather than unfolding within a project. Leavers are mostly casual contributors affected by smells of isolation. Technical debt is not associated with departure, but the debt of those who leave is rarely taken over and becomes orphaned in dormant projects, as much as the number of departures alone would imply. After a core departure, the community is smaller and sparser, but not smellier. Projects fade through a long, unannounced tail of maintenance-only activity; once scale is controlled, no socio-technical factor distinguishes projects that fade from those that stop while still maintained, and under temporal definitions technical debt relates to how early a project stops, not to whether it is still active.
 
-**Conclusion.** Social debt is associated with who leaves, technical debt with what remains, and project dormancy with maintenance continuity. Conclusions on project dormancy depend on how it is defined.
+**Conclusion.** Departures cluster, debt stays behind, and projects fade when maintenance is no longer shared rather than because of the debt they carry. Conclusions on project dormancy depend on how it is defined.
 
 **Keywords:** Social Debt, Technical Debt, Community Smells, Open-Source Sustainability, Survival
 Analysis, Empirical Software Engineering.
