@@ -25,7 +25,15 @@ BASE_DIR = Path(__file__).resolve().parent
 # Share of a project's commits covered by its core developers (main analysis: 0.50).
 # Set CORE_THRESHOLD=0.8 to run the sensitivity analysis; its outputs go to outputs_core80/.
 CORE_THRESHOLD = float(os.environ.get('CORE_THRESHOLD', '0.5'))
-OUT_DIR = BASE_DIR / ('outputs' if CORE_THRESHOLD == 0.5 else f'outputs_core{int(round(CORE_THRESHOLD * 100))}')
+# Inactivity threshold (in windows) used to label the departure of CORE developers only
+# (main analysis: 4, as for everybody else). Set CORE_DEPARTURE_WINDOWS=8 to run the
+# sensitivity analysis on the departure threshold of core developers, whose four-window
+# absences end with a return far more often; its outputs go to outputs_coredep8/.
+CORE_DEPARTURE_WINDOWS = int(os.environ.get('CORE_DEPARTURE_WINDOWS', '4'))
+_suffix = ('' if CORE_THRESHOLD == 0.5 else f'_core{int(round(CORE_THRESHOLD * 100))}') + \
+          ('' if CORE_DEPARTURE_WINDOWS == 4 else f'_coredep{CORE_DEPARTURE_WINDOWS}')
+OUT_DIR = BASE_DIR / ('outputs' + _suffix)
+SENSITIVITY_RUN = bool(_suffix)
 OUT_DIR.mkdir(exist_ok=True, parents=True)
 
 
@@ -194,7 +202,52 @@ def add_core_flags(df):
             cut = (g['commits'].cumsum() / tot >= CORE_THRESHOLD).values.argmax()
             g.iloc[:cut + 1, g.columns.get_loc('is_core')] = 1
         flags.append(g[['project_url', 'developer_id', 'is_core']])
-    return df.merge(pd.concat(flags), on=['project_url', 'developer_id'], how='left')
+    df = df.merge(pd.concat(flags), on=['project_url', 'developer_id'], how='left')
+    if CORE_DEPARTURE_WINDOWS != INACTIVITY_THRESHOLD:
+        # Relabel the departure of core developers with their own threshold; the
+        # duration of a core developer who is no longer labeled as departed runs to
+        # the horizon of the project (right-censoring), exactly as for everybody else.
+        core = df['is_core'] == 1
+        dev_first = df.groupby(['project_url', 'developer_id'])['time_window_rank'].transform('min')
+        dev_last = df.groupby(['project_url', 'developer_id'])['last_interaction_rank'].transform('max')
+        failed = (df['inactivity_lag'] >= CORE_DEPARTURE_WINDOWS).astype(int)
+        dur = np.where(failed == 1, dev_last - dev_first, df['project_last_observed_rank'] - dev_first) + 1
+        df.loc[core, 'has_failed'] = failed[core]
+        df.loc[core, 'obs_duration'] = dur[core]
+    return df
+
+
+def add_loo_metrics(df):
+    """Lagged leave-one-out turnover, core turnover and ratio of smelly quitters (needs add_core_flags).
+
+    For a developer i active in window t: share of the other developers active in t-1 who
+    left the project for good after t-1 (restricted to core developers for core turnover),
+    and share of those leavers affected by at least one community smell in their last window.
+    """
+    pair_last = df.groupby(['project_url', 'developer_id'])['time_window_rank'].transform('max')
+    df['_leaves_after'] = ((df['time_window_rank'] == pair_last) & (df['has_failed'] == 1)).astype(int)
+    df['_smelly_leaver'] = df['_leaves_after'] * (df['community_smell_raw'] > 0).astype(int)
+    w = df.groupby(['project_url', 'time_window_rank']).agg(
+        n=('developer_id', 'size'), lv=('_leaves_after', 'sum'), slv=('_smelly_leaver', 'sum'),
+        n_core=('is_core', 'sum'),
+        lv_core=('_leaves_after', lambda s: int((s * df.loc[s.index, 'is_core']).sum()))).reset_index()
+    w['time_window_rank'] += 1  # window t-1 seen from window t
+    df = df.merge(w, on=['project_url', 'time_window_rank'], how='left')
+    for c in ['n', 'lv', 'slv', 'n_core', 'lv_core']:
+        df[c] = df[c].fillna(0)
+    # Leave-one-out: remove developer i from the t-1 counts if i was active in t-1
+    # (i is active in t, so i is never among the leavers of t-1).
+    prev = df[['project_url', 'developer_id', 'time_window_rank']].copy()
+    prev['time_window_rank'] += 1
+    prev['_i_in_prev'] = 1
+    df = df.merge(prev, on=['project_url', 'developer_id', 'time_window_rank'], how='left')
+    df['_i_in_prev'] = df['_i_in_prev'].fillna(0)
+    den = df['n'] - df['_i_in_prev']
+    den_core = df['n_core'] - df['_i_in_prev'] * df['is_core']
+    df['loo_turnover'] = np.where(den > 0, df['lv'] / den.where(den > 0, 1), 0.0)
+    df['loo_core_turnover'] = np.where(den_core > 0, df['lv_core'] / den_core.where(den_core > 0, 1), 0.0)
+    df['loo_smelly_quitters'] = np.where(df['lv'] > 0, df['slv'] / df['lv'].where(df['lv'] > 0, 1), 0.0)
+    return df
 
 
 def add_bot_flags(df):
@@ -229,6 +282,8 @@ def check_main_model(df, feat_model):
     from lifelines import CoxPHFitter
     p = later_stage_panel(df, feat_model)
     feats = [f for f in feat_model if p[f].std() > 0]
+    if SENSITIVITY_RUN and CORE_DEPARTURE_WINDOWS != INACTIVITY_THRESHOLD:
+        return feats  # the core relabeling changes the outcome, so Table 2 is not expected
     cph = CoxPHFitter(penalizer=0.1).fit(p[feats + ['duration', 'event']], 'duration', 'event')
     hr = cph.summary['exp(coef)']
     expected = {'stqf_global_truck': 2.44, 'stqf_ratio_smelly_quitters': 1.86,

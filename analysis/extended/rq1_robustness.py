@@ -21,7 +21,7 @@ from lifelines.statistics import proportional_hazard_test
 from statsmodels.stats.multitest import multipletests
 
 from panel import (OUT_DIR, EARLY_STAGE_WINDOWS, INACTIVITY_THRESHOLD, load_panel, add_core_flags,
-                   add_bot_flags, later_stage_panel, early_stage_panel, check_main_model, fmt_p)
+                   add_bot_flags, add_loo_metrics, later_stage_panel, early_stage_panel, check_main_model, fmt_p)
 
 KEY = ['stqf_global_truck', 'stqf_ratio_smelly_quitters', 'stqf_global_turnover',
        'stqf_core_code_turnover', 'stqf_ratio_sponsored', 'log_traditional_smell_count',
@@ -58,30 +58,7 @@ def fit_cox(panel, feats, spec, **kw):
 
 # ── Lagged leave-one-out metrics ────────────────────────────────────────────
 print('Building lagged leave-one-out metrics...')
-pair_last = df.groupby(['project_url', 'developer_id'])['time_window_rank'].transform('max')
-df['_leaves_after'] = ((df['time_window_rank'] == pair_last) & (df['has_failed'] == 1)).astype(int)
-df['_smelly_leaver'] = df['_leaves_after'] * (df['community_smell_raw'] > 0).astype(int)
-w = df.groupby(['project_url', 'time_window_rank']).agg(
-    n=('developer_id', 'size'), lv=('_leaves_after', 'sum'), slv=('_smelly_leaver', 'sum'),
-    n_core=('is_core', 'sum'),
-    lv_core=('_leaves_after', lambda s: int((s * df.loc[s.index, 'is_core']).sum()))).reset_index()
-w['time_window_rank'] += 1  # window t-1 seen from window t
-df = df.merge(w, on=['project_url', 'time_window_rank'], how='left')
-for c in ['n', 'lv', 'slv', 'n_core', 'lv_core']:
-    df[c] = df[c].fillna(0)
-# Leave-one-out: remove developer i from the t-1 counts if i was active in t-1
-# (i is active in t, so i is never among the leavers of t-1).
-prev = df[['project_url', 'developer_id', 'time_window_rank']].copy()
-prev['time_window_rank'] += 1
-prev['_i_in_prev'] = 1
-df = df.merge(prev, on=['project_url', 'developer_id', 'time_window_rank'], how='left')
-df['_i_in_prev'] = df['_i_in_prev'].fillna(0)
-core_prev = df[['project_url', 'developer_id', 'time_window_rank', 'is_core']]
-den = df['n'] - df['_i_in_prev']
-den_core = df['n_core'] - df['_i_in_prev'] * df['is_core']
-df['loo_turnover'] = np.where(den > 0, df['lv'] / den.where(den > 0, 1), 0.0)
-df['loo_core_turnover'] = np.where(den_core > 0, df['lv_core'] / den_core.where(den_core > 0, 1), 0.0)
-df['loo_smelly_quitters'] = np.where(df['lv'] > 0, df['slv'] / df['lv'].where(df['lv'] > 0, 1), 0.0)
+df = add_loo_metrics(df)
 corr = {orig: df[orig].corr(df[new]) for orig, new in LOO.items()}
 print('  correlation with the original metrics: ' + ', '.join(f'{k}={v:.2f}' for k, v in corr.items()))
 pd.DataFrame([{'metric': k, 'loo_metric': LOO[k], 'pearson_r_row_level': v} for k, v in corr.items()]

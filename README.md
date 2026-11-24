@@ -148,6 +148,7 @@ python analysis/extended/rq2_extras.py
 python analysis/extended/descriptive_rq3.py
 python analysis/extended/rq3_social.py
 python analysis/extended/rq1_extra.py   # after rq1_robustness.py; needs R with the survival package
+python analysis/extended/rq1_signature_loo.py   # Figure 2 with the lagged leave-one-out turnover
 ```
 
 `rq1_extra.py` adds the gamma-frailty Cox model (through `frailty_cox.R`), the models that
@@ -157,6 +158,12 @@ models. If `Rscript` is not on the path, the frailty model is skipped.
 
 To repeat the role-based analyses with an 80% core threshold, prefix the extended scripts with
 `CORE_THRESHOLD=0.8`; outputs go to `analysis/extended/outputs_core80/`.
+
+To repeat them with a departure threshold of eight windows (two years) for core developers
+only, prefix `rq1_robustness.py`, `descriptive_rq3.py` and `rq3_social.py` with
+`CORE_DEPARTURE_WINDOWS=8`; outputs go to `analysis/extended/outputs_coredep8/`
+(copy `outputs/rq2_project_labels.csv` there first, since `descriptive_rq3.py` reuses it).
+In this run the check against Table 2 is skipped, because the relabeling changes the outcome.
 
 Each pipeline takes well under a minute once the panel is loaded. `rq1_robustness.py` first
 re-estimates Table 2 and stops if it does not match the paper, so every extended analysis is

@@ -1,0 +1,274 @@
+,cluster,trajectory,first_fifth_share,debt_index,proj_failed,v1,cluster2
+https://github.com/AICoE/prometheus-anomaly-detector.git,0,early peak,0.7658227848101266,-0.36625450905016754,1,1,1
+https://github.com/ARM-software/CMSIS_5.git,1,sustained,0.25078698845750264,-0.793578694563977,0,1,0
+https://github.com/Adlik/Adlik.git,1,sustained,0.19382022471910113,0.09090997948255647,0,1,0
+https://github.com/BachiLi/redner.git,1,sustained,0.3590308370044053,-0.44527230251191635,1,1,0
+https://github.com/Belval/TextRecognitionDataGenerator.git,1,sustained,0.28205128205128205,0.9807256660574326,0,1,0
+https://github.com/BloodAxe/pytorch-toolbelt.git,1,sustained,0.2737373737373737,0.5791427753183092,0,1,0
+https://github.com/CLUEbenchmark/CLUE.git,2,initial burst,0.8918406072106262,-0.6488824590465934,1,1,1
+https://github.com/Cadene/bootstrap.pytorch.git,1,sustained,0.3487394957983193,-0.3779894868439382,0,1,0
+https://github.com/Calamari-OCR/calamari.git,1,sustained,0.3667621776504298,0.5011494388150068,0,1,0
+https://github.com/CorentinJ/Real-Time-Voice-Cloning.git,0,early peak,0.8087248322147651,0.08630318378965746,1,0,1
+https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit.git,1,sustained,0.041638225255972695,-0.21656106985897144,0,0,0
+https://github.com/DSE-MSU/DeepRobust.git,2,initial burst,0.7972027972027972,-0.10004551561875043,1,0,1
+https://github.com/DagnyT/hardnet.git,2,initial burst,0.8691588785046729,0.1679829932631401,1,0,1
+https://github.com/DigitalSlideArchive/HistomicsTK.git,0,early peak,0.5559714188499489,-0.6888932522838545,0,1,1
+https://github.com/EdinburghNLP/nematus.git,1,sustained,0.10817610062893082,-0.28980649719383017,0,1,0
+https://github.com/EpistasisLab/tpot.git,1,sustained,0.3028571428571428,-0.04885471623489143,0,0,0
+https://github.com/FunctionLab/selene.git,1,sustained,0.15415549597855227,-0.15865748931746873,0,1,0
+https://github.com/GRAAL-Research/poutyne.git,1,sustained,0.23466666666666666,0.3681550695085146,0,1,0
+https://github.com/GoogleCloudPlatform/healthcare.git,1,sustained,0.47461629279811096,-0.504703510003489,0,1,0
+https://github.com/GoogleCloudPlatform/ml-on-gcp.git,1,sustained,0.3723404255319149,0.0918797755392877,1,1,0
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,1,sustained,0.021499079805922704,-0.5897837512299977,0,0,0
+https://github.com/GoogleCloudPlatform/tensorflow-without-a-phd.git,1,sustained,0.24541284403669728,-0.23261008440216657,0,1,0
+https://github.com/Ha0Tang/AttentionGAN.git,2,initial burst,0.9344978165938864,-0.5582213854066372,1,1,1
+https://github.com/Ha0Tang/GestureGAN.git,1,sustained,0.75,0.4184937414831395,1,1,0
+https://github.com/Ha0Tang/SelectionGAN.git,0,early peak,0.8883248730964466,-0.5477053938367926,1,1,1
+https://github.com/HazyResearch/fonduer.git,1,sustained,0.0547945205479452,0.5804750094040235,0,1,0
+https://github.com/HumanCompatibleAI/adversarial-policies.git,2,initial burst,0.9300847457627119,0.07239843255408146,1,1,1
+https://github.com/IBM/AIX360.git,0,early peak,0.4628751974723539,-0.4254342976874461,0,0,1
+https://github.com/IBM/lale.git,1,sustained,0.3842139595564253,-0.7398061725490134,0,0,0
+https://github.com/JayYip/bert-multitask-learning.git,0,early peak,0.48598130841121495,0.8964027407995395,1,1,0
+https://github.com/Kaixhin/Rainbow.git,0,early peak,0.6770186335403726,-0.22807006952872413,1,1,1
+https://github.com/KaiyangZhou/deep-person-reid.git,0,early peak,0.5970982142857143,0.3625163475532305,0,1,0
+https://github.com/KevinMusgrave/powerful-benchmarker.git,1,sustained,0.2681564245810056,1.031093080829534,0,1,0
+https://github.com/KevinMusgrave/pytorch-metric-learning.git,1,sustained,0.43146417445482865,0.23906047656415072,0,0,0
+https://github.com/LPDI-EPFL/masif.git,0,early peak,0.6477272727272727,0.34941770095432456,1,1,1
+https://github.com/LiberAI/NSpM.git,1,sustained,0.480225988700565,-0.885481469666322,0,1,0
+https://github.com/LoSealL/VideoSuperResolution.git,1,sustained,0.3574561403508772,0.10683939484729249,0,1,0
+https://github.com/Lyken17/pytorch-OpCounter.git,1,sustained,0.4526315789473684,0.014997488129728162,0,1,0
+https://github.com/MAIF/melusine.git,1,sustained,0.3349875930521092,0.139194045721586,0,0,0
+https://github.com/MIC-DKFZ/nnUNet.git,1,sustained,0.23389830508474574,-0.011421737723629075,0,0,0
+https://github.com/MIC-DKFZ/trixi.git,1,sustained,0.3546875,-0.24631860017612275,0,1,0
+https://github.com/MIPT-Oulu/solt.git,0,early peak,0.5259593679458239,0.6488343130544338,0,0,1
+https://github.com/MarcSkovMadsen/awesome-streamlit.git,2,initial burst,0.9936842105263158,0.23605811203572888,1,1,1
+https://github.com/MaybeShewill-CV/CRNN_Tensorflow.git,1,sustained,0.5335689045936396,-0.019612214293063313,1,1,0
+https://github.com/MaybeShewill-CV/lanenet-lane-detection.git,0,early peak,0.5670103092783505,-0.46236560743162497,1,1,1
+https://github.com/MegviiDetection/video_analyst.git,1,sustained,0.7380025940337224,-0.16823150892641434,1,1,0
+https://github.com/Mini-Conf/Mini-Conf.git,2,initial burst,0.9432624113475178,0.37378200480167567,1,1,1
+https://github.com/MisaOgura/flashtorch.git,2,initial burst,0.9448818897637796,0.30888145871794187,1,1,1
+https://github.com/MrGiovanni/ModelsGenesis.git,2,initial burst,0.7216117216117216,-0.045981469825357696,1,0,1
+https://github.com/MycroftAI/mycroft-precise.git,0,early peak,0.5598591549295775,-0.1326897347620138,0,1,1
+https://github.com/NLeSC/mcfly.git,0,early peak,0.4865156418554477,-0.4829502120545329,0,0,1
+https://github.com/NVIDIA/Megatron-LM.git,1,sustained,0.06676470588235293,-1.2115009423012675,0,0,0
+https://github.com/NVIDIA/tacotron2.git,0,early peak,0.5,0.21967736239647645,0,1,1
+https://github.com/NVIDIAGameWorks/kaolin.git,1,sustained,0.3394736842105263,0.6888469136079638,0,0,0
+https://github.com/NVISO-BE/ee-outliers.git,1,sustained,0.7177514792899409,-0.8769679570362505,0,1,0
+https://github.com/NervanaSystems/distiller.git,0,early peak,0.6329704510108864,0.14966281962345873,1,1,0
+https://github.com/NeuromorphicProcessorProject/snn_toolbox.git,0,early peak,0.5948406676783005,0.31145305444201676,1,1,1
+https://github.com/OUCMachineLearning/OUCML.git,1,sustained,0.4525993883792049,-0.48004024933606976,0,1,0
+https://github.com/Open-Debin/Emotion-FAN.git,2,initial burst,0.587719298245614,-0.08202558586066322,0,1,1
+https://github.com/OpenNMT/OpenNMT-py.git,1,sustained,0.5841105354058722,0.24016156025482496,0,1,0
+https://github.com/OpenNMT/OpenNMT-tf.git,1,sustained,0.3305541932319765,-0.04847559539053743,0,1,0
+https://github.com/PacktPublishing/Advanced-Deep-Learning-with-Keras.git,0,early peak,0.6784922394678492,-0.31038714683235935,0,1,1
+https://github.com/PacktPublishing/Deep-Reinforcement-Learning-Hands-On.git,2,initial burst,0.9741666666666666,-0.3727554080186748,1,0,1
+https://github.com/PaddlePaddle/PARL.git,1,sustained,0.2147001934235977,0.3201213976714687,1,0,0
+https://github.com/PetrochukM/PyTorch-NLP.git,2,initial burst,0.7516629711751663,0.060798487662209286,1,1,1
+https://github.com/PhoenixDL/rising.git,0,early peak,0.8655555555555556,0.45997855503883434,0,1,1
+https://github.com/adobe/antialiased-cnns.git,2,initial burst,0.6081871345029239,-0.6579124096715714,0,1,1
+https://github.com/advboxes/AdvBox.git,0,early peak,0.8015873015873016,-0.30170226527405813,1,1,1
+https://github.com/aimacode/aima-python.git,1,sustained,0.020168067226890758,-0.3865082096279484,1,1,0
+https://github.com/alfredfrancis/ai-chatbot-framework.git,0,early peak,0.6523605150214593,-0.061514903758638995,0,0,1
+https://github.com/alibaba/ai-matrix.git,1,sustained,0.137123745819398,-0.7457563695032401,0,1,0
+https://github.com/allegroai/trains.git,1,sustained,0.2443467336683417,-0.21025760859821668,0,1,0
+https://github.com/allenai/allennlp.git,1,sustained,0.21130378933847144,-0.39943721514711306,0,1,0
+https://github.com/alvinwan/neural-backed-decision-trees.git,1,sustained,0.05421686746987952,-0.14379513831299143,0,1,0
+https://github.com/amaiya/ktrain.git,1,sustained,0.1693290734824281,-0.22206914285275556,0,1,0
+https://github.com/amzn/xfer.git,2,initial burst,0.785,0.061992798984086134,1,1,1
+https://github.com/analyticalmindsltd/smote_variants.git,0,early peak,0.390134529147982,1.1206829950530797,0,1,0
+https://github.com/anicolson/DeepXi.git,1,sustained,0.18823529411764706,0.12482974211626352,0,1,0
+https://github.com/apache/submarine.git,1,sustained,0.4072312083729781,-0.5630356444662893,0,1,0
+https://github.com/apachecn/Interview.git,1,sustained,0.37037037037037035,-0.388092130902951,1,1,0
+https://github.com/apachecn/pytorch-doc-zh.git,0,early peak,0.6013931888544891,-1.2195666326045713,0,0,1
+https://github.com/arogozhnikov/einops.git,1,sustained,0.2757475083056478,-0.0378318715072421,0,1,0
+https://github.com/arviz-devs/arviz.git,1,sustained,0.032133676092544985,-0.679002433185631,0,1,0
+https://github.com/as-ideas/TransformerTTS.git,1,sustained,0.44212218649517687,0.08689529837361332,0,1,0
+https://github.com/astooke/rlpyt.git,0,early peak,0.8206686930091185,-0.20478095578439023,0,1,1
+https://github.com/athena-team/athena.git,0,early peak,0.7387518142235123,-0.6935860987528811,0,1,1
+https://github.com/autorope/donkeycar.git,0,early peak,0.3983050847457627,-0.28801794898093025,0,1,0
+https://github.com/avrae/avrae.git,1,sustained,0.21515040352164344,0.06415288114994586,0,1,0
+https://github.com/baldassarreFe/deep-koalarization.git,2,initial burst,0.8288288288288288,-1.0053815399987565,1,1,1
+https://github.com/bayesiains/nflows.git,2,initial burst,0.8074534161490683,0.0456530174699149,1,0,1
+https://github.com/beringresearch/ivis.git,1,sustained,0.2243150684931507,-0.7434904755014495,0,1,0
+https://github.com/bhoov/exbert.git,0,early peak,0.717948717948718,-0.26633052362430043,0,1,1
+https://github.com/biolib/openprotein.git,1,sustained,0.20858895705521474,1.632699563940258,0,1,0
+https://github.com/bitextor/bitextor.git,1,sustained,0.018245438640339916,-0.05376730709869397,1,0,0
+https://github.com/black0017/MedicalZooPytorch.git,1,sustained,0.38524590163934425,-0.34382795554778667,1,1,0
+https://github.com/brainiak/brainiak.git,0,early peak,0.7407407407407407,0.5440136304370276,1,0,1
+https://github.com/bricewalker/Hey-Jetson.git,0,early peak,0.4269406392694064,-1.4488335765558356,0,1,0
+https://github.com/bureaucratic-labs/dostoevsky.git,1,sustained,0.20285714285714287,-1.247409033583499,0,1,0
+https://github.com/calico/basenji.git,1,sustained,0.2723242558581381,0.8830901546000823,0,1,0
+https://github.com/carefree0910/MachineLearning.git,0,early peak,0.6188747731397459,0.6610642256189567,1,1,0
+https://github.com/cisco/mindmeld.git,1,sustained,0.5331594634873323,-0.5918777310661494,0,1,0
+https://github.com/cmusatyalab/OpenTPOD.git,1,sustained,0.5330882352941176,0.11855868683697199,0,1,0
+https://github.com/colearninglounge/co-learning-lounge.git,1,sustained,0.3246376811594203,-0.4815491741554577,0,1,0
+https://github.com/cornellius-gp/gpytorch.git,1,sustained,0.38980858768753235,-0.44906070350078237,0,1,0
+https://github.com/cortexlabs/cortex.git,1,sustained,0.4061022776106575,-0.45497685285226586,1,1,0
+https://github.com/danielegrattarola/spektral.git,1,sustained,0.1279373368146214,-0.02014979220848683,0,1,0
+https://github.com/danielhanchen/hyperlearn.git,2,initial burst,0.7651515151515151,-0.06298435551065479,1,0,1
+https://github.com/data-science-on-aws/workshop.git,0,early peak,0.8036137440758293,-0.004413385996006686,1,1,1
+https://github.com/databricks/spark-deep-learning.git,0,early peak,0.42500000000000004,0.3392171458278977,0,1,0
+https://github.com/datamllab/rlcard.git,0,early peak,0.4938574938574939,-0.3785694526398462,0,1,1
+https://github.com/ddbourgin/numpy-ml.git,2,initial burst,0.7672413793103449,-0.5329753368358844,0,1,1
+https://github.com/deepmedic/deepmedic.git,1,sustained,0.2139917695473251,-0.21385344044015595,0,1,0
+https://github.com/deepmind/dm-haiku.git,0,early peak,0.4531410916580844,0.12773113032118102,0,1,0
+https://github.com/deepmind/open_spiel.git,1,sustained,0.24206466923761494,-0.5762980084280898,0,1,0
+https://github.com/deepmind/sonnet.git,1,sustained,0.25375000000000003,-0.5679864004717021,0,1,0
+https://github.com/deepmipt/DeepPavlov.git,0,early peak,0.7908700741318767,-0.2156512725117924,0,1,1
+https://github.com/deepset-ai/FARM.git,1,sustained,0.3769230769230769,0.6369560433360686,0,1,0
+https://github.com/deezer/spleeter.git,1,sustained,0.36363636363636365,-0.04181530581848267,0,1,0
+https://github.com/digantamisra98/Mish.git,0,early peak,0.5866894197952218,-0.08611661834507303,0,0,1
+https://github.com/dmlc/dgl.git,1,sustained,0.1524390243902439,0.9075671531192763,0,1,0
+https://github.com/dsgiitr/d2l-pytorch.git,2,initial burst,0.9414893617021276,-0.41181541242124486,1,1,1
+https://github.com/eladhoffer/convNet.pytorch.git,1,sustained,0.11180124223602485,0.7219499794325807,1,1,0
+https://github.com/eleurent/rl-agents.git,1,sustained,0.2986022871664549,0.1406404904946266,0,1,0
+https://github.com/eth-sri/eran.git,1,sustained,0.11313131313131314,0.26568729865430685,1,1,0
+https://github.com/explosion/prodigy-recipes.git,1,sustained,0.24761904761904763,-0.9179015711870058,0,1,0
+https://github.com/f-dangel/backpack.git,0,early peak,0.7341772151898733,-0.28188460977004964,1,0,1
+https://github.com/facebookresearch/ClassyVision.git,0,early peak,0.6238095238095238,0.5689434210194771,1,1,1
+https://github.com/facebookresearch/EGG.git,1,sustained,0.12409288824383165,0.540576376523052,0,0,0
+https://github.com/facebookresearch/ParlAI.git,1,sustained,0.22115384615384615,-0.4592537887396759,0,1,0
+https://github.com/facebookresearch/ReAgent.git,1,sustained,0.315136476426799,0.14268269585201224,0,0,0
+https://github.com/facebookresearch/mmf.git,1,sustained,0.30234657039711194,0.21848793453065402,1,0,0
+https://github.com/facebookresearch/nevergrad.git,1,sustained,0.38208409506398533,-0.18336450312963748,0,1,0
+https://github.com/facebookresearch/pytext.git,1,sustained,0.40019379844961245,-1.0369842933081008,0,1,0
+https://github.com/facebookresearch/vilbert-multi-task.git,2,initial burst,0.9016949152542373,0.011702768188597168,1,1,1
+https://github.com/flairNLP/flair.git,1,sustained,0.2867351496203662,0.1180419683399665,0,1,0
+https://github.com/flatironinstitute/CaImAn.git,1,sustained,0.2124608967674661,0.1507748545344137,0,1,0
+https://github.com/frankkramer-lab/MIScnn.git,0,early peak,0.3655705996131528,0.24370768615643704,0,1,0
+https://github.com/freewym/espresso.git,1,sustained,0.2132021320213202,-0.024591995428405622,1,1,0
+https://github.com/funcwj/setk.git,1,sustained,0.4819277108433735,1.1970709383920264,1,1,0
+https://github.com/geomstats/geomstats.git,1,sustained,0.10789909777204935,-0.5510445762418938,0,0,0
+https://github.com/geyang/ml_logger.git,1,sustained,0.27899159663865547,0.6895884427540717,0,1,0
+https://github.com/gjy3035/C-3-Framework.git,2,initial burst,0.9774436090225564,-0.9178728423754754,1,1,1
+https://github.com/google-research/google-research.git,1,sustained,0.1803312629399586,-0.19703127910311316,0,0,0
+https://github.com/google-research/tensor2robot.git,0,early peak,0.6751054852320676,0.23634871372715435,1,1,1
+https://github.com/google/clusterfuzz.git,1,sustained,0.2973134328358209,-0.876905860825193,0,1,0
+https://github.com/google/fhir.git,1,sustained,0.156,-0.3807648505272678,0,1,0
+https://github.com/google/flax.git,1,sustained,0.3490794573643411,-0.5513510547705618,0,1,0
+https://github.com/google/ml-metadata.git,1,sustained,0.0664451827242525,-0.6851685283237201,0,1,0
+https://github.com/google/qkeras.git,1,sustained,0.14893617021276595,0.5904765470518467,0,1,0
+https://github.com/graphbrain/graphbrain.git,1,sustained,0.3969907407407407,-0.3207641520457891,0,1,0
+https://github.com/guildai/guildai.git,1,sustained,0.3828064764841943,2.0088234077195026,0,1,0
+https://github.com/guillaume-be/rust-bert.git,0,early peak,0.6544642857142857,-0.008127487392635968,1,0,1
+https://github.com/hasanirtiza/Pedestron.git,0,early peak,0.6230248306997743,-0.3259690815132083,1,0,1
+https://github.com/hastagAB/Awesome-Python-Scripts.git,1,sustained,0.43736730360934184,0.34571415974042374,0,1,0
+https://github.com/henrysky/astroNN.git,2,initial burst,0.7121975806451613,1.3939409862279737,0,1,1
+https://github.com/heronsystems/adeptRL.git,1,sustained,0.18992248062015504,0.8725693222111895,0,1,0
+https://github.com/hrpan/tetris_mcts.git,1,sustained,0.40610328638497656,0.6839281386204696,1,1,0
+https://github.com/huggingface/neuralcoref.git,1,sustained,0.11235955056179775,0.23045217423729003,0,1,0
+https://github.com/hunkim/DeepLearningZeroToAll.git,2,initial burst,0.8208955223880597,0.016635573623142774,1,1,1
+https://github.com/hunkim/PyTorchZeroToAll.git,2,initial burst,0.7948717948717948,-0.15706752481496852,1,1,1
+https://github.com/huseinzol05/Malaya.git,1,sustained,0.2623126338329764,-0.1131665434870526,0,0,0
+https://github.com/huseinzol05/NLP-Models-Tensorflow.git,1,sustained,0.2,0.7078740501557393,0,1,0
+https://github.com/hysts/pytorch_image_classification.git,1,sustained,0.16216216216216217,0.8519596243787593,1,1,0
+https://github.com/idealo/image-super-resolution.git,2,initial burst,0.8278145695364238,-0.5206575637907191,1,0,1
+https://github.com/inferno-pytorch/inferno.git,2,initial burst,0.6330561330561331,0.5891665380466106,0,1,1
+https://github.com/interpretml/DiCE.git,1,sustained,0.33501896333754744,0.7554624343566565,0,0,0
+https://github.com/interpretml/interpret-community.git,0,early peak,0.6152263374485597,0.29441960115653065,1,0,1
+https://github.com/interpretml/interpret-text.git,0,early peak,0.9144736842105263,0.8056459783303327,1,1,1
+https://github.com/iskandr/fancyimpute.git,2,initial burst,0.6881188118811881,-0.5595788622473541,1,1,1
+https://github.com/jakeret/tf_unet.git,0,early peak,0.631578947368421,-0.23987179886155918,1,1,1
+https://github.com/jantic/DeOldify.git,0,early peak,0.6603053435114504,-0.49391958720973894,1,0,1
+https://github.com/jeongyoonlee/Kaggler.git,1,sustained,0.3976377952755905,-0.02685230054978653,1,1,0
+https://github.com/jessevig/bertviz.git,0,early peak,0.6331168831168831,0.09072281771438016,1,0,1
+https://github.com/jettify/pytorch-optimizer.git,0,early peak,0.6229885057471264,-0.35428608701797976,1,1,1
+https://github.com/jim-schwoebel/voicebook.git,2,initial burst,0.9241486068111455,0.12771175650092925,1,1,1
+https://github.com/joe-siyuan-qiao/DetectoRS.git,1,sustained,0.4534313725490196,-0.2046870924707522,0,1,0
+https://github.com/joeynmt/joeynmt.git,0,early peak,0.5154867256637168,0.26973359263505414,0,1,1
+https://github.com/jrzaurin/pytorch-widedeep.git,1,sustained,0.06729758149316509,0.5178039153211772,0,0,0
+https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix.git,0,early peak,0.5247148288973384,0.32212113250638225,1,1,0
+https://github.com/kakao/buffalo.git,2,initial burst,0.689655172413793,-0.41236666823072277,0,0,1
+https://github.com/kakaobrain/torchgpipe.git,0,early peak,0.6457142857142857,-0.9897642019021917,0,1,0
+https://github.com/kan-bayashi/PytorchWaveNetVocoder.git,2,initial burst,0.6380208333333334,0.29428746759656266,0,1,1
+https://github.com/kaushaltrivedi/fast-bert.git,0,early peak,0.5375722543352601,0.3038205273403087,1,1,0
+https://github.com/kdexd/virtex.git,1,sustained,0.22624434389140272,0.11008394279335187,0,1,0
+https://github.com/keiohta/tf2rl.git,2,initial burst,0.6954314720812182,-1.1861817304999263,0,1,1
+https://github.com/keras-team/autokeras.git,1,sustained,0.4913916786226685,0.34320919448985215,1,0,0
+https://github.com/keras-team/keras-tuner.git,1,sustained,0.46182152713891444,0.258306295950141,0,1,0
+https://github.com/kerlomz/captcha_platform.git,0,early peak,0.5459770114942528,0.01848682340316815,1,1,1
+https://github.com/kermitt2/delft.git,1,sustained,0.25477707006369427,-0.4454160218253658,0,0,0
+https://github.com/keunwoochoi/kapre.git,2,initial burst,0.7948717948717948,-0.4223727478157493,1,1,1
+https://github.com/kk7nc/HDLTex.git,2,initial burst,0.9033457249070632,0.3240328277066468,1,1,1
+https://github.com/kk7nc/RMDL.git,2,initial burst,0.8701550387596899,0.02151916628109274,1,1,1
+https://github.com/kleinee/jns.git,1,sustained,0.40047961630695444,-0.6838110689845652,0,1,0
+https://github.com/knazeri/edge-connect.git,2,initial burst,0.9568965517241379,-0.3963030704102703,1,1,1
+https://github.com/koaning/scikit-lego.git,0,early peak,0.5653710247349824,0.319093608205475,0,0,0
+https://github.com/kornia/kornia.git,1,sustained,0.4276838108387988,-0.06390140013905783,0,0,0
+https://github.com/kubeflow-kale/kale.git,1,sustained,0.2204968944099379,0.06716427766325835,0,1,0
+https://github.com/kundajelab/deeplift.git,0,early peak,0.6998191681735986,-0.757485587625525,1,1,1
+https://github.com/kwotsin/mimicry.git,0,early peak,0.9047619047619047,1.357352837410367,0,1,1
+https://github.com/l3p-cv/lost.git,0,early peak,0.443042537851478,-0.30273032990776627,0,0,0
+https://github.com/lab-ml/labml.git,1,sustained,0.16934801016088064,-0.18959187204429814,0,0,0
+https://github.com/learnables/cherry.git,2,initial burst,0.9759036144578312,0.46247412690001044,1,0,1
+https://github.com/learnables/learn2learn.git,2,initial burst,0.7450980392156863,0.5844841894107129,0,1,1
+https://github.com/leela-zero/leela-zero.git,2,initial burst,0.8695136417556346,-0.757907588422826,1,1,1
+https://github.com/lsds/KungFu.git,0,early peak,0.7630208333333333,0.022261363645911636,1,1,1
+https://github.com/lucidrains/reformer-pytorch.git,2,initial burst,0.8875502008032128,-0.9222186043466405,1,1,1
+https://github.com/lufficc/SSD.git,1,sustained,0.3971631205673759,-0.2904093823934642,0,1,0
+https://github.com/lukas/ml-class.git,1,sustained,0.007776049766718507,-0.005861467320260029,0,1,0
+https://github.com/lukemelas/EfficientNet-PyTorch.git,1,sustained,0.41358024691358025,0.1974183563955093,0,1,0
+https://github.com/lululxvi/deepxde.git,1,sustained,0.2708333333333333,0.20340349965247972,0,0,0
+https://github.com/machine-learning-apps/Issue-Label-Bot.git,0,early peak,0.8313953488372092,-0.16849968478216654,1,1,1
+https://github.com/maelfabien/Multimodal-Emotion-Recognition.git,2,initial burst,0.9635854341736694,0.519864800854679,0,1,1
+https://github.com/magenta/ddsp.git,0,early peak,0.6546610169491525,0.33966956169731916,1,1,0
+https://github.com/magenta/magenta.git,0,early peak,0.5256140350877193,-0.06268731192591137,1,0,0
+https://github.com/malllabiisc/RESIDE.git,0,early peak,0.5277777777777778,-0.14261037648306135,0,1,1
+https://github.com/mangaki/mangaki.git,0,early peak,0.5919487648673376,0.24768209946341918,0,1,0
+https://github.com/mapbox/robosat.git,0,early peak,0.75,0.4500122784921444,0,1,1
+https://github.com/masa-su/pixyz.git,0,early peak,0.6877777777777778,-0.06092509120670554,1,1,1
+https://github.com/materialsvirtuallab/megnet.git,1,sustained,0.42233856893542754,-1.0020871281102417,0,1,0
+https://github.com/mdeff/fma.git,2,initial burst,0.6731707317073171,0.0890253719730199,1,1,1
+https://github.com/medipixel/rl_algorithms.git,2,initial burst,0.6358695652173912,0.4535851750644085,1,1,1
+https://github.com/mesutpiskin/computer-vision-guide.git,2,initial burst,0.9029126213592233,0.7960156163519863,1,1,1
+https://github.com/michaelhush/M-LOOP.git,1,sustained,0.36085626911314983,-0.44476790456811655,0,1,0
+https://github.com/microsoft/DeepSpeed.git,1,sustained,0.17035475939585526,-0.2861408896411815,0,0,0
+https://github.com/microsoft/EdgeML.git,1,sustained,0.5640449438202246,0.060677296348344956,1,1,0
+https://github.com/microsoft/MMdnn.git,0,early peak,0.915129151291513,0.3100082010613727,1,1,1
+https://github.com/microsoft/Windows-Machine-Learning.git,1,sustained,0.3497109826589595,0.07592514618449919,1,1,0
+https://github.com/microsoft/ai-edu.git,0,early peak,0.6469740634005764,0.09369968666629394,0,1,1
+https://github.com/microsoft/botbuilder-python.git,1,sustained,0.3072289156626506,0.3015807259217818,0,0,0
+https://github.com/microsoft/hummingbird.git,0,early peak,0.6166666666666667,0.5452306279886696,0,1,1
+https://github.com/microsoft/nni.git,1,sustained,0.33200531208499334,-0.3418602730622398,0,1,0
+https://github.com/microsoft/tf2-gnn.git,2,initial burst,0.8026905829596414,-1.3425418354352074,1,1,1
+https://github.com/mittagessen/kraken.git,1,sustained,0.11715296198054818,-0.08226177888818506,0,0,0
+https://github.com/mljar/mljar-supervised.git,1,sustained,0.22356739305891848,0.053611373069218995,0,0,0
+https://github.com/mlmed/torchxrayvision.git,0,early peak,0.5474452554744526,0.4196474332602641,0,0,1
+https://github.com/mlperf/inference.git,1,sustained,0.48654708520179374,0.3063029310008957,0,0,0
+https://github.com/mlperf/training.git,2,initial burst,0.6123595505617977,0.39498651820879294,0,0,1
+https://github.com/mnicnc404/CartoonGan-tensorflow.git,2,initial burst,0.9795918367346939,0.5049305120636561,1,1,1
+https://github.com/molecularsets/moses.git,2,initial burst,0.8571428571428571,0.13739619807191325,1,1,1
+https://github.com/mozilla/TTS.git,1,sustained,0.20924908424908426,0.4099697259540346,0,1,0
+https://github.com/mozilla/bugbug.git,1,sustained,0.18958695996201932,-0.3045465711053441,0,0,0
+https://github.com/mozilla/fathom.git,1,sustained,0.22236756049705692,-0.8945878701849242,1,1,0
+https://github.com/mpariente/asteroid.git,0,early peak,0.8331515812431843,0.34360163008972905,1,0,1
+https://github.com/mravanelli/pytorch-kaldi.git,1,sustained,0.4873417721518988,0.19808611959697903,1,1,0
+https://github.com/namisan/mt-dnn.git,0,early peak,0.6529209621993127,0.14788464472595791,1,1,1
+https://github.com/nanoporetech/medaka.git,1,sustained,0.23045822102425875,-0.2510833324879731,0,0,0
+https://github.com/natethegreate/hent-AI.git,1,sustained,0.3333333333333333,-0.46591505317321946,0,1,0
+https://github.com/nerox8664/pytorch2keras.git,1,sustained,0.4645390070921986,-0.1251618157441498,1,1,0
+https://github.com/nicolas-chaulet/torch-points3d.git,0,early peak,0.686241610738255,-0.25946339468893437,0,1,1
+https://github.com/norse/norse.git,0,early peak,0.6191646191646192,-0.05541375448095625,0,0,1
+https://github.com/numenta/nupic.torch.git,2,initial burst,0.6923076923076923,-0.02758573845664203,1,1,1
+https://github.com/nussl/nussl.git,1,sustained,0.22330097087378642,-0.5026273921165594,1,0,0
+https://github.com/nutonomy/nuscenes-devkit.git,0,early peak,0.5128205128205129,0.15910681469684973,1,0,0
+https://github.com/nyanp/nyaggle.git,2,initial burst,0.910958904109589,-0.7063480585411406,0,1,1
+https://github.com/nyu-mll/jiant.git,1,sustained,0.6435233160621763,0.39640395988482,1,1,0
+https://github.com/onnx/keras-onnx.git,1,sustained,0.425531914893617,0.4395230920945763,0,1,0
+https://github.com/onnx/onnx-tensorflow.git,0,early peak,0.39625167336010714,0.12915321423162918,0,1,0
+https://github.com/onnx/onnxmltools.git,0,early peak,0.5714285714285714,0.39326827348326593,1,0,0
+https://github.com/onnx/tensorflow-onnx.git,1,sustained,0.44746684801088066,-0.008886210942167336,0,0,0
+https://github.com/open-mmlab/mmfashion.git,1,sustained,0.05791505791505792,0.4153868956078839,1,1,0
+https://github.com/open-mmlab/mmskeleton.git,0,early peak,0.4313725490196078,0.5339467053612892,0,1,0
+https://github.com/openseg-group/openseg.pytorch.git,1,sustained,0.3246753246753247,0.3316849525926113,1,1,0
+https://github.com/osmr/imgclsmob.git,0,early peak,0.7445458151527171,0.805169836914995,0,1,1
+https://github.com/ottogroup/palladium.git,1,sustained,0.2988826815642458,-1.264863494604465,0,1,0
+https://github.com/ownthink/Jiagu.git,1,sustained,0.5514018691588785,0.16475987601279218,1,1,0
+https://github.com/parlance/ctcdecode.git,0,early peak,0.5904255319148937,-0.27360411967085413,0,1,1
+https://github.com/persephone-tools/persephone.git,1,sustained,0.2990732940185341,0.14458264825352454,0,1,0
+https://github.com/philipperemy/deep-speaker.git,1,sustained,0.38315217391304346,0.31875010266304904,1,1,0
+https://github.com/philipperemy/keract.git,1,sustained,0.19664268585131894,-0.20055741590284532,1,0,0
+https://github.com/philipperemy/keras-tcn.git,1,sustained,0.3467600700525394,-0.15959431065937363,0,0,0
+https://github.com/piEsposito/blitz-bayesian-deep-learning.git,0,early peak,0.7905982905982906,-0.55671708563759,0,1,1
+https://github.com/podgorskiy/ALAE.git,1,sustained,0.20477815699658702,1.1526307834949674,0,1,0
+https://github.com/priya-dwivedi/Deep-Learning.git,1,sustained,0.37948717948717947,1.0862128908168573,1,1,0
