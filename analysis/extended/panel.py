@@ -47,6 +47,31 @@ def locate_dataset():
 
 DATA_PATH = locate_dataset()
 
+# Inclusion criteria (Section 3.1 of the paper):
+#  (i)  the history must be reconstructed, i.e. the mined history must contain at least the
+#       100 commits that NICHE requires of every project;
+#  (ii) the project must involve more than one contributor, as required by the network metrics.
+MIN_MINED_COMMITS = 100
+MIN_CONTRIBUTORS = 2
+
+
+def apply_inclusion_criteria(df):
+    """Keep only the projects that meet the two inclusion criteria."""
+    commits = pd.to_numeric(df['commits_count'], errors='coerce').fillna(0)
+    g = df.assign(_c=commits).groupby('project_url').agg(_commits=('_c', 'sum'),
+                                                         _devs=('developer_id', 'nunique'))
+    keep = g.index[(g['_commits'] >= MIN_MINED_COMMITS) & (g['_devs'] >= MIN_CONTRIBUTORS)]
+    print(f"Inclusion criteria: {len(keep)} of {len(g)} projects retained "
+          f"({(g['_commits'] < MIN_MINED_COMMITS).sum()} with fewer than {MIN_MINED_COMMITS} mined commits, "
+          f"{(g['_devs'] < MIN_CONTRIBUTORS).sum()} with a single contributor)")
+    return df[df['project_url'].isin(keep)].reset_index(drop=True)
+
+
+def included_projects():
+    """Set of the projects that meet the inclusion criteria."""
+    d = pd.read_csv(DATA_PATH, usecols=['project_url', 'developer_id', 'commits_count'])
+    return set(apply_inclusion_criteria(d)['project_url'])
+
 INACTIVITY_THRESHOLD = 4
 EARLY_STAGE_WINDOWS = 3
 PROJECT_ACTIVITY_WINDOWS = 4
@@ -57,9 +82,9 @@ OUTLIER_QUANTILE = 0.99
 REQUIRED_COLUMNS = [
     'project_url', 'time_window_id', 'developer_id',
     'last_interaction_window_id', 'commits_count', 'code_churn',
-    'bug_fix_commits_count', 'files_touched_count',
+    'files_touched_count',
     'community_smell_count', 'traditional_smell_count', 'ml_smell_count',
-    'vulnerability_count', 'vulnerability_high', 'bug_introduced_count_rszz',
+    'vulnerability_count', 'vulnerability_high',
     'se_score', 'sentiment_score', 'project_loc',
     'Socio-Technical Quality Factors', 'developer_raw_json'
 ]
@@ -84,13 +109,13 @@ FEATURES_BASE = [
     'stqf_closeness_centr', 'stqf_degree_centr', 'stqf_core_global_devs',
     'stqf_core_code_devs',
     'traditional_smell_count', 'ml_smell_count', 'vulnerability_count',
-    'vulnerability_high', 'bug_introduced_count_rszz',
-    'commits_count', 'code_churn', 'bug_fix_commits_count', 'files_touched_count',
+    'vulnerability_high',
+    'commits_count', 'code_churn', 'files_touched_count',
     'se_score', 'sentiment_score',
     'project_age', 'developer_tenure',
 ]
 LOG_COLS = ['commits_count', 'code_churn', 'traditional_smell_count',
-            'community_smell_count', 'bug_introduced_count_rszz', 'files_touched_count']
+            'community_smell_count', 'files_touched_count']
 
 # Automation accounts, matched on the developer identity (e-mail) only: GitHub app
 # accounts ([bot]), identities with a standalone 'bot' token, and known automation
@@ -119,6 +144,7 @@ def load_panel(extra=False):
     """Return (df, FEAT_MODEL, project_status) exactly as in the v2 pipeline."""
     cols = REQUIRED_COLUMNS + (EXTRA_COLUMNS if extra else [])
     df = pd.read_csv(DATA_PATH, usecols=cols, low_memory=False)
+    df = apply_inclusion_criteria(df)
 
     stqf = df['Socio-Technical Quality Factors'].apply(safe_json)
     stqf_df = pd.DataFrame([{k: d.get(k, np.nan) for k in STQF_KEYS} for d in stqf])
@@ -286,11 +312,11 @@ def check_main_model(df, feat_model):
         return feats  # the core relabeling changes the outcome, so Table 2 is not expected
     cph = CoxPHFitter(penalizer=0.1).fit(p[feats + ['duration', 'event']], 'duration', 'event')
     hr = cph.summary['exp(coef)']
-    expected = {'stqf_global_truck': 2.44, 'stqf_ratio_smelly_quitters': 1.86,
-                'stqf_ratio_sponsored': 0.67, 'developer_tenure': 0.74}
+    expected = {'stqf_global_truck': 2.43, 'stqf_ratio_smelly_quitters': 1.85,
+                'stqf_ratio_sponsored': 0.68, 'developer_tenure': 0.74}
     for k, v in expected.items():
         assert abs(hr[k] - v) < 0.006, f'{k}: {hr[k]:.3f} != {v} (Table 2)'
-    assert len(p) == 1917 and int(p['event'].sum()) == 1103
+    assert len(p) == 1905 and int(p['event'].sum()) == 1103
     return feats
 
 

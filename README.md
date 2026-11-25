@@ -13,9 +13,9 @@ Software Engineering (SeSa) Lab, Department of Computer Science, University of S
 
 **Objective.** We test this intuition by investigating how developers leave and projects fade, what role socio-technical debt plays in it, and how much the answer depends on the definition of project dormancy.
 
-**Method.** We analyze 332 engineered open-source projects from NICHE, a curated dataset of Python projects built on machine learning frameworks, and 10,416 developers over quarterly windows. We model developer departure and project dormancy with logistic regression and (time-varying) Cox models, rebuild metrics based on departures in a lagged leave-one-out form, run an event study around core departures, and compare temporal, maintenance-based, and combined definitions of dormancy, controlling for scale and age. A descriptive analysis covers the last activity of developers and projects and the fate of the debt left behind.
+**Method.** We analyze 308 engineered open-source projects from NICHE, a curated dataset of Python projects built on machine learning frameworks, and 10,350 developers over quarterly windows. We model developer departure and project dormancy with logistic regression and (time-varying) Cox models, rebuild metrics based on departures in a lagged leave-one-out form, run an event study around core departures, and compare temporal, maintenance-based, and combined definitions of dormancy, controlling for scale and age. A descriptive analysis covers the last activity of developers and projects and the fate of the debt left behind.
 
-**Results.** Developer departure is associated with social debt indicators that describe the departures of others and the structure of the community, not with the number of community smells nor with technical debt. A developer is more likely to leave where others, especially smelly contributors, have left, even when only previous departures of other developers are counted; this distinguishes projects from one another rather than unfolding within a project. Leavers are mostly casual contributors affected by smells of isolation. Technical debt is not associated with departure, but the debt of those who leave is rarely taken over and becomes orphaned in dormant projects, as much as the number of departures alone would imply. After a core departure, the community is smaller and sparser, but not smellier. Projects fade through a long, unannounced tail of pure maintenance. Once scale is controlled, no socio-technical factor distinguishes projects that fade from those that stop while still maintained, and under temporal definitions technical debt relates to how early a project stops, not to whether it is still active.
+**Results.** Developer departure is associated with turnover and with the structure of the community rather than with debt, as neither the number of community smells nor technical debt is robustly associated with it. A developer is more likely to leave where others, especially smelly contributors, have left, even when only previous departures of other developers are counted; this distinguishes projects from one another rather than unfolding within a project. Leavers are mostly casual contributors affected by smells of isolation. Technical debt is not associated with departure, but the debt of those who leave is rarely taken over and becomes largely orphaned in dormant projects, although less than the number of departures alone would imply. After a core departure, the community is smaller and sparser, but not smellier. Projects fade through a long, unannounced decline, whose last window contains only maintenance in nearly half of the dormant projects. Once scale is controlled, no socio-technical factor consistently distinguishes projects that fade from those that stop while still maintained, and under temporal definitions technical debt relates to how early a project stops, not to whether it is still active.
 
 **Conclusion.** Departures cluster, debt stays behind, and projects fade when maintenance is no longer shared rather than because of the debt they carry. Conclusions on project dormancy depend on how it is defined.
 
@@ -149,6 +149,8 @@ python analysis/extended/descriptive_rq3.py
 python analysis/extended/rq3_social.py
 python analysis/extended/rq1_extra.py   # after rq1_robustness.py; needs R with the survival package
 python analysis/extended/rq1_signature_loo.py   # Figure 2 with the lagged leave-one-out turnover
+python analysis/extended/smell_structure_overlap.py   # overlap between community smells and structure
+python analysis/extended/td_robustness.py   # RQ1 with alternative technical debt measures
 ```
 
 `rq1_extra.py` adds the gamma-frailty Cox model (through `frailty_cox.R`), the models that
@@ -205,9 +207,12 @@ for the extended analyses.
 | Activity trajectories | extended/descriptive_rq3.py | `desc_trajectories.csv`, `desc_trajectories_tests.csv` |
 | Contrasting cases | extended/descriptive_rq3.py | `desc_contrasting_cases*.csv` |
 | RQ3 — debt left behind, orphaned debt and permutation baseline | extended/descriptive_rq3.py | `rq3_debt_left_behind.csv`, `rq3_orphaned_share_by_project.csv` |
-| Table 5 — RQ3, community after a core departure (event study) | extended/rq3_social.py | `rq3_social_event_study.csv`, `rq3_social_counts.csv` |
+| Results — leavers still active in another project of the sample | extended/descriptive_rq3.py | `desc_cross_project_departures.csv` |
+| Table 5 — RQ3, community after a core departure (event study) | extended/rq3_social.py | `rq3_social_event_study.csv`, `rq3_social_event_study_sun_abraham.csv`, `rq3_social_counts.csv` |
 | Codebook validation samples (stratified and random) | extended/descriptive_rq3.py | `desc_codebook_validation_sample.csv`, `desc_codebook_holdout_sample.csv` |
 | VIF-based variable selection | v2-maintenance-based | `vif_results.csv` |
+| Appendix — RQ1 with alternative technical debt measures (instances, per file touched, without B101) | extended/td_robustness.py | `rq1_td_robustness.csv`, `rq1_b101_share.csv` |
+| Data Collection — overlap between community smells and community structure | extended/smell_structure_overlap.py | `smell_structure_correlations.csv`, `smell_detection_rules.csv` |
 
 > Some output files and column names still carry the earlier wording (`proj_failed`,
 > `active_vs_failed_mw.csv`, `rq2_sensitivity_v1_cox.csv`). These are the names the pipelines
@@ -236,12 +241,17 @@ for the extended analyses.
 
 The sample is derived from **NICHE** (Widyasari et al., MSR 2023), a curated dataset of engineered
 machine learning projects written in Python. We retained only the 441 projects labelled as
-*engineered*, and further kept those whose history could be reconstructed through quarterly windows,
-with more than one contributor, and for which the extraction of all metrics succeeded. This yields
-the 332 projects analysed in the paper.
+*engineered*. Of these, 332 could be mined: the repository was still public, the commit history was
+mined without errors, and the extraction of all metrics succeeded. The analysis scripts then apply two
+inclusion criteria (`apply_inclusion_criteria` in `analysis/extended/panel.py`, repeated in the two
+pipelines): (i) the mined history contains at least the 100 commits that NICHE requires of every
+project (`MIN_MINED_COMMITS`), and (ii) the project has more than one contributor
+(`MIN_CONTRIBUTORS`), as required by the network metrics. They exclude 24 projects (18 with fewer
+than 100 mined commits, 11 with a single contributor, five for both reasons), which yields the 308
+projects and 10,350 developers analysed in the paper. The dataset itself still contains all 332.
 
 Metrics were extracted with **Designite** (traditional code smells), **dslinter** (ML-specific
-smells), **Bandit** (security weaknesses), the **RSZZ** variant of SZZ (bug-inducing commits) and
+smells), **Bandit** (security weaknesses) and
 **csDetector** (community smells and socio-technical quality factors).
 
 ---

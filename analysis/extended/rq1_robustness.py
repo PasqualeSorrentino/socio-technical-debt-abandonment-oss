@@ -171,7 +171,7 @@ def early(cols, label, cluster=False):
         erows.append({'spec': label, 'covariate': c, 'OR': np.exp(m.params[c]), 'p': m.pvalues[c]})
     print(f'  {label:28s} ' + ', '.join(f"{c.replace('stqf_', '')[:14]}={np.exp(m.params[c]):.2f}({fmt_p(m.pvalues[c])})"
                                          for c in ['stqf_global_truck', 'stqf_ratio_smelly_quitters', 'stqf_ratio_smelly_devs',
-                                                   'stqf_communicability', 'log_bug_introduced_count_rszz', 'log_team_size']
+                                                   'stqf_communicability', 'log_team_size']
                                          if c in m.params.index))
 
 

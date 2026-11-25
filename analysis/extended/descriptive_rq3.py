@@ -38,12 +38,12 @@ CODEBOOK = [
     ('documentation', r'\b(readme|docs?\b|documentation|docstring|tutorial|typo\w*|spelling|grammar|clarif\w*|comments?\b(?! out)|license|citation|cite\b|bibtex|markdown|\.md\b|\.rst\b|example(s)?\b|notebook|link(s)?\b|badge|paper)'),
     ('build and dependencies', r'\b(upgrade|downgrade|setup\.py|setup\.cfg|pyproject|dockerfile|docker|ci\b|workflow|github actions|travis|circleci|appveyor|tox\b|conda|environment\.ya?ml|build|install(ation)?|packaging|pypi|wheel|pip\b|makefile|pre-commit|lint\w*|flake8|black\b|isort|ruff)'),
     ('test', r'\b(test(s|ing|ed)?|unittest|pytest|coverage)\b'),
-    ('bug fix', r'bug ?fix\w*|\b(fix(es|ed|ing)?|bugs?|hotfix|patch|issue|error|crash|correct(ed|ion)?|resolve(s|d)?|wrong|broken|repair|fail(s|ed|ing|ure)?)\b|\bput back\b|\bhandle \w*error'),
+    ('corrective change', r'bug ?fix\w*|\b(fix(es|ed|ing)?|bugs?|hotfix|patch|issue|error|crash|correct(ed|ion)?|resolve(s|d)?|wrong|broken|repair|fail(s|ed|ing|ure)?)\b|\bput back\b|\bhandle \w*error'),
     ('refactoring', r'\b(refactor\w*|clean ?up|cleanup|renam\w*|restructur\w*|reorgani[sz]\w*|simplif\w*|mov(e|es|ed|ing)\b|remove (unused|unnecessary|obsolete|dead)|unused\b|tidy|reformat\w*|formatting|format with|pyfmt|code ?style|replac\w*|in favou?r of|unif(y|ies|ied)|dedup\w*|consolidat\w*)'),
     ('feature', r'\b(add(s|ed|ing)?|implement\w*|introduc\w*|support(s|ed)?|new\b|feature\w*|enable\w*|allow\w*|extend\w*|improve\w*|initial|create(s|d)?)\b'),
 ]
 CATEGORIES = list(dict.fromkeys(c for c, _ in CODEBOOK)) + ['other']
-MAINTENANCE = {'documentation', 'build and dependencies', 'bug fix'}
+MAINTENANCE = {'documentation', 'build and dependencies', 'corrective change'}
 _RX = [(c, re.compile(p, re.I)) for c, p in CODEBOOK]
 _PREFIX = re.compile(r'^(\s*\[[^\]]*\])+\s*|^[\w./-]+!\d+\s*-\s*')
 
@@ -337,4 +337,25 @@ rq3.update({
 pd.Series(rq3).to_csv(OUT_DIR / 'rq3_debt_left_behind.csv', header=['value'])
 orph.to_csv(OUT_DIR / 'rq3_orphaned_share_by_project.csv')
 print(pd.Series(rq3).round(3).to_string())
-print('\nDone. Outputs in', OUT_DIR)
+# ── Departure from a project vs departure from open source ─────────────────────────
+# Developers who left at least one project and contributed to at least one other project of the
+# sample; of these, the share whose activity in another project continues after the last window
+# of the project they left.
+_pr = df.groupby(['project_url', 'developer_id']).agg(left=('has_failed', 'max'),
+                                                      last=('time_window_rank', 'max')).reset_index()
+_np = _pr.groupby('developer_id')['project_url'].nunique()
+_multi = _pr[_pr['developer_id'].isin(_np.index[_np > 1])]
+_later = {}
+for dev, rows in _multi.groupby('developer_id'):
+    if rows['left'].max() == 0:
+        continue
+    _later[dev] = any((rows.loc[rows['project_url'] != r.project_url, 'last'] > r.last).any()
+                      for r in rows[rows['left'] == 1].itertuples())
+cross = pd.Series({'leavers_with_other_projects': len(_later),
+                   'leavers_active_elsewhere_later': int(sum(_later.values())),
+                   'leavers_active_elsewhere_later_pct': 100 * np.mean(list(_later.values()))})
+cross.to_csv(OUT_DIR / 'desc_cross_project_departures.csv', header=['value'])
+print('\nDeparture from a project vs from the sample:')
+print(cross.round(1).to_string())
+
+print('\nDone. Outputs in', OUT_DIR.name)

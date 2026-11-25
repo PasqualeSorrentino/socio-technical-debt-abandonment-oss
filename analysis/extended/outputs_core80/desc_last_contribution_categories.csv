@@ -1,14 +1,14 @@
 category,Core Leave,Core Stay,Peripheral Leave,Peripheral Stay,Projects Active,Projects Inactive
-end-of-life notice,0.0,0.1,0.0,0.0,0.0,0.7
-merge,9.0,14.3,3.4,4.5,12.6,13.6
-revert,0.5,0.1,0.3,0.4,0.4,0.0
-build and dependencies,6.9,10.5,5.7,7.6,9.3,15.6
-feature,15.8,12.9,17.8,17.5,13.9,8.8
-release,3.4,5.6,1.6,1.0,4.3,1.4
-documentation,22.5,16.1,22.3,19.2,15.2,32.0
-test,3.7,3.9,2.8,2.4,3.2,0.0
-bug fix,10.4,10.4,16.6,19.7,15.9,7.5
-refactoring,3.4,2.8,2.9,2.7,1.9,2.7
-other,24.4,23.2,26.6,24.9,23.3,17.7
-Units,922.0,684.0,7706.0,2048.0,847.0,147.0
-Median commits,23.0,112.0,1.0,2.0,13.0,2.0
+end-of-life notice,0.0,0.2,0.0,0.0,0.0,0.7
+merge,9.0,13.9,3.4,4.5,12.1,14.8
+revert,0.5,0.2,0.3,0.4,0.4,0.0
+build and dependencies,6.9,10.7,5.7,7.6,9.3,17.0
+feature,15.9,13.1,17.8,17.6,14.0,9.6
+release,3.4,5.7,1.6,1.0,4.3,1.5
+documentation,22.5,15.6,22.3,19.0,14.7,29.6
+test,3.7,3.9,2.8,2.5,3.3,0.0
+corrective change,10.4,10.7,16.6,19.8,16.6,6.7
+refactoring,3.4,2.6,2.9,2.7,2.0,1.5
+other,24.3,23.5,26.6,24.8,23.3,18.5
+Units,921.0,647.0,7695.0,2022.0,815.0,135.0
+Median commits,23.0,119.0,1.0,2.0,13.0,2.0

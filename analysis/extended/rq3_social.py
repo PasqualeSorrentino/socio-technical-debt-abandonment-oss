@@ -116,6 +116,18 @@ def sun_abraham(t0, controls, label):
     data['cohort'] = data['project_url'].map(t0)
     data['k'] = (data['time_window_rank'] - data['cohort']).where(data['cohort'].notna())
     data['kb'] = data['k'].map(lambda v: bin_k(v) if pd.notna(v) else np.nan)
+    # Identification requires every cohort to be observed in the reference period and every
+    # calendar period to contain never-treated projects; cohorts and periods that violate
+    # these conditions are dropped.
+    tr = data.dropna(subset=['kb'])
+    ref_ok = tr.groupby('cohort')['kb'].apply(lambda s: (s == REF).any())
+    bad_cohorts = set(ref_ok.index[~ref_ok])
+    data = data[~data['cohort'].isin(bad_cohorts)]
+    ctrl_periods = set(data.loc[data['cohort'].isna(), 'time_window_rank'])
+    dropped_periods = data.loc[~data['time_window_rank'].isin(ctrl_periods), 'time_window_rank'].nunique()
+    data = data[data['time_window_rank'].isin(ctrl_periods)]
+    print(f'  Sun-Abraham: dropped {len(bad_cohorts)} cohort(s) without the reference period and '
+          f'{dropped_periods} period(s) without never-treated projects')
     cells = data.dropna(subset=['kb']).groupby(['cohort', 'kb']).size().rename('n').reset_index()
     cells = cells[cells.kb != REF]
     names = []
@@ -151,7 +163,7 @@ def sun_abraham(t0, controls, label):
         S = W @ V.values @ W.T
         chi = float(b @ np.linalg.pinv(S) @ b)
         sd = d.loc[d['cohort'].isna() | (d['k'] < 0), y].std()
-        rows.append({'design': label, 'outcome': y, 'treated_projects': int(t0.size),
+        rows.append({'design': label, 'outcome': y, 'treated_projects': int(data.loc[data['cohort'].notna(), 'project_url'].nunique()),
                      'control_projects': int(len(controls)), 'cohorts': int(cells.cohort.nunique()),
                      'post_avg': est, 'post_ci_low': est - 1.96 * se, 'post_ci_high': est + 1.96 * se,
                      'post_p': p, 'post_avg_in_sd': est / sd if sd > 0 else np.nan,
@@ -188,4 +200,4 @@ cols = ['design', 'outcome', 'post_avg', 'post_ci_low', 'post_ci_high', 'post_p'
 print(R[cols].round(3).to_string(index=False))
 print('\nSun-Abraham interaction-weighted estimator (core departure):')
 print(SA[cols].round(3).to_string(index=False))
-print('\nDone. Outputs in', OUT_DIR)
+print('\nDone. Outputs in', OUT_DIR.name)

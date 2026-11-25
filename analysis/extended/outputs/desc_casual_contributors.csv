@@ -1,13 +1,13 @@
 ,value
-peripheral_departures,8423
-all_departures,8628
+peripheral_departures,8411
+all_departures,8616
 peripheral_leaver_median_commits,1.0
-peripheral_leavers_one_commit_pct,51.01507776326725
-peripheral_leavers_one_window_pct,73.53674462780482
-departure_rate_single_commit_pct,82.34955921809122
-departure_rate_repeated_pct,70.52597296857189
-core_departure_rate_low_noncore_pct,21.49122807017544
-core_departure_rate_mid_noncore_pct,43.94904458598726
-core_departure_rate_high_noncore_pct,45.97701149425287
-core_departure_by_tercile_chi2_p,6.334700648872701e-07
+peripheral_leavers_one_commit_pct,51.00463678516228
+peripheral_leavers_one_window_pct,73.51087861134229
+departure_rate_single_commit_pct,82.5635103926097
+departure_rate_repeated_pct,71.04614879290524
+core_departure_rate_low_noncore_pct,22.272727272727273
+core_departure_rate_mid_noncore_pct,44.871794871794876
+core_departure_rate_high_noncore_pct,45.348837209302324
+core_departure_by_tercile_chi2_p,1.7143136518745038e-06
 top_single_commit_leaver_projects,google-research=297; python-docs-samples=294; espresso=224; DeepSpeed=187; kornia=158

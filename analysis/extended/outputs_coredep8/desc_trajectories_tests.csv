@@ -1,8 +1,8 @@
 ,value
-projects_with_6plus_windows,273.0
-silhouette_k2,0.34351521197281737
-silhouette_k3,0.23083378422316997
-silhouette_k4,0.2247882907184959
-chi2_p_trajectory_vs_v2,1.0183745755977896e-10
-kruskal_p_debt_k3,0.41830256389049214
-kruskal_p_debt_k2,0.3550326392497368
+projects_with_6plus_windows,265.0
+silhouette_k2,0.3445928736314662
+silhouette_k3,0.2339512794643374
+silhouette_k4,0.2238504352216525
+chi2_p_trajectory_vs_v2,4.446826725768591e-11
+kruskal_p_debt_k3,0.44874225816094915
+kruskal_p_debt_k2,0.3435876318647516

@@ -1,39 +1,40 @@
 Loading panel...
-Table 2 reproduced (21 covariates).
+Inclusion criteria: 308 of 332 projects retained (18 with fewer than 100 mined commits, 11 with a single contributor)
+Table 2 reproduced (20 covariates).
 Building lagged leave-one-out metrics...
   correlation with the original metrics: stqf_global_turnover=0.69, stqf_core_code_turnover=0.24, stqf_ratio_smelly_quitters=0.63
-Later-stage pairs: 1917 (events 1103), projects 284
+Later-stage pairs: 1905 (events 1103), projects 274
 
 Later-stage Cox, robustness specifications:
-  main                                       n= 1917 C=0.860 | global_truck=2.44(<0.001) ratio_smelly_q=1.86(<0.001) global_turnove=1.30(0.198) core_code_turn=1.41(0.025) ratio_sponsore=0.67(0.010)
-  without_tenure                             n= 1917 C=0.697 | global_truck=3.35(<0.001) ratio_smelly_q=1.59(0.006) global_turnove=1.47(0.058) core_code_turn=1.42(0.025) ratio_sponsore=0.69(0.018)
-  clustered_by_project                       n= 1917 C=0.860 | global_truck=2.44(<0.001) ratio_smelly_q=1.86(0.001) global_turnove=1.30(0.203) core_code_turn=1.41(0.126) ratio_sponsore=0.67(0.048)
-  Benjamini-Hochberg on 21 coefficients: significant -> log_commits_count, stqf_global_truck, stqf_st_congruence, stqf_ratio_smelly_quitters, stqf_ratio_sponsored, project_age, developer_tenure
-  PH assumption violated (p<0.05): developer_tenure(p=<0.001), log_community_smell_count(p=0.013), se_score(p=0.034), stqf_core_code_turnover(p=0.046)
-  stratified_tenure_terciles                 n= 1917 C=0.689 | global_truck=2.55(<0.001) ratio_smelly_q=1.86(<0.001) global_turnove=1.23(0.308) core_code_turn=1.43(0.016) ratio_sponsore=0.69(0.015)
-  bot accounts: 28 developers, 147 project-developer pairs
-  without_bots                               n= 1862 C=0.860 | global_truck=2.42(<0.001) ratio_smelly_q=1.95(<0.001) global_turnove=1.25(0.279) core_code_turn=1.42(0.022) ratio_sponsore=0.67(0.012)
-  role_and_team_size                         n= 1917 C=0.866 | global_truck=1.57(0.013) ratio_smelly_q=1.62(0.005) global_turnove=1.04(0.853) core_code_turn=1.25(0.150) ratio_sponsore=0.73(0.041)
-  role_team_size_no_bots_clustered           n= 1862 C=0.867 | global_truck=1.55(0.059) ratio_smelly_q=1.69(0.007) global_turnove=0.99(0.965) core_code_turn=1.26(0.350) ratio_sponsore=0.72(0.110)
-  active_projects_only_v2                    n= 1496 C=0.859 | global_truck=3.57(<0.001) ratio_smelly_q=1.75(0.005) global_turnove=1.01(0.976) core_code_turn=1.44(0.045) ratio_sponsore=0.78(0.183)
-  stratified_by_project                      n= 1917 C=0.898 | global_truck=2.10(0.002) ratio_smelly_q=0.97(0.881) global_turnove=0.87(0.561) core_code_turn=1.12(0.551) ratio_sponsore=1.05(0.844)
-  loo_metrics                                n= 1917 C=0.872 | global_truck=1.97(<0.001) ratio_sponsore=0.65(0.005) loo_turnover=2.51(<0.001) loo_core_turno=1.97(<0.001) loo_smelly_qui=2.09(<0.001)
-  loo_metrics_clustered                      n= 1917 C=0.872 | global_truck=1.97(0.002) ratio_sponsore=0.65(0.033) loo_turnover=2.51(<0.001) loo_core_turno=1.97(0.030) loo_smelly_qui=2.09(<0.001)
+  main                                       n= 1905 C=0.859 | global_truck=2.43(<0.001) ratio_smelly_q=1.85(<0.001) global_turnove=1.28(0.222) core_code_turn=1.41(0.026) ratio_sponsore=0.68(0.012)
+  without_tenure                             n= 1905 C=0.696 | global_truck=3.31(<0.001) ratio_smelly_q=1.58(0.007) global_turnove=1.44(0.072) core_code_turn=1.43(0.022) ratio_sponsore=0.70(0.022)
+  clustered_by_project                       n= 1905 C=0.859 | global_truck=2.43(<0.001) ratio_smelly_q=1.85(0.001) global_turnove=1.28(0.233) core_code_turn=1.41(0.134) ratio_sponsore=0.68(0.055)
+  Benjamini-Hochberg on 20 coefficients: significant -> log_commits_count, stqf_global_truck, stqf_st_congruence, stqf_ratio_smelly_quitters, stqf_ratio_sponsored, project_age, developer_tenure
+  PH assumption violated (p<0.05): developer_tenure(p=<0.001), log_community_smell_count(p=0.015)
+  stratified_tenure_terciles                 n= 1905 C=0.688 | global_truck=2.48(<0.001) ratio_smelly_q=1.83(<0.001) global_turnove=1.21(0.353) core_code_turn=1.41(0.022) ratio_sponsore=0.69(0.018)
+  bot accounts: 28 developers, 146 project-developer pairs
+  without_bots                               n= 1850 C=0.859 | global_truck=2.42(<0.001) ratio_smelly_q=1.92(<0.001) global_turnove=1.24(0.303) core_code_turn=1.42(0.023) ratio_sponsore=0.68(0.012)
+  role_and_team_size                         n= 1905 C=0.865 | global_truck=1.58(0.012) ratio_smelly_q=1.61(0.005) global_turnove=1.03(0.884) core_code_turn=1.26(0.143) ratio_sponsore=0.73(0.044)
+  role_team_size_no_bots_clustered           n= 1850 C=0.865 | global_truck=1.56(0.055) ratio_smelly_q=1.68(0.008) global_turnove=0.98(0.941) core_code_turn=1.26(0.355) ratio_sponsore=0.72(0.116)
+  active_projects_only_v2                    n= 1490 C=0.860 | global_truck=3.44(<0.001) ratio_smelly_q=1.73(0.005) global_turnove=0.99(0.957) core_code_turn=1.45(0.045) ratio_sponsore=0.79(0.210)
+  stratified_by_project                      n= 1905 C=0.896 | global_truck=2.15(0.002) ratio_smelly_q=0.97(0.894) global_turnove=0.86(0.521) core_code_turn=1.13(0.509) ratio_sponsore=1.06(0.817)
+  loo_metrics                                n= 1905 C=0.872 | global_truck=1.98(<0.001) ratio_sponsore=0.65(0.005) loo_turnover=2.49(<0.001) loo_core_turno=1.97(<0.001) loo_smelly_qui=2.08(<0.001)
+  loo_metrics_clustered                      n= 1905 C=0.872 | global_truck=1.98(0.002) ratio_sponsore=0.65(0.036) loo_turnover=2.49(<0.001) loo_core_turno=1.97(0.031) loo_smelly_qui=2.08(<0.001)
 
 Time-varying Cox:
-  original: community_smell_count=1.02(0.277), stqf_global_turnover=1.12(<0.001), stqf_st_congruence=1.04(0.075), traditional_smell_count=0.94(0.012), vulnerability_count=0.93(0.002), log_commits_count=0.80(<0.001), se_score=0.99(0.703), sentiment_score=1.03(0.078)
-  loo: community_smell_count=1.01(0.477), loo_turnover=1.13(<0.001), stqf_st_congruence=1.04(0.038), traditional_smell_count=0.94(0.010), vulnerability_count=0.93(0.002), log_commits_count=0.80(<0.001), se_score=0.99(0.749), sentiment_score=1.03(0.064), loo_smelly_quitters=1.11(<0.001)
+  original: community_smell_count=1.02(0.265), stqf_global_turnover=1.12(<0.001), stqf_st_congruence=1.04(0.086), traditional_smell_count=0.95(0.014), vulnerability_count=0.93(0.002), log_commits_count=0.80(<0.001), se_score=0.99(0.676), sentiment_score=1.03(0.078)
+  loo: community_smell_count=1.02(0.457), loo_turnover=1.13(<0.001), stqf_st_congruence=1.04(0.043), traditional_smell_count=0.94(0.012), vulnerability_count=0.93(0.002), log_commits_count=0.80(<0.001), se_score=0.99(0.724), sentiment_score=1.04(0.064), loo_smelly_quitters=1.10(<0.001)
 
 Early-stage logit:
-  main                         global_truck=1.29(<0.001), ratio_smelly_q=1.29(<0.001), ratio_smelly_d=1.21(<0.001), communicabilit=1.07(0.012), log_bug_introd=1.25(<0.001)
-  clustered_by_project         global_truck=1.29(0.025), ratio_smelly_q=1.29(0.114), ratio_smelly_d=1.21(0.167), communicabilit=1.07(0.505), log_bug_introd=1.25(<0.001)
-  role_and_team_size           global_truck=0.99(0.595), ratio_smelly_q=1.17(<0.001), ratio_smelly_d=1.26(<0.001), communicabilit=1.38(<0.001), log_bug_introd=1.17(<0.001), log_team_size=3.19(<0.001)
+  main                         global_truck=1.26(<0.001), ratio_smelly_q=1.29(<0.001), ratio_smelly_d=1.21(<0.001), communicabilit=1.08(0.006)
+  clustered_by_project         global_truck=1.26(0.041), ratio_smelly_q=1.29(0.113), ratio_smelly_d=1.21(0.167), communicabilit=1.08(0.461)
+  role_and_team_size           global_truck=0.98(0.463), ratio_smelly_q=1.17(<0.001), ratio_smelly_d=1.25(<0.001), communicabilit=1.38(<0.001), log_team_size=3.12(<0.001)
 
 Departure threshold:
  k  absences  share_returned  share_returned_core  share_returned_peripheral
  4      5580           0.080                0.312                      0.073
  8      3684           0.037                0.164                      0.035
-  departed developers: median inactivity 13 windows, 79.5% at least eight
-  core events: 205 of 8628
+  departed developers: median inactivity 13 windows, 79.6% at least eight
+  core events: 205 of 8616
 
-Done. Outputs in /Users/broke31/Downloads/Developers_Leave__Projects_Fade__On_the_Relationship_between_Socio_Technical_Debt_and_Abandonment_in_Open_Source_Machine_Learning_Projects-3/socio-technical-debt-abandonment-oss/analysis/extended/outputs
+Done. Outputs in analysis/extended/outputs

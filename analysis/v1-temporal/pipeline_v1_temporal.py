@@ -80,7 +80,28 @@ EMO = ['Anger', 'Fear', 'Sadness', 'Love', 'Joy', 'Surprise']
 print("STEP 1 — Caricamento dati")
 
 
+# Inclusion criteria (Section 3.1 of the paper):
+#  (i)  the history must be reconstructed, i.e. the mined history must contain at least the
+#       100 commits that NICHE requires of every project;
+#  (ii) the project must involve more than one contributor, as required by the network metrics.
+MIN_MINED_COMMITS = 100
+MIN_CONTRIBUTORS = 2
+
+
+def apply_inclusion_criteria(df):
+    """Keep only the projects that meet the two inclusion criteria."""
+    commits = pd.to_numeric(df['commits_count'], errors='coerce').fillna(0)
+    g = df.assign(_c=commits).groupby('project_url').agg(_commits=('_c', 'sum'),
+                                                         _devs=('developer_id', 'nunique'))
+    keep = g.index[(g['_commits'] >= MIN_MINED_COMMITS) & (g['_devs'] >= MIN_CONTRIBUTORS)]
+    print(f"Inclusion criteria: {len(keep)} of {len(g)} projects retained "
+          f"({(g['_commits'] < MIN_MINED_COMMITS).sum()} with fewer than {MIN_MINED_COMMITS} mined commits, "
+          f"{(g['_devs'] < MIN_CONTRIBUTORS).sum()} with a single contributor)")
+    return df[df['project_url'].isin(keep)].reset_index(drop=True)
+
+
 df = pd.read_csv(DATA_PATH, low_memory=False)
+df = apply_inclusion_criteria(df)
 print(f"Shape: {df.shape[0]:,} righe × {df.shape[1]} colonne")
 print(f"Progetti: {df['project_url'].nunique():,}")
 print(f"Developer: {df['developer_id'].nunique():,}")
@@ -260,16 +281,14 @@ FEATURES_BASE = [
     'stqf_degree_centr',
     'stqf_core_global_devs',
     'stqf_core_code_devs',
-    # Technical Debt 5 feature
+    # Technical Debt 4 feature
     'traditional_smell_count',
     'ml_smell_count',
     'vulnerability_count',
     'vulnerability_high',
-    'bug_introduced_count_rszz',
-    # Attività (controllo) 4 feature
+    # Attività (controllo) 3 feature
     'commits_count',
     'code_churn',
-    'bug_fix_commits_count',
     'files_touched_count',
     # Developer (controllo) 2 feature
     'se_score',
@@ -326,7 +345,7 @@ for col in FEATURES_BASE:
 # Log-trasformazione variabili skewed
 LOG_COLS = [
     'commits_count', 'code_churn', 'traditional_smell_count',
-    'community_smell_count', 'bug_introduced_count_rszz', 'files_touched_count'
+    'community_smell_count', 'files_touched_count'
 ]
 LOG_COLS = [c for c in LOG_COLS if c in df.columns]
 for c in LOG_COLS:
@@ -649,7 +668,6 @@ interaction_pairs = [
     ('stqf_ratio_smelly_devs',   'vulnerability_count',     'SD_smelly_x_TD_vuln'),
     ('stqf_global_turnover',     'code_churn',              'SD_turnover_x_TD_churn'),
     ('stqf_global_turnover',     'traditional_smell_count', 'SD_turnover_x_TD_trad'),
-    ('stqf_ratio_smelly_quitters','bug_introduced_count_rszz','SD_quitters_x_TD_bugs'),
 ]
 
 for sd, td, name in interaction_pairs:
@@ -1553,7 +1571,7 @@ for p in ALLP:
 _cox2 = pd.concat([_pl2[['duration', 'proj_failed']].rename(columns={'proj_failed': 'event'}), _Z2[ALLP]], axis=1)
 _cph2 = _CoxPH3(penalizer=0.1); _cph2.fit(_cox2, duration_col='duration', event_col='event')
 print(f"  [Cox] concordance = {_cph2.concordance_index_:.3f}  (HR per +1 dev. std.; eta' controllata dall'asse tempo)")
-_s2 = _cph2.summary[['exp(coef)', 'p']]
+_s2 = _cph2.summary[['exp(coef)', 'exp(coef) lower 95%', 'exp(coef) upper 95%', 'p']]
 for p in ALLP:
     hr = _s2.loc[p, 'exp(coef)']; pv = _s2.loc[p, 'p']
     sig = '***' if pv < .001 else '**' if pv < .01 else '*' if pv < .05 else 'ns'
