@@ -6,8 +6,8 @@ Descriptive analyses (how developers leave, how projects fade) and RQ3 (debt lef
   (iii) final active window of each project and explicit end-of-life notices;
   (iv)  activity trajectories (share of commits per tenth of life, k-means);
   (v)   contrasting cases (debt index);
-  (vi)  RQ3: fate of the traditional-smell files of the developers who leave, and share
-        of orphaned smelly files per project.
+  (vi)  RQ3: fate of the smelly files of the developers who leave, and share of orphaned
+        smelly files per project, for traditional smells, ML smells and vulnerabilities.
 The commit codebook is a closed set of deterministic keyword rules evaluated in a fixed
 order (CODEBOOK below); a stratified sample of coded messages is exported for manual
 validation, together with a simple random hold-out sample. Outputs: extended/outputs/desc_*.csv and rq3_*.csv
@@ -248,95 +248,110 @@ print(f'  Spearman debt index vs team size: rho={rho.statistic:.2f} (p={rho.pval
 cc.to_csv(OUT_DIR / 'desc_contrasting_cases_summary.csv')
 
 # ── (vi) RQ3: debt left behind ────────────────────────────────────────────
-print('\nRQ3: parsing smell locations...')
+# The same analysis is run on three kinds of technical debt located in files: traditional
+# code smells (DPy), ML-specific smells (dslinter) and security vulnerabilities (Bandit).
+# A file is "smelly" for a kind when the tool flags at least one instance of that kind in it.
+DEBT_KINDS = {'traditional': 'traditional_smell_details', 'ml': 'ml_smell_details',
+              'vulnerability': 'vulnerability_details'}
 
 
-def smelly_files(raw):
+def smelly_files(raw, key):
     try:
         d = json.loads(raw)
     except Exception:
         return set()
-    return {str(x.get('file', '')) for x in d.get('traditional_smell_details') or [] if x.get('file')}
+    return {str(x.get('file', '')) for x in d.get(key) or [] if x.get('file')}
 
 
-df['files'] = df['developer_raw_json'].map(smelly_files)
-occ = df[['project_url', 'developer_id', 'time_window_rank', 'files']].explode('files').dropna(subset=['files'])
-occ = occ.rename(columns={'files': 'file'})
-pl_last = df.groupby(['project_url', 'developer_id']).agg(last=('time_window_rank', 'max'), leave=('has_failed', 'max'),
-                                                         core=('is_core', 'max')).reset_index()
-leavers = pl_last[pl_last.leave == 1]
-lf = occ.merge(leavers, on=['project_url', 'developer_id'])[['project_url', 'developer_id', 'file', 'last', 'core']].drop_duplicates(
-    ['project_url', 'developer_id', 'file'])
-others = occ[['project_url', 'developer_id', 'time_window_rank', 'file']].rename(
-    columns={'developer_id': 'other', 'time_window_rank': 'w'})
-m = lf.merge(others, on=['project_url', 'file'])
-m = m[(m['other'] != m['developer_id']) & (m['w'] > m['last'])]
-taken = m[['project_url', 'developer_id', 'file']].drop_duplicates().assign(taken=1)
-lf = lf.merge(taken, on=['project_url', 'developer_id', 'file'], how='left').fillna({'taken': 0})
-per_leaver = lf.groupby(['project_url', 'developer_id', 'core']).agg(files=('file', 'size'), taken=('taken', 'sum')).reset_index()
-core_l = per_leaver[per_leaver.core == 1]
-rq3 = {
-    'smelly_files_of_leavers': len(lf),
-    'taken_over_pct': lf['taken'].mean() * 100,
-    'taken_over_peripheral_pct': lf[lf.core == 0]['taken'].mean() * 100,
-    'taken_over_core_pct': lf[lf.core == 1]['taken'].mean() * 100,
-    'leavers_with_smelly_files': len(per_leaver),
-    'leavers_with_nothing_taken_over_pct': (per_leaver['taken'] == 0).mean() * 100,
-    'core_leaver_median_smelly_files': core_l['files'].median(),
-}
-# Orphaned smelly files: share of a project's smelly files whose last contributors all left
-# (all the developers who worked on the file in the last window in which it was smelly).
-last_w = occ.groupby(['project_url', 'file'])['time_window_rank'].transform('max')
-lastc = occ[occ['time_window_rank'] == last_w].drop_duplicates(['project_url', 'file', 'developer_id'])
-lastc = lastc.merge(pl_last[['project_url', 'developer_id', 'leave']], on=['project_url', 'developer_id'])
-file_orph = lastc.groupby(['project_url', 'file'])['leave'].min()
-orph = file_orph.groupby('project_url').mean().rename('orphaned_share').to_frame().join(ps['proj_failed'])
-a, d = orph[orph.proj_failed == 0]['orphaned_share'], orph[orph.proj_failed == 1]['orphaned_share']
-rq3.update({'orphaned_share_median_dormant_pct': d.median() * 100, 'orphaned_share_median_active_pct': a.median() * 100,
-            'orphaned_share_mannwhitney_p': stats.mannwhitneyu(a, d).pvalue})
+def debt_left_behind(key):
+    files = df['developer_raw_json'].map(lambda r: smelly_files(r, key))
+    occ = df[['project_url', 'developer_id', 'time_window_rank']].assign(files=files).explode('files').dropna(subset=['files'])
+    occ = occ.rename(columns={'files': 'file'})
+    pl_last = df.groupby(['project_url', 'developer_id']).agg(last=('time_window_rank', 'max'), leave=('has_failed', 'max'),
+                                                             core=('is_core', 'max')).reset_index()
+    leavers = pl_last[pl_last.leave == 1]
+    lf = occ.merge(leavers, on=['project_url', 'developer_id'])[['project_url', 'developer_id', 'file', 'last', 'core']].drop_duplicates(
+        ['project_url', 'developer_id', 'file'])
+    others = occ[['project_url', 'developer_id', 'time_window_rank', 'file']].rename(
+        columns={'developer_id': 'other', 'time_window_rank': 'w'})
+    m = lf.merge(others, on=['project_url', 'file'])
+    m = m[(m['other'] != m['developer_id']) & (m['w'] > m['last'])]
+    taken = m[['project_url', 'developer_id', 'file']].drop_duplicates().assign(taken=1)
+    lf = lf.merge(taken, on=['project_url', 'developer_id', 'file'], how='left').fillna({'taken': 0})
+    per_leaver = lf.groupby(['project_url', 'developer_id', 'core']).agg(files=('file', 'size'), taken=('taken', 'sum')).reset_index()
+    core_l = per_leaver[per_leaver.core == 1]
+    rq3 = {
+        'smelly_files_of_leavers': len(lf),
+        'taken_over_pct': lf['taken'].mean() * 100,
+        'taken_over_peripheral_pct': lf[lf.core == 0]['taken'].mean() * 100,
+        'taken_over_core_pct': lf[lf.core == 1]['taken'].mean() * 100,
+        'leavers_with_smelly_files': len(per_leaver),
+        'leavers_with_nothing_taken_over_pct': (per_leaver['taken'] == 0).mean() * 100,
+        'core_leaver_median_smelly_files': core_l['files'].median(),
+    }
+    # Orphaned smelly files: share of a project's smelly files whose last contributors all left
+    # (all the developers who worked on the file in the last window in which it was smelly).
+    last_w = occ.groupby(['project_url', 'file'])['time_window_rank'].transform('max')
+    lastc = occ[occ['time_window_rank'] == last_w].drop_duplicates(['project_url', 'file', 'developer_id'])
+    lastc = lastc.merge(pl_last[['project_url', 'developer_id', 'leave']], on=['project_url', 'developer_id'])
+    file_orph = lastc.groupby(['project_url', 'file'])['leave'].min()
+    orph = file_orph.groupby('project_url').mean().rename('orphaned_share').to_frame().join(ps['proj_failed'])
+    a, d = orph[orph.proj_failed == 0]['orphaned_share'], orph[orph.proj_failed == 1]['orphaned_share']
+    rq3.update({'orphaned_share_median_dormant_pct': d.median() * 100, 'orphaned_share_median_active_pct': a.median() * 100,
+                'orphaned_share_mannwhitney_p': stats.mannwhitneyu(a, d).pvalue})
 
-# Permutation baseline: the orphaned share expected if departures were unrelated to who
-# worked last on the smelly files. Within each project, the leave labels are permuted
-# among its developers (the number of leavers is kept) and the orphaned share recomputed.
-rng = np.random.default_rng(0)
-N_PERM = 500
-smelly_devs = occ.groupby('project_url')['developer_id'].apply(set).to_dict()
-expected = {}
-for proj, g in lastc.groupby('project_url'):
-    files = g['file'].astype('category').cat.codes.to_numpy()
-    out = []
-    # (a) among all the developers of the project; (b) only among those with smelly files
-    for pool in (pl_last[pl_last.project_url == proj],
-                 pl_last[(pl_last.project_url == proj) & pl_last.developer_id.isin(smelly_devs.get(proj, ()))]):
-        idx = {d: i for i, d in enumerate(pool['developer_id'])}
-        labels = pool['leave'].to_numpy()
-        A = np.zeros((files.max() + 1, len(labels)))
-        A[files, g['developer_id'].map(idx).to_numpy()] = 1
-        out.append(np.mean([((A @ (1 - rng.permutation(labels))) == 0).mean() for _ in range(N_PERM)]))
-    expected[proj] = out
-orph['expected_share'] = pd.Series({k: v[0] for k, v in expected.items()})
-orph['expected_share_smelly_devs'] = pd.Series({k: v[1] for k, v in expected.items()})
-orph['excess_smelly_devs'] = orph['orphaned_share'] - orph['expected_share_smelly_devs']
-orph['excess'] = orph['orphaned_share'] - orph['expected_share']
-ea, ed = orph[orph.proj_failed == 0]['excess'], orph[orph.proj_failed == 1]['excess']
-rq3.update({
-    'expected_share_median_dormant_pct': orph[orph.proj_failed == 1]['expected_share'].median() * 100,
-    'expected_share_median_active_pct': orph[orph.proj_failed == 0]['expected_share'].median() * 100,
-    'excess_median_dormant_pp': ed.median() * 100, 'excess_median_active_pp': ea.median() * 100,
-    'excess_dormant_wilcoxon_p': stats.wilcoxon(ed).pvalue, 'excess_active_wilcoxon_p': stats.wilcoxon(ea).pvalue,
-    'excess_dormant_vs_active_mannwhitney_p': stats.mannwhitneyu(ea, ed).pvalue,
-    'excess_positive_dormant_pct': (ed > 0).mean() * 100, 'excess_positive_active_pct': (ea > 0).mean() * 100,
-    'projects_dormant': len(ed), 'projects_active': len(ea),
-    'expected_smelly_devs_median_dormant_pct': orph[orph.proj_failed == 1]['expected_share_smelly_devs'].median() * 100,
-    'expected_smelly_devs_median_active_pct': orph[orph.proj_failed == 0]['expected_share_smelly_devs'].median() * 100,
-    'excess_smelly_devs_median_dormant_pp': orph[orph.proj_failed == 1]['excess_smelly_devs'].median() * 100,
-    'excess_smelly_devs_median_active_pp': orph[orph.proj_failed == 0]['excess_smelly_devs'].median() * 100,
-    'excess_smelly_devs_dormant_wilcoxon_p': stats.wilcoxon(orph[orph.proj_failed == 1]['excess_smelly_devs']).pvalue,
-    'excess_smelly_devs_active_wilcoxon_p': stats.wilcoxon(orph[orph.proj_failed == 0]['excess_smelly_devs']).pvalue,
-})
-pd.Series(rq3).to_csv(OUT_DIR / 'rq3_debt_left_behind.csv', header=['value'])
-orph.to_csv(OUT_DIR / 'rq3_orphaned_share_by_project.csv')
-print(pd.Series(rq3).round(3).to_string())
+    # Permutation baseline: the orphaned share expected if departures were unrelated to who
+    # worked last on the smelly files. Within each project, the leave labels are permuted
+    # among its developers (the number of leavers is kept) and the orphaned share recomputed.
+    rng = np.random.default_rng(0)
+    N_PERM = 500
+    smelly_devs = occ.groupby('project_url')['developer_id'].apply(set).to_dict()
+    expected = {}
+    for proj, g in lastc.groupby('project_url'):
+        files = g['file'].astype('category').cat.codes.to_numpy()
+        out = []
+        # (a) among all the developers of the project; (b) only among those with smelly files
+        for pool in (pl_last[pl_last.project_url == proj],
+                     pl_last[(pl_last.project_url == proj) & pl_last.developer_id.isin(smelly_devs.get(proj, ()))]):
+            idx = {d: i for i, d in enumerate(pool['developer_id'])}
+            labels = pool['leave'].to_numpy()
+            A = np.zeros((files.max() + 1, len(labels)))
+            A[files, g['developer_id'].map(idx).to_numpy()] = 1
+            out.append(np.mean([((A @ (1 - rng.permutation(labels))) == 0).mean() for _ in range(N_PERM)]))
+        expected[proj] = out
+    orph['expected_share'] = pd.Series({k: v[0] for k, v in expected.items()})
+    orph['expected_share_smelly_devs'] = pd.Series({k: v[1] for k, v in expected.items()})
+    orph['excess_smelly_devs'] = orph['orphaned_share'] - orph['expected_share_smelly_devs']
+    orph['excess'] = orph['orphaned_share'] - orph['expected_share']
+    ea, ed = orph[orph.proj_failed == 0]['excess'], orph[orph.proj_failed == 1]['excess']
+    rq3.update({
+        'expected_share_median_dormant_pct': orph[orph.proj_failed == 1]['expected_share'].median() * 100,
+        'expected_share_median_active_pct': orph[orph.proj_failed == 0]['expected_share'].median() * 100,
+        'excess_median_dormant_pp': ed.median() * 100, 'excess_median_active_pp': ea.median() * 100,
+        'excess_dormant_wilcoxon_p': stats.wilcoxon(ed).pvalue, 'excess_active_wilcoxon_p': stats.wilcoxon(ea).pvalue,
+        'excess_dormant_vs_active_mannwhitney_p': stats.mannwhitneyu(ea, ed).pvalue,
+        'excess_positive_dormant_pct': (ed > 0).mean() * 100, 'excess_positive_active_pct': (ea > 0).mean() * 100,
+        'projects_dormant': len(ed), 'projects_active': len(ea),
+        'expected_smelly_devs_median_dormant_pct': orph[orph.proj_failed == 1]['expected_share_smelly_devs'].median() * 100,
+        'expected_smelly_devs_median_active_pct': orph[orph.proj_failed == 0]['expected_share_smelly_devs'].median() * 100,
+        'excess_smelly_devs_median_dormant_pp': orph[orph.proj_failed == 1]['excess_smelly_devs'].median() * 100,
+        'excess_smelly_devs_median_active_pp': orph[orph.proj_failed == 0]['excess_smelly_devs'].median() * 100,
+        'excess_smelly_devs_dormant_wilcoxon_p': stats.wilcoxon(orph[orph.proj_failed == 1]['excess_smelly_devs']).pvalue,
+        'excess_smelly_devs_active_wilcoxon_p': stats.wilcoxon(orph[orph.proj_failed == 0]['excess_smelly_devs']).pvalue,
+    })
+    return rq3, orph
+
+rq3_by_kind = {}
+for kind, key in DEBT_KINDS.items():
+    print(f'\nRQ3 ({kind}): parsing file locations...')
+    rq3, orph = debt_left_behind(key)
+    rq3_by_kind[kind] = rq3
+    suffix = '' if kind == 'traditional' else f'_{kind}'
+    orph.to_csv(OUT_DIR / f'rq3_orphaned_share_by_project{suffix}.csv')
+# the traditional-smell results keep their original file; all three kinds side by side
+pd.Series(rq3_by_kind['traditional']).to_csv(OUT_DIR / 'rq3_debt_left_behind.csv', header=['value'])
+pd.DataFrame(rq3_by_kind).to_csv(OUT_DIR / 'rq3_debt_left_behind_by_kind.csv')
+print(pd.DataFrame(rq3_by_kind).round(3).to_string())
 # ── Departure from a project vs departure from open source ─────────────────────────
 # Developers who left at least one project and contributed to at least one other project of the
 # sample; of these, the share whose activity in another project continues after the last window

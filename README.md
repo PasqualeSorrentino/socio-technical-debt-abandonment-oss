@@ -210,7 +210,7 @@ for the extended analyses.
 | How projects fade (final window, end-of-life notices) | extended/descriptive_rq3.py | `desc_project_final_window.csv` |
 | Activity trajectories | extended/descriptive_rq3.py | `desc_trajectories.csv`, `desc_trajectories_tests.csv` |
 | Contrasting cases | extended/descriptive_rq3.py | `desc_contrasting_cases*.csv` |
-| RQ3 — debt left behind, orphaned debt and permutation baseline | extended/descriptive_rq3.py | `rq3_debt_left_behind.csv`, `rq3_orphaned_share_by_project.csv` |
+| RQ3 — debt left behind, orphaned debt and permutation baseline (traditional smells, ML smells, vulnerabilities) | extended/descriptive_rq3.py | `rq3_debt_left_behind.csv` (traditional), `rq3_debt_left_behind_by_kind.csv` (all three), `rq3_orphaned_share_by_project{,_ml,_vulnerability}.csv` |
 | Results — leavers still active in another project of the sample | extended/descriptive_rq3.py | `desc_cross_project_departures.csv` |
 | Table 5 — RQ3, community after a core departure (event study) | extended/rq3_social.py | `rq3_social_event_study.csv`, `rq3_social_event_study_sun_abraham.csv`, `rq3_social_counts.csv` |
 | Codebook validation samples (stratified and random) | extended/descriptive_rq3.py | `desc_codebook_validation_sample.csv`, `desc_codebook_holdout_sample.csv` |
