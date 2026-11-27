@@ -33,6 +33,7 @@ Analysis, Empirical Software Engineering.
 └── analysis/
     ├── dataset/
     │   ├── mining.csv                 # longitudinal panel, 913 MB, Git LFS
+    │   ├── NICHE.csv                  # NICHE metadata (stars, commits, LOC) of the 572 projects
     │   └── README.md                  # how to retrieve it
     ├── v2-maintenance-based/          # MAIN analysis -> RQ1 and RQ2 models of the paper
     │   ├── pipeline_v2_maintenance_based.py
@@ -151,6 +152,9 @@ python analysis/extended/rq1_extra.py   # after rq1_robustness.py; needs R with 
 python analysis/extended/rq1_signature_loo.py   # Figure 2 with the lagged leave-one-out turnover
 python analysis/extended/smell_structure_overlap.py   # overlap between community smells and structure
 python analysis/extended/td_robustness.py   # RQ1 with alternative technical debt measures
+python analysis/extended/rq1_smelly_quitters_decomposition.py   # smelly vs non-smelly turnover
+python analysis/extended/rq2_left_truncation.py   # project Cox models with delayed entry (May 2020)
+python analysis/extended/context_descriptives.py  # descriptive statistics of the 308 projects (needs dataset/NICHE.csv)
 ```
 
 `rq1_extra.py` adds the gamma-frailty Cox model (through `frailty_cox.R`), the models that
@@ -212,6 +216,10 @@ for the extended analyses.
 | Codebook validation samples (stratified and random) | extended/descriptive_rq3.py | `desc_codebook_validation_sample.csv`, `desc_codebook_holdout_sample.csv` |
 | VIF-based variable selection | v2-maintenance-based | `vif_results.csv` |
 | Appendix — RQ1 with alternative technical debt measures (instances, per file touched, without B101) | extended/td_robustness.py | `rq1_td_robustness.csv`, `rq1_b101_share.csv` |
+| RQ1 — decomposition of the ratio of smelly quitters into smelly and non-smelly turnover | extended/rq1_smelly_quitters_decomposition.py | `rq1_smelly_quitters_decomposition.csv` |
+| RQ2 — project-level Cox models with delayed entry for left truncation | extended/rq2_left_truncation.py | `rq2_left_truncation.csv` |
+| Context selection — descriptive statistics of the sample (stars, commits, LOC, contributors, history) | extended/context_descriptives.py | `context_descriptives.csv`, `context_descriptives_by_project.csv` |
+| RQ3 — event study with a balanced post period (design `core_departure_balanced_post`) | extended/rq3_social.py | `rq3_social_event_study.csv` |
 | Data Collection — overlap between community smells and community structure | extended/smell_structure_overlap.py | `smell_structure_correlations.csv`, `smell_detection_rules.csv` |
 
 > Some output files and column names still carry the earlier wording (`proj_failed`,

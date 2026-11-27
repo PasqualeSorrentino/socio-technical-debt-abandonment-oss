@@ -187,13 +187,21 @@ print(f'Core departures: {core_t0.size} projects (first event), {still} still ob
       f'{len(never_core)} never-treated projects')
 print(f'Comparison (repeated peripheral): {per_t0.size} projects, {len(never_per)} controls')
 
+# Post period observed only while a project remains active: as a check on this selection, keep the
+# treated projects observed in all three windows after the departure (balanced post period).
+obs = set(zip(pw.project_url, pw.time_window_rank))
+balanced = core_t0[[all((p, t + k) in obs for k in (1, 2, 3)) for p, t in core_t0.items()]]
+print(f'Balanced post period: {balanced.size} of {core_t0.size} treated projects observed at k = 1..3')
+
 R = pd.concat([event_study(core_t0, never_core, 'core_departure'),
                event_study(core_t0, never_core, 'core_departure_size_adjusted', control_size=True),
+               event_study(balanced, never_core, 'core_departure_balanced_post'),
                event_study(per_t0, never_per, 'repeated_peripheral_departure')])
 R.to_csv(OUT_DIR / 'rq3_social_event_study.csv', index=False)
 SA = sun_abraham(core_t0, never_core, 'core_departure_sun_abraham')
 SA.to_csv(OUT_DIR / 'rq3_social_event_study_sun_abraham.csv', index=False)
 pd.Series({'core_event_projects': core_t0.size, 'core_event_projects_observed_after': still,
+           'core_event_projects_balanced_post': balanced.size,
            'never_treated_projects': len(never_core), 'placebo_projects': per_t0.size}).to_csv(
     OUT_DIR / 'rq3_social_counts.csv', header=['value'])
 cols = ['design', 'outcome', 'post_avg', 'post_ci_low', 'post_ci_high', 'post_p', 'post_q_bh', 'post_avg_in_sd', 'pretrend_p']

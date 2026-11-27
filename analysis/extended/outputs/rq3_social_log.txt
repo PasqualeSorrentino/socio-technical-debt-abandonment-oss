@@ -2,6 +2,7 @@ Loading panel...
 Inclusion criteria: 308 of 332 projects retained (18 with fewer than 100 mined commits, 11 with a single contributor)
 Core departures: 93 projects (first event), 93 still observed afterwards; 215 never-treated projects
 Comparison (repeated peripheral): 110 projects, 105 controls
+Balanced post period: 61 of 93 treated projects observed at k = 1..3
   Sun-Abraham: dropped 1 cohort(s) without the reference period and 5 period(s) without never-treated projects
                        design                        outcome  post_avg  post_ci_low  post_ci_high  post_p  post_q_bh  post_avg_in_sd  pretrend_p
                core_departure           share_devs_any_smell     0.018       -0.081         0.116   0.725      0.871           0.042       0.265
@@ -29,6 +30,19 @@ Comparison (repeated peripheral): 110 projects, 105 controls
  core_departure_size_adjusted                 non_core_ratio    -0.008       -0.053         0.037   0.718      0.847          -0.028       0.096
  core_departure_size_adjusted                network_density    -0.076       -0.160         0.008   0.077      0.474          -0.191       0.192
  core_departure_size_adjusted             network_modularity     0.013       -0.010         0.035   0.258      0.774           0.163       0.735
+ core_departure_balanced_post           share_devs_any_smell    -0.033       -0.145         0.078   0.558      0.669          -0.080       0.261
+ core_departure_balanced_post share_devs_organisational_silo    -0.168       -0.276        -0.061   0.002      0.026          -0.431       0.520
+ core_departure_balanced_post           share_devs_lone_wolf     0.123        0.033         0.212   0.007      0.045           0.267       0.164
+ core_departure_balanced_post       share_devs_radio_silence    -0.033       -0.075         0.009   0.121      0.259          -0.370       0.583
+ core_departure_balanced_post          share_devs_bottleneck     0.010       -0.024         0.044   0.554      0.669           0.102       0.631
+ core_departure_balanced_post       community_smells_per_dev    -0.082       -0.227         0.064   0.270      0.463          -0.176       0.134
+ core_departure_balanced_post              ratio_smelly_devs    -0.027       -0.136         0.082   0.629      0.686          -0.066       0.402
+ core_departure_balanced_post                  st_congruence     0.038       -0.045         0.121   0.372      0.558           0.101       0.402
+ core_departure_balanced_post                communicability    -0.070       -0.158         0.019   0.122      0.259          -0.169       0.023
+ core_departure_balanced_post                 non_core_ratio    -0.050       -0.115         0.015   0.130      0.259          -0.166       0.401
+ core_departure_balanced_post                network_density    -0.069       -0.151         0.014   0.105      0.259          -0.173       0.009
+ core_departure_balanced_post             network_modularity     0.003       -0.023         0.030   0.803      0.803           0.042       0.381
+ core_departure_balanced_post                log_active_devs    -0.239       -0.389        -0.090   0.002        NaN          -0.322       0.504
 repeated_peripheral_departure           share_devs_any_smell     0.153        0.056         0.250   0.002      0.005           0.343       0.084
 repeated_peripheral_departure share_devs_organisational_silo    -0.011       -0.099         0.077   0.805      0.805          -0.032       0.518
 repeated_peripheral_departure           share_devs_lone_wolf     0.170        0.090         0.251   0.000      0.000           0.346       0.008
