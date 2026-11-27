@@ -1,0 +1,13 @@
+,value
+history_median_dormant,21.0
+history_median_active,13.0
+final_window_median_devs_dormant,1.0
+final_window_median_devs_active,2.0
+final_window_median_commits_dormant,2.0
+final_window_median_commits_active,13.0
+maintenance_only_final_window_dormant_pct,46.15384615384615
+maintenance_only_final_window_active_pct,17.15686274509804
+maintenance_or_merge_only_dormant_pct,61.53846153846154
+maintenance_or_merge_only_active_pct,34.80392156862745
+dormant_projects_with_end_of_life_message,1
+end_of_life_projects,nussl.git

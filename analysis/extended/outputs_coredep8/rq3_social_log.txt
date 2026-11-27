@@ -1,0 +1,62 @@
+Loading panel...
+Inclusion criteria: 308 of 332 projects retained (18 with fewer than 100 mined commits, 11 with a single contributor)
+Core departures: 70 projects (first event), 70 still observed afterwards; 238 never-treated projects
+Comparison (repeated peripheral): 129 projects, 109 controls
+  Sun-Abraham: dropped 0 cohort(s) without the reference period and 5 period(s) without never-treated projects
+                       design                        outcome  post_avg  post_ci_low  post_ci_high  post_p  post_q_bh  post_avg_in_sd  pretrend_p
+               core_departure           share_devs_any_smell     0.041       -0.072         0.153   0.479      0.687           0.097       0.358
+               core_departure share_devs_organisational_silo    -0.124       -0.228        -0.019   0.021      0.065          -0.318       0.598
+               core_departure           share_devs_lone_wolf     0.155        0.056         0.254   0.002      0.025           0.338       0.454
+               core_departure       share_devs_radio_silence    -0.027       -0.064         0.010   0.152      0.303          -0.316       0.554
+               core_departure          share_devs_bottleneck     0.005       -0.027         0.038   0.742      0.890           0.054       0.829
+               core_departure       community_smells_per_dev     0.005       -0.135         0.145   0.943      0.943           0.011       0.237
+               core_departure              ratio_smelly_devs     0.036       -0.072         0.144   0.515      0.687           0.087       0.426
+               core_departure                  st_congruence    -0.042       -0.144         0.060   0.419      0.687          -0.111       0.912
+               core_departure                communicability    -0.111       -0.205        -0.016   0.022      0.065          -0.268       0.342
+               core_departure                 non_core_ratio    -0.073       -0.132        -0.014   0.016      0.065          -0.242       0.568
+               core_departure                network_density    -0.102       -0.195        -0.009   0.031      0.074          -0.257       0.174
+               core_departure             network_modularity    -0.003       -0.032         0.027   0.858      0.936          -0.034       0.875
+               core_departure                log_active_devs    -0.242       -0.384        -0.100   0.001        NaN          -0.327       0.477
+ core_departure_size_adjusted           share_devs_any_smell     0.001       -0.108         0.111   0.979      0.979           0.003       0.267
+ core_departure_size_adjusted share_devs_organisational_silo    -0.045       -0.149         0.058   0.390      0.876          -0.117       0.862
+ core_departure_size_adjusted           share_devs_lone_wolf     0.035       -0.053         0.123   0.438      0.876           0.076       0.141
+ core_departure_size_adjusted       share_devs_radio_silence    -0.015       -0.050         0.020   0.396      0.876          -0.176       0.575
+ core_departure_size_adjusted          share_devs_bottleneck     0.018       -0.015         0.051   0.288      0.876           0.179       0.796
+ core_departure_size_adjusted       community_smells_per_dev    -0.011       -0.149         0.127   0.872      0.979          -0.024       0.211
+ core_departure_size_adjusted              ratio_smelly_devs     0.002       -0.104         0.107   0.974      0.979           0.004       0.354
+ core_departure_size_adjusted                  st_congruence     0.002       -0.097         0.101   0.968      0.979           0.005       0.986
+ core_departure_size_adjusted                communicability    -0.027       -0.116         0.062   0.552      0.947          -0.066       0.226
+ core_departure_size_adjusted                 non_core_ratio     0.002       -0.047         0.051   0.944      0.979           0.006       0.364
+ core_departure_size_adjusted                network_density    -0.052       -0.143         0.039   0.261      0.876          -0.131       0.150
+ core_departure_size_adjusted             network_modularity     0.013       -0.016         0.041   0.382      0.876           0.158       0.845
+repeated_peripheral_departure           share_devs_any_smell     0.150        0.060         0.239   0.001      0.002           0.335       0.151
+repeated_peripheral_departure share_devs_organisational_silo     0.005       -0.075         0.085   0.908      0.984           0.013       0.836
+repeated_peripheral_departure           share_devs_lone_wolf     0.151        0.076         0.226   0.000      0.000           0.308       0.050
+repeated_peripheral_departure       share_devs_radio_silence    -0.013       -0.033         0.008   0.225      0.269          -0.185       0.008
+repeated_peripheral_departure          share_devs_bottleneck     0.000       -0.022         0.022   0.984      0.984           0.002       0.268
+repeated_peripheral_departure       community_smells_per_dev     0.147        0.043         0.251   0.006      0.008           0.311       0.360
+repeated_peripheral_departure              ratio_smelly_devs     0.143        0.053         0.232   0.002      0.004           0.324       0.092
+repeated_peripheral_departure                  st_congruence    -0.143       -0.225        -0.061   0.001      0.002          -0.348       0.128
+repeated_peripheral_departure                communicability    -0.137       -0.209        -0.065   0.000      0.001          -0.297       0.059
+repeated_peripheral_departure                 non_core_ratio    -0.073       -0.123        -0.023   0.005      0.008          -0.243       0.012
+repeated_peripheral_departure                network_density    -0.155       -0.230        -0.080   0.000      0.000          -0.349       0.126
+repeated_peripheral_departure             network_modularity     0.011        0.000         0.022   0.047      0.062           0.263       0.579
+repeated_peripheral_departure                log_active_devs    -0.098       -0.187        -0.009   0.032        NaN          -0.175       0.004
+
+Sun-Abraham interaction-weighted estimator (core departure):
+                    design                        outcome  post_avg  post_ci_low  post_ci_high  post_p  post_q_bh  post_avg_in_sd  pretrend_p
+core_departure_sun_abraham           share_devs_any_smell     0.049       -0.057         0.156   0.366      0.512           0.117       0.228
+core_departure_sun_abraham share_devs_organisational_silo    -0.126       -0.215        -0.038   0.005      0.021          -0.325       0.869
+core_departure_sun_abraham           share_devs_lone_wolf     0.167        0.074         0.259   0.000      0.005           0.363       0.065
+core_departure_sun_abraham       share_devs_radio_silence    -0.031       -0.065         0.002   0.068      0.135          -0.365       0.338
+core_departure_sun_abraham          share_devs_bottleneck     0.000       -0.026         0.027   0.996      0.996           0.001       0.520
+core_departure_sun_abraham       community_smells_per_dev     0.001       -0.127         0.129   0.990      0.996           0.002       0.206
+core_departure_sun_abraham              ratio_smelly_devs     0.045       -0.056         0.146   0.384      0.512           0.110       0.298
+core_departure_sun_abraham                  st_congruence    -0.043       -0.134         0.048   0.358      0.512          -0.113       0.892
+core_departure_sun_abraham                communicability    -0.116       -0.204        -0.028   0.010      0.029          -0.281       0.060
+core_departure_sun_abraham                 non_core_ratio    -0.082       -0.134        -0.030   0.002      0.012          -0.272       0.169
+core_departure_sun_abraham                network_density    -0.107       -0.194        -0.021   0.015      0.036          -0.271       0.035
+core_departure_sun_abraham             network_modularity    -0.002       -0.031         0.026   0.871      0.996          -0.029       0.828
+core_departure_sun_abraham                log_active_devs    -0.259       -0.380        -0.139   0.000        NaN          -0.350       0.414
+
+Done. Outputs in outputs_coredep8

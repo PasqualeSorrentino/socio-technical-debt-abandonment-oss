@@ -1,0 +1,6 @@
+smell,instances,example_message,evidence_modes
+organisational_silo,15932,Silo: code coupling without communication between <developer> and <developer>,"{'pair_no_communication_path': 15924, 'isolated_collaboration_component': 8}"
+lone_wolf,4755,Lone wolf: <developer> works in complete isolation.,{None: 4755}
+bottleneck,1419,Bottleneck: <developer> sits on 31% of collaboration shortest paths.,{None: 1419}
+radio_silence,1377,Radio silence: <developer> has no communication despite high code coupling.,{None: 1377}
+black_cloud,177,Black cloud: information bottleneck between communities 0 and 1.,{None: 177}

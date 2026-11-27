@@ -1,0 +1,1090 @@
+project_url,developer_id,last_commit_message,category
+https://github.com/lukemelas/EfficientNet-PyTorch.git,cove9988@gmail.com,"Update Readme.md
+
+Added new released pretrained efficientnet-B4/B5 usage accordingly",documentation
+https://github.com/iskandr/fancyimpute.git,alex.rubinsteyn@gmail.com,"Update __init__.py
+
+Version bump",other
+https://github.com/microsoft/nni.git,8174871+dofuuz@users.noreply.github.com,"Fix wrong examples in assessor docs (#5520)
+
+",documentation
+https://github.com/aimacode/aima-python.git,russell@cs.berkeley.edu,"Remove legacy lisp functions
+
+Remove count_if, find_if, every, some, Struct; replace them with modern
+Python equivalents.
+",other
+https://github.com/onnx/tensorflow-onnx.git,andhus@kth.se,"remove trailing white space
+",other
+https://github.com/google/flax.git,jamiehntownsend@gmail.com,"Use a different rng key for each batch element in DenseGeneral
+
+Dense and DenseGeneral now initialize with different parameters, so I
+also weakened `test_dense_is_dense_general` to only check that the
+result of applying is identical between Dense and DenseGeneral, i.e.
+the init params are allowed to differ.
+",other
+https://github.com/namisan/mt-dnn.git,32424535+monomagentaeggroll@users.noreply.github.com,"Update README.md
+
+Corrects typo, and some consistency changes.",documentation
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,yukuairoy@gmail.com,"Fix test for slack slash using knowledge graph API (#1613)
+
+* Fix test
+
+* remove import os that's no longer needed
+",test
+https://github.com/magenta/magenta.git,ilya.edrenkin@gmail.com,"Fix melody generation in attention_rnn (#179)
+
+",corrective change
+https://github.com/freewym/espresso.git,joseph.suh@netmarble.com,"Fix bug for issue (#3211) (#3212)
+
+Summary:
+# Before submitting
+
+- [x] Was this discussed/approved via a Github issue? (no need for typos, doc improvements)
+- [x] Did you read the [contributor guideline](https://github.com/pytorch/fairseq/blob/master/CONTRIBUTING.md)?
+- [x] Did you make sure to update the docs?
+- [ ] Did you write any new necessary tests?
+
+## What does this PR do?
+Fixes KeyError mentioned in  # (3211).
+
+## PR review
+Anyone in the community is free to review the PR once the tests have passed.
+If we didn't discuss your PR in Github issues there's a high chance it will not be merged.
+
+## Did you have fun?
+Make sure you had fun coding �
+
+Pull Request resolved: https://github.com/pytorch/fairseq/pull/3212
+
+Reviewed By: alexeib
+
+Differential Revision: D26513255
+
+Pulled By: myleott
+
+fbshipit-source-id: 5a11cb369c9d4202fab6998d269e7da5f3d3e534
+",corrective change
+https://github.com/arogozhnikov/einops.git,liangdepeng@gmail.com,"refine
+",other
+https://github.com/OpenNMT/OpenNMT-py.git,goncalommac@gmail.com,"Change how existing vocabularies are loaded in preprocessing (#990)
+
+* change vocabulary creation when there is an existing vocabulary file
+
+* add a comment about the vocabulary creation
+
+* fix a bug related to vocab loading when there is no vocab to load
+
+* fix typographical error in comment
+",other
+https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix.git,andersasac@gmail.com,"Update cycle_gan_model.py
+
+Fix argument mismatch. Was feeding gpu_ids to the init_type argument",other
+https://github.com/facebookresearch/mmf.git,charlesxbai@fb.com,"[fix] Override of final array elements through dot element (#438)
+
+Summary:
+Should check if we reach the end of the dot_list when overriding config with args. This should fix issue https://github.com/facebookresearch/mmf/issues/431
+
+Pull Request resolved: https://github.com/facebookresearch/mmf/pull/438
+
+Test Plan:
+```
+mmf_run config=projects/m4c/configs/textvqa/defaults.yaml \
+    datasets=textvqa \
+    model=m4c \
+    run_type=train_val \
+    training.lr_steps[1]=100 \
+    dataset_config.textvqa.zoo_requirements[0]=""test"" \
+```
+
+Output:
+```
+Overriding option config to projects/m4c/configs/textvqa/defaults.yaml
+Overriding option datasets to textvqa
+Overriding option model to m4c
+Overriding option run_type to train_val
+Overriding option training.lr_steps[1] to 100
+Overriding option dataset_config.textvqa.zoo_requirements[0] to test
+```
+
+Also: `pytest ./tests/configs/test_config_overrides.py`
+
+Reviewed By: apsdehal
+
+Differential Revision: D22894342
+
+Pulled By: charlesxbai
+
+fbshipit-source-id: bbd67b0c223c571bd2f705299d4a48cf48a49655
+",other
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,aaronmjohnson29@gmail.com,"add python snippets and tests for creating, listing, and deleting queues (#4012)
+
+* add python snippets and tests for creating, listing, and deleting queues
+
+* fix grammar
+
+* update licenses
+
+* apply suggested fixes and format with black
+
+* refine delete_queue_test with fixture for setup
+
+* utilize fixtures and match format of create_http_task_test
+
+* utilize fixtures in list_queues_test and create_queue_test
+
+* make create_queue_test call the right function
+
+* still attempt to delete queue after test runs in case of failure
+
+* attempt to delete queue in case of failure, using try/except approach
+
+* add print when NotFound is caught
+
+* fix import
+
+Co-authored-by: Averi Kitsch <akitsch@google.com>
+Co-authored-by: Takashi Matsuo <tmatsuo@google.com>",test
+https://github.com/mpariente/asteroid.git,61687366+joriscos@users.noreply.github.com,"[src] Fix device in padding for sudormrf.  Fix #598  (#603)
+
+",corrective change
+https://github.com/hastagAB/Awesome-Python-Scripts.git,joe@clanryan.us,"added elastic-snapshot script  (#193)
+
+* added elastic-snapshot script
+
+* added project to the projects list
+
+* updated requirements.txt",feature
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,77115915+gcseh@users.noreply.github.com,"feat: add blunderbuss config to cloud iot label (#5685)
+
+",feature
+https://github.com/microsoft/nni.git,junliang@mail.ustc.edu.cn,"[Common] deleted redundant GraphModule assign in concrete_tracer.py (#5593)
+
+",other
+https://github.com/MIC-DKFZ/nnUNet.git,maximilian.rokuss@dkfz-heidelberg.de,"fix a few general typos
+",documentation
+https://github.com/deepmedic/deepmedic.git,guedria.soulaimen@gmail.com,"Fix python3 compatibility
+
+by importing xrange from six
+",corrective change
+https://github.com/koaning/scikit-lego.git,tomergabay001@gmail.com,"implemented GroupTimeSeriesSplit with tests and documentation (#540)
+
+* implemented GroupTimeSeriesSplit with tests and documentation
+
+* changed chunkers to sliding window and added tests
+
+* updated documentation and parameter name of sliding_window function, and removed Hypothesis for its tests
+
+* changed code to have same output for pd.Series and np.ndarrays and added tests to check for it
+
+* fixed nitpicks
+
+Co-authored-by: Tomer Gabay <tomergabay@Admins-MacBook-Pro.local>
+Co-authored-by: davidelagano <dlagano@xccelerated.io>
+Co-authored-by: vincent d warmerdam <vincentwarmerdam@gmail.com>",documentation
+https://github.com/google-research/google-research.git,asabyrbayev@google.com,"Automated Code Change
+
+PiperOrigin-RevId: 736133883
+",other
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,91195610+t-karasova@users.noreply.github.com,"docs(samples): improve the setup scripts (#207)
+
+* update README
+
+* fix: sleep is added to the setup script
+
+* improve the setup scripts
+
+Co-authored-by: tetiana-karasova <tetiana.karasova@gmail.com>
+Co-authored-by: Karl Weinmeister <11586922+kweinmeister@users.noreply.github.com>",documentation
+https://github.com/fastai/fastai.git,31695+dreamflasher@users.noreply.github.com,"lr_find() fails with torch.nn.modules.module.ModuleAttributeError: 'ModuleList' object has no attribute 'grad' (#2900)
+
+* hasattr(o[0], 'grad')
+
+* remove newline",corrective change
+https://github.com/deepmind/dm-haiku.git,swj@google.com,"Set global semantics when when using gda.
+
+PiperOrigin-RevId: 477675711
+",other
+https://github.com/GoogleCloudPlatform/healthcare.git,rachelgagnon@uchicago.edu,"Merge pull request #550 from GoogleCloudPlatform/svetakvsundhar-patch-1
+
+Move Contribution Guide from Contributing.MD to ReadME",merge
+https://github.com/mozilla/bugbug.git,aftaabzia9@gmail.com,"Add a way for models to select other sampling techniques (#157)
+
+",feature
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,jwmctavi@gmail.com,"chore: Remove deprecated Cloud Debugger sample (#10238)
+
+Co-authored-by: meredithslota <meredithslota@google.com>",other
+https://github.com/OpenNMT/OpenNMT-py.git,yury.kasimov@gmail.com,"cleanup
+",refactoring
+https://github.com/apachecn/pytorch-doc-zh.git,zhrlnt@gmail.com,"Update 04.md
+
+translate ""performance benefits"" to ""性能优势""",documentation
+https://github.com/microsoft/botbuilder-python.git,77245923+microsoft-github-policy-service[bot]@users.noreply.github.com,"Microsoft mandatory file (#1962)
+
+Co-authored-by: microsoft-github-policy-service[bot] <77245923+microsoft-github-policy-service[bot]@users.noreply.github.com>",other
+https://github.com/apache/submarine.git,liushaohui@xiaomi.com,"SUBMARINE-391. Submarine build failed for jackson-databind version conflicts with hadoop 3.1
+
+### What is this PR for?
+Submarine build failed for jackson-databind version conflicts with hadoop 3.1
+
+### What type of PR is it?
+[Bug Fix]
+
+### Todos
+* [ ] - Task
+
+### What is the Jira issue?
+https://issues.apache.org/jira/browse/SUBMARINE-391
+
+### How should this be tested?
+https://travis-ci.org/lshmouse/submarine/jobs/654886926
+
+### Screenshots (if appropriate)
+
+### Questions:
+* Does the licenses files need update? No
+* Is there breaking changes for older versions? No
+* Does this needs documentation? No
+
+Author: Liu Shaohui <liushaohui@xiaomi.com>
+
+Closes #189 from lshmouse/SUBMARINE-391 and squashes the following commits:
+
+382daea [Liu Shaohui] SUBMARINE-391. Submarine build failed for jackson-databind version conflicts with hadoop 3.1
+",build and dependencies
+https://github.com/natethegreate/hent-AI.git,waleed.abdulla@gmail.com,"Fix citation markup.
+
+",documentation
+https://github.com/flatironinstitute/CaImAn.git,andrea@at-compute003.ad.bcm.edu,"updating for cluster
+",other
+https://github.com/google-research/tensor2robot.git,alexirpan@google.com,"Adds random flips as an image distortion option, modifies default contrastive loss to semihard cosine loss.
+
+PiperOrigin-RevId: 385185958
+",feature
+https://github.com/microsoft/botbuilder-python.git,61112041+nikita-gz@users.noreply.github.com,"Fixed type hint in turn_context.py (#2147)
+
+Previous type hint implied that send_activity will always return ResourceResponse, meanwhile it can also return None
+
+Co-authored-by: tracyboehrer <tracyboehrer@users.noreply.github.com>",corrective change
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,chenyumic@google.com,"Regenerate the README files and fix the Open in Cloud Shell link for some samples [(#1441)](https://github.com/GoogleCloudPlatform/python-docs-samples/issues/1441)
+
+",documentation
+https://github.com/aimacode/aima-python.git,jacobkjoseph@users.noreply.github.com,"Corrects a typo in tests/test_games.py (#278)
+
+",documentation
+https://github.com/microsoft/botbuilder-python.git,stevenic@microsoft.com,Updated doc links,documentation
+https://github.com/microsoft/DeepSpeed.git,jcrandall@alum.mit.edu,"print warning if actual triton cache dir is on NFS, not just for default (#6487)
+
+move the logic that prints a warning when triton cache dir is on NFS to
+act on the actual calculated cache_dir rather than on the default.
+
+this means that:
+- when the default directory (in the user's home directory) is on NFS
+but `TRITON_CACHE_DIR` is set to a non-NFS directory, no warning will be
+printed whereas prior to this change a spurious and confusing warning
+was printed
+- when the user's home directory is not on NFS but `TRITON_CACHE_DIR` is
+set to an NFS directory, a warning will be printed whereas prior to this
+change no warning would be printed
+ 
+fixes #6486",other
+https://github.com/onnx/tensorflow-onnx.git,nakersha@microsoft.com,"More changes after review
+",other
+https://github.com/EdinburghNLP/nematus.git,proyag.pal@gmail.com,"Reward Augmented Maximum Likelihood (#52)
+
+* Added RAML training objective",other
+https://github.com/Calamari-OCR/calamari.git,unixprog@gmail.com,"Add --version flag to train and predict script
+",feature
+https://github.com/colearninglounge/co-learning-lounge.git,36594459+yogeshkumar1999@users.noreply.github.com,"added all the files (#101)
+
+",feature
+https://github.com/baldassarreFe/deep-koalarization.git,diegomorin8@gmail.com,"Merge branch 'master' of https://github.com/baldassarreFe/hashtag-nofilter
+",merge
+https://github.com/google-research/google-research.git,scotttodd@google.com,"Add function for creating a model with default params.
+
+Including this function in the source code also documents the most basic way to create a new model and changing it's streaming mode, which can serve as a jumping off point for new users.
+
+PiperOrigin-RevId: 340332334
+",feature
+https://github.com/facebookresearch/pytext.git,egaudet@fb.com,"--include is remembered in generated configs and can automatically load custom components. (#995)
+
+Summary:
+## Motivation and Context
+
+Until now, you had to use `--include <my_directory>` in every command if
+your config uses custom components.  This diff stores the custom directories
+in the config in `include_dirs`, and this is loaded automatically before
+parsing the config.
+
+## How Has This Been Tested
+
+first create the config using --include with the path of the custom component AtisIntentDataSource
+
+```
+  > pytext --include demo/datasource gen-default-config DocumentClassificationTask AtisIntentDataSource > my_config.json
+  Including: demo/datasource
+  ... importing module: demo.datasource.source
+  ... importing: <class 'demo.datasource.source.AtisIntentDataSource'>
+  INFO - Applying task option: DocumentClassificationTask
+  INFO - Applying class option: task.data.source = AtisIntentDataSource
+```
+
+verify that my_config.json contains `""include_dirs"": [""demo/datasource""]`
+
+then run `train` without --include and verify that custom component AtisIntentDataSource is imported
+
+```
+  > pytext train < my_config.json
+  Including: demo/datasource
+  ... importing module: demo.datasource.source
+  ... importing: <class 'demo.datasource.source.AtisIntentDataSource'>
+
+  ===Starting training...
+  [...task using AtisIntentDataSource]
+```
+
+## Types of changes
+
+- [ ] Docs change / refactoring / dependency upgrade
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [x] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to change)
+
+## Checklist
+
+- [x] My code follows the code style of this project.
+- [ ] My change requires a change to the documentation.
+- [ ] I have updated the documentation accordingly.
+- [x] I have read the **CONTRIBUTING** document.
+- [x] I have completed my CLA (see **CONTRIBUTING**)
+- [ ] I have added tests to cover my changes.
+- [x] All new and existing tests passed.
+Pull Request resolved: https://github.com/facebookresearch/pytext/pull/995
+
+Reviewed By: geof90
+
+Differential Revision: D17540333
+
+Pulled By: Titousensei
+
+fbshipit-source-id: 03fe3ca5c54c7ec5a837b6615903a6fc2868a8ad
+",other
+https://github.com/google-research/google-research.git,ddambro@google.com,"Update for compatibility with latest CMA-ES
+
+PiperOrigin-RevId: 615047667
+",other
+https://github.com/keras-team/autokeras.git,32795986+nicksmyr@users.noreply.github.com,"Update ImageAugmentation rotation_factor hyperparameter to have a range (#1710)
+
+* Update rotation factor docstring
+
+* fixed imports on preprocessing.py
+
+* Add type hint for rotation_factor",other
+https://github.com/inferno-pytorch/inferno.git,manuelhaussmann@users.noreply.github.com,"Merge pull request #79 from manuelhaussmann/logdir
+
+create intermediate log directories",merge
+https://github.com/iskandr/fancyimpute.git,jhngstfssn@gmail.com,"Typo in documentation (#131)
+
+",documentation
+https://github.com/google/flax.git,gavrilescu.roland@gmail.com,"updated howtos.rst
+",documentation
+https://github.com/onnx/onnxmltools.git,shauheen@users.noreply.github.com,"-- update docs (#11)
+
+* -- update docs
+
+* - typo fix
+",documentation
+https://github.com/onnx/keras-onnx.git,xadupre@users.noreply.github.com,"add some names for CI configuration. (#358)
+
+* add tensorflow 2.1.0 to CI
+
+* update CI
+
+* Update win32-conda-CI.yml
+
+* Update linux-conda-CI.yml
+
+Co-authored-by: xavier dupré <sdpython@users.noreply.github.com>
+Co-authored-by: Wenbing Li <wenli@microsoft.com>
+",build and dependencies
+https://github.com/MycroftAI/mycroft-precise.git,veilleux.chris@gmail.com,"Merge pull request #171 from forslund/bugfix/jenkins-job
+
+Attempt to fix Jenkins job",merge
+https://github.com/bayesiains/nflows.git,alvaro.tejero@tum.de,"Expose PointwiseAffineTransform in nflows.transforms.
+",other
+https://github.com/colearninglounge/co-learning-lounge.git,vinit777ganorkar@gmail.com,"[boost.ai](https://www.boost.ai/career)
+
+Added boost ai",other
+https://github.com/deepmind/open_spiel.git,jan.rudolf.steeldog@gmail.com,"Fixes the path in regenerate_playthroughs.sh.
+",corrective change
+https://github.com/mlperf/inference.git,mrmhodak@users.noreply.github.com,"Increment version to 5.0.24
+",release
+https://github.com/mozilla/TTS.git,thorstenmueller@users.noreply.github.com,"Merge pull request #1 from mozilla/dev
+
+Sync with Mozilla TTS dev branch",merge
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,60490673+hkdevandla@users.noreply.github.com,"Remove samples for language API (#4851)
+
+",other
+https://github.com/autorope/donkeycar.git,tnilsson.x@gmail.com,"Add test for memory.py
+",test
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,gioia.ballin@gmail.com,"Fix region handling and allow to use an existing cluster. (#1053)
+
+",corrective change
+https://github.com/google-research/google-research.git,srinivasksun@google.com,"First commit for data processing code of rico-semantics dataset.
+
+PiperOrigin-RevId: 559872188
+",other
+https://github.com/deepmind/sonnet.git,gabrielbm@google.com,"Improve the way reuse_variables handles name scopes
+
+This fixes a bug where outer name scopes were ignored by reuse_variables.
+
+PiperOrigin-RevId: 188163153
+",feature
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,balaji.warft@gmail.com,"chore(fixit): vision document text sample clean-up (#10060)
+
+* chore(fixit): vision document text sample clean-up
+
+* format changes
+
+---------
+
+Co-authored-by: Balaji Subramaniam <balajismaniam@google.com>",other
+https://github.com/natethegreate/hent-AI.git,ldk14@mails.tsinghua.edu.cn,"Use mask AP in compute_AP instead
+",other
+https://github.com/masa-su/pixyz.git,yatsugatake_nnk@yahoo.co.jp,"update to v005
+",other
+https://github.com/microsoft/DeepSpeed.git,ax.muzio@gmail.com,"Removing `ImportError` from tutel import try/except (#1583)
+
+Co-authored-by: Jeff Rasley <jerasley@microsoft.com>",other
+https://github.com/google/qkeras.git,louisly@google.com,"Update setup.py with setuptools
+
+PiperOrigin-RevId: 266510965
+Change-Id: Ia09965768ef8e0ede6c9f5bea92493a106a07b40
+",build and dependencies
+https://github.com/hastagAB/Awesome-Python-Scripts.git,max@vonforell.de,"Add script to run a Minecraft server in the background
+",feature
+https://github.com/facebookresearch/habitat-api.git,arjunmajum@gmail.com,"Fix contains method in space classes (#272)
+
+The contains methods in the three habitat.core.spaces classes (EmptySpace, ActionSpace, and ListSpace) have errors that are described in #271. This pull request fixes those errors, corrects the documentation for the ActionSpace class, and adds a __repr__ to the EmptySpace class.
+closes #271",corrective change
+https://github.com/allegroai/trains.git,klein.shaked@gmail.com,"add support for TRAINS_NO_DEFAULT_SERVER issue #209
+",corrective change
+https://github.com/flairNLP/flair.git,myaldiz.dtl@outlook.com,"fix init
+",corrective change
+https://github.com/lukas/ml-class.git,stacey@anastasias-mbp.lan,"added correct clean links to all benchmarks
+",documentation
+https://github.com/baldassarreFe/deep-koalarization.git,diegogm@kth.se,"clean
+",other
+https://github.com/deepmipt/DeepPavlov.git,seliverstov.a@gmail.com,"docs: add LRScheduledModel to apiref
+
+docs: add LRScheduledModel to apiref",documentation
+https://github.com/jantic/DeOldify.git,645775992@qq.com,"update opencv-python 3.3.0.10 to 4.2.0.32
+",other
+https://github.com/kubeflow-kale/kale.git,klolos@arrikto.com,"backend: Automatically create Rok buckets
+
+Signed-off-by: Kostis Lolos <klolos@arrikto.com>
+",feature
+https://github.com/evilsocket/pwnagotchi.git,jeroen@massar.ch,"Fix CRLF line endings...
+
+Before:
+```
+bash: ./update_pwnagotchi.sh: /bin/bash^M: bad interpreter: No such file or directory
+```
+
+Thus:
+```
+scripts/update_pwnagotchi.sh: Bourne-Again shell script text executable, ASCII text, with CRLF line terminators
+
+dos2unix: converting file scripts/update_pwnagotchi.sh to Unix format...
+
+scripts/update_pwnagotchi.sh: Bourne-Again shell script text executable, ASCII text
+```
+
+Now it works :)
+",corrective change
+https://github.com/keras-team/autokeras.git,fuweijie@users.noreply.github.com,"Update preprocessing.py (#1068)
+
+",other
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,brad.friedman@gmail.com,"Update echo quickstart requirements.txt (#951)
+
+",build and dependencies
+https://github.com/deepfakes/faceswap.git,f4ttire@gmail.com,"Fix breakage on some versions of python3 (on Ubuntu 17.10 for sure)
+
+Also gives better info when you don't include any arguments (or bad ones)
+",corrective change
+https://github.com/avrae/avrae.git,bvl46z@gmail.com,"Update monster.py
+",other
+https://github.com/lululxvi/deepxde.git,119129015+kostap7@users.noreply.github.com,"Update research.rst (#1529)
+
+",documentation
+https://github.com/freewym/espresso.git,qingsun@fb.com,"Enable sampling (#571)
+
+Summary:
+Pull Request resolved: https://github.com/pytorch/fairseq/pull/571
+
+Enable sampling from Fairseq
+
+Reviewed By: akinh
+
+Differential Revision: D13981666
+
+fbshipit-source-id: 2af1bd67701a73a2c76a9255bd8381d6a7518876
+",feature
+https://github.com/onnx/onnx-tensorflow.git,sirius.frozen@gmail.com,"Add Relu6 and DepthwiseConv support (#266)
+
+* Add Relu6 and DepthwiseConv support
+
+This PR adds DepthwiseConv2d and Relu6 conversions, which allows one
+to convert MobileNetV1 and potentially other models
+
+* Fix test
+
+Since it is legacy, I can remove consumed_inputs, right?
+
+* Formatting and documentation
+
+Updated code style, added doc for Convolution
+
+* revert stylistic changes to frontend test
+
+* add split_v test case back in
+
+* update test case for split
+",feature
+https://github.com/microsoft/ai-edu.git,tnlin@users.noreply.github.com,"Add course 工业数据挖掘与分析-清华大学徐华 (#187)
+
+* Create 工业数据挖掘与分析-清华大学徐华.md
+
+* Create README.md
+
+* Add files via upload
+
+* Update README.md
+",feature
+https://github.com/hunkim/DeepLearningZeroToAll.git,devnote5676@naver.com,"Create/pytorch/lab12 (#108)
+
+* Add lab-12-1-hello-rnn.py for PyTorch
+
+* Add lab-12-1,2,4,5 for PyTorch
+* imported from Tensorflow codes in repo
+",feature
+https://github.com/google/flax.git,dnlng@google.com,"Turn OCDBT on by default
+
+PiperOrigin-RevId: 566723287
+",other
+https://github.com/apachecn/pytorch-doc-zh.git,skywalk.duan@gmail.com,"add %matplotlib inline
+
+```py
+%matplotlib inline
+from matplotlib import pyplot
+import numpy as np
+
+pyplot.imshow(x_train[0].reshape((28, 28)), cmap=""gray"")
+print(x_train.shape)
+```",feature
+https://github.com/microsoft/DeepSpeed.git,ryan_innerpeace@foxmail.com,"[NPU] Add HcclBackend for 1-bit adam, 1-bit lamb, 0/1 adam (#4733)
+
+To support NPU devices fulfilling feature requirements like 1-bit Adam,
+1-bit Lamb, 0/1 Adam, I add HcclBackend and its corresponding import
+logics.
+See what we have already done in #4567 .
+
+---------
+
+Co-authored-by: ryan <ruanzhixiang1@huawei.com>
+Co-authored-by: Conglong Li <conglong.li@gmail.com>",feature
+https://github.com/freewym/espresso.git,cclauss@me.com,"Use ==/!= to compare str, bytes, and int literals (#948)
+
+Summary:
+Identity is not the same thing as equality in Python.
+Pull Request resolved: https://github.com/pytorch/fairseq/pull/948
+
+Differential Revision: D16608269
+
+Pulled By: myleott
+
+fbshipit-source-id: be203d62e7824c96c59400d1b342196adb89a839
+",other
+https://github.com/nerox8664/pytorch2keras.git,sean@wayve.ai,"test: ConvTranspose2D with padding
+",test
+https://github.com/koaning/scikit-lego.git,jsamoocha@yahoo.com,"subjective classification (#213)
+
+* Adds initial computation of posterior class probabilities, given prior and confusion matrix
+
+* Adds tests for single posterior computations
+
+The other ones are to make sure all posterior class probabilities add up to 1 for a given class prediction.
+
+* Parameterizes test, adds several edge cases
+
+... and breaks the posterior computation - it doesn't like all-zero columns in the confusion matrix.
+
+* Typo
+
+* Adds test assuring fit() stores confusion matrix as dataframe
+
+* Prevents pain from missing classes in prior
+
+* Adds handling of edge cases regarding confusion matrices
+
+When the confusion matrix has no false positives (i.e. filled only on the diagonal), the posterior
+for a class is simply 1 because the evidence equals the likelihood * prior.
+
+When the confusion matrix has all-zero columns (i.e. the inner classifier fails to make any
+prediction for a given class), the posterior for these classes equals their prior probability.
+This is necessary to make sure that the posterior probabilities of all classes, given a
+prediction, sum to 1.
+
+* Adds predict_proba() implementation
+
+* Adds guard against invalid model configuration
+
+* ok, ok, numerical edge cases
+
+* Flips expected/actual in tests to better understand failed tests
+
+* Corrects docstring
+
+* Adds sklearn boilerplate + checks
+
+* Adds check for inner estimator to be fitted
+
+* Adds evidence parameter to meta estimator
+
+* Adds weighing of posterior by 'probas' of inner estimator
+
+* Adds documentation for expected result of different evidence types
+
+* Adds helper to convert probas to discrete predictions
+
+* Adds optimization for predictions
+
+Instead of computing the posterior for every observation at predict_proba(), the possible
+posterior combinations (n_classes ** 2) are computed during fit() and stored in self as
+posterior_matrix_. During prediction, this matrix only needs to be multiplied with the
+(discrete) predictions, preventing lotsa recomputations of the same posteriors.
+
+* Moves param checking to fit()
+
+* Removes unnecessary references to inner estimator's classes_ attribute
+
+It already can be referenced from the meta estimator's property.
+
+* Adds docstring
+
+* Moves method docstring to correct location
+",other
+https://github.com/apache/submarine.git,quanzhou@quans-air.lan," SUBMARINE-371. Remove tony submodule.
+
+### What is this PR for?
+To work with tony community more closely, we need to remove tony submodule and use tony dependency directly. We should not maintain tony code by ourselves. If a patch to tony is needed, we should submit a PR to tony repository
+
+### What type of PR is it?
+Improvement
+
+### What is the Jira issue?
+https://issues.apache.org/jira/browse/SUBMARINE-371
+
+### How should this be tested?
+https://travis-ci.org/yuanzac/hadoop-submarine/builds/646704729?utm_source=github_status&utm_medium=notification
+
+### Screenshots (if appropriate)
+
+### Questions:
+* Does the licenses files need update? No
+* Is there breaking changes for older versions? No
+* Does this needs documentation? Yes
+
+Author: Quan zhou <quanzhou@Quans-Air.lan>
+
+Closes #173 from yuanzac/topic/SUBMARINE-371 and squashes the following commits:
+
+e045f11 [Quan zhou]  SUBMARINE-371. Remove tony submodule.
+",other
+https://github.com/google-research/google-research.git,kevinssy@qq.com,"Merge of PR #2138
+
+PiperOrigin-RevId: 661028196
+",merge
+https://github.com/kornia/kornia.git,simon.k.schaefer@gmail.com,"fix: added eps in geometry/rotmat_to_quaternion (#1665)
+
+For numerical stability and to avoid nan gradients added an eps in case the trace is -1 so that the sqrt would be negative.",corrective change
+https://github.com/koaning/scikit-lego.git,xhochy@users.noreply.github.com,"Exclude `tests` from packaging (#557)
+
+Currently `scikit-lego` installs its tests into `site-packages/tests/…`. This looks more like accidental than intended. If tests should really be part of the package, they should better live in `site-packages/scikit-lego/tests`. This excludes the tests from being part of the installed package.
+
+Co-authored-by: vincent d warmerdam <vincentwarmerdam@gmail.com>",build and dependencies
+https://github.com/facebookresearch/ClassyVision.git,renganxu@fb.com,"Add multi-tensor AdamW optimizer (#786)
+
+Summary:
+Pull Request resolved: https://github.com/facebookresearch/ClassyVision/pull/786
+
+Add the parallel version (multi-tensor) of AdamW for omnivore workflow, to improve the step and zero_grad performance in optimizer.
+
+Reviewed By: mannatsingh
+
+Differential Revision: D35660803
+
+fbshipit-source-id: b516f5e405f16479b2f8a413bf1e7544f26c41f3
+",feature
+https://github.com/allegroai/trains.git,75068813+pollfly@users.noreply.github.com,"Fix docstrings (#560)
+
+",documentation
+https://github.com/kundajelab/deeplift.git,avanti.shrikumar@gmail.com,Update README.md,documentation
+https://github.com/flairNLP/flair.git,kasper.socha@jayway.com,Fix broken link in README,documentation
+https://github.com/NVIDIA/Megatron-LM.git,mausin@nvidia.com,"Add contiguous to grad_output in layers.py
+",feature
+https://github.com/IBM/AIX360.git,igor.melnyk@ibm.com,"included missed import
+
+Signed-off-by: IGOR MELNYK <igor.melnyk@ibm.com>
+",other
+https://github.com/microsoft/Windows-Machine-Learning.git,lobourre@microsoft.com,"Merge pull request #293 from mccoykillian/patch-1
+
+Update readme.md",merge
+https://github.com/GRAAL-Research/poutyne.git,39306007+tortillasalfred@users.noreply.github.com,"Reorganize doc tree (#50)
+
+",documentation
+https://github.com/geomstats/geomstats.git,keschenb@uw.edu,"fix white space
+",corrective change
+https://github.com/deepfakes/faceswap.git,mpuels@gmail.com,"doc: Fix typos (#79)
+
+",documentation
+https://github.com/microsoft/DeepSpeed.git,pistasable@gmail.com,"add the missing method (#4363)
+
+Co-authored-by: Olatunji Ruwase <olruwase@microsoft.com>",feature
+https://github.com/flairNLP/flair.git,kishaloy.halder@gmail.com,"Fixed old model deserialization logic for 'pooling' parameter
+",corrective change
+https://github.com/aimacode/aima-python.git,sai.sasank.yadati@gmail.com,"Fix EightPuzzle class implementation in search.py (#710) (#733)
+
+* Fix EightPuzzle class implementation
+
+* Fix EightPuzzle class implementation (#710)
+
+* Address style issues (#710)
+",corrective change
+https://github.com/keiohta/tf2rl.git,dev.ohtakei@gmail.com,"Merge pull request #158 from ymd-h/Feature_docstring
+
+Add docstring",merge
+https://github.com/aimacode/aima-python.git,mirco.theone@gmail.com,"Rollback to one folder organization
+",other
+https://github.com/kornia/kornia.git,oskar.flordal@gmail.com,"Added required sphinx dependencies (#1371)
+
+* Added required sphinx dependencies
+
+* Point to already available docs requirements instead
+
+* Fix issue with build when using -r in requirements",build and dependencies
+https://github.com/facebookresearch/mmf.git,binhtang@fb.com,"[PyTorchLightning/pytorch-lightning] Add callout items to the Docs landing page (#12196) (#189)
+
+Summary:
+X-link: https://github.com/facebookresearch/d2go/pull/189
+
+X-link: https://github.com/facebookresearch/recipes/pull/14
+
+X-link: https://github.com/facebookresearch/ReAgent/pull/616
+
+### New commit log messages
+- [9b011606f Add callout items to the Docs landing page (#12196)](https://github.com/PyTorchLightning/pytorch-lightning/pull/12196)
+
+Reviewed By: edward-io
+
+Differential Revision: D34687261
+
+fbshipit-source-id: 3ef6be5169a855582384f9097a962d2261625882
+",documentation
+https://github.com/kornia/kornia.git,70471360+calmdown13@users.noreply.github.com,"Fix ``undistort_image`` documentation and support additional dimensions. (#1464)
+
+* fix support for extra dims in undistort_image
+
+* remove unused dependency in undistort.py
+
+* change reshape to view_as
+
+Co-authored-by: Edgar Riba <edgar.riba@gmail.com>
+
+* fix dimensions in docstring, test correct dims
+
+* clean up B calc
+
+* add test_exception to TestUndistortImage
+
+* [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+for more information, see https://pre-commit.ci
+
+* fix shape in undistort_image doctest
+
+Co-authored-by: Edgar Riba <edgar.riba@gmail.com>
+Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>",documentation
+https://github.com/mlperf/inference.git,yiminghu@xilinx.com,"PostProcess for ssd-resnet34-tf
+",other
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,lucianomelomartins@gmail.com,"docs(samples): fixing file saving for local documents translation (#419)
+
+Co-authored-by: Anthonios Partheniou <partheniou@google.com>",documentation
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,alefh.sousa@gmail.com,"fix problems with automl docs (#2501)
+
+Today when we try to use the function `batch_predict` follow the docs we receive and error saying: `the paramaters should be a pandas.Dataframe` it’s happens because the first parameter of the function `batch_predict` is a pandas.Dataframe. To solve this problem we need to use de named parameters of python.",documentation
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,jameswinegar@users.noreply.github.com,"Update submit_job_to_cluster.py (#1708)
+
+switch region to new 'global' region and remove unnecessary function.",other
+https://github.com/learnables/learn2learn.git,bunner@usc.edu,"Docs for RL Environments. (#47)
+
+* update getting_started to contain intro to l2l and meta-learning
+
+* update mkdocs and pydocmd config files to restore equation rendering and fix equations in getting_started tutorial
+
+* update getting_started
+
+* pydocmd builds on top of mkdocs
+
+* clean up notation and add installation notes
+
+* docstrings for meta_env and particles
+
+* docstrings for mujoco envs
+
+* update mujoco env docstrings
+
+* fix mujoco docstrings
+
+* update meta_env docstring
+
+* docstring for asyncVec
+
+* add link to source in async docstring
+
+* add link to source in async docstring
+
+* remove newline between references
+",documentation
+https://github.com/google-research/google-research.git,boffi@google.com,"Notebook for adaptive dynamics prediction.
+
+PiperOrigin-RevId: 375191709
+",documentation
+https://github.com/bitextor/bitextor.git,it.hisas@gmail.com,"fix content duplicate statement.
+",corrective change
+https://github.com/arogozhnikov/einops.git,iamfullofspam@gmail.com,"change version to 0.6.2rc
+",other
+https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix.git,konstantin.gudkov@picsart.com,"separate save train and test options
+",test
+https://github.com/google-research/google-research.git,alldieck@google.com,"updated Bibtex for imGHUM
+
+PiperOrigin-RevId: 400926788
+",documentation
+https://github.com/HumanCompatibleAI/adversarial-policies.git,kantneel@berkeley.edu,"Add lookback reward shaping (#10)
+
+* most of LookbackRewardVecWrapper complete
+
+* plugged LookbackRewardVecWrapper into train
+
+* created OldMujocoResettableWrapper and modified MujocoState and MultiMonitor
+
+* integrate lookback_args and OldMujocoResettableWrapper
+
+* LookbackRewardVecWrapper functional but not shaping reward yet
+
+* refactored and also added logic for storing reward and info dicts
+
+* changed 'past' to 'base'. All logic completed, now testing
+
+* bugfix: base_reward assignment vs incrementing
+
+* compatibility with adversarial noise ball
+
+* deterministic policies, truncated obs, debug statements
+
+* lookback operational for rewards, needs to be cleaned up
+
+* refactored to use LookbackDict
+
+* refactored curry_obs and also TransparentLSTMPolicy to fit new LSTMPolicy semantics
+
+* high precision with MlpPolicy rewards. some extraneous code for dealing with transparent stable baselines
+
+* removed extraneous transparent policy handling
+
+* update radius in envs
+
+* all good except for sudden contacts
+
+* cleaned up lookback reward loop
+
+* created lookback_params in order to load arbitrary lookback baseline policies
+
+* bugfix for load_policy finetuning
+
+* WIP mujoco debugging
+
+* s/x_dict/sim_data/
+
+* created DebugVenv which wraps innermost environments
+
+* updated requirements
+
+* wip: trying to debug why buffer doesn't copy over
+
+* lookback works correctly and also runs at reasonable speed
+
+* fixed indexing issue when doing lookback with multiple envs
+
+* changed get_full_state since C pointers are not pickleable
+
+* added lookback_mul param and also removed extraneous logic from lookback step_wait
+
+* made DebugVenv and debug files optional
+
+* s/lb_dict/lb_tuple
+
+* refactored but also broken
+
+* moved responsibility of transparency to VecEnvWrappers
+
+* cleaned up _reset_state_data, added docstrings
+
+* fixed state assignment bug and renamed some vars
+
+* built logic for setting all deterministic=True
+
+* cleaned _reset_state_data, added helper methods and docstrings
+
+* changed adv_noise_params defaults and added lookback test case
+
+* linting and code cleanup
+
+* moved lookback into modelfree.common and also moved lookback mujoco into aprl.common
+
+* reverted MujocoState to just qpos, qvel. Added mujoco docstrings
+
+* removed debug print statement
+
+* refactored and cleaned lookback
+
+* updated requirements-modelfree.txt for new gym_compete
+
+* changed lookback_params, debugging, added helper functions
+
+* changed requirements.txt to have VecEnvWrapper.__getattr__ bugfix
+
+* added modelfree.training.victim_envs
+
+* cleaned code for lookback and pre- and post-wrapping
+
+* updated requirements.txt to better VecEnvWrapper.__getattr__ bug fix
+
+* Code cleanup
+
+* Update requirements.txt to include Stable Baselines bugfix
+
+* Move OldMujocoResettableWrapper to lookback (only place it is used)
+
+* Remove dead code
+
+* Bugfix from merge
+",feature
+https://github.com/mlperf/training.git,avsonawane28@gmail.com,"Spell-check and links to papers (#26)
+
+Spell-check and links to papers should always point to their summaries and not the pdf locations as the pdf locations can change
+",documentation
+https://github.com/flairNLP/flair.git,31824443+taehyuny@users.noreply.github.com,Update README.md,documentation
+https://github.com/allenai/allennlp.git,joelgrus@gmail.com,"bump version number to v0.8.5
+",release
+https://github.com/MIC-DKFZ/trixi.git,t.adler@dkfz-heidelberg.de,"Make telegram logger and slack logger independent
+",other
+https://github.com/freewym/espresso.git,tantia.vinayak1@gmail.com,"Update implemention of SlowMo to its implementation in Fairscale (#3996)
+
+Summary:
+- [ ] Was this discussed/approved via a Github issue? (no need for typos, doc improvements)
+- [x] Did you read the [contributor guideline](https://github.com/pytorch/fairseq/blob/main/CONTRIBUTING.md)?
+- [x] Did you make sure to update the docs?
+- [x] Did you write any new necessary tests?
+
+## What does this PR do?
+SlowMo is being moved to [Fairscale](https://fairscale.readthedocs.io/en/latest/). This commit updates the implementation of SlowMo to the Fairscale version. It also adds tests for SlowMo.
+Note: This PR is currently for review. It will be merged at a later date once SlowMo has been updated to Fairscale. SlowMo is being merged to Fairscale as part of [a PR](https://github.com/facebookresearch/fairscale/pull/378). So, once that PR is merged to Fairscale, this PR on Fairseq will be ready for merge
+
+## PR review
+Anyone in the community is free to review the PR once the tests have passed.
+If we didn't discuss your PR in Github issues there's a high chance it will not be merged.
+
+## Did you have fun?
+Make sure you had fun coding �
+
+Pull Request resolved: https://github.com/pytorch/fairseq/pull/3996
+
+Reviewed By: dianaml0
+
+Differential Revision: D32280163
+
+Pulled By: vtantia
+
+fbshipit-source-id: 70c97b04a7cdc90ada7099375c2a31b0c978ba70
+",feature
+https://github.com/lukas/ml-class.git,lavanya.shukla12@gmail.com,install wandb,build and dependencies
+https://github.com/deepmind/open_spiel.git,walton.myke@gmail.com,"exp descent example network init patch
+",documentation
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,73185172+iamtamjam@users.noreply.github.com,"samples: Add request/response integrity verification to crypto operations (#72)
+
+",feature
+https://github.com/facebookresearch/ReAgent.git,poshannessy@fb.com,"Adopt Contributor Covenant
+
+Summary:
+In order to foster healthy open source communities, we're adopting the
+[Contributor Covenant](https://www.contributor-covenant.org/). It has been
+built by open source community members and represents a shared understanding of
+what is expected from a healthy community.
+
+Reviewed By: josephsavona, danobi, rdzhabarov
+
+Differential Revision: D17104640
+
+fbshipit-source-id: d210000de686c5f0d97d602b50472d5869bc6a49
+",other
+https://github.com/natethegreate/hent-AI.git,34725775+rekaxua@users.noreply.github.com,tool_to_find_the_resolution_of_mosaic,other
+https://github.com/GRAAL-Research/poutyne.git,50740990+mohammad-brdrn@users.noreply.github.com,"Example of multitask learning (#110)
+
+",documentation
+https://github.com/cortexlabs/cortex.git,andrei@archipelo.co,"Failed batches processing with dead-letter queue (#1713)
+
+",corrective change
+https://github.com/magenta/magenta.git,hike@hdanak.com,"Fix imports in MIDI interface.
+",corrective change
+https://github.com/facebookresearch/mmf.git,jknox@meta.com,"[staticdocs][mmf] automatic update for docusaurus-plugin-internaldocs-fb@1.5.0
+
+Reviewed By: antonk52
+
+Differential Revision: D42709776
+
+fbshipit-source-id: f3bb6bfb6c43cb5c0919045d5e39216bc9ec8796
+",other
+https://github.com/aimacode/aima-python.git,jonathan.guillotte.blouin@gmail.com,"fix typos & grammar (#656)
+
+",documentation
+https://github.com/microsoft/nni.git,670130115@qq.com,"Bug-fixed for _compute_hessian in Pytorch NAS Darts (#3058)
+
+Co-authored-by: huwei <huw@abc.com>",corrective change
+https://github.com/facebookresearch/mmf.git,abhishekkadiyan@gmail.com,"Update logger.py (#50)
+
+- Histogram logging should use named_parameters only instead of using all of the parameters.
+Probably a recent change introduced in new PyTorch versions.",other
+https://github.com/hastagAB/Awesome-Python-Scripts.git,xemeds@protonmail.com,"Added Cryptocurrency prices (#223)
+
+* Added Cryptocurrency prices
+
+* Update README.md",feature
+https://github.com/deepmind/open_spiel.git,7979515+ngrupen@users.noreply.github.com,Update README.md,documentation
+https://github.com/microsoft/DeepSpeed.git,1066864+fasterinnerlooper@users.noreply.github.com,"Update _sidebar.scss (#5293)
+
+The right sidebar disappears off of the right side of the page. These
+changes will help bring the content back and place it correctly on the
+page.
+
+Co-authored-by: Logan Adams <114770087+loadams@users.noreply.github.com>",other
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,pattishin@users.noreply.github.com,"chore: adding in region tag for cloud storage v2 unit test docs (#10507)
+
+* refactor: adding in region tag to link back to cloud storage v2 unit test docs
+
+* 🦉 Updates from OwlBot post-processor
+
+See https://github.com/googleapis/repo-automation-bots/blob/main/packages/owl-bot/README.md
+
+---------
+
+Co-authored-by: Owl Bot <gcf-owl-bot[bot]@users.noreply.github.com>",documentation

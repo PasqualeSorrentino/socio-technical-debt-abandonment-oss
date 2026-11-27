@@ -1,0 +1,53 @@
+Loading panel...
+Inclusion criteria: 308 of 332 projects retained (18 with fewer than 100 mined commits, 11 with a single contributor)
+  v1: active=67 dormant=241
+  v2: active=204 dormant=104
+  v3: active=41 dormant=267
+v1          v1 active  v1 dormant
+v2                               
+v2 active          41         163
+v2 dormant         26          78
+  v2-active but v1-dormant: 163 of 204, median 19 quarters since their last activity
+definition  median_active  median_dormant  mannwhitney_p
+        v1           30.0            12.0          0.000
+        v2           15.5            13.0          0.257
+        v3           32.0            13.0          0.000
+
+Six-factor models (OR / HR per SD):
+model               cox_six_factors             logit_six_factors_age            
+definition                       v1    v2    v3                    v1    v2    v3
+predictor                                                                        
+SD_community                   0.85  1.10  0.88                  0.72  1.35  1.03
+SD_stcongr                     1.08  0.97  1.07                  0.98  0.86  1.06
+SD_truck                       1.95  1.01  1.90                  0.53  0.81  0.34
+TD_ml                          0.88  0.80  0.87                  0.72  0.66  0.47
+TD_trad                        1.24  1.05  1.23                  0.97  0.74  0.94
+TD_vuln                        1.29  1.30  1.30                  1.13  1.12  1.64
+log_age_last_commit             NaN   NaN   NaN                  0.02  3.45  0.05
+log_loc                        0.84  0.87  0.83                  1.15  0.97  0.99
+log_n_dev                      0.49  0.65  0.49                  1.02  0.49  0.97
+p-values:
+model               cox_six_factors               logit_six_factors_age              
+definition                       v1     v2     v3                    v1     v2     v3
+predictor                                                                            
+SD_community                  0.078  0.430  0.175                 0.363  0.229  0.937
+SD_stcongr                    0.386  0.775  0.436                 0.960  0.557  0.903
+SD_truck                      0.000  0.906  0.000                 0.125  0.482  0.019
+TD_ml                         0.056  0.028  0.035                 0.162  0.015  0.004
+TD_trad                       0.011  0.695  0.012                 0.922  0.184  0.882
+TD_vuln                       0.001  0.041  0.000                 0.752  0.560  0.252
+log_age_last_commit             NaN    NaN    NaN                 0.000  0.000  0.000
+log_loc                       0.012  0.120  0.004                 0.512  0.876  0.957
+log_n_dev                     0.000  0.001  0.000                 0.968  0.019  0.939
+
+v2 without bot commits: 102 dormant (vs 104), 4 labels change
+
+Minimum detectable HR (104 events, alpha=0.05 two-sided, power=0.80):
+               factor  R2_with_other_predictors  min_HR_risk  min_HR_protective
+any (no collinearity)                     0.000        1.316              0.760
+             SD_truck                     0.674        1.618              0.618
+         SD_community                     0.154        1.348              0.742
+              TD_trad                     0.538        1.498              0.668
+              TD_vuln                     0.488        1.468              0.681
+
+Done. Outputs in analysis/extended/outputs

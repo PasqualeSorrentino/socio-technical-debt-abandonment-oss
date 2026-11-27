@@ -3,7 +3,8 @@
 #
 # Install with:  pip install -r requirements.txt
 #
-# The four pinned versions are the ones reported in the paper (Section 3.4).
+# The four pinned versions are the ones used to produce the results of the paper.
+# The analyses were also verified with Python 3.14.0 and the same pinned versions.
 # The remaining packages are listed without a pin because their exact versions
 # were not recorded; any recent release compatible with Python 3.13 works.
 # Before archiving, consider freezing the environment:  pip freeze > requirements-lock.txt

@@ -1,0 +1,3005 @@
+project_url,developer_id,last_commit_message,category
+https://github.com/PaddlePaddle/PARL.git,70361439+p90-rushb@users.noreply.github.com,"Latest installation instructions (#1166)
+
+* add installation guide
+
+* add install zh
+
+---------
+
+Co-authored-by: liangjiage <liangjiage@baidu.com>",build and dependencies
+https://github.com/deezer/spleeter.git,romi1502@users.noreply.github.com,Updated installation instructions,build and dependencies
+https://github.com/google-research/google-research.git,polozov@google.com,"Upgrade MBPP to avoid dependency on Python 3.7-specific behavior
+
+PiperOrigin-RevId: 438583102
+",build and dependencies
+https://github.com/nyu-mll/jiant.git,49699333+dependabot[bot]@users.noreply.github.com,"Bump lxml from 4.6.5 to 4.9.1 (#1352)
+
+Bumps [lxml](https://github.com/lxml/lxml) from 4.6.5 to 4.9.1.
+- [Release notes](https://github.com/lxml/lxml/releases)
+- [Changelog](https://github.com/lxml/lxml/blob/master/CHANGES.txt)
+- [Commits](https://github.com/lxml/lxml/compare/lxml-4.6.5...lxml-4.9.1)
+
+---
+updated-dependencies:
+- dependency-name: lxml
+  dependency-type: direct:production
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",build and dependencies
+https://github.com/CorentinJ/Real-Time-Voice-Cloning.git,niwala101@gmail.com,"Added instructions for installing pytorch and pyqt4
+",build and dependencies
+https://github.com/flatironinstitute/CaImAn.git,orp@medigate.io,"dockerfile copy repository from local
+",build and dependencies
+https://github.com/google/flax.git,brittix1023@gmail.com,"Added `tensorflow` to requirements.txt and setup.py as it is needed by `tensorflow-datasets`.
+",build and dependencies
+https://github.com/mozilla/bugbug.git,39332885+effaf@users.noreply.github.com,"Added ruff for linting and formatting (#4031)
+
+",build and dependencies
+https://github.com/microsoft/tf2-gnn.git,krmaziar@microsoft.com,"feat(setup): Add an explicit dependency on packaging
+",build and dependencies
+https://github.com/microsoft/nni.git,cclauss@me.com,"azure-pipelines.yml: Upgrade pylint and astroid (#2669)
+
+",build and dependencies
+https://github.com/MIC-DKFZ/nnUNet.git,48475933+nils-christianiseke@users.noreply.github.com,"Adding build-system to pyproject.toml
+
+If using an older version of setuptools, the installation of nnunet fails (#1832). Adding the requirement of using setuptoosl >=69.0.2 should resolve this issue.
+
+I had no time to test it yet, and it might also work with lower version than 69.0.2. Before merging this should be tested.",build and dependencies
+https://github.com/elifesciences/sciencebeam.git,49699333+dependabot[bot]@users.noreply.github.com,"Bump types-pyyaml from 6.0.0 to 6.0.1 (#456)
+
+Bumps [types-pyyaml](https://github.com/python/typeshed) from 6.0.0 to 6.0.1.
+- [Release notes](https://github.com/python/typeshed/releases)
+- [Commits](https://github.com/python/typeshed/commits)
+
+---
+updated-dependencies:
+- dependency-name: types-pyyaml
+  dependency-type: direct:development
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+
+Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",build and dependencies
+https://github.com/facebookresearch/ClassyVision.git,lefaudeux@fb.com,"Fix fairscale dependency for fblearner jobs (#704)
+
+Summary:
+Pull Request resolved: https://github.com/facebookresearch/ClassyVision/pull/704
+
+tentatively fix classy+fairscale on fblearner
+
+Reviewed By: mannatsingh
+
+Differential Revision: D26612730
+
+fbshipit-source-id: 085fe6abc089d3a143d54ff0a09a0efc6f0c9f04
+",build and dependencies
+https://github.com/keras-team/keras-tuner.git,42114189+hanxiaolyu@users.noreply.github.com,"Update the setup.py classifiers (#746)
+
+* Update the setup.py classifiers
+
+Added more supported Python versions in the `classifiers` of `setup.py` for better discoverability.
+
+* Also add python 3.11
+
+Co-authored-by: Haifeng Jin <5476582+haifeng-jin@users.noreply.github.com>",build and dependencies
+https://github.com/jeongyoonlee/Kaggler.git,7578770+dickmao@users.noreply.github.com,"Move to Github Actions (#51)
+
+Clean up requirements.txt
+
+Co-authored-by: dickmao <none>",build and dependencies
+https://github.com/idealo/image-super-resolution.git,cclauss@me.com,"Travis CI: Add flake8 tests (on the dev branch)
+
+Redo #48 on the __dev__ branch.
+
+Former-commit-id: 4b7250ccc68355e5e867dc965983d3d1fafcf53d",build and dependencies
+https://github.com/google-research/google-research.git,summeryue@google.com,"Fix Multiagent dependency by adding newly added loss aggregation argument.
+
+PiperOrigin-RevId: 404332321
+",build and dependencies
+https://github.com/kerlomz/captcha_platform.git,x120039483@hotmail.com,"add docker support.
+",build and dependencies
+https://github.com/keras-team/keras-tuner.git,pedro.k.night@gmail.com,"Set workflow permissions to read-only (#930)
+
+",build and dependencies
+https://github.com/MaybeShewill-CV/lanenet-lane-detection.git,49699333+dependabot[bot]@users.noreply.github.com,"Bump tensorflow-gpu from 1.15.0 to 1.15.2
+
+Bumps [tensorflow-gpu](https://github.com/tensorflow/tensorflow) from 1.15.0 to 1.15.2.
+- [Release notes](https://github.com/tensorflow/tensorflow/releases)
+- [Changelog](https://github.com/tensorflow/tensorflow/blob/master/RELEASE.md)
+- [Commits](https://github.com/tensorflow/tensorflow/compare/v1.15.0...v1.15.2)
+
+Signed-off-by: dependabot[bot] <support@github.com>",build and dependencies
+https://github.com/allenai/allennlp.git,andreas@madflex.de,"add option ""-k"" to limit tests in test-install command (#2635)
+
+* add option ""-k"" to limit tests in test-install command
+
+* remove ""not notebooks_test"" argument
+
+* explicit is better than a comment
+
+* Remove last reference to notebook tests
+
+* Simplify nesting
+",build and dependencies
+https://github.com/data-science-on-aws/workshop.git,steven.harms@gsa.gov,"Remove invalid pip version check flag
+",build and dependencies
+https://github.com/mangaki/mangaki.git,erwan.milis@gmail.com,"Added README and a forgotten dependency in requirements.txt
+",build and dependencies
+https://github.com/BachiLi/redner.git,jonathanp.chen@gmail.com,"use std::make_tuple to prevent build errors from older versions of gcc
+",build and dependencies
+https://github.com/leela-zero/leela-zero.git,infinity0@pwned.gg,"Packaging improvements.
+
+* Install to ${CMAKE_INSTALL_BINDIR},
+  some distros like to put games in /usr/games.
+
+* Store/load leelaz_opencl_tuning and load weights file from
+  system directories, i.e.
+  ~/.local/share/leela-zero on Unix
+
+* Better error reporting when network weights file is not found.
+
+Pull request #1618.
+",build and dependencies
+https://github.com/guildai/guildai.git,garrett@corp.amazonworkspaces.com,"Support builds on Windows
+",build and dependencies
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,dcavazos@google.com,"fix: rasterio and update dependencies (#12538)
+
+* fix rasterio and update dependencies
+
+* update docker beam version",build and dependencies
+https://github.com/deepmind/sonnet.git,torstenrudolf@users.noreply.github.com,"FIX: setup.py.tmpl referenced wrong package name
+
+setup.py.tmpl referenced ""tensor-probability-gpu"" instead of ""tensorflow-probability-gpu"".
+this caused installation via pip to fail since dm-sonnet-gpu==1.25
+
+GIT_ORIGIN_REV_ID=b18ca77dd73795d5c18dbf2a1e895471493c15f2
+PiperOrigin-RevId: 226004212
+",build and dependencies
+https://github.com/persephone-tools/persephone.git,nay.san@anu.edu.au,"Added Dockerfile
+",build and dependencies
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,31829545+rogerthatdev@users.noreply.github.com,"chore: add region tags to workflows quickstart (#10537)
+
+* chore: add workflows quickstart region tags
+
+* 🦉 Updates from OwlBot post-processor
+
+See https://github.com/googleapis/repo-automation-bots/blob/main/packages/owl-bot/README.md
+
+---------
+
+Co-authored-by: Owl Bot <gcf-owl-bot[bot]@users.noreply.github.com>",build and dependencies
+https://github.com/microsoft/nni.git,60100549+changqi97@users.noreply.github.com,"fix the bug that can only create two stage (#4956)
+
+",corrective change
+https://github.com/DigitalSlideArchive/HistomicsTK.git,chanwayng@u.nus.edu,"fix: Update matrix inversion to pseudo-inverse (#943)
+
+The (Moore-Penrose) [pseudo-inverse](https://numpy.org/doc/stable/reference/generated/numpy.linalg.pinv.html#numpy-linalg-pinv) of a matrix can avoid `numpy.linalg.LinAlgError`: Singular matrix.",corrective change
+https://github.com/nyu-mll/jiant.git,sheng-fu@users.noreply.github.com,"Fixing the script for probing experiments (spring19_seminar) (#704)
+
+* Update metadata_probing_exps.sh
+
+* Update metadata_probing_exps.sh
+",corrective change
+https://github.com/google-research/google-research.git,xingyousong@google.com,"Fix from new gym API
+
+PiperOrigin-RevId: 407652487
+",corrective change
+https://github.com/OpenNMT/OpenNMT-py.git,rapigan@gmail.com,"Method signature fix
+
+Update example in docs to match onmt.utils.optimizers.Optimizer parameters.",corrective change
+https://github.com/mozilla/bugbug.git,73170696+naoya2000@users.noreply.github.com,"[model:stepstoreproduce] Train on defect bugs only (#3897)
+
+",corrective change
+https://github.com/l3p-cv/lost.git,patipat@me.com,"Fix issue 115
+",corrective change
+https://github.com/nutonomy/nuscenes-devkit.git,44242350+dh-nutonomy@users.noreply.github.com,"EvalBoxes bug quick fix (#106)
+
+",corrective change
+https://github.com/onnx/onnx-tensorflow.git,73995669+krishnannuance@users.noreply.github.com,"resolve #1020 squeeze and unsqueeze opset v13 (#1022)
+
+* initial code for PR
+
+Signed-off-by: Pooja Krishnan <pooja.krishnan@nuance.com>
+
+* exclude backend testb based on test_sequence_map_
+
+Signed-off-by: Pooja Krishnan <pooja.krishnan@nuance.com>
+
+* 1020-removed irrelevant update in opset version
+
+Signed-off-by: Pooja Krishnan <pooja.krishnan@nuance.com>",corrective change
+https://github.com/deepmind/open_spiel.git,svenotto@mailbox.org,"Fixed legal actions for null games
+",corrective change
+https://github.com/deepset-ai/FARM.git,tanaysoni12@gmail.com,"Fix import (#581)
+
+",corrective change
+https://github.com/ARM-software/CMSIS_5.git,andrew.leech@planetinnovation.com.au,"DSP: fix double-promotion warnings in arm_mat_inverse_f64
+",corrective change
+https://github.com/magenta/magenta.git,sergeybok@users.noreply.github.com,"Fixed IllegalFlagValueError: flag value must be string caused by line 28 in nsynth_generate.py because of TF Flags expecting string but getting Boolean (#1040)
+
+",corrective change
+https://github.com/magenta/magenta.git,willfenton14@gmail.com,"fixed bug in music VAE training script with make_one_shot_iterator
+",corrective change
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,9151046+mokshasoul@users.noreply.github.com,"fix(airflow_db_cleanup): sessions cleanup (#11035)
+
+This fixes an issue where the python operator gets killed if the ssession table is large neough",corrective change
+https://github.com/hasanirtiza/Pedestron.git,shizehao.scu@gmail.com,"Fix index error when class_agnostic is true.
+",corrective change
+https://github.com/allenai/allennlp.git,ethanperez18@gmail.com,"Fixing BERT mask size (#2429)
+
+* Fixing BERT mask size
+
+Input tokens are truncated to <512 tokens long to fit into BERT. When this happens, the mask associated with that sample appears to not also be truncated. This edit is a fix for that issue, which can cause size mismatch errors downstream when the mask is used.
+
+* update comment
+",corrective change
+https://github.com/mpariente/asteroid.git,102612038+xinyi-cheng@users.noreply.github.com,"[bigs] Fixed a bug caused by a type error (#696)
+
+* 修正了因为类型错误导致的bug
+
+* remove ds_store
+
+---------
+
+Co-authored-by: Cheng <cheng@ChengdeMacBook-Air.local>",corrective change
+https://github.com/medipixel/rl_algorithms.git,33583101+cyoon1729@users.noreply.github.com,"Fix resnet parameter copy error (#257)
+
+* * Change statedict2numpy return a dict, instead of list of numpy converted params.
+* Worker and logger receives dict so that they can use name and value of parameters.
+
+* Change return type hinting for statedict2numpy.
+
+* Fix synchronize() function arguments",corrective change
+https://github.com/magenta/magenta.git,jeremy.sawruk@gmail.com,"Fix issue #674: MusicXML Time Signature and Whole Measure (#699)
+
+* Fix issue #674: MusicXML Time Signature and Whole Measure rest parsing issues
+
+* Move Issue #674 code that inserts a whole measure rest into an empty measure to the Part class. This code is now called before the measure is parsed.
+
+* Code cleanup as per Fjord's comments
+
+* Remove commented out lines of code
+
+* syntax fix
+
+* lint
+",corrective change
+https://github.com/lululxvi/deepxde.git,34447668+twansklaf@users.noreply.github.com,"Improved error tracking by adding hints (#1269)
+
+* Improved error tracking by adding hints: what are acceptable values for batch_normalization and layer_normalization
+
+* formatted code changes
+
+---------
+
+Co-authored-by: Twansklaf <adt5@eduroamprvnat-172-16-38-161.near.illinois.edu>",corrective change
+https://github.com/facebookresearch/habitat-api.git,21229070+jasonjiazhizhang@users.noreply.github.com,"Fix vector env deletion (#185)
+
+Explicitly call close for vector env to avoid issues with file writer prematurely close buffer when tensorboard enabled. See #184 for more info.",corrective change
+https://github.com/google-research/google-research.git,lehou@google.com,"Fix an eval prompt
+
+PiperOrigin-RevId: 642381833
+",corrective change
+https://github.com/microsoft/DeepSpeed.git,44502768+rezayazdaniaminabadi@users.noreply.github.com,"Fix fp8 gemm (#7265)
+
+This PR addresses this issue
+https://github.com/deepspeedai/DeepSpeed/issues/7236.
+I might have reverted some of the recent changes introduced in this
+[PR](https://github.com/deepspeedai/DeepSpeed/pull/6932), which was
+necessary to remove a misaligned address issue on the CUDA kernel. I
+will get back to this and try to make the necessary changes for the
+other pass.
+
+cc: @mrwyattii @jeffra
+
+---------
+
+Co-authored-by: Reza Yazdani <reza.yazdani@snowflake.com>
+Co-authored-by: Reza Yazdani <rezay@microsoft.com>
+Co-authored-by: Jeff Rasley <jeffra45@gmail.com>
+Co-authored-by: Michael Wyatt <michael.wyatt@snowflake.com>
+Co-authored-by: Logan Adams <114770087+loadams@users.noreply.github.com>",corrective change
+https://github.com/deepmind/dm-haiku.git,vanderplas@google.com,"Haiku: fix jaxpr_info_test for jax v0.4.24
+
+The implementation of jnp.sign changed in https://github.com/google/jax/pull/19390
+
+PiperOrigin-RevId: 599205731
+",corrective change
+https://github.com/google-research/tensor2robot.git,kappler@google.com,"Fix issue with batch_size=None comparison for python 3.
+
+PiperOrigin-RevId: 403500022
+",corrective change
+https://github.com/ARM-software/CMSIS_5.git,norbert.lange@andritz.com,"Correct gcc version check for __builtin_arm_[gs]et_fpscr builtins
+
+The fix is now in the gcc-7 branch, and will be definitly
+be included with 7.2
+
+https://github.com/gcc-mirror/gcc/commits/gcc-7-branch/gcc/config/arm/arm-builtins.c
+",corrective change
+https://github.com/deezer/spleeter.git,u.suke.goto@gmail.com,"fix: switch up to 1.4.9
+",corrective change
+https://github.com/microsoft/DeepSpeed.git,tl_tj_jan@163.com,"fix hybrid engine mlp module (#3736)
+
+* fixgated_mlp.py
+
+* fix hybrid_engine.py
+
+---------
+
+Co-authored-by: Logan Adams <114770087+loadams@users.noreply.github.com>",corrective change
+https://github.com/amzn/xfer.git,wjm363@nyu.edu,"Resolve malaria dataset error (#86)
+
+",corrective change
+https://github.com/facebookresearch/ClassyVision.git,vini@fb.com,"Update readme (#661)
+
+Summary:
+- Add news section (from https://github.com/facebookresearch/ClassyVision/pull/638)
+ - Add v0.5 release notes
+ - Highlight Vision Transformers
+ - Change CircleCI badge style
+
+Pull Request resolved: https://github.com/facebookresearch/ClassyVision/pull/661
+
+Reviewed By: lauragustafson
+
+Differential Revision: D25124830
+
+Pulled By: vreis
+
+fbshipit-source-id: dafc6a842dfbbab9ab2c6c37a7bdb1883d3aa40e
+",documentation
+https://github.com/microsoft/nni.git,jiahaoyao.math@gmail.com,typo,documentation
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,alnbaldon@gmail.com,"docs: Generate using new common.py_samples() synthtool functionality (#35)
+
+* docs: Generate using new common.py_samples() synthtool functionality
+
+* docs: Generate using new common.py_samples() synthtool functionality
+
+* Delete old README
+
+* Updated README to remove duplicate info
+
+* Minor change",documentation
+https://github.com/learnables/learn2learn.git,19637339+8bitmp3@users.noreply.github.com,"Fix the link to Lightning module for Model-Agnostic Meta-Learning in docs (#226)
+
+",documentation
+https://github.com/facebookresearch/ParlAI.git,gcouti@gmail.com,"Fixing bibtex citation (#186)
+
+Missing braces",documentation
+https://github.com/apachecn/pytorch-doc-zh.git,yportne13@gmail.com,Update aws_distributed_training_tutorial.md,documentation
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,lcaggioni@google.com,"Fix `tempLocation` Dataflow parameter in Airflow example (#7139)
+
+* Fix `tempLocation` Dataflow parameter
+
+Fix `tempLocation` parameter as per Airflow documentation at https://airflow.apache.org/docs/apache-airflow-providers-google/stable/_api/airflow/providers/google/cloud/operators/dataflow/index.html
+
+* Fix Airflow 2 sample
+
+Co-authored-by: Leah E. Cole <6719667+leahecole@users.noreply.github.com>",documentation
+https://github.com/MisaOgura/flashtorch.git,43755000+vainaijr@users.noreply.github.com,"open in colab badge (#11)
+
+* Created using Colaboratory
+
+* Created using Colaboratory
+
+* Created using Colaboratory
+
+* Created using Colaboratory
+
+* Created using Colaboratory
+
+* Created using Colaboratory
+
+* Created using Colaboratory
+
+* Created using Colaboratory
+
+* Add files via upload
+
+* Add files via upload
+
+* Add files via upload
+",documentation
+https://github.com/facebookresearch/ParlAI.git,gmanasi13@gmail.com," Updated link for LICENSE file (#2970)
+
+Added the link to the LICENSE file in README for easier navigation.",documentation
+https://github.com/jantic/DeOldify.git,81195143+ak391@users.noreply.github.com,Update README.md,documentation
+https://github.com/microsoft/botbuilder-python.git,26118630+alexrecuenco@users.noreply.github.com,"Typo on link (#2217)
+
+contributing goes to a 404 — file not found, https://github.com/microsoft/botbuilder-python/blob/main/contributing.md
+
+The correct link is https://github.com/microsoft/botbuilder-python/blob/main/Contributing.md
+
+Co-authored-by: tracyboehrer <tracyboehrer@users.noreply.github.com>",documentation
+https://github.com/magenta/magenta.git,natashamjaques@gmail.com,"update readme with arxiv paper (#404)
+
+",documentation
+https://github.com/NVIDIA/Megatron-LM.git,erinh@nvidia.com,"link doc in README
+",documentation
+https://github.com/calico/basenji.git,geoff.fudenberg@gmail.com,small-readme-update,documentation
+https://github.com/EdinburghNLP/nematus.git,donglixp@gmail.com,"typo
+",documentation
+https://github.com/deepmind/sonnet.git,diegolascasas@google.com,"Set setup.py description content type to Markdown.
+
+PiperOrigin-RevId: 270663464
+Change-Id: Ib5693cb3690e374617c08ef800265882f3fd9afb
+",documentation
+https://github.com/freewym/espresso.git,yinhanliu@fb.com,"add bart xsum readme (#1055)
+
+Summary:
+# Before submitting
+
+- [ ] Was this discussed/approved via a Github issue? (no need for typos, doc improvements)
+- [ ] Did you read the [contributor guideline](https://github.com/pytorch/fairseq/blob/master/CONTRIBUTING.md)?
+- [ ] Did you make sure to update the docs?
+- [ ] Did you write any new necessary tests?
+
+## What does this PR do?
+Fixes # (#1664, #1760, #1455).
+
+## PR review
+Anyone in the community is free to review the PR once the tests have passed.
+If we didn't discuss your PR in Github issues there's a high chance it will not be merged.
+
+## Did you have fun?
+Make sure you had fun coding �
+Pull Request resolved: https://github.com/fairinternal/fairseq-py/pull/1055
+
+Differential Revision: D20197177
+
+Pulled By: yinhanliu
+
+fbshipit-source-id: 0df2d468a4015d98b6d1b7816bc832ea815c5e79
+",documentation
+https://github.com/freewym/espresso.git,artetxe@fb.com,"Add X-MOD paper citation (#3386)
+
+Summary:
+Add a link and bibtex citation to the X-MOD paper
+
+X-link: https://github.com/fairinternal/fairseq-py/pull/3386
+
+Reviewed By: ngoyal2707
+
+Differential Revision: D36377376
+
+Pulled By: artetxem
+
+fbshipit-source-id: 84540b90dbea8502ba5fecfcbdb60164e4fb801e
+",documentation
+https://github.com/deepmind/sonnet.git,jeffdonahue@google.com,"Add Sonnet 2 ""Little GAN"" notebook
+
+PiperOrigin-RevId: 259953991
+Change-Id: I7375e59a3bf92dff56e088c31331588bcbfdd591
+",documentation
+https://github.com/kornia/kornia.git,tv.github@beamnet.de,"Mark long description as content type markdown in setup.py (#993)
+
+Python assumes restructured text by default. While they are similar, they are not compatible and you'll run into PyPI problems without.
+
+See
+https://packaging.python.org/guides/making-a-pypi-friendly-readme/#including-your-readme-in-your-package-s-metadata
+for details.",documentation
+https://github.com/deepmipt/DeepPavlov.git,srkvoa@gmail.com,"gobot rasa tutorial minor changes (#1304)
+
+* updated the tutorial with ""run with colaboratory"" link, fixed rasa config version, added pip install deeppavlov
+
+* added ""of"" in the beginning paragraph
+
+* removed duplicating installs of deeppavlov
+
+Co-authored-by: Daniel Kornev <daniel@zetuniverse.com>",documentation
+https://github.com/hanxiao/bert-as-service.git,mingweichang@outlook.com,Fix typos.,documentation
+https://github.com/facebookresearch/pytext.git,hartb@us.ibm.com,"Fix docstring / help string for torchscript-export (#606)
+
+Summary:
+The docstring for torchscript_export() mistakenly refers to caffe2
+(probably cut-n-paste from export()), and this is reflected in the
+help text:
+
+Before:
+
+$ pytext --help
+Usage: pytext [OPTIONS] COMMAND [ARGS]...
+...
+Commands:
+  export              Convert a pytext model snapshot to a caffe2 model.
+...
+  torchscript-export  Convert a pytext model snapshot to a caffe2 model.
+
+After:
+
+  export              Convert a pytext model snapshot to a caffe2 model.
+...
+  torchscript-export  Convert a pytext model snapshot to torchscript.
+
+## Motivation and Context
+
+Minor fix to help text / documentation.
+
+## How Has This Been Tested
+
+Built and confirmed locally.
+
+## Types of changes
+
+- [x] Docs change / refactoring / dependency upgrade
+- [x] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to change)
+
+## Checklist
+
+- [x] My code follows the code style of this project.
+- [ ] My change requires a change to the documentation.
+- [ ] I have updated the documentation accordingly.
+- [x] I have read the **CONTRIBUTING** document.
+- [x] I have completed my CLA (see **CONTRIBUTING**)
+- [ ] I have added tests to cover my changes.
+- [x] All new and existing tests passed.
+Pull Request resolved: https://github.com/facebookresearch/pytext/pull/606
+
+Differential Revision: D16770130
+
+Pulled By: Titousensei
+
+fbshipit-source-id: 4280bf771992157950b50c5ca01f2fce5340aaf1
+",documentation
+https://github.com/apachecn/pytorch-doc-zh.git,lonelyparabola@gmail.com,"finish pendulum tiatoolbox_tutoria markdown
+",documentation
+https://github.com/flairNLP/flair.git,pranayc6@gmail.com,GH-5: updated the documentation,documentation
+https://github.com/keras-team/keras-tuner.git,matthew.kelcey@gmail.com,"single character typo in README
+
+s/read-to-use/ready-to-use/",documentation
+https://github.com/onnx/onnxmltools.git,161749246+ju4nv1e1r4@users.noreply.github.com,"Add docstring for 2 classes and 1 function (#715)
+
+Co-authored-by: Xavier Dupré <xadupre@users.noreply.github.com>",documentation
+https://github.com/calico/basenji.git,jaspersnoek@gmail.com,Update README.md,documentation
+https://github.com/google/flax.git,lukasz.lew@gmail.com,"typo fix
+",documentation
+https://github.com/google/flax.git,antoine.plumerault@gmail.com,"Add Stochastic to documentation
+
+Add Stochastic and Dropout to the documentation.",documentation
+https://github.com/nussl/nussl.git,ethanmanilow@gmail.com,"Deprecation notice in README.md
+
+Deprecation notice.",end-of-life notice
+https://github.com/google-research/google-research.git,jameswr@google.com,"Deleting project that is no longer maintained.
+
+PiperOrigin-RevId: 688158076
+",end-of-life notice
+https://github.com/GoogleCloudPlatform/healthcare.git,nikklassen@google.com,"Add deprecation notice to FHIR demos
+
+PiperOrigin-RevId: 531520189
+",end-of-life notice
+https://github.com/ARM-software/CMSIS_5.git,rohit.grover@arm.com,"Introduce Storage driver
+",feature
+https://github.com/leela-zero/leela-zero.git,ywrt@users.noreply.github.com,"Support batches larger than GPU RAM size.
+
+* Add arg parsing to parse.py.
+* Switch to using placeholder instead of Dataset for tensorflow batches.
+* Add v2_write_training.py to generate shuffled V2 records.
+* Refactor tfprocess.py.
+* Add support for batches larger than GPU RAM size.
+
+Pull request #1121.
+",feature
+https://github.com/freewym/espresso.git,ronanr@fb.com,"Add timeout kwarg to EpochBatchIterator (#2261)
+
+Summary:
+Add an optional ```timeout``` argument to ```EpochBatchIterator```.
+
+I need it to fix this issue: https://github.com/pytorch/pytorch/issues/2474
+
+I could do something more general, allowing one to pass ```**dataloader_kwargs``` to ```torch.utils.data.DataLoader```, if you think it's worth.
+Pull Request resolved: https://github.com/pytorch/fairseq/pull/2261
+
+Reviewed By: huihuifan
+
+Differential Revision: D22162936
+
+Pulled By: myleott
+
+fbshipit-source-id: 959b408a53356c19c04fc5ae94aad5f164a32dcd
+",feature
+https://github.com/IBM/AIX360.git,dwei@us.ibm.com,"improve column names of binary columns
+",feature
+https://github.com/OpenNMT/OpenNMT-tf.git,williamgoffic@gmail.com,"Add BPE encoding script (#43)
+
+* Add BPE encoding
+
+* Add licence
+",feature
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,jianqiaoli@google.com,"Add Profiler code samples for App Engine (#2028)
+
+* Add Profiler code samples for App Engine
+
+* Fix comments
+",feature
+https://github.com/hastagAB/Awesome-Python-Scripts.git,55136108+saksham117@users.noreply.github.com,"Added automation for converting JSON to YAML format. (#197)
+
+* Added automation for converting json to yaml format
+
+* Create Readme.md
+
+* Deletd the extra files
+
+* Added requirements.txt
+
+* Added name and project in project list
+
+Co-authored-by: Ayush Bhardwaj <classicayush@gmail.com>",feature
+https://github.com/google-research/google-research.git,basv@google.com,"Adds Flax implementation of cold posterior SGMCMC CIFAR10 experiment.
+
+PiperOrigin-RevId: 353246672
+",feature
+https://github.com/l3p-cv/lost.git,avnih0@gmail.com,"Added filter to load only image files and search iteratively into subfolders for image files.
+",feature
+https://github.com/apache/submarine.git,b05901171@ntu.edu.tw,"SUBMARINE-502. [WEB] Implement outline of experiment information page with Angular
+
+### What is this PR for?
+Implement outline of experiment information page.
+
+### What type of PR is it?
+[Feature]
+
+### Todos
+
+### What is the Jira issue?
+https://issues.apache.org/jira/projects/SUBMARINE/issues/SUBMARINE-502?filter=allopenissues
+
+### How should this be tested?
+https://travis-ci.org/github/apache/submarine/builds/688737391
+
+### Screenshots (if appropriate)
+![](https://i.imgur.com/udUjXNq.gif)
+
+### Questions:
+* Does the licenses files need update? No
+* Is there breaking changes for older versions? No
+* Does this needs documentation? No
+
+Author: jasoonn <b05901171@ntu.edu.tw>
+Author: jasoonn <35865970+jasoonn@users.noreply.github.com>
+
+Closes #293 from jasoonn/SUBMARINE-502 and squashes the following commits:
+
+ab9aee2 [jasoonn] fix code style
+17ec776 [jasoonn] add icon
+03ec6a4 [jasoonn] update
+a949fb9 [jasoonn] update
+1b1e723 [jasoonn] Update submarine-workbench/workbench-web-ng/src/app/pages/workbench/experiment/experiment-info/experiment-info.component.ts
+ddacbb6 [jasoonn] Update submarine-workbench/workbench-web-ng/src/app/pages/workbench/experiment/experiment-info/metrics/metrics.component.ts
+ac7a440 [jasoonn] Update submarine-workbench/workbench-web-ng/src/app/pages/workbench/experiment/experiment-info/hyper-params/hyper-params.component.ts
+3d177c3 [jasoonn] Update submarine-workbench/workbench-web-ng/src/app/pages/workbench/experiment/experiment-info/charts/charts.component.ts
+7a810ee [jasoonn] Update submarine-workbench/workbench-web-ng/src/app/pages/workbench/experiment/experiment-info/experiment-info.component.html
+5b3c816 [jasoonn] fix code style
+2755b1f [jasoonn] update
+002ebaf [jasoonn] update
+",feature
+https://github.com/deepmind/open_spiel.git,lizun@google.com,"Add all_instances method in pyspiel.
+
+PiperOrigin-RevId: 467683372
+Change-Id: Iba01470c754ad412dd7f95a2bcedb693328f319d
+",feature
+https://github.com/google/automl.git,32759977+glenvorel@users.noreply.github.com,"Improve handling of custom label maps (#789)
+
+* Create output directory if it doesn't exist
+
+* Select class for list of examples dynamically (supports custom label map)
+
+* Minor change to silence deprecation warning
+
+Co-authored-by: Glen Vorel <glen.vorel@gmail.com>",feature
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,31265687+cumason123@users.noreply.github.com,"added cloudevents to events-storage (#4537)
+
+* added cloudevents to events-storage
+
+Signed-off-by: Curtis Mason <cumason@bu.edu>
+
+* modified README
+
+Signed-off-by: Curtis Mason <cumason@bu.edu>
+
+* nit lower case ce-subject fix
+
+Signed-off-by: Curtis Mason <cumason@google.com>
+
+Co-authored-by: Grant Timmerman <timmerman+devrel@google.com>
+Co-authored-by: Leah E. Cole <6719667+leahecole@users.noreply.github.com>",feature
+https://github.com/kaushaltrivedi/fast-bert.git,hiram1@e.ntu.edu.sg,"Added electra to list of models for cls and lm
+",feature
+https://github.com/hastagAB/Awesome-Python-Scripts.git,hmahajan1999@gmail.com,"added files for automated code submission
+",feature
+https://github.com/google-research/google-research.git,kempy@google.com,"Add flag to keep more checkpoints
+
+PiperOrigin-RevId: 280842208
+",feature
+https://github.com/NVIDIA/Megatron-LM.git,sanshang@nvidia.com,"ADLR/megatron-lm!2513 - add group_desc when invoking new_group()
+",feature
+https://github.com/datamllab/rlcard.git,717678696@qq.com,"add classes and functions of doudizhu
+",feature
+https://github.com/natethegreate/hent-AI.git,liudkun15@gmail.com,Implement overlap computation based on masks,feature
+https://github.com/hasanirtiza/Pedestron.git,66578286+f-fl0@users.noreply.github.com,"Add missing __init__.py file
+",feature
+https://github.com/fastnlp/fastNLP.git,kunya.dn@gmail.com,"add graph summary in _train_step
+",feature
+https://github.com/kornia/kornia.git,jhacsonmeza@gmail.com,"Add ``undistort_image`` function (#1303)
+
+* Moving tiltProjection to distort.py
+
+Adding support for tilt and inverse tilt projection matrices. Distortion
+and undistortion models are separated into two different files.
+
+* Adding distort_points function
+
+* Adding function to undistort an image
+
+* Adding lens distortion math model to docs
+
+* Test for distort_points function
+
+* Adding test for undistort_image
+
+* [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+for more information, see https://pre-commit.ci
+
+* Replace torch.meshgrid by kornia.utils.create_meshgrid
+
+* Replace tiltProjection with tilt_projection
+
+* Raise an error if image shape isn't suitable
+
+* raise error message, change some variable names
+
+* Adapted to pep8
+
+* Adding option to return image as float 0-1 or uint8 0-255
+
+* Typos
+
+* Check if input image isn't float instead of checking if it isn't float32
+
+* Adding test_opencv for undistort_image
+
+* Creating grid of the same dtype of image
+
+* Removing optional uint8 output tensor
+
+* Replacing cat by reshape for 2D matrix of pixel points
+
+* Apply suggestions from code review
+
+* Input image is expected to be [0,1] float
+
+We don't convert the input image to float. Instead if image isn't float
+and error arises. Then, we don't normalize the output tensor by dividing
+by 255.
+
+* Return when return_inverse is false
+
+* [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+for more information, see https://pre-commit.ci
+
+* some fixes
+
+* [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+for more information, see https://pre-commit.ci
+
+* if/else fix
+
+Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+Co-authored-by: Edgar Riba <edgar.riba@gmail.com>",feature
+https://github.com/facebookresearch/ClassyVision.git,melissahall@devfair0455.h2.fair,"Create folder to avoid Tensorboard race condition (#768)
+
+Summary:
+Without this change, if a directory doesn't exist it is possible that there will be a race condition in which parallel processes attempt to create the same directory. This will cause an error. This change avoids this outcome by making the directory if it doesn't exist.
+
+Pull Request resolved: https://github.com/facebookresearch/ClassyVision/pull/768
+
+Test Plan:
+Imported from GitHub, without a `Test Plan:` line.
+
+Testing with `./classy_train.py --config configs/template_config.json
+` works.
+
+|[Site Preview: classyvision](https://our.intern.facebook.com/intern/staticdocs/eph/D30794164/V8/classyvision/)
+
+Reviewed By: mannatsingh
+
+Differential Revision: D30794164
+
+Pulled By: melissah14
+
+fbshipit-source-id: 47a0580ad30f27f5ada099c6b45447c29ea011f2
+",feature
+https://github.com/NervanaSystems/distiller.git,gal.novik@intel.com,"Enable compute (training/inference) on the CPU
+
+In compress_classifier.py we added a new application argument: --cpu
+which you can use to force compute (training/inference) to run on the CPU 
+when you invoke compress_classifier.py on a machine which has Nvidia GPUs.
+
+If your machine lacks Nvidia GPUs, then the compute will now run on the CPU
+(and you do not need the new flag).
+
+Caveat: we did not fully test the CPU support for the code in the Jupyter 
+notebooks.  If you find a bug, we apologize and appreciate your feedback.",feature
+https://github.com/ARM-software/CMSIS_5.git,martin.guenther@arm.com,"CMSIS-Core(M): added instruction barrier (ISB) to set_CONTROL functions.
+",feature
+https://github.com/mlperf/training.git,subin@apache.org,Create cla.yml,feature
+https://github.com/amaiya/ktrain.git,logeshb@sahajsoft.com,"support for custom tokenizer added in Predictor.predict method
+",feature
+https://github.com/koaning/scikit-lego.git,vincentwarmerdam@gmail.com,"Drop Python 3.8 support (#749)
+
+- Update minimum Python version from 3.6 to 3.9
+- Remove Python 3.8 from project classifiers
+- Remove importlib-metadata conditional dependency (not needed for Python 3.9+)
+
+This aligns with the current CI test matrix which only tests Python 3.9-3.13.
+
+Fixes #734
+
+Co-authored-by: claude[bot] <209825114+claude[bot]@users.noreply.github.com>
+Co-authored-by: vincent d warmerdam <koaning@users.noreply.github.com>",feature
+https://github.com/fastai/fastai.git,radekosmulski@users.noreply.github.com,"Add zebra finch2 (#303)
+
+* amend 04_data.external
+
+* add hash for zebra_finch
+
+* generate lib, fix build (hopefully)
+
+* add changes from running updated nbdev_build_lib",feature
+https://github.com/fastai/fastai.git,guy.rosin@gmail.com,"wandb callback: support logging lists of parameters (#2875)
+
+Co-authored-by: Guy Rosin <grosin@ebay.com>",feature
+https://github.com/microsoft/botbuilder-python.git,jess.m.wailes@gmail.com,Merge branch 'master' into jj/echo-aiohttp,merge
+https://github.com/DigitalSlideArchive/HistomicsTK.git,matt@mmmccormick.com,"Merge pull request #658 from DigitalSlideArchive/fix-license-in-setup.py
+
+Fix license in setup.py.",merge
+https://github.com/mangaki/mangaki.git,camille.poquet@gmail.com,"Merge pull request #504 from mangaki/soubi/htmlSafe
+
+HTML is not escaped in Work's synopsis",merge
+https://github.com/MAIF/melusine.git,25296515+milidris@users.noreply.github.com,"Merge pull request #1 from MAIF/master
+
+Update to current image before pull requesting changes",merge
+https://github.com/hanxiao/bert-as-service.git,artex.xh@gmail.com,"Merge pull request #352 from PeterisP/master
+
+Added server command line option for cased tokenization",merge
+https://github.com/bayesiains/nflows.git,janfb@users.noreply.github.com,"Merge pull request #13 from mackelab/readme
+
+update readme, fix git lfs ",merge
+https://github.com/mozilla/TTS.git,31413490+thllwg@users.noreply.github.com,"Merge pull request #1 from mozilla/dev
+
+Dev",merge
+https://github.com/nyanp/nyaggle.git,noumi.taiga@gmail.com,"Merge pull request #113 from wakame1367/bugfix/lightgbm_v4
+
+Temporary Fix for Issue #112",merge
+https://github.com/BloodAxe/pytorch-toolbelt.git,ekhvedchenya@gmail.com,"Merge pull request #81 from BloodAxe/develop
+
+PyTorch Toolbelt 0.6.0",merge
+https://github.com/nanoporetech/medaka.git,julian.libiseller-egger@nanoporetech.com,"Merge branch 'smolecule-fix-not-running-POA-twice' into 'dev'
+
+smolecule: fix not running poa twice
+
+See merge request research/medaka!563",merge
+https://github.com/nussl/nussl.git,nsnshelly@gmail.com,"Merge pull request #158 from interactiveaudiolab/ns/clustering
+
+Add `zarr` to extra requirements",merge
+https://github.com/microsoft/MMdnn.git,chenghao.zhang@blacksesame.com,"Merge branch 'master' of git://github.com/Microsoft/MMdnn
+",merge
+https://github.com/microsoft/botbuilder-python.git,14935595+stevengum@users.noreply.github.com,Merge branch 'master' into kyled/ActivityPrompt,merge
+https://github.com/CLUEbenchmark/CLUE.git,1187645397@qq.com,"Merge pull request #38 from CLUEbenchmark/dev_verify_cong
+
+update bert/roberta-wwm-large results in copa",merge
+https://github.com/deepmind/open_spiel.git,mevsb183@gmail.com,"Merge branch 'master' of https://github.com/deepmind/open_spiel into emergent-comm-games
+",merge
+https://github.com/flairNLP/flair.git,pommedeterresautee@msn.com,"Merge remote-tracking branch 'upstream/master' into verbose_classif
+",merge
+https://github.com/facebookresearch/ParlAI.git,pengrobertqi@163.com,"Merge pull request #196 from facebookresearch/task-cmdline-args
+
+Add command-line arguments for task agents as well",merge
+https://github.com/microsoft/nni.git,t-shya@microsoft.com,"Merge branch 'master' of https://github.com/SparkSnail/nni
+",merge
+https://github.com/mljar/mljar-supervised.git,79571164+maciekmalachowski@users.noreply.github.com,"Merge branch 'mljar:master' into #729
+",merge
+https://github.com/mlperf/inference.git,40809717+pkanwar23@users.noreply.github.com,"Merge pull request #298 from mlperf/jveejay-patch-3
+
+Update README.md",merge
+https://github.com/MAIF/melusine.git,fdesmier@gmail.com,"Merge pull request #30 from baudelotphilippe/master
+
+fix loc for logo #rwd",merge
+https://github.com/LiberAI/NSpM.git,32532766+panchbhai1969@users.noreply.github.com,"Merge pull request #16 from KShivendu/kshivendu
+
+Fix for issue #15 (Issues while running pipeline_1)",merge
+https://github.com/lukemelas/EfficientNet-PyTorch.git,sasankchilamkurthy@gmail.com,"Merge branch 'master' of github.com:chsasank/EfficientNet-PyTorch
+",merge
+https://github.com/NVIDIA/Megatron-LM.git,satpal.code@gmail.com,Merge branch 'main' into main,merge
+https://github.com/jantic/DeOldify.git,jsa169@gmail.com,"Merge pull request #517 from jantic/jantic-patch-2
+
+Update README.md- farewell!",merge
+https://github.com/facebookresearch/EGG.git,mmahaut@ohpc.s.upf.edu,"Merge branch 'working' of https://github.com/mahautm/EGG into working
+",merge
+https://github.com/alvinwan/neural-backed-decision-trees.git,scott.lee.3898@gmail.com,"Merge branch 'master' of https://github.com/alvinwan/neuralmodularnetwork
+",merge
+https://github.com/deepmind/dm-haiku.git,alonfnt@pm.me,"Merge branch 'deepmind:main' into avg_pool_perf
+",merge
+https://github.com/evilsocket/pwnagotchi.git,7201814+daswisher@users.noreply.github.com,Merge branch 'master' into display-fix,merge
+https://github.com/google-research/google-research.git,1399628+rmkn85@users.noreply.github.com,"Merge of PR #1222
+
+PiperOrigin-RevId: 475646922
+",merge
+https://github.com/google/automl.git,brain-automl@google.com,"Internal change
+
+PiperOrigin-RevId: 303081796
+",other
+https://github.com/ARM-software/CMSIS_5.git,kevin.bracey@arm.com,"GCC/Clang: cope with __set_CPSR changing condition codes
+
+Add a ""cc"" clobber to __set_CPSR to reflect the fact that it could be
+changing the condition codes.
+",other
+https://github.com/OpenNMT/OpenNMT-py.git,anis.chenbeh08@gmail.com,RM trailing space,other
+https://github.com/microsoft/MMdnn.git,jiahaoyao.math@gmail.com,"kit (#648)
+
+",other
+https://github.com/amansrivastava17/embedding-as-service.git,pranav.bhasin07@gmail.com,"made the encode vectorize
+",other
+https://github.com/evilsocket/pwnagotchi.git,g0blin@hackthebox.eu,"Include PaPiRus drivers in project
+",other
+https://github.com/facebookresearch/ReAgent.git,saravanp@fb.com,"Suppress Caffe2 debug logging in Reinforcement Learning Codebase
+
+Summary: Caffe2 is emitting lots of debug logs that are hiding logs we care about. This commit updates the Caffe2 logging level using python API to reduce the excessive logging.
+
+Reviewed By: econti
+
+Differential Revision: D8735775
+
+fbshipit-source-id: 841fab4ef26002fc7f70fee6545ab918c9d49caa
+",other
+https://github.com/Kaixhin/Rainbow.git,49523965+thisisisaac@users.noreply.github.com,Update agent.py,other
+https://github.com/google/clusterfuzz.git,oliverchang@users.noreply.github.com,"Update llvm-symbolizer. (#2170)
+
+Use from the latest chromium clang roll.",other
+https://github.com/google-research/google-research.git,sehoonha@google.com,"Delete safe_mrl, which is outdated.
+
+PiperOrigin-RevId: 347764100
+",other
+https://github.com/deepfakes/faceswap.git,33478015+czfhhh@users.noreply.github.com,"Update Convert_Masked.py (#130)
+
+correct issue when seamless_clone is true",other
+https://github.com/NVIDIA/Megatron-LM.git,jkamalu@nvidia.com,"ADLR/megatron-lm!2995 - make mid level dataset surplus a cli param and config attr
+",other
+https://github.com/kornia/kornia.git,belltailjp@users.noreply.github.com,"Not to globally set warning filter at import time (#1451)
+
+* Not to globally set warning filter
+
+* Use FutureWarning to avoid being ignored by default",other
+https://github.com/dsgiitr/d2l-pytorch.git,867907127@qq.com,"""of an"" instead of ""ofan"" (#108)
+
+",other
+https://github.com/apachecn/pytorch-doc-zh.git,631763140@qq.com,"修复 版本特性 链接
+",other
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,72526832+xliutaox-g@users.noreply.github.com,"Update poll.js (#4826)
+
+Use query parameter",other
+https://github.com/nutonomy/nuscenes-devkit.git,35328154+marcso@users.noreply.github.com,"Update mot.py (#908)
+
+* Update mot.py
+
+The pandas package does not support the DataFrame.append(...) function any longer (https://pandas.pydata.org/docs/whatsnew/v2.0.0.html). It proposes to use pd.concat(...) instead
+
+* Update mot.py
+
+Fixed pandas call",other
+https://github.com/kornia/kornia.git,ash1995@gmail.com,"Don't detach tensors to cpu (#3084)
+
+* Don't detach to cpu
+
+* Empty-Commit",other
+https://github.com/deepfakes/faceswap.git,38301399+fakinated@users.noreply.github.com,"Model backups before saving (#349)
+
+* Sort images properly (to make the frame range parameter meaningfull)
+
+* Add backup mechanism for model weights.
+
+* Replace 'print' call by 'tqdm.write' call.
+",other
+https://github.com/LiberAI/NSpM.git,amanmehta1997@gmail.com,"pipeline updated
+",other
+https://github.com/evilsocket/pwnagotchi.git,gh0stshell@users.noreply.github.com,Removed extra return,other
+https://github.com/alfredfrancis/ai-chatbot-framework.git,varatharaj@digiledge.com,"NLTK to SPACY Migration
+",other
+https://github.com/google-research/google-research.git,keranrong@google.com,"Upload PaLI model card and WebLI data card
+
+PiperOrigin-RevId: 474433276
+",other
+https://github.com/keras-team/autokeras.git,jcrodriguez@unc.edu.ar,"StructuredDataRegressor was missing some init variables documented (#899)
+
+",other
+https://github.com/joe-siyuan-qiao/DetectoRS.git,pangjiangmiao@gmail.com,"Update Libra RetinaNet config with the latest code (#1975)
+
+* Fix IoU sampling
+
+* Update config of libra rcnn with the latest code
+",other
+https://github.com/cornellius-gp/gpytorch.git,saitcakmak@meta.com,"Update __init__.py (#2423)
+
+",other
+https://github.com/iskandr/fancyimpute.git,post@fritshermans.nl,"sets random_state when calling randomized_svd to prevent sklearn warnings (#145)
+
+",other
+https://github.com/allenai/allennlp.git,darabos.daniel@gmail.com,"Pad coreference model input to 5 (#2933)
+
+* Pad coreference model input to 5.
+
+It has a 5-wide Conv1D layer.
+
+* mypy
+",other
+https://github.com/facebookresearch/mmf.git,xialuli@meta.com,"[mmf][search] Leverage the TrainerProfilingMixin to figure out the detailed latency breakdown
+
+Differential Revision: D46013756
+
+fbshipit-source-id: d01a6668b40e77c3adaddf0e93a7948da94657d8
+",other
+https://github.com/deepmind/open_spiel.git,zenoengine@gmail.com,"Do not print url, before make public
+",other
+https://github.com/facebookresearch/EGG.git,tomasz.korbak@gmail.com,"Move remaining trainer functionality to the new callback API (#17)
+
+* Move checkpointing and temperature updating to callbacks
+
+* Rewrite early stoppers as callbacks
+
+* Fix a bug in callbacks
+
+* Add tests for new callbacks
+
+* Rewrite zoo examples to conform to the new callback API
+",refactoring
+https://github.com/aiqm/torchani.git,farhadrgh@users.noreply.github.com,"Remove unnecessary import (#296)
+
+* Remove unnecessary import
+
+* fix
+",refactoring
+https://github.com/facebookresearch/mmf.git,nbadami@meta.com,"[third-party upgrades] move TP2_OVERRIDES.bzl to PACKAGE files 2/N
+
+Summary: move remaining pypi/transformers 3.4.0-transitional overrides
+
+Reviewed By: yns88
+
+Differential Revision: D46124267
+
+fbshipit-source-id: d732eb5b609ffd924be92be889e08bddf5c0bbf1
+",refactoring
+https://github.com/koaning/scikit-lego.git,joskodeboer@gmail.com,"That explains. The small reformat removes the parenthesis and arguments.
+",refactoring
+https://github.com/facebookresearch/pytext.git,pengxia@fb.com,"move ast featurization tensorizor
+
+Summary: as above
+
+Reviewed By: seayoung1112
+
+Differential Revision: D19056171
+
+fbshipit-source-id: c8f4310997361d308f3f0d8633556785118b9e19
+",refactoring
+https://github.com/aimacode/aima-python.git,lucas.moura128@gmail.com,"Refactor backpropagation (#437)
+
+* Create function to initialize random weights
+
+* Add sigmoid derivative function
+",refactoring
+https://github.com/microsoft/DeepSpeed.git,chunyang.wen@gmail.com,"Replace brute force and add log (#1560)
+
+Co-authored-by: Jeff Rasley <jerasley@microsoft.com>",refactoring
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,77979573+monochromaticcoder@users.noreply.github.com,"refactor: clean up compute/auth samples (#10099)
+
+* refactor: clean up compute/auth samples
+
+* Update license of application_default_test.py
+
+---------
+
+Co-authored-by: gcf-merge-on-green[bot] <60162190+gcf-merge-on-green[bot]@users.noreply.github.com>
+Co-authored-by: arithmetic1728 <58957152+arithmetic1728@users.noreply.github.com>",refactoring
+https://github.com/facebookresearch/mmf.git,alexanderm@meta.com,"[codemod][2/n] Replace deprecated uses of collections.$ABC_CLASS
+
+Summary:
+The ""abstract base classes"" in collections were moved to a submodule,
+collections.abc in Python 3.3.  There was a redirect added for backwards
+compatibility, but this is getting removed in Python 3.10.  As such, we need to
+update all callsites to use the newer module or we can't upgrade Python.
+
+This diff is brought to you by:
+
+  fbgr -l -f '.py$' ""collections\.$(~/codemod-regex.py)"" | xargs ~/add-abc.py
+
+where codemod-regex.py is P536570839 and add-abc.py is P536570878.
+
+Reviewed By: itamaro
+
+Differential Revision: D40308519
+
+fbshipit-source-id: d3dd62a188c7b0925359ab4016579f39bab0d8e6
+",refactoring
+https://github.com/facebookresearch/pytext.git,jiesi@fb.com,"move RNNGParser_Deprecated, SemanticParsingTask_Deprecated, SemanticParsingCppTask_Deprecate, RnngJitTask, CompositionDataHandler to fb/deprecated (#963)
+
+Summary:
+Pull Request resolved: https://github.com/facebookresearch/pytext/pull/963
+
+- Move `RNNGParser_Deprecated` to `fb/deprecated/models`
+- Move `SemanticParsingTask_Deprecated` and `SemanticParsingCppTask_Deprecated` to `fb/deprecated/tasks`
+- Rename `RnngJitTask` to `RnngJitTask_Deprecated` and move to `fb/deprecated/tasks`
+- Move `CompositionDataHandler` and related tests to `fb/deprecated/data`
+
+Reviewed By: chenyangyu1988
+
+Differential Revision: D16907908
+
+fbshipit-source-id: 52a08aae3f95033c730880c034560a1db45e962d
+",refactoring
+https://github.com/microsoft/DeepSpeed.git,824040212@qq.com,"Use `torch.nan_to_num` replace numpy wrapper one (#5877)
+
+Co-authored-by: Logan Adams <114770087+loadams@users.noreply.github.com>",refactoring
+https://github.com/OpenNMT/OpenNMT-tf.git,jean@senellart.com,"refactor process_fn to be more generic through transform_fns (#652)
+
+* refactor process_fn to be more generic through transform_fns
+
+* no need for test - filter examples by length by default do nothing if the length_fn are not set
+
+* misc and style
+
+* remove useless parameter
+
+* add back num_threads to dataset map
+
+* remove useless maximum labels length
+
+* put back maximum labels length",refactoring
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,kulac@google.com,"Add code sample for string replacement based deidentification. (#3956)
+
+Adds a code sample corresponding to the replacement based deidentification in the Cloud DLP API. The detected sensitive value is replaced with a specified surrogate. ",refactoring
+https://github.com/allegroai/trains.git,revital@allegro.ai,"rename TrainsTuner to ClearmlTuner
+",refactoring
+https://github.com/google/clusterfuzz.git,mspector@google.com,"Don't replace LKL crashes with ABRT crashes. (#2146)
+
+The libfuzzer portion of the LKL stack may contain an ABRT don't replace
+the crash_type similar to other aborts.",refactoring
+https://github.com/kornia/kornia.git,nima@huggingface.co,"[Docs] Refactor the embedded Gradio demos (#1901)
+
+* Refactor embedded Gradio demos
+
+* Refactor line fitting demo
+Co-authored-by: pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>",refactoring
+https://github.com/flairNLP/flair.git,pranjalsrajput@gmail.com,removed the unused variable: data_fetcher.py,refactoring
+https://github.com/deepmind/sonnet.git,noreply@google.com,"Explicitly create names for batch_norm moving statistics.
+
+PiperOrigin-RevId: 297411469
+Change-Id: I6c9c37958930614bf47f10edf51dafb161b2ace3
+",refactoring
+https://github.com/PetrochukM/PyTorch-NLP.git,jmribeiro@users.noreply.github.com,"Replaced .view with .reshape on Attention
+
+Replaced .view with .reshape in Attention module in order to avoid RuntimeError: ""view size is not compatible with input tensor's size and stride (at least one dimension spans across two contiguous subspaces). Use .reshape(...) instead."".",refactoring
+https://github.com/onnx/onnx-tensorflow.git,rladhkstn8@gmail.com,"Refactoring: Line Reduce (#709)
+
+Co-authored-by: Chin Huang <chhuang@us.ibm.com>",refactoring
+https://github.com/google-research/tensor2robot.git,yanhuasun@google.com,"Explicitly replace ""import tensorflow"" with ""tensorflow.compat.v1""
+
+PiperOrigin-RevId: 287151514
+",refactoring
+https://github.com/joe-siyuan-qiao/DetectoRS.git,40779233+zwwwayne@users.noreply.github.com,"Refactor (resnet.py): remove unnecessary initialization of dcn (#2395)
+
+* Refactor (resnet.py): remove unnecessary initialization of dcn
+
+* change key names",refactoring
+https://github.com/google-research/google-research.git,adamsealfon@google.com,"Minor cleanup
+
+PiperOrigin-RevId: 587781985
+",refactoring
+https://github.com/mozilla/bugbug.git,45161803+pranay144@users.noreply.github.com,"Replace custom retry function with tenacity retrying library (#1235)
+
+Fixes #1234
+
+Co-authored-by: Marco Castelluccio <mcastelluccio@mozilla.com>
+",refactoring
+https://github.com/mozilla/TTS.git,reuben.morais@gmail.com,"Remove some duplicated or unused files
+",refactoring
+https://github.com/mozilla/bugbug.git,elena@realemail.net,"Refactor print statements to use logger (#3330)
+
+",refactoring
+https://github.com/mpariente/asteroid.git,35534591+mhu-coder@users.noreply.github.com,"[src&tests] Refactor DeMask for consistency (#304)
+
+Inherit from BaseEncoderMaskerDecoder
+Use fb_name instead of fb_type (BC)
+fix _shape_reconstructed
+Raise value error in STFTFB for odd n_filters
+JIT tests 
+
+Co-authored-by: mpariente <pariente.mnl@gmail.com>",refactoring
+https://github.com/google/flax.git,phawkins@google.com,"[JAX] Replace uses of jax.experimental.pjit.with_sharding_constraint with jax.lax.with_sharding_constraint.
+
+This API has graduated from experimental status; use the non-experimental name. No functional changes intended.
+
+PiperOrigin-RevId: 553879678
+",refactoring
+https://github.com/microsoft/DeepSpeed.git,matthew@protopia.ai,"Further refactor deepspeed.moe.utils + deepspeed.moe.layer type hints (#5060)
+
+When unpacking a `dict`, keys that appear after the unpacking can
+overwrite the keys of the unpacked `dict`, meaning we can avoid avoid
+the pattern of skipping certain keys; also use `defaultdict` to avoid
+having to do the boilerplate of assigning the elements of `group_moe`.
+
+More type hints and small stylistic changes to `deepspeed.moe.layer`
+
+---------
+
+Co-authored-by: Michael Wyatt <mrwyattii@gmail.com>
+Co-authored-by: Michael Wyatt <michaelwyatt@microsoft.com>",refactoring
+https://github.com/google-research/google-research.git,azhmogin@google.com,"Minor refactoring.
+
+PiperOrigin-RevId: 584359275
+",refactoring
+https://github.com/lululxvi/deepxde.git,agni.spare@gmail.com,"Update version of TF (#1784)
+
+",release
+https://github.com/dsgiitr/d2l-pytorch.git,45359232+ankitaharwal@users.noreply.github.com,"5.3 Concise implementation of linear regression (Updated) (#74)
+
+* Add files via upload
+
+* Add files via upload
+
+* Update Concise_implementation_of_linear_regression.ipynb
+
+* Delete fig_5_3_1.png
+
+* Delete fig_5_3_10.png
+",release
+https://github.com/google-research/google-research.git,igul@google.com,"Release code to accompany paper ``Towards GAN Benchmarks That Require
+Generalization'' (ICLR 2019).
+
+PiperOrigin-RevId: 256713252
+",release
+https://github.com/google-research/google-research.git,zhenxu@google.com,"Open source code for paper ""Learning an Adaptive Learning Rate Schedule"".
+
+PiperOrigin-RevId: 331039916
+",release
+https://github.com/google-research/google-research.git,tdick@google.com,"Open sourcing code for fitting synthetic topics API data models.
+
+PiperOrigin-RevId: 775205879
+",release
+https://github.com/google-research/google-research.git,dieterichl@google.com,"Open-sourcing the learn-to-infer project.
+
+PiperOrigin-RevId: 335082826
+",release
+https://github.com/google-research/google-research.git,joelshor@google.com,"Release code for Agnes to fix.
+
+PiperOrigin-RevId: 548138875
+",release
+https://github.com/google-research/google-research.git,senrajat@google.com,"TiDE code release with results on long-term forecasting benchmarks.
+
+PiperOrigin-RevId: 531348929
+",release
+https://github.com/EdinburghNLP/nematus.git,philip.williams@mac.com,"Version 0.4
+",release
+https://github.com/google-research/google-research.git,haitiansun@google.com,"open-source drfact
+
+PiperOrigin-RevId: 329717009
+",release
+https://github.com/google-research/google-research.git,aidamd@google.com,"code for paper: Dealing with disagreements: Looking beyond the majority vote in subjective annotations
+
+PiperOrigin-RevId: 497273565
+",release
+https://github.com/google-research/google-research.git,spfohl@google.com,"Open source code to reproduce experiments in Pfohl et al. ""Understanding challenges to the interpretation of disaggregated evaluations of algorithmic fairness"".
+
+PiperOrigin-RevId: 766767711
+",release
+https://github.com/google-research/google-research.git,yanfeichen@google.com,"Release the code for TableRAG
+
+PiperOrigin-RevId: 695130326
+",release
+https://github.com/google-research/google-research.git,mhoffman@google.com,"Open-source Charles Margossian's internship colabs.
+
+PiperOrigin-RevId: 399707210
+",release
+https://github.com/google-research/google-research.git,dandeutsch@google.com,"Adds documentation for releasing data from ""The Devil is in the Errors: Leveraging Large Language Models for Fine-grained Machine Translation Evaluation.""
+
+PiperOrigin-RevId: 582348948
+",release
+https://github.com/microsoft/EdgeML.git,aayan.kumar123@gmail.com,"Shiftry Release Code (#213)
+
+* Copying new seedot files
+
+* Added batching for compiling large programs without blowing up memory
+
+* Updated README.md to FastGRNN example
+
+* Fixed copyright messages, included m3 codegen files
+
+* Removed unnecessary commented code
+
+* Added high level comments and added dlx executables
+
+* Fixed formatting of C/C++ files
+
+* Adding architecture diagram
+
+* Adding tutorial on extending the compiler
+
+* Fix typo
+
+* Fix Scale Nomenclature and Remove Redundant Function Arguments in MatVec Code
+
+* Consolidate c_reference/ and m3/library codes
+
+* Revise C and C++ Code To The Agreed Convention
+
+* Remove Redundant M3 Library and Add TODO for Memory Management
+
+* Re-Index Sparse Model According to Optimal Strategy
+
+* Fix Redundant Array Issue
+
+* Fix stray spaces and grammatical issues
+
+* Make Multi-Dimensional Arrays Uni-Dimensional for M3
+
+* Hacky Fix for Widx and Uidx
+
+* Fix Grammar and Remove Unused Code
+
+* Make SeeDot Directly Runnable
+
+* Remove Stray Spaces
+
+* Fix Grammar
+
+* Fix Comments
+
+* Incorporate Changes from Aayan
+
+* Fix x86 pipeline on FirstFitPriority
+
+* Optimize x86 pipeline on FirstFitPriority
+
+* Add Wno-narrowing flag to x86 codegen
+
+* Prettier Printing.  (#1)
+
+* Replaced the print stagement using logging (error, warning, info and debug levels used).
+Added progress bar using tqdm package in performSearch function for the 4 stages of exploration.
+Changes Antlr Check version to 4.9.1.
+Added requirements.txt
+
+* Added more information to the print statment that prints the stage of exploration.
+
+* Added log level as a command line argument.
+Added  descriptive error messages.
+
+* Reverted parameters to old state
+
+* Slight changes to the strings printed by logging
+
+* Resolved formatting comments
+
+* Updated README.md with comand to change logging level
+
+* Converted the log level input arguments to lowercase strings
+
+* Minor Improvements
+
+* Changes to improve README.md in SeeDot and respective modifications. (#2)
+
+* Replaced the print stagement using logging (error, warning, info and debug levels used).
+Added progress bar using tqdm package in performSearch function for the 4 stages of exploration.
+Changes Antlr Check version to 4.9.1.
+Added requirements.txt
+
+* Added more information to the print statment that prints the stage of exploration.
+
+* Added log level as a command line argument.
+Added  descriptive error messages.
+
+* Reverted parameters to old state
+
+* Slight changes to the strings printed by logging
+
+* Resolved formatting comments
+
+* Updated README.md with comand to change logging level
+
+* Converted the log level input arguments to lowercase strings
+
+* Updated requirements and Readme
+
+* Replaced argument version with argument encoding
+Removed dependency on Results.csv
+
+* Readme formatting change
+
+* Changed the help strings in argument parser, renamed rnn as fastgrnn
+
+* Some more changes to SeeDot-dev.py for the argument parser.
+Added line that shows that the available fastgrnn model belongs to usps10 dataset.
+
+* Added descriptive comments to python files except ONNX and TF folders.
+
+* Removed unnecessary comma in launch.json
+
+* Corrected default SeeDot values in README.md
+
+* Minor changes to improv README.md's readablility.
+
+* Added legacy_scales.csv and restored the legacy_scales processor in SeeDot-dev.py
+
+* Replaced rnn keyword with fastgrnn in launch.json
+
+* Changed all comments to a single format
+
+* Added face detection run instructions.
+Removed lsf flag from README and uppressed it in help.
+
+* Replaced maximisingMetric with metric in the main.py, config.py and test.py.
+Made the respective changes in README.md.
+
+* Removed instructions to run face detection
+
+* Architecture.md started
+
+* Architecture.md iteration 1 completed
+
+* Improved line spacing
+
+* Removed incorrect line
+
+* Replaced architecture.svg
+
+* replaced version with encoding
+
+* made FastGRNN on usps10 with reduced disagreemts the default for seedot
+
+* Points added to architecture.md
+
+* Included suggestions from reviewer.
+
+* Added instructions to fetch face detection dataset and licenses to newly added files (#3)
+
+* Replaced the print stagement using logging (error, warning, info and debug levels used).
+Added progress bar using tqdm package in performSearch function for the 4 stages of exploration.
+Changes Antlr Check version to 4.9.1.
+Added requirements.txt
+
+* Added more information to the print statment that prints the stage of exploration.
+
+* Added log level as a command line argument.
+Added  descriptive error messages.
+
+* Reverted parameters to old state
+
+* Slight changes to the strings printed by logging
+
+* Resolved formatting comments
+
+* Updated README.md with comand to change logging level
+
+* Converted the log level input arguments to lowercase strings
+
+* Updated requirements and Readme
+
+* Replaced argument version with argument encoding
+Removed dependency on Results.csv
+
+* Readme formatting change
+
+* Changed the help strings in argument parser, renamed rnn as fastgrnn
+
+* Some more changes to SeeDot-dev.py for the argument parser.
+Added line that shows that the available fastgrnn model belongs to usps10 dataset.
+
+* Added descriptive comments to python files except ONNX and TF folders.
+
+* Removed unnecessary comma in launch.json
+
+* Corrected default SeeDot values in README.md
+
+* Minor changes to improv README.md's readablility.
+
+* Added legacy_scales.csv and restored the legacy_scales processor in SeeDot-dev.py
+
+* Replaced rnn keyword with fastgrnn in launch.json
+
+* Changed all comments to a single format
+
+* Added face detection run instructions.
+Removed lsf flag from README and uppressed it in help.
+
+* Replaced maximisingMetric with metric in the main.py, config.py and test.py.
+Made the respective changes in README.md.
+
+* Removed instructions to run face detection
+
+* Architecture.md started
+
+* Architecture.md iteration 1 completed
+
+* Improved line spacing
+
+* Removed incorrect line
+
+* Replaced architecture.svg
+
+* replaced version with encoding
+
+* made FastGRNN on usps10 with reduced disagreemts the default for seedot
+
+* Points added to architecture.md
+
+* Included suggestions from reviewer.
+
+* Added rnnpool.sd to folder of seedot models
+
+* Added faceDetection code fetcher
+
+* Added face detection run instructions and licenses
+
+* Updated face Detection instructions and readme.md
+
+* Minor correction to readmes
+
+* Added rnnpool as an option in SeeDot-dev.py
+
+* Added support for face-2 dataset
+
+* Error in cleanup in fetchFDDataset.py
+
+* Added information about input to Predictor in faceDetection.md
+
+* Included reviewr comments to fix typos
+
+* Fixed typos in faceDetection.md
+
+* Added code to run the quantized face detection on images
+
+* Added instructions to run face detection on extra images in faceDetection.md
+
+* Added argument support to scale_image.pu
+
+* Fixed typos in faceDetection.md
+
+* Added info about the output of eval_fromquant in faceDetection.md
+
+* Added instructions to fetch an image in faceDetection.md
+
+* Added load_sf condition to printing PASS or FAIL
+
+* Added instructions to install libraries for detecting bounding boxes
+
+* Minor changes to faceDetection.md and main.cpp
+
+* Removed duplicate files from the repository and added instructions to copy them for running image to text converters and vice-versa
+
+* Minor change to faceDetection.md
+
+* Changes to face detection readme  (#4)
+
+* Replaced the print stagement using logging (error, warning, info and debug levels used).
+Added progress bar using tqdm package in performSearch function for the 4 stages of exploration.
+Changes Antlr Check version to 4.9.1.
+Added requirements.txt
+
+* Added more information to the print statment that prints the stage of exploration.
+
+* Added log level as a command line argument.
+Added  descriptive error messages.
+
+* Reverted parameters to old state
+
+* Slight changes to the strings printed by logging
+
+* Resolved formatting comments
+
+* Updated README.md with comand to change logging level
+
+* Converted the log level input arguments to lowercase strings
+
+* Updated requirements and Readme
+
+* Replaced argument version with argument encoding
+Removed dependency on Results.csv
+
+* Readme formatting change
+
+* Changed the help strings in argument parser, renamed rnn as fastgrnn
+
+* Some more changes to SeeDot-dev.py for the argument parser.
+Added line that shows that the available fastgrnn model belongs to usps10 dataset.
+
+* Added descriptive comments to python files except ONNX and TF folders.
+
+* Removed unnecessary comma in launch.json
+
+* Corrected default SeeDot values in README.md
+
+* Minor changes to improv README.md's readablility.
+
+* Added legacy_scales.csv and restored the legacy_scales processor in SeeDot-dev.py
+
+* Replaced rnn keyword with fastgrnn in launch.json
+
+* Changed all comments to a single format
+
+* Added face detection run instructions.
+Removed lsf flag from README and uppressed it in help.
+
+* Replaced maximisingMetric with metric in the main.py, config.py and test.py.
+Made the respective changes in README.md.
+
+* Removed instructions to run face detection
+
+* Architecture.md started
+
+* Architecture.md iteration 1 completed
+
+* Improved line spacing
+
+* Removed incorrect line
+
+* Replaced architecture.svg
+
+* replaced version with encoding
+
+* made FastGRNN on usps10 with reduced disagreemts the default for seedot
+
+* Points added to architecture.md
+
+* Included suggestions from reviewer.
+
+* Added rnnpool.sd to folder of seedot models
+
+* Added faceDetection code fetcher
+
+* Added face detection run instructions and licenses
+
+* Updated face Detection instructions and readme.md
+
+* Minor correction to readmes
+
+* Added rnnpool as an option in SeeDot-dev.py
+
+* Added support for face-2 dataset
+
+* Error in cleanup in fetchFDDataset.py
+
+* Added information about input to Predictor in faceDetection.md
+
+* Included reviewr comments to fix typos
+
+* Fixed typos in faceDetection.md
+
+* Added code to run the quantized face detection on images
+
+* Added instructions to run face detection on extra images in faceDetection.md
+
+* Added argument support to scale_image.pu
+
+* Fixed typos in faceDetection.md
+
+* Added info about the output of eval_fromquant in faceDetection.md
+
+* Added instructions to fetch an image in faceDetection.md
+
+* Added load_sf condition to printing PASS or FAIL
+
+* Added instructions to install libraries for detecting bounding boxes
+
+* Minor changes to faceDetection.md and main.cpp
+
+* Removed duplicate files from the repository and added instructions to copy them for running image to text converters and vice-versa
+
+* Minor change to faceDetection.md
+
+* Updated faceDetection.md
+
+* Added trace to seedot converstion scripts
+
+* Fixed trace dimensions in convert_to_seedot files
+
+* Removed torch from the requirements.txt file
+
+* Updated face detection readme
+
+* Updated faceDetection.md with corrected instructions to install edgeml_pytorch
+
+* Reset the changes made to requiments-cpu.txt and requirements-gpu.txt in EdgeML/pytorch
+
+* Added multi-line commands to face detection.md
+
+* Added instructions for SeeDot installation as well
+
+* Some more refactoring
+
+* Merged the two convert_to_seedot_scripts into one
+
+* fixed typo in convert_RPool_Face_to_SeeDot
+
+* Minor addition to faceDetection.md
+
+* Minor Nitpicks
+
+* Fixed copy instructions in faceDetection.md (#5)
+
+* Replaced the print stagement using logging (error, warning, info and debug levels used).
+Added progress bar using tqdm package in performSearch function for the 4 stages of exploration.
+Changes Antlr Check version to 4.9.1.
+Added requirements.txt
+
+* Added more information to the print statment that prints the stage of exploration.
+
+* Added log level as a command line argument.
+Added  descriptive error messages.
+
+* Reverted parameters to old state
+
+* Slight changes to the strings printed by logging
+
+* Resolved formatting comments
+
+* Updated README.md with comand to change logging level
+
+* Converted the log level input arguments to lowercase strings
+
+* Updated requirements and Readme
+
+* Replaced argument version with argument encoding
+Removed dependency on Results.csv
+
+* Readme formatting change
+
+* Changed the help strings in argument parser, renamed rnn as fastgrnn
+
+* Some more changes to SeeDot-dev.py for the argument parser.
+Added line that shows that the available fastgrnn model belongs to usps10 dataset.
+
+* Added descriptive comments to python files except ONNX and TF folders.
+
+* Removed unnecessary comma in launch.json
+
+* Corrected default SeeDot values in README.md
+
+* Minor changes to improv README.md's readablility.
+
+* Added legacy_scales.csv and restored the legacy_scales processor in SeeDot-dev.py
+
+* Replaced rnn keyword with fastgrnn in launch.json
+
+* Changed all comments to a single format
+
+* Added face detection run instructions.
+Removed lsf flag from README and uppressed it in help.
+
+* Replaced maximisingMetric with metric in the main.py, config.py and test.py.
+Made the respective changes in README.md.
+
+* Removed instructions to run face detection
+
+* Architecture.md started
+
+* Architecture.md iteration 1 completed
+
+* Improved line spacing
+
+* Removed incorrect line
+
+* Replaced architecture.svg
+
+* replaced version with encoding
+
+* made FastGRNN on usps10 with reduced disagreemts the default for seedot
+
+* Points added to architecture.md
+
+* Included suggestions from reviewer.
+
+* Added rnnpool.sd to folder of seedot models
+
+* Added faceDetection code fetcher
+
+* Added face detection run instructions and licenses
+
+* Updated face Detection instructions and readme.md
+
+* Minor correction to readmes
+
+* Added rnnpool as an option in SeeDot-dev.py
+
+* Added support for face-2 dataset
+
+* Error in cleanup in fetchFDDataset.py
+
+* Added information about input to Predictor in faceDetection.md
+
+* Included reviewr comments to fix typos
+
+* Fixed typos in faceDetection.md
+
+* Added code to run the quantized face detection on images
+
+* Added instructions to run face detection on extra images in faceDetection.md
+
+* Added argument support to scale_image.pu
+
+* Fixed typos in faceDetection.md
+
+* Added info about the output of eval_fromquant in faceDetection.md
+
+* Added instructions to fetch an image in faceDetection.md
+
+* Added load_sf condition to printing PASS or FAIL
+
+* Added instructions to install libraries for detecting bounding boxes
+
+* Minor changes to faceDetection.md and main.cpp
+
+* Removed duplicate files from the repository and added instructions to copy them for running image to text converters and vice-versa
+
+* Minor change to faceDetection.md
+
+* Updated faceDetection.md
+
+* Added trace to seedot converstion scripts
+
+* Fixed trace dimensions in convert_to_seedot files
+
+* Removed torch from the requirements.txt file
+
+* Updated face detection readme
+
+* Updated faceDetection.md with corrected instructions to install edgeml_pytorch
+
+* Reset the changes made to requiments-cpu.txt and requirements-gpu.txt in EdgeML/pytorch
+
+* Added multi-line commands to face detection.md
+
+* Added instructions for SeeDot installation as well
+
+* Some more refactoring
+
+* Merged the two convert_to_seedot_scripts into one
+
+* fixed typo in convert_RPool_Face_to_SeeDot
+
+* Minor addition to faceDetection.md
+
+* Fixed location of copying from SCUT_Head_Part_B
+
+* Minor addition to faceDetection.md
+
+* GCC version check added to build.py (#6)
+
+* Replaced the print stagement using logging (error, warning, info and debug levels used).
+Added progress bar using tqdm package in performSearch function for the 4 stages of exploration.
+Changes Antlr Check version to 4.9.1.
+Added requirements.txt
+
+* Added more information to the print statment that prints the stage of exploration.
+
+* Added log level as a command line argument.
+Added  descriptive error messages.
+
+* Reverted parameters to old state
+
+* Slight changes to the strings printed by logging
+
+* Resolved formatting comments
+
+* Updated README.md with comand to change logging level
+
+* Converted the log level input arguments to lowercase strings
+
+* Updated requirements and Readme
+
+* Replaced argument version with argument encoding
+Removed dependency on Results.csv
+
+* Readme formatting change
+
+* Changed the help strings in argument parser, renamed rnn as fastgrnn
+
+* Some more changes to SeeDot-dev.py for the argument parser.
+Added line that shows that the available fastgrnn model belongs to usps10 dataset.
+
+* Added descriptive comments to python files except ONNX and TF folders.
+
+* Removed unnecessary comma in launch.json
+
+* Corrected default SeeDot values in README.md
+
+* Minor changes to improv README.md's readablility.
+
+* Added legacy_scales.csv and restored the legacy_scales processor in SeeDot-dev.py
+
+* Replaced rnn keyword with fastgrnn in launch.json
+
+* Changed all comments to a single format
+
+* Added face detection run instructions.
+Removed lsf flag from README and uppressed it in help.
+
+* Replaced maximisingMetric with metric in the main.py, config.py and test.py.
+Made the respective changes in README.md.
+
+* Removed instructions to run face detection
+
+* Architecture.md started
+
+* Architecture.md iteration 1 completed
+
+* Improved line spacing
+
+* Removed incorrect line
+
+* Replaced architecture.svg
+
+* replaced version with encoding
+
+* made FastGRNN on usps10 with reduced disagreemts the default for seedot
+
+* Points added to architecture.md
+
+* Included suggestions from reviewer.
+
+* Added rnnpool.sd to folder of seedot models
+
+* Added faceDetection code fetcher
+
+* Added face detection run instructions and licenses
+
+* Updated face Detection instructions and readme.md
+
+* Minor correction to readmes
+
+* Added rnnpool as an option in SeeDot-dev.py
+
+* Added support for face-2 dataset
+
+* Error in cleanup in fetchFDDataset.py
+
+* Added information about input to Predictor in faceDetection.md
+
+* Included reviewr comments to fix typos
+
+* Fixed typos in faceDetection.md
+
+* Added code to run the quantized face detection on images
+
+* Added instructions to run face detection on extra images in faceDetection.md
+
+* Added argument support to scale_image.pu
+
+* Fixed typos in faceDetection.md
+
+* Added info about the output of eval_fromquant in faceDetection.md
+
+* Added instructions to fetch an image in faceDetection.md
+
+* Added load_sf condition to printing PASS or FAIL
+
+* Added instructions to install libraries for detecting bounding boxes
+
+* Minor changes to faceDetection.md and main.cpp
+
+* Removed duplicate files from the repository and added instructions to copy them for running image to text converters and vice-versa
+
+* Minor change to faceDetection.md
+
+* Updated faceDetection.md
+
+* Added trace to seedot converstion scripts
+
+* Fixed trace dimensions in convert_to_seedot files
+
+* Removed torch from the requirements.txt file
+
+* Updated face detection readme
+
+* Updated faceDetection.md with corrected instructions to install edgeml_pytorch
+
+* Reset the changes made to requiments-cpu.txt and requirements-gpu.txt in EdgeML/pytorch
+
+* Added multi-line commands to face detection.md
+
+* Added instructions for SeeDot installation as well
+
+* Some more refactoring
+
+* Merged the two convert_to_seedot_scripts into one
+
+* fixed typo in convert_RPool_Face_to_SeeDot
+
+* Minor addition to faceDetection.md
+
+* Fixed location of copying from SCUT_Head_Part_B
+
+* Minor addition to faceDetection.md
+
+* Gcc version restriction added to seedot/Predictor/Makefile
+
+* Added GCC version check to SeeDot
+
+* Removed extra new-line
+
+* Data processing (#7)
+
+* Replaced the print stagement using logging (error, warning, info and debug levels used).
+Added progress bar using tqdm package in performSearch function for the 4 stages of exploration.
+Changes Antlr Check version to 4.9.1.
+Added requirements.txt
+
+* Added more information to the print statment that prints the stage of exploration.
+
+* Added log level as a command line argument.
+Added  descriptive error messages.
+
+* Reverted parameters to old state
+
+* Slight changes to the strings printed by logging
+
+* Resolved formatting comments
+
+* Updated README.md with comand to change logging level
+
+* Converted the log level input arguments to lowercase strings
+
+* Updated requirements and Readme
+
+* Replaced argument version with argument encoding
+Removed dependency on Results.csv
+
+* Readme formatting change
+
+* Changed the help strings in argument parser, renamed rnn as fastgrnn
+
+* Some more changes to SeeDot-dev.py for the argument parser.
+Added line that shows that the available fastgrnn model belongs to usps10 dataset.
+
+* Added descriptive comments to python files except ONNX and TF folders.
+
+* Removed unnecessary comma in launch.json
+
+* Corrected default SeeDot values in README.md
+
+* Minor changes to improv README.md's readablility.
+
+* Added legacy_scales.csv and restored the legacy_scales processor in SeeDot-dev.py
+
+* Replaced rnn keyword with fastgrnn in launch.json
+
+* Changed all comments to a single format
+
+* Added face detection run instructions.
+Removed lsf flag from README and uppressed it in help.
+
+* Replaced maximisingMetric with metric in the main.py, config.py and test.py.
+Made the respective changes in README.md.
+
+* Removed instructions to run face detection
+
+* Architecture.md started
+
+* Architecture.md iteration 1 completed
+
+* Improved line spacing
+
+* Removed incorrect line
+
+* Replaced architecture.svg
+
+* replaced version with encoding
+
+* made FastGRNN on usps10 with reduced disagreemts the default for seedot
+
+* Points added to architecture.md
+
+* Included suggestions from reviewer.
+
+* Added rnnpool.sd to folder of seedot models
+
+* Added faceDetection code fetcher
+
+* Added face detection run instructions and licenses
+
+* Updated face Detection instructions and readme.md
+
+* Minor correction to readmes
+
+* Added rnnpool as an option in SeeDot-dev.py
+
+* Added support for face-2 dataset
+
+* Error in cleanup in fetchFDDataset.py
+
+* Added information about input to Predictor in faceDetection.md
+
+* Included reviewr comments to fix typos
+
+* Fixed typos in faceDetection.md
+
+* Added code to run the quantized face detection on images
+
+* Added instructions to run face detection on extra images in faceDetection.md
+
+* Added argument support to scale_image.pu
+
+* Fixed typos in faceDetection.md
+
+* Added info about the output of eval_fromquant in faceDetection.md
+
+* Added instructions to fetch an image in faceDetection.md
+
+* Added load_sf condition to printing PASS or FAIL
+
+* Added instructions to install libraries for detecting bounding boxes
+
+* Minor changes to faceDetection.md and main.cpp
+
+* Removed duplicate files from the repository and added instructions to copy them for running image to text converters and vice-versa
+
+* Minor change to faceDetection.md
+
+* Updated faceDetection.md
+
+* Added trace to seedot converstion scripts
+
+* Fixed trace dimensions in convert_to_seedot files
+
+* Removed torch from the requirements.txt file
+
+* Updated face detection readme
+
+* Updated faceDetection.md with corrected instructions to install edgeml_pytorch
+
+* Reset the changes made to requiments-cpu.txt and requirements-gpu.txt in EdgeML/pytorch
+
+* Added multi-line commands to face detection.md
+
+* Added instructions for SeeDot installation as well
+
+* Some more refactoring
+
+* Merged the two convert_to_seedot_scripts into one
+
+* fixed typo in convert_RPool_Face_to_SeeDot
+
+* Minor addition to faceDetection.md
+
+* Fixed location of copying from SCUT_Head_Part_B
+
+* Minor addition to faceDetection.md
+
+* Gcc version restriction added to seedot/Predictor/Makefile
+
+* Added GCC version check to SeeDot
+
+* Removed extra new-line
+
+* Added data preprocessing line
+
+* The script to fix ranges (#8)
+
+* Replaced the print stagement using logging (error, warning, info and debug levels used).
+Added progress bar using tqdm package in performSearch function for the 4 stages of exploration.
+Changes Antlr Check version to 4.9.1.
+Added requirements.txt
+
+* Added more information to the print statment that prints the stage of exploration.
+
+* Added log level as a command line argument.
+Added  descriptive error messages.
+
+* Reverted parameters to old state
+
+* Slight changes to the strings printed by logging
+
+* Resolved formatting comments
+
+* Updated README.md with comand to change logging level
+
+* Converted the log level input arguments to lowercase strings
+
+* Updated requirements and Readme
+
+* Replaced argument version with argument encoding
+Removed dependency on Results.csv
+
+* Readme formatting change
+
+* Changed the help strings in argument parser, renamed rnn as fastgrnn
+
+* Some more changes to SeeDot-dev.py for the argument parser.
+Added line that shows that the available fastgrnn model belongs to usps10 dataset.
+
+* Added descriptive comments to python files except ONNX and TF folders.
+
+* Removed unnecessary comma in launch.json
+
+* Corrected default SeeDot values in README.md
+
+* Minor changes to improv README.md's readablility.
+
+* Added legacy_scales.csv and restored the legacy_scales processor in SeeDot-dev.py
+
+* Replaced rnn keyword with fastgrnn in launch.json
+
+* Changed all comments to a single format
+
+* Added face detection run instructions.
+Removed lsf flag from README and uppressed it in help.
+
+* Replaced maximisingMetric with metric in the main.py, config.py and test.py.
+Made the respective changes in README.md.
+
+* Removed instructions to run face detection
+
+* Architecture.md started
+
+* Architecture.md iteration 1 completed
+
+* Improved line spacing
+
+* Removed incorrect line
+
+* Replaced architecture.svg
+
+* replaced version with encoding
+
+* made FastGRNN on usps10 with reduced disagreemts the default for seedot
+
+* Points added to architecture.md
+
+* Included suggestions from reviewer.
+
+* Added rnnpool.sd to folder of seedot models
+
+* Added faceDetection code fetcher
+
+* Added face detection run instructions and licenses
+
+* Updated face Detection instructions and readme.md
+
+* Minor correction to readmes
+
+* Added rnnpool as an option in SeeDot-dev.py
+
+* Added support for face-2 dataset
+
+* Error in cleanup in fetchFDDataset.py
+
+* Added information about input to Predictor in faceDetection.md
+
+* Included reviewr comments to fix typos
+
+* Fixed typos in faceDetection.md
+
+* Added code to run the quantized face detection on images
+
+* Added instructions to run face detection on extra images in faceDetection.md
+
+* Added argument support to scale_image.pu
+
+* Fixed typos in faceDetection.md
+
+* Added info about the output of eval_fromquant in faceDetection.md
+
+* Added instructions to fetch an image in faceDetection.md
+
+* Added load_sf condition to printing PASS or FAIL
+
+* Added instructions to install libraries for detecting bounding boxes
+
+* Minor changes to faceDetection.md and main.cpp
+
+* Removed duplicate files from the repository and added instructions to copy them for running image to text converters and vice-versa
+
+* Minor change to faceDetection.md
+
+* Updated faceDetection.md
+
+* Added trace to seedot converstion scripts
+
+* Fixed trace dimensions in convert_to_seedot files
+
+* Removed torch from the requirements.txt file
+
+* Updated face detection readme
+
+* Updated faceDetection.md with corrected instructions to install edgeml_pytorch
+
+* Reset the changes made to requiments-cpu.txt and requirements-gpu.txt in EdgeML/pytorch
+
+* Added multi-line commands to face detection.md
+
+* Added instructions for SeeDot installation as well
+
+* Some more refactoring
+
+* Merged the two convert_to_seedot_scripts into one
+
+* fixed typo in convert_RPool_Face_to_SeeDot
+
+* Minor addition to faceDetection.md
+
+* Fixed location of copying from SCUT_Head_Part_B
+
+* Minor addition to faceDetection.md
+
+* Gcc version restriction added to seedot/Predictor/Makefile
+
+* Added GCC version check to SeeDot
+
+* Removed extra new-line
+
+* Added data preprocessing line
+
+* Added cpu conversion in convert_RPool_Face_to_SeeDot.py
+
+* Added script to process seedot input files
+
+* Increased precision of printing floating point in fixSeeDotInput.py
+
+* Updated instructions to update ranges by script
+
+* Add newline at the end of fixSeeDotInput.py
+
+* ONNX dependency added to README (#9)
+
+* Replaced the print stagement using logging (error, warning, info and debug levels used).
+Added progress bar using tqdm package in performSearch function for the 4 stages of exploration.
+Changes Antlr Check version to 4.9.1.
+Added requirements.txt
+
+* Added more information to the print statment that prints the stage of exploration.
+
+* Added log level as a command line argument.
+Added  descriptive error messages.
+
+* Reverted parameters to old state
+
+* Slight changes to the strings printed by logging
+
+* Resolved formatting comments
+
+* Updated README.md with comand to change logging level
+
+* Converted the log level input arguments to lowercase strings
+
+* Updated requirements and Readme
+
+* Replaced argument version with argument encoding
+Removed dependency on Results.csv
+
+* Readme formatting change
+
+* Changed the help strings in argument parser, renamed rnn as fastgrnn
+
+* Some more changes to SeeDot-dev.py for the argument parser.
+Added line that shows that the available fastgrnn model belongs to usps10 dataset.
+
+* Added descriptive comments to python files except ONNX and TF folders.
+
+* Removed unnecessary comma in launch.json
+
+* Corrected default SeeDot values in README.md
+
+* Minor changes to improv README.md's readablility.
+
+* Added legacy_scales.csv and restored the legacy_scales processor in SeeDot-dev.py
+
+* Replaced rnn keyword with fastgrnn in launch.json
+
+* Changed all comments to a single format
+
+* Added face detection run instructions.
+Removed lsf flag from README and uppressed it in help.
+
+* Replaced maximisingMetric with metric in the main.py, config.py and test.py.
+Made the respective changes in README.md.
+
+* Removed instructions to run face detection
+
+* Architecture.md started
+
+* Architecture.md iteration 1 completed
+
+* Improved line spacing
+
+* Removed incorrect line
+
+* Replaced architecture.svg
+
+* replaced version with encoding
+
+* made FastGRNN on usps10 with reduced disagreemts the default for seedot
+
+* Points added to architecture.md
+
+* Included suggestions from reviewer.
+
+* Added rnnpool.sd to folder of seedot models
+
+* Added faceDetection code fetcher
+
+* Added face detection run instructions and licenses
+
+* Updated face Detection instructions and readme.md
+
+* Minor correction to readmes
+
+* Added rnnpool as an option in SeeDot-dev.py
+
+* Added support for face-2 dataset
+
+* Error in cleanup in fetchFDDataset.py
+
+* Added information about input to Predictor in faceDetection.md
+
+* Included reviewr comments to fix typos
+
+* Fixed typos in faceDetection.md
+
+* Added code to run the quantized face detection on images
+
+* Added instructions to run face detection on extra images in faceDetection.md
+
+* Added argument support to scale_image.pu
+
+* Fixed typos in faceDetection.md
+
+* Added info about the output of eval_fromquant in faceDetection.md
+
+* Added instructions to fetch an image in faceDetection.md
+
+* Added load_sf condition to printing PASS or FAIL
+
+* Added instructions to install libraries for detecting bounding boxes
+
+* Minor changes to faceDetection.md and main.cpp
+
+* Removed duplicate files from the repository and added instructions to copy them for running image to text converters and vice-versa
+
+* Minor change to faceDetection.md
+
+* Updated faceDetection.md
+
+* Added trace to seedot converstion scripts
+
+* Fixed trace dimensions in convert_to_seedot files
+
+* Removed torch from the requirements.txt file
+
+* Updated face detection readme
+
+* Updated faceDetection.md with corrected instructions to install edgeml_pytorch
+
+* Reset the changes made to requiments-cpu.txt and requirements-gpu.txt in EdgeML/pytorch
+
+* Added multi-line commands to face detection.md
+
+* Added instructions for SeeDot installation as well
+
+* Some more refactoring
+
+* Merged the two convert_to_seedot_scripts into one
+
+* fixed typo in convert_RPool_Face_to_SeeDot
+
+* Minor addition to faceDetection.md
+
+* Fixed location of copying from SCUT_Head_Part_B
+
+* Minor addition to faceDetection.md
+
+* Gcc version restriction added to seedot/Predictor/Makefile
+
+* Added GCC version check to SeeDot
+
+* Removed extra new-line
+
+* Added data preprocessing line
+
+* Added cpu conversion in convert_RPool_Face_to_SeeDot.py
+
+* Added script to process seedot input files
+
+* Increased precision of printing floating point in fixSeeDotInput.py
+
+* Updated instructions to update ranges by script
+
+* Add newline at the end of fixSeeDotInput.py
+
+* Added ONNX as a dependencey in README
+
+* Minor Fixes
+
+* Improve README
+
+Co-authored-by: ShikharJ <jaiswalshikhar87@gmail.com>
+Co-authored-by: G Rahul Kranti Kiran <krantikiran.68@gmail.com>",release
+https://github.com/google-research/google-research.git,ravitejavemu@google.com,"Open sourcing supervised pixel contrastive loss implementations.
+
+PiperOrigin-RevId: 400334478
+",release
+https://github.com/MAIF/melusine.git,97873m@slhdg002.maif.local,"1.8.6 -> 1.8.7
+",release
+https://github.com/google-research/google-research.git,theis@google.com,"Open source basic implementations of reverse channel coding algorithms
+
+PiperOrigin-RevId: 452056036
+",release
+https://github.com/google-research/google-research.git,wrui@google.com,"Open source code for adaptive behavior policy sharing(ABPS) paper.
+
+PiperOrigin-RevId: 288816072
+",release
+https://github.com/interpretml/interpret-community.git,ilmat@microsoft.com,"release interpret-community v0.32.0 (#601)
+
+",release
+https://github.com/microsoft/DeepSpeed.git,114770087+loadams@users.noreply.github.com,"Update version.txt after v0.17.2 release. (#7417)
+
+",release
+https://github.com/magenta/magenta.git,adarob@google.com,"Point gansynth_generate at the public tfds data dir to avoid crashing. Bump version for release. Fixes #1800.
+
+PiperOrigin-RevId: 342087362
+",release
+https://github.com/joe-siyuan-qiao/DetectoRS.git,wuyuebupt@users.noreply.github.com,"Code for ""Double-Head RCNN: Rethinking Classification and Localization for Object Detection"" (#809)
+
+* add major components for training double head
+
+double head only with two losses and no attention
+
+remove double_head detector for now, merge upchannel to double_head bbox head
+
+change the stype using yapl
+
+remove uncessary comment#
+
+to pass check
+
+to pass v2
+
+to pass v3
+
+line too long and style again
+
+reuse bottlenet
+
+* refactoring
+
+* bug fix
+
+* bug fix for weight initialization
+
+* add reg roi scale factor and modify loss weights
+
+* rescale the roi after mapping to fpn levels
+",release
+https://github.com/google-research/google-research.git,siyang@google.com,"Open-sourcing the code for ""CLIP as RNN: Segment Countless Visual Concepts without Training Endeavor"".
+https://arxiv.org/abs/2312.07661
+
+PiperOrigin-RevId: 600601383
+",release
+https://github.com/OpenNMT/OpenNMT-py.git,jack@hodgestar.com,"Fixing model release example command in README (#2114)
+
+The ""--output"" and ""--model"" arguments to onmt_release_model were incorrectly specified with single hyphens, which results in ""unrecognized argument"" errors if run verbatim.",release
+https://github.com/google/nucleus.git,thomaswc@google.com,"Version 0.1.0 of Nucleus
+",release
+https://github.com/MIPT-Oulu/solt.git,diana.bacircea@cadentia.ai,"update version in setup
+",release
+https://github.com/google-research/google-research.git,heinrichj@google.com,"Open source code for Identifying and Correcting Label Bias in Machine Learning.
+
+PiperOrigin-RevId: 266159221
+",release
+https://github.com/google-research/google-research.git,ccchang@google.com,"Opensourcing the code for https://arxiv.org/abs/2306.01286.
+
+PiperOrigin-RevId: 570802008
+",release
+https://github.com/freewym/espresso.git,jingfeidu@fb.com,"Revert preix beamsearch fix (#2763)
+
+Summary:
+# Before submitting
+
+- [ ] Was this discussed/approved via a Github issue? (no need for typos, doc improvements)
+- [ ] Did you read the [contributor guideline](https://github.com/pytorch/fairseq/blob/main/CONTRIBUTING.md)?
+- [ ] Did you make sure to update the docs?
+- [ ] Did you write any new necessary tests?
+
+## What does this PR do?
+reverting to fix issue mentioned [here](https://github.com/pytorch/fairseq/issues/3913). Having another PR for fixing the original issue later.
+
+## PR review
+Anyone in the community is free to review the PR once the tests have passed.
+If we didn't discuss your PR in Github issues there's a high chance it will not be merged.
+
+## Did you have fun?
+Make sure you had fun coding �
+
+Pull Request resolved: https://github.com/fairinternal/fairseq-py/pull/2763
+
+Reviewed By: myleott
+
+Differential Revision: D33000411
+
+Pulled By: jingfeidu
+
+fbshipit-source-id: 95a54cbdc612129a0eab4b5e6aa576a5bcf00588
+",revert
+https://github.com/facebookresearch/pytext.git,nanshuwang@fb.com,"Back out ""support byte token input for Language Model"" (#849)
+
+Summary:
+Pull Request resolved: https://github.com/facebookresearch/pytext/pull/849
+
+Original commit changeset: 1d452a524d8b
+
+Reviewed By: bethebunny
+
+Differential Revision: D16545983
+
+fbshipit-source-id: a2c083c8beb4155e138586b294d06e6e5cf20677
+",revert
+https://github.com/facebookresearch/ClassyVision.git,kaizh@fb.com,"Back out ""Fix for T84033471"" (#699)
+
+Summary:
+Pull Request resolved: https://github.com/facebookresearch/ClassyVision/pull/699
+
+Original commit changeset: fbee6f7c17f9
+
+Reviewed By: sallysyw
+
+Differential Revision: D26373044
+
+fbshipit-source-id: d5ef0dd1b2c01ecc4d14500878a030ccf3d3830b
+",revert
+https://github.com/alibaba/ai-matrix.git,yunfei.mao@intel.com,"Revert ""Enable  tensorflow v2 compatible code for DIEN""
+
+This reverts commit 592255df28b06c5026d59e0f1f8cf373355b8354.
+",revert
+https://github.com/mlmed/torchxrayvision.git,janos.tolgyesi@neosperience.com,"Revert whitespace modifications
+",revert
+https://github.com/magenta/magenta.git,ondra@cifka.com,"Revert some other changes
+",revert
+https://github.com/deepmedic/deepmedic.git,bernardo.marques@imperial.ac.uk,"revert reverted changes
+",revert
+https://github.com/apache/submarine.git,weichiu@apache.org,"Revert ""Create anchore-analysis.yml""
+
+This reverts commit b9792254101662554217170b5eae4c892f102c87.
+",revert
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,coleleah@google.com,"revert last change
+",revert
+https://github.com/kakao/buffalo.git,jason.yoon@kakaocorp.com,"revert auc branch
+",revert
+https://github.com/mittagessen/kraken.git,mittagessen@l.unchti.me,"revert click version bump
+
+8.2 is no longer compatible with python 3.9
+",revert
+https://github.com/mozilla/bugbug.git,riyasharma031995@gmail.com,"Ignore backed out commits when calculating author experience (#188)
+
+",revert
+https://github.com/piEsposito/blitz-bayesian-deep-learning.git,hongchenglong@brilliance.com.cn,"Revert ""deep_hybrid_bayesian_mnist""
+
+This reverts commit d5413fa38867d2e3eff8f51e545263ac2a10f499.
+",revert
+https://github.com/numenta/nupic.torch.git,ayaza2004@outlook.com,Revert changes.,revert
+https://github.com/mapbox/robosat.git,dasmanaswini10@gmail.com,"Reverts a change
+",revert
+https://github.com/mozilla/fathom.git,byron@glob.com.au,"revert revokeObjectURL logic
+",revert
+https://github.com/NVIDIA/Megatron-LM.git,pfischer@nvidia.com,"Revert lmcafee/pip-import-fix and fix setup.py instead
+",revert
+https://github.com/cornellius-gp/gpytorch.git,neerajprad@fb.com,"revert changes
+",revert
+https://github.com/Kaixhin/Rainbow.git,artyom@gmail.com,"revert to work with the tensor states
+",revert
+https://github.com/facebookresearch/ReAgent.git,sestep@fb.com,"Revert D29241736: To add Rectified Adam Algorithm to Optimizers
+
+Differential Revision:
+D29241736 (https://github.com/facebookresearch/ReAgent/commit/0ff36345744501d4ed954edb007b86b883668b24)
+
+Original commit changeset: 288b9b1f3125
+
+fbshipit-source-id: 56c4ec98647c6f1822b130726741a1c9ca193670
+",revert
+https://github.com/data-science-on-aws/workshop.git,kwillet@amazon.com,"Revert ""Merge branch 'master' of https://github.com/willettk/workshop""
+
+This reverts commit 391fb4dbf7dbcc954993bad4cf679e37c99cd2a4, reversing
+changes made to a8c20c6789570812a68a745c6ca7404930a98ab6.
+",revert
+https://github.com/MaybeShewill-CV/CRNN_Tensorflow.git,335272236@qq.com,"Revert ""fix imread""
+
+This reverts commit e679d6037808f5f36d53d21aa250b0aa71e4ad84.
+",revert
+https://github.com/magenta/ddsp.git,yyyyy@snu.ac.kr,"revert DDSP to DSP in CONTRIBUTING.md
+",revert
+https://github.com/CornellNLP/Cornell-Conversational-Analysis-Toolkit.git,cristiandnm@users.noreply.github.com,"Revert ""Convokit 3.0 Mega Pull Request (#197)"" (#198)
+
+This reverts commit 3935d4e7f0d4501a242b7817113e8a1284a56144.",revert
+https://github.com/avrae/avrae.git,storytellermahkasad@gmail.com,"revert token lookup name arg
+",revert
+https://github.com/keras-team/keras-tuner.git,1530877+kayzhu@users.noreply.github.com,"Revert change PR #369 to allow TPU to use tf format (#591)
+
+* Revert change PR 369 to allow TPU to use tf format
+
+Allow TPUs to save in tf format in tuner.
+
+* Revert PR #369
+
+* Update tuner_correctness_test.py
+
+Addresses linter error from: https://github.com/keras-team/keras-tuner/pull/591/checks
+
+./tests/keras_tuner/engine/tuner_correctness_test.py:15:1: F401 'unittest.mock' imported but unused
+./tests/keras_tuner/engine/tuner_correctness_test.py:204:1: E304 blank lines found after function decorator",revert
+https://github.com/freewym/espresso.git,weiho@fb.com,"Back out ""BT enablement on fairseq - fairseq change""
+
+Summary:
+Context: https://fburl.com/7vdj7vhl
+
+Backing out due to breaking our TorchScript test:
+```
+RuntimeError:
+method cannot be used as a value:
+  File ""/dev/shm/uid-30041/54641b26-seed-nspid4026533396_cgpid7154327-ns-4026533393/fairseq/modules/transformer_layer.py"", line 307
+                self.in_proj_weight,
+                self.in_proj_bias,
+                self.self_attn.out_proj.weight,
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ <--- HERE
+                self.self_attn.out_proj.bias,
+                self.activation_relu_or_gelu == 2,
+
+Stack trace:
+Exception type: torch::jit::ErrorReport
+```
+https://fburl.com/sandcastle/4pzqemf5
+
+Original commit changeset: 984266f850fc
+
+Original Phabricator Diff: D37082681 (https://github.com/facebookresearch/fairseq/commit/3a757d7ab2de97c3da5efd05712f703c26abe8d2)
+
+Differential Revision: D37303846
+
+fbshipit-source-id: 1757ea5dae98be5beb4d08f70b0c3001d6ea336f
+",revert
+https://github.com/MAIF/melusine.git,willian.ver.valem.paiva@maif.fr,"revert notebooks
+",revert
+https://github.com/freewym/espresso.git,moslehpour@users.noreply.github.com,"Revert changes to sinusoidal_positional_embedding.py (#4808)
+
+* Revert #4805 and #4708",revert
+https://github.com/HazyResearch/fonduer.git,prabhkaran.singh@ust-global.com,"reverted to original path for test_spacy_integration
+",revert
+https://github.com/deepmind/open_spiel.git,mankitpong@gmail.com,"test NeuRD exploitability on Kuhn poker
+",test
+https://github.com/aimacode/aima-python.git,krishnaw14@gmail.com,"Added function and test cases for cross-entropy loss (#853)
+
+* Correction in the formula for mean square error
+
+* Added cross-entropy loss
+
+* Test case for cross-entropy loss
+
+* Decimal point mistake
+
+* Added spaces around = and ==
+",test
+https://github.com/facebookresearch/ReAgent.git,jialiu@fb.com,"Slate OPE Improvements and Tests
+
+Summary:
+Slate OPE Improvements and Tests
+
+* Bug fixes
+* Improved APIs
+* Improved test cases: MSLR and Yandex
+
+Reviewed By: kaiwenw
+
+Differential Revision: D21519156
+
+fbshipit-source-id: 73658df028b0f786b5b1982292f5ddfca8c80139
+",test
+https://github.com/koaning/scikit-lego.git,fabio.scantamburlo@nielsen.com,"Refine tests
+",test
+https://github.com/facebookresearch/ReAgent.git,xinqian@fb.com,"Test publishing seq2slate_reward model to FBlearner
+
+Summary:
+Support Seq2slateReward models to be compatitable with FBlearner predictor format. D22284677 (https://github.com/facebookresearch/ReAgent/commit/69569c6bc8ca31f2dee9b807429172950753e29b) only supports the local `FbSeq2SlateRewardPredictorWrapper` format but did not run integratino test to the FBleanrer predictors. In this diff we support the publishing tests and also some other local tests.
+
+Also revised the input metadata format of `FbSeq2SlateRewardPredictorWrapper` to be a single variable, which is the same as the `FbSeq2SlatePredictorWrapper`.
+
+Reviewed By: czxttkl
+
+Differential Revision: D22393533
+
+fbshipit-source-id: 80e5688f0383518d00101a2216554bbc18a27420
+",test
+https://github.com/aimacode/aima-python.git,contact@tmrts.com,"Port and test text module for python 3.5
+",test
+https://github.com/michaelhush/M-LOOP.git,mhush@quantum-eng-psi,"Added additional tests for halting conditions.
+Fixed bug with GP fitting data with bad runs.",test
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,anassri@google.com,"chore(GAE Python3): add HTTP retries to flaky test (#8882)
+
+* chore(GAE Python3): add HTTP retries to flaky test
+
+Fixes #8852
+
+* Use backoff + requests.raise_for_status()
+
+* Propagate changes to other samples",test
+https://github.com/facebookresearch/ReAgent.git,espellman@fb.com,"Adding transform.StackDenseFixedSizeArray unit test (#544)
+
+Summary:
+Pull Request resolved: https://github.com/facebookresearch/ReAgent/pull/544
+
+Adding unit test for transforms.StackDenseFixedSizeArray
+
+Reviewed By: igfox
+
+Differential Revision: D31114407
+
+fbshipit-source-id: acd1a15c524ca2a990b879e31bea2832c8549be2
+",test
+https://github.com/facebookresearch/ReAgent.git,ruxuanli@fb.com,"Replace Caffe2SparseToDenseProcessor with PythonSparseToDenseProcessor in tests (#194)
+
+Summary:
+Pull Request resolved: https://github.com/facebookresearch/ReAgent/pull/194
+
+Replace Caffe2SparseToDenseProcessor with PythonSparseToDenseProcessor in tests
+
+Reviewed By: kittipatv
+
+Differential Revision: D18846423
+
+fbshipit-source-id: bc3e0f3f30ccf7ef6c01b3c519b775e4d7039e68
+",test
+https://github.com/magenta/magenta.git,0xdxdy@gmail.com,"Mention directory change before running bazel test (#753)
+
+",test
+https://github.com/PaddlePaddle/PARL.git,wyattliang@gmail.com,"add a episode in quick start to show the final test reward (#37)
+
+* add a episode to show the final test reward
+
+* make code more clear
+",test
+https://github.com/GoogleCloudPlatform/python-docs-samples.git,shollyman@google.com,"chore: add reservation quickstart and test (#25)
+
+* chore: add quickstart and test
+
+This PR introduces code for a reservation quickstart, but does not
+include the wiring for augmenting kokoro/nox/etc to include it in
+testing.  This will be addressed in subsequent changes.
+
+* blacken
+
+* use new samples template
+
+* use samples template
+
+* move imports to sample
+
+* add type hints
+
+* add type hints
+
+* format strings
+
+* revert noxfile
+
+* use env var from noxfile
+
+Co-authored-by: Tim Swast <swast@google.com>",test
+https://github.com/aimacode/aima-python.git,robhoenig@gmail.com,"Add test for TableDrivenAgentProgram. (#749)
+
+Fixes #748.",test
+https://github.com/google/flax.git,zainmeekail@gmail.com,"Squashed commits, reduced test count
+",test
+https://github.com/kornia/kornia.git,14985132+fgeri@users.noreply.github.com,"Augmentation tests refactor (#706)
+
+* Some progress
+
+* WIP
+
+* Autoformat
+
+* device,dtype moved into class attrib
+
+* batch,sequential,gradcheck implemented
+
+* Inverse coord check, exception test added
+
+* Centercrop implemented
+
+* RandomResizedCrop
+
+* RandomResizedCropImplemented
+
+* RandomRotationImplemented tests refactored
+
+* HorizontalFlip and VerticalFlip implemented
+
+* RandomGRaycale tests refactored
+
+* RandomEqualise refactored
+
+* Smaller chunk
+
+* Make mypy happy
+
+* Fixing flake8 and small issue
+
+* create_meshgrid used
+
+* Move autouse fixtures to CommonTests
+
+* pytest import removed from testing
+
+Co-authored-by: Feher Gergo (CC-AD/EPE-Bp) <bosch.feher@extaccount.com>
+Co-authored-by: shijianjian <sj8716643@126.com>",test
+https://github.com/facebookresearch/pytext.git,huntermonk@fb.com,"Add unit tests to ascii_table.py (#375)
+
+Summary:
+Pull Request resolved: https://github.com/facebookresearch/pytext/pull/375
+
+Adding unit tests to ascii_table.py to verify that the footer length
+calculation is correct.
+
+Reviewed By: bethebunny
+
+Differential Revision: D14327748
+
+fbshipit-source-id: fe313d1f2a75dea82fdb4db8ae7b45e37630494d
+",test
+https://github.com/deepmind/dm-haiku.git,armanroshannai@google.com,"Adds 'replaceable' function decorator to 'lift' and 'lift_with_state' for replacement. Includes test cases.
+
+PiperOrigin-RevId: 462610884
+",test
+https://github.com/PetrochukM/PyTorch-NLP.git,937823963@qq.com,"add decode test for test_subword_encoder.py
+",test
+https://github.com/onnx/onnx-tensorflow.git,sdaya@ca.ibm.com,"Updated test in TestNode to leverage  onnx.backend.test.case.node.hardmax for expected value. (#806)
+
+Signed-off-by: Shahir A. Daya <sdaya@ca.ibm.com>",test
+https://github.com/google/flax.git,ronw@google.com,"Fix naming error in test.
+",test
+https://github.com/joeynmt/joeynmt.git,staniek@cl.uni-heidelberg.de,"Testing after training should use best model
+",test
+https://github.com/flatironinstitute/CaImAn.git,hagaihargil@gmail.com,"improved test readability
+",test
+https://github.com/mittagessen/kraken.git,rebecca.s.koeser@princeton.edu,"Add a test for image error handling
+",test
+https://github.com/microsoft/nni.git,noob@mail.ustc.edu.cn,"Add tests for GraphConverterWithShape (#3951)
+
+",test
+https://github.com/mozilla/bugbug.git,10053862+con-cat@users.noreply.github.com,"Add basic test for defect_enhancement_task model (#1019)
+
+Fixes #438",test
+https://github.com/mozilla/bugbug.git,vishal27.rs@outlook.com,"Add 'arch' as a feature for test scheduling (#1040)
+
+Fixes #1018",test
+https://github.com/inferno-pytorch/inferno.git,bailoni.alberto@gmail.com,"Improved test for generalized dice score
+",test
+https://github.com/microsoft/DeepSpeed.git,81312776+tohtana@users.noreply.github.com,"Improve coverage of DeepCompile (#7386)
+
+This PR improves the coverage of DeepCompile.
+
+- Use real parameters when recompilation happens
+- Handling overflow error in profiling
+
+This PR should be merged after #7366.
+
+ZeRO1 and ZeRO3 both worked with OpenRLHF. See [Wiki
+page](https://github.com/tohtana/DeepCompile_docs/wiki/Debug-with-OpenRLHF-(%237243))
+for more details.
+
+---------
+
+Signed-off-by: Masahiro Tanaka <mtanaka@microsoft.com>
+Co-authored-by: Stas Bekman <stas00@users.noreply.github.com>",test
+https://github.com/flatironinstitute/CaImAn.git,valentina-s@users.noreply.github.com,segmentation to source_extraction in tests,test
