@@ -80,7 +80,7 @@ record(cph.summary, 'baseline_covariates_clustered', len(B), int(B.event.sum()))
 # ── (2b) Time-varying Cox with covariates lagged by one window ─────────────
 print('\nTime-varying Cox with covariates lagged by one window:')
 ADV = ['community_smell_count', 'stqf_global_turnover', 'stqf_ratio_smelly_quitters', 'stqf_st_congruence',
-       'traditional_smell_count', 'vulnerability_count', 'log_commits_count', 'se_score']
+       'traditional_smell_count', 'vulnerability_count', 'log_commits_count']
 ev = df.groupby(['project_url', 'developer_id']).agg(event=('has_failed', 'max'),
                                                       n_win=('time_window_rank', 'nunique')).reset_index()
 keep = ev[ev.n_win >= 3]

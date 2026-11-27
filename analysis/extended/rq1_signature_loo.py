@@ -33,7 +33,7 @@ tot = traj.groupby(['project_url', 'developer_id'])['time_window_rank'].transfor
 pos = seq - (tot - 1)
 
 SIG = ['community_smell_count', 'traditional_smell_count', 'stqf_global_turnover',
-       'loo_turnover', 'loo_smelly_quitters', 'log_commits_count', 'se_score']
+       'loo_turnover', 'loo_smelly_quitters', 'log_commits_count']
 first = traj[seq == 0].set_index(['project_url', 'developer_id'])[SIG]
 last = traj[pos == 0].set_index(['project_url', 'developer_id'])[SIG]
 pair = first.add_suffix('_f').join(last.add_suffix('_l')).dropna()

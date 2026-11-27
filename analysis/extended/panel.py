@@ -84,8 +84,7 @@ REQUIRED_COLUMNS = [
     'last_interaction_window_id', 'commits_count', 'code_churn',
     'files_touched_count',
     'community_smell_count', 'traditional_smell_count', 'ml_smell_count',
-    'vulnerability_count', 'vulnerability_high',
-    'se_score', 'sentiment_score', 'project_loc',
+    'vulnerability_count', 'vulnerability_high', 'project_loc',
     'Socio-Technical Quality Factors', 'developer_raw_json'
 ]
 # Extra raw columns used only by the descriptive analyses; never used as predictors.
@@ -111,7 +110,6 @@ FEATURES_BASE = [
     'traditional_smell_count', 'ml_smell_count', 'vulnerability_count',
     'vulnerability_high',
     'commits_count', 'code_churn', 'files_touched_count',
-    'se_score', 'sentiment_score',
     'project_age', 'developer_tenure',
 ]
 LOG_COLS = ['commits_count', 'code_churn', 'traditional_smell_count',
@@ -312,8 +310,8 @@ def check_main_model(df, feat_model):
         return feats  # the core relabeling changes the outcome, so Table 2 is not expected
     cph = CoxPHFitter(penalizer=0.1).fit(p[feats + ['duration', 'event']], 'duration', 'event')
     hr = cph.summary['exp(coef)']
-    expected = {'stqf_global_truck': 2.43, 'stqf_ratio_smelly_quitters': 1.85,
-                'stqf_ratio_sponsored': 0.68, 'developer_tenure': 0.74}
+    expected = {'stqf_global_truck': 2.42, 'stqf_ratio_smelly_quitters': 1.87,
+                'stqf_ratio_sponsored': 0.67, 'developer_tenure': 0.74}
     for k, v in expected.items():
         assert abs(hr[k] - v) < 0.006, f'{k}: {hr[k]:.3f} != {v} (Table 2)'
     assert len(p) == 1905 and int(p['event'].sum()) == 1103

@@ -149,7 +149,7 @@ def time_varying(cols, label):
 
 
 ADV = ['community_smell_count', 'stqf_global_turnover', 'stqf_st_congruence',
-       'traditional_smell_count', 'vulnerability_count', 'log_commits_count', 'se_score', 'sentiment_score']
+       'traditional_smell_count', 'vulnerability_count', 'log_commits_count']
 tv = [time_varying(ADV, 'original'),
       time_varying([LOO.get(c, c) for c in ADV] + ['loo_smelly_quitters'], 'loo')]
 pd.concat(tv).reset_index().rename(columns={'index': 'covariate'}).to_csv(

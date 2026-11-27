@@ -228,10 +228,6 @@ df['censor_type'] = np.where(df['has_failed'] == 1, 'evento',
                     np.where(_alive, 'admin', 'fine_progetto'))
 df['proj_failed'] = ((GLOBAL_LAST - _proj_last) >= INACTIVITY_THRESHOLD).astype(int)  # progetto morto prima del cutoff
 
-# Estrazione delle 6 emozioni dal JSON grezzo (necessarie allo STEP 14)
-_emo = df['developer_raw_json'].apply(safe_json).apply(lambda d: (d.get('sentiment_emotions') or {}))
-for e in EMO:
-    df['emo_' + e] = pd.to_numeric(_emo.apply(lambda d: d.get(e, np.nan)), errors='coerce')
 
 _vc = df['has_failed'].value_counts()
 print("\n[CENSURA A DESTRA] esito ricalcolato e usato da tutti gli step:")
@@ -291,8 +287,6 @@ FEATURES_BASE = [
     'code_churn',
     'files_touched_count',
     # Developer (controllo) 2 feature
-    'se_score',
-    'sentiment_score',
     # Temporali (controllo) 2 feature
     'project_age',
     'developer_tenure',
@@ -847,7 +841,7 @@ corr_cols = [
     'community_smell_count', 'traditional_smell_count', 'ml_smell_count',
     'vulnerability_count', 'stqf_global_turnover', 'stqf_ratio_smelly_devs',
     'stqf_density', 'stqf_st_congruence', 'stqf_global_truck',
-    'code_churn', 'commits_count', 'se_score', 'has_failed'
+    'code_churn', 'commits_count', 'has_failed'
 ]
 corr_cols = [c for c in corr_cols if c in df.columns]
 corr_matrix = df[corr_cols].corr() # Pearson
@@ -958,247 +952,6 @@ print("Thresholds salvato.")
 
 
 # ─────────────────────────────────────────────
-# STEP 14 — SENTIMENT & EMOZIONI
-# ─────────────────────────────────────────────
-print("\n")
-print("STEP 14 — Sentiment & Emozioni")
-
-# Risultati: si vedano i file in outputs/file/, rigenerati a ogni esecuzione.
-
-print(
-    "  sentiment_label degenere (>99.9% Neutral) -> "
-    "escluso. Uso emozioni + score."
-)
-
-# Le emozioni sono contenute all'interno di developer_raw_json
-RAW_JSON_COLUMN = 'developer_raw_json'
-
-if RAW_JSON_COLUMN not in df.columns:
-    raise KeyError(
-        f"Colonna '{RAW_JSON_COLUMN}' non trovata nel dataset."
-    )
-
-# Converte ogni JSON testuale in un dizionario Python.
-# safe_json è già definita nello STEP 2.
-developer_json = df[RAW_JSON_COLUMN].apply(safe_json)
-
-
-def extract_emotion(raw_data, emotion):
-    """
-    Estrae il valore di un'emozione dal JSON del developer.
-    Restituisce NaN quando il dato non è disponibile.
-    """
-    if not isinstance(raw_data, dict):
-        return np.nan
-
-    emotions = raw_data.get('sentiment_emotions', {})
-
-    if not isinstance(emotions, dict):
-        return np.nan
-
-    return emotions.get(emotion, np.nan)
-
-
-# Estrazione delle sei emozioni
-for emotion in EMO:
-    column_name = f'emo_{emotion}'
-
-    df[column_name] = pd.to_numeric(
-        developer_json.map(
-            lambda raw_data, current_emotion=emotion:
-            extract_emotion(raw_data, current_emotion)
-        ),
-        errors='coerce'
-    )
-
-print("  Colonne emozionali estratte:")
-
-for emotion in EMO:
-    column_name = f'emo_{emotion}'
-
-    print(
-        f"    {column_name:15s}: "
-        f"{df[column_name].notna().sum():,}/{len(df):,}"
-    )
-
-# Elenco dei segnali analizzati
-SENT = {
-    'sentiment_score': 'Sentiment',
-    'se_score': 'SE score'
-}
-
-for emotion in EMO:
-    column_name = f'emo_{emotion}'
-
-    if (
-        column_name in df.columns
-        and df[column_name].notna().sum() >= 10
-    ):
-        SENT[column_name] = emotion
-
-# Divisione tra osservazioni ACTIVE e FAILED
-act = df[df['has_failed'] == 0].copy()
-fai = df[df['has_failed'] == 1].copy()
-
-sentiment_results = []
-
-for column_name, label in SENT.items():
-
-    active_values = pd.to_numeric(
-        act[column_name],
-        errors='coerce'
-    ).dropna()
-
-    failed_values = pd.to_numeric(
-        fai[column_name],
-        errors='coerce'
-    ).dropna()
-
-    if len(active_values) < 5 or len(failed_values) < 5:
-        print(
-            f"  {label:12s}: dati insufficienti "
-            f"(ACTIVE={len(active_values)}, "
-            f"FAILED={len(failed_values)})"
-        )
-        continue
-
-    _, p_value = _ss.mannwhitneyu(
-        active_values,
-        failed_values,
-        alternative='two-sided'
-    )
-
-    delta = cliffs_delta(
-        active_values.values,
-        failed_values.values
-    )
-
-    print(
-        f"  {label:12s} "
-        f"ACT={active_values.median():7.3f} "
-        f"FAIL={failed_values.median():7.3f} "
-        f"p={p_value:.1e} "
-        f"d={delta:+.2f} ({eff_label(delta)})"
-    )
-
-    sentiment_results.append({
-        'signal': label,
-        'active_med': active_values.median(),
-        'failed_med': failed_values.median(),
-        'p_value': p_value,
-        'cliffs_d': delta,
-        'effect_size': eff_label(delta),
-        'n_active': len(active_values),
-        'n_failed': len(failed_values)
-    })
-
-pd.DataFrame(sentiment_results).to_csv(
-    OUT_DIR / 'sentiment_active_vs_failed.csv',
-    index=False
-)
-
-# ── Grafici ──
-
-available_emotions = [
-    emotion
-    for emotion in EMO
-    if (
-        f'emo_{emotion}' in df.columns
-        and df[f'emo_{emotion}'].notna().sum() >= 10
-    )
-]
-
-fig, axes = plt.subplots(1, 2, figsize=(14, 4.5))
-
-# Profilo emotivo medio
-if available_emotions:
-
-    x = np.arange(len(available_emotions))
-    width = 0.38
-
-    active_means = [
-        act[f'emo_{emotion}'].mean()
-        for emotion in available_emotions
-    ]
-
-    failed_means = [
-        fai[f'emo_{emotion}'].mean()
-        for emotion in available_emotions
-    ]
-
-    axes[0].bar(
-        x - width / 2,
-        active_means,
-        width,
-        label='ACTIVE',
-        color='#2980b9'
-    )
-
-    axes[0].bar(
-        x + width / 2,
-        failed_means,
-        width,
-        label='FAILED',
-        color='#c0392b'
-    )
-
-    axes[0].set_xticks(x)
-    axes[0].set_xticklabels(
-        available_emotions,
-        rotation=20
-    )
-
-    axes[0].set_ylabel('Valore medio')
-    axes[0].set_title('Profilo emotivo medio')
-    axes[0].legend()
-    axes[0].grid(alpha=0.3, axis='y')
-
-else:
-    axes[0].text(
-        0.5,
-        0.5,
-        'Dati emozionali non disponibili',
-        ha='center',
-        va='center'
-    )
-    axes[0].set_axis_off()
-
-# Boxplot SE score
-axes[1].boxplot(
-    [
-        pd.to_numeric(
-            act['se_score'],
-            errors='coerce'
-        ).dropna(),
-
-        pd.to_numeric(
-            fai['se_score'],
-            errors='coerce'
-        ).dropna()
-    ],
-    tick_labels=['ACTIVE', 'FAILED']
-)
-
-axes[1].set_title('SE score')
-axes[1].set_ylabel('Valore')
-axes[1].grid(alpha=0.3, axis='y')
-
-plt.tight_layout()
-
-plt.savefig(
-    OUT_DIR / 'sentiment_emotions.png',
-    dpi=110
-)
-
-plt.close()
-
-print("Sentiment analysis salvata.")
-
-
-# Confrontando developer censurati (attivi) vs eventi (abbandonati), le emozioni non distinguono i due gruppi.
-
-
-# ─────────────────────────────────────────────
 # STEP 15 — COX TEMPO-VARIANTE
 # ─────────────────────────────────────────────
 print("\n")
@@ -1214,8 +967,7 @@ _ev = df.groupby(['project_url', 'developer_id']).agg(
 
 ADV = {'community_smell_count': 'SD community', 'stqf_global_turnover': 'SD turnover',
        'stqf_st_congruence': 'SD st-congr', 'traditional_smell_count': 'TD trad',
-       'vulnerability_count': 'TD vuln', 'log_commits_count': 'Commit(log)',
-       'se_score': 'SE score', 'sentiment_score': 'Sentiment'}
+       'vulnerability_count': 'TD vuln', 'log_commits_count': 'Commit(log)',}
 for c in ADV:
     df[c] = pd.to_numeric(df[c], errors='coerce').fillna(0)
 
@@ -1265,7 +1017,7 @@ _traj = df.merge(_aid, on=['project_url', 'developer_id']).sort_values(
 _seq = _traj.groupby(['project_url', 'developer_id']).cumcount()
 _tot = _traj.groupby(['project_url', 'developer_id'])['time_window_rank'].transform('size')
 _traj['pos'] = _seq - (_tot - 1)                       # 0 = ultima finestra, negativi = precedenti
-SIG = ['community_smell_count', 'traditional_smell_count', 'stqf_global_turnover', 'log_commits_count', 'se_score']
+SIG = ['community_smell_count', 'traditional_smell_count', 'stqf_global_turnover', 'log_commits_count']
 _prof = _traj[_traj['pos'] >= -4].groupby('pos')[SIG].mean().round(3)
 print(f"  Dev in abbandono con traiettoria: {_aid.shape[0]:,}")
 print("  Media per posizione (0 = ultima finestra prima di sparire):")
@@ -1285,7 +1037,7 @@ for c in SIG:
     _sr.append({'metric': c, 'first_mean': a.mean(), 'last_mean': b.mean(), 'delta_pct': dpc, 'p': p})
 pd.DataFrame(_sr).to_csv(OUT_DIR / 'prefailure_signature.csv', index=False)
 fig, ax = plt.subplots(1, 2, figsize=(14, 4.8))
-for c in ['traditional_smell_count', 'stqf_global_turnover', 'log_commits_count', 'se_score']:
+for c in ['traditional_smell_count', 'stqf_global_turnover', 'log_commits_count']:
     v = _prof[c] / (_prof[c].abs().max() + 1e-9)
     ax[0].plot(_prof.index, v, 'o-', label=c)
 ax[0].set_xlabel('finestre prima della sparizione (0 = ultima)'); ax[0].set_ylabel('valore normalizzato')
